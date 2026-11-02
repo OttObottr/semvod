@@ -1,0 +1,51 @@
+{
+  "benchmark": "DeepMind Perception Test",
+  "task": "official multiple-choice video QA",
+  "split": "validation",
+  "selection": {
+    "seed": "semvod-perception-valid-v1-2026-11-02",
+    "rule": "All IDs in the official MCQA validation list; sort ascending SHA256(seed + newline + video_id), take first 20. No question, label, duration, media or outcome filtering.",
+    "population": 5260,
+    "idsUrl": "https://storage.googleapis.com/dm-perception-test/misc/mc_question_valid_id_list.csv",
+    "idsSha256": "7670290c80fc227ba965c3791457eeadab661049ebc2fa550f261b1dfdb68fb6",
+    "ids": [
+      "video_10627",
+      "video_10527",
+      "video_9011",
+      "video_6009",
+      "video_1347",
+      "video_1286",
+      "video_3870",
+      "video_8758",
+      "video_6198",
+      "video_2313",
+      "video_429",
+      "video_9045",
+      "video_5496",
+      "video_2163",
+      "video_8585",
+      "video_2140",
+      "video_5082",
+      "video_2781",
+      "video_872",
+      "video_1663"
+    ]
+  },
+  "evaluation": {
+    "questions": "Every official MCQA question for selected videos, unchanged options/order; gold withheld from prompts and grading until all arms complete.",
+    "input": "Respect official cut-frame mapping before both frame extraction and video inference. OpenAI/Jev get chronological 384px frames sampled every 2 seconds in contact sheets; Gemini gets clipped audiovisual video.",
+    "metric": "Official top-one answer accuracy. Invalid/missing answers count as wrong; report all selected IDs and failures, including budget stops. No comparisons to full-validation leaderboards.",
+    "prompts": "Freeze before the first paid call; no tuning on this sample. No test-time retries.",
+    "arms": [
+      "gpt-4.1-mini frames",
+      "typesafe/jev-1.14 frames",
+      "google/gemini-2.5-flash-lite audiovisual"
+    ],
+    "limits": "This is a capability audit of input representations/models, not an end-to-end SemVOD retrieval score; public data may have appeared in model pretraining."
+  },
+  "budget": {
+    "sharedLedger": ".semvod/real-footage/spend.json",
+    "priorSpendUsd": 0.074620048,
+    "maxAdditionalUsd": 0.42
+  }
+}
