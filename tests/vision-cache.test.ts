@@ -22,10 +22,24 @@ test('live search memoizes paid calls, fans out duplicate frames, and invalidate
   for(let i=0;i<3;i++)await sharp({create:{width:384,height:216,channels:3,background:i===1?'#00aa77':'#993300'}}).jpeg().toFile(path.join(dir,`frames/${i}.jpg`));
   await atomicJson(path.join(dir,'index.json'),{id,title:'test',startedAt:new Date().toISOString(),duration:30,status:'complete',frames:[0,1,2].map(i=>({id:i,t:i*10,file:`frames/${i}.jpg`}))});
   const key=JSON.stringify({id,query,liveDemo:false});const [a,b]=await Promise.all([runSearch(key),runSearch(key)]);
-  assert.equal(a,b);assert.equal(a.scores.length,3);assert.equal(a.scores[0].visualScore,2);assert.equal(a.scores[2].visualScore,2);assert.equal(a.hits.length,0);assert.equal(visionCalls,3);assert.equal(moderationCalls,1);assert.equal(a.stats.visionCalls,3);assert.equal(a.stats.inputTokens,300);assert.equal(a.stats.outputTokens,60);
+  assert.equal(a,b);assert.equal(a.scores.length,3);assert.equal(a.scores[0].visualScore,2);assert.equal(a.scores[2].visualScore,2);assert.ok(a.scores.every(s=>s.visualStage==='refined'));assert.equal(a.hits.length,0);assert.equal(visionCalls,3);assert.equal(moderationCalls,1);assert.equal(a.stats.visionCalls,3);assert.equal(a.stats.inputTokens,300);assert.equal(a.stats.outputTokens,60);
   const cached=await search(id,`  ${query.toUpperCase()}  `);assert.equal(cached.cached,true);assert.equal(cached.stats.visionCalls,0);assert.equal(cached.stats.inputTokens,0);assert.equal(cached.stats.outputTokens,0);assert.equal(visionCalls,3);assert.equal(moderationCalls,1);
   config.model='test-other-model';await search(id,query);assert.equal(visionCalls,6);assert.equal(moderationCalls,1);
  }finally{globalThis.fetch=originalFetch;config.openaiKey=originalKey;config.model=originalModel;await fs.rm(dir,{recursive:true,force:true});}
+});
+test('a candidate beyond the ten-frame refinement budget remains explicitly provisional',async()=>{
+ const id=`test-provisional-${Date.now()}`,dir=sessionDir(id),native=globalThis.fetch,oldKey=config.openaiKey;let calls=0;
+ config.openaiKey='test-only';globalThis.fetch=async(input,init)=>{
+  if(String(input).endsWith('/moderations'))return Response.json({results:[{flagged:false}]});
+  const body=JSON.parse(String(init?.body)),count=Number(/all (\d+) numbered/.exec(body.input[0].content[0].text)![1]);calls++;
+  return Response.json({output:[{content:[{type:'output_text',text:JSON.stringify({scores:Array.from({length:count},(_,i)=>({cell:i+1,score:count===1?0:9,reason:count===1?'rejected on inspection':'sheet candidate'}))})}]}]});
+ };
+ try{
+  await fs.mkdir(path.join(dir,'frames'),{recursive:true});const frames=Array.from({length:11},(_,i)=>({id:i,t:i*20,file:`frames/${i}.jpg`}));
+  await Promise.all(frames.map(f=>sharp({create:{width:32,height:18,channels:3,background:{r:f.id*20,g:100,b:50}}}).jpeg().toFile(path.join(dir,f.file))));
+  await atomicJson(path.join(dir,'index.json'),{id,title:'test',startedAt:new Date().toISOString(),duration:220,status:'complete',frames});
+  const result=await search(id,`provisional ${Date.now()}`);assert.equal(result.stats.refined,10);assert.equal(calls,11);assert.equal(result.hits.length,1);assert.equal(result.hits[0].id,10);assert.equal(result.hits[0].visualStage,'coarse');assert.ok(result.scores.slice(0,10).every(s=>s.visualStage==='refined'&&s.visualScore===0));
+ }finally{globalThis.fetch=native;config.openaiKey=oldKey;await fs.rm(dir,{recursive:true,force:true});}
 });
 test('moderation rejects a flagged query before sending any frame',async()=>{
  const original=globalThis.fetch;const key=config.openaiKey;config.openaiKey='test-key';let vision=0;
