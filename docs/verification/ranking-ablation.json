@@ -1,0 +1,307 @@
+{
+  "note": "Offline checked-evidence-first ranking using identical saved traces and original thresholds/spacing. NASA is development data with provisional labels; QVH is the preregistered two-query check. No paid calls. No measured aggregate benefit, so production ordering is unchanged.",
+  "development": {
+    "baseline": [
+      {
+        "session": "eval-nasa-lab",
+        "query": "a man standing outdoors beside green trees",
+        "before": {
+          "firstHitRelevant": true,
+          "correctReturned": 1,
+          "returned": 1
+        },
+        "checkedFirst": {
+          "firstHitRelevant": true,
+          "correctReturned": 1,
+          "returned": 1
+        }
+      },
+      {
+        "session": "eval-nasa-lab",
+        "query": "a person wearing a white laboratory coat",
+        "before": {
+          "firstHitRelevant": true,
+          "correctReturned": 3,
+          "returned": 3
+        },
+        "checkedFirst": {
+          "firstHitRelevant": true,
+          "correctReturned": 3,
+          "returned": 3
+        }
+      },
+      {
+        "session": "eval-nasa-lab",
+        "query": "a person wearing a bright red shirt",
+        "before": {
+          "firstHitRelevant": false,
+          "correctReturned": 0,
+          "returned": 0
+        },
+        "checkedFirst": {
+          "firstHitRelevant": false,
+          "correctReturned": 0,
+          "returned": 0
+        }
+      },
+      {
+        "session": "eval-nasa-kitchen",
+        "query": "a close-up view of a food pouch held toward the camera",
+        "before": {
+          "firstHitRelevant": true,
+          "correctReturned": 1,
+          "returned": 3
+        },
+        "checkedFirst": {
+          "firstHitRelevant": false,
+          "correctReturned": 1,
+          "returned": 3
+        }
+      },
+      {
+        "session": "eval-nasa-kitchen",
+        "query": "a close-up of hands at an open metal food preparation compartment, with no face visible",
+        "before": {
+          "firstHitRelevant": true,
+          "correctReturned": 1,
+          "returned": 1
+        },
+        "checkedFirst": {
+          "firstHitRelevant": true,
+          "correctReturned": 1,
+          "returned": 1
+        }
+      },
+      {
+        "session": "eval-nasa-kitchen",
+        "query": "a person wearing a tall white chef hat",
+        "before": {
+          "firstHitRelevant": false,
+          "correctReturned": 0,
+          "returned": 0
+        },
+        "checkedFirst": {
+          "firstHitRelevant": false,
+          "correctReturned": 0,
+          "returned": 0
+        }
+      }
+    ],
+    "scores": [
+      {
+        "session": "eval-nasa-lab",
+        "query": "a man standing outdoors beside green trees",
+        "before": {
+          "firstHitRelevant": true,
+          "correctReturned": 1,
+          "returned": 1
+        },
+        "checkedFirst": {
+          "firstHitRelevant": true,
+          "correctReturned": 1,
+          "returned": 1
+        }
+      },
+      {
+        "session": "eval-nasa-lab",
+        "query": "a person wearing a white laboratory coat",
+        "before": {
+          "firstHitRelevant": true,
+          "correctReturned": 3,
+          "returned": 3
+        },
+        "checkedFirst": {
+          "firstHitRelevant": true,
+          "correctReturned": 3,
+          "returned": 3
+        }
+      },
+      {
+        "session": "eval-nasa-lab",
+        "query": "a person wearing a bright red shirt",
+        "before": {
+          "firstHitRelevant": false,
+          "correctReturned": 0,
+          "returned": 0
+        },
+        "checkedFirst": {
+          "firstHitRelevant": false,
+          "correctReturned": 0,
+          "returned": 0
+        }
+      },
+      {
+        "session": "eval-nasa-kitchen",
+        "query": "a close-up view of a food pouch held toward the camera",
+        "before": {
+          "firstHitRelevant": true,
+          "correctReturned": 1,
+          "returned": 3
+        },
+        "checkedFirst": {
+          "firstHitRelevant": true,
+          "correctReturned": 1,
+          "returned": 3
+        }
+      },
+      {
+        "session": "eval-nasa-kitchen",
+        "query": "a close-up of hands at an open metal food preparation compartment, with no face visible",
+        "before": {
+          "firstHitRelevant": true,
+          "correctReturned": 1,
+          "returned": 1
+        },
+        "checkedFirst": {
+          "firstHitRelevant": true,
+          "correctReturned": 1,
+          "returned": 1
+        }
+      },
+      {
+        "session": "eval-nasa-kitchen",
+        "query": "a person wearing a tall white chef hat",
+        "before": {
+          "firstHitRelevant": false,
+          "correctReturned": 0,
+          "returned": 0
+        },
+        "checkedFirst": {
+          "firstHitRelevant": false,
+          "correctReturned": 0,
+          "returned": 0
+        }
+      }
+    ],
+    "jev": [
+      {
+        "session": "eval-nasa-lab",
+        "query": "a man standing outdoors beside green trees",
+        "before": {
+          "firstHitRelevant": true,
+          "correctReturned": 1,
+          "returned": 1
+        },
+        "checkedFirst": {
+          "firstHitRelevant": true,
+          "correctReturned": 1,
+          "returned": 1
+        }
+      },
+      {
+        "session": "eval-nasa-lab",
+        "query": "a person wearing a white laboratory coat",
+        "before": {
+          "firstHitRelevant": true,
+          "correctReturned": 3,
+          "returned": 3
+        },
+        "checkedFirst": {
+          "firstHitRelevant": true,
+          "correctReturned": 3,
+          "returned": 3
+        }
+      },
+      {
+        "session": "eval-nasa-lab",
+        "query": "a person wearing a bright red shirt",
+        "before": {
+          "firstHitRelevant": false,
+          "correctReturned": 0,
+          "returned": 0
+        },
+        "checkedFirst": {
+          "firstHitRelevant": false,
+          "correctReturned": 0,
+          "returned": 0
+        }
+      },
+      {
+        "session": "eval-nasa-kitchen",
+        "query": "a close-up view of a food pouch held toward the camera",
+        "before": {
+          "firstHitRelevant": true,
+          "correctReturned": 1,
+          "returned": 3
+        },
+        "checkedFirst": {
+          "firstHitRelevant": true,
+          "correctReturned": 1,
+          "returned": 3
+        }
+      },
+      {
+        "session": "eval-nasa-kitchen",
+        "query": "a close-up of hands at an open metal food preparation compartment, with no face visible",
+        "before": {
+          "firstHitRelevant": true,
+          "correctReturned": 1,
+          "returned": 2
+        },
+        "checkedFirst": {
+          "firstHitRelevant": true,
+          "correctReturned": 1,
+          "returned": 2
+        }
+      },
+      {
+        "session": "eval-nasa-kitchen",
+        "query": "a person wearing a tall white chef hat",
+        "before": {
+          "firstHitRelevant": false,
+          "correctReturned": 0,
+          "returned": 0
+        },
+        "checkedFirst": {
+          "firstHitRelevant": false,
+          "correctReturned": 0,
+          "returned": 0
+        }
+      }
+    ]
+  },
+  "qvh": {
+    "openai": [
+      {
+        "qid": 8967,
+        "error": "Please try a different search. This query was flagged by moderation.",
+        "bestIoU": 0,
+        "r1IoU50": 0,
+        "r1IoU70": 0
+      },
+      {
+        "qid": 601,
+        "error": null,
+        "bestIoU": 0.9310344827586207,
+        "r1IoU50": 1,
+        "r1IoU70": 1,
+        "checkedFirst": {
+          "bestIoU": 0.9310344827586207,
+          "r1IoU50": 1,
+          "r1IoU70": 1
+        }
+      }
+    ],
+    "jev": [
+      {
+        "qid": 8967,
+        "error": "Please try a different search. This query was flagged by moderation.",
+        "bestIoU": 0,
+        "r1IoU50": 0,
+        "r1IoU70": 0
+      },
+      {
+        "qid": 601,
+        "error": null,
+        "bestIoU": 0.9310344827586207,
+        "r1IoU50": 1,
+        "r1IoU70": 1,
+        "checkedFirst": {
+          "bestIoU": 0.9310344827586207,
+          "r1IoU50": 1,
+          "r1IoU70": 1
+        }
+      }
+    ]
+  }
+}

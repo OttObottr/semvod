@@ -1,0 +1,240 @@
+{
+  "benchmark": "Official Perception Test validation subset; not a leaderboard result",
+  "selection": 25,
+  "questions": 97,
+  "chanceExpectedAccuracy": 0.3333333333333333,
+  "metric": "Question-weighted top-one accuracy; invalid/missing predictions wrong",
+  "arms": {
+    "gemini": {
+      "correct": 61,
+      "total": 97,
+      "accuracy": 0.6288659793814433,
+      "invalid": 0,
+      "strata": {
+        "hash-selected": {
+          "correct": 49,
+          "total": 77,
+          "accuracy": 0.6363636363636364,
+          "invalid": 0
+        },
+        "memory-games": {
+          "correct": 12,
+          "total": 20,
+          "accuracy": 0.6,
+          "invalid": 0
+        }
+      },
+      "areas": {
+        "abstraction": {
+          "correct": 9,
+          "total": 20,
+          "accuracy": 0.45,
+          "invalid": 0
+        },
+        "memory": {
+          "correct": 0,
+          "total": 2,
+          "accuracy": 0,
+          "invalid": 0
+        },
+        "physics": {
+          "correct": 28,
+          "total": 45,
+          "accuracy": 0.6222222222222222,
+          "invalid": 0
+        },
+        "semantics": {
+          "correct": 24,
+          "total": 30,
+          "accuracy": 0.8,
+          "invalid": 0
+        }
+      },
+      "reasoning": {
+        "counterfactual": {
+          "correct": 0,
+          "total": 4,
+          "accuracy": 0,
+          "invalid": 0
+        },
+        "descriptive": {
+          "correct": 56,
+          "total": 80,
+          "accuracy": 0.7,
+          "invalid": 0
+        },
+        "explanatory": {
+          "correct": 3,
+          "total": 6,
+          "accuracy": 0.5,
+          "invalid": 0
+        },
+        "predictive": {
+          "correct": 2,
+          "total": 7,
+          "accuracy": 0.2857142857142857,
+          "invalid": 0
+        }
+      },
+      "estimatedCompletedUsd": 0.0203527,
+      "reservedUnknownUsd": 0,
+      "elapsedMs": 132595,
+      "successfulCalls": 25,
+      "failedCalls": 0
+    },
+    "openai": {
+      "correct": 54,
+      "total": 97,
+      "accuracy": 0.5567010309278351,
+      "invalid": 0,
+      "strata": {
+        "hash-selected": {
+          "correct": 44,
+          "total": 77,
+          "accuracy": 0.5714285714285714,
+          "invalid": 0
+        },
+        "memory-games": {
+          "correct": 10,
+          "total": 20,
+          "accuracy": 0.5,
+          "invalid": 0
+        }
+      },
+      "areas": {
+        "abstraction": {
+          "correct": 8,
+          "total": 20,
+          "accuracy": 0.4,
+          "invalid": 0
+        },
+        "memory": {
+          "correct": 0,
+          "total": 2,
+          "accuracy": 0,
+          "invalid": 0
+        },
+        "physics": {
+          "correct": 24,
+          "total": 45,
+          "accuracy": 0.5333333333333333,
+          "invalid": 0
+        },
+        "semantics": {
+          "correct": 22,
+          "total": 30,
+          "accuracy": 0.7333333333333333,
+          "invalid": 0
+        }
+      },
+      "reasoning": {
+        "counterfactual": {
+          "correct": 1,
+          "total": 4,
+          "accuracy": 0.25,
+          "invalid": 0
+        },
+        "descriptive": {
+          "correct": 50,
+          "total": 80,
+          "accuracy": 0.625,
+          "invalid": 0
+        },
+        "explanatory": {
+          "correct": 1,
+          "total": 6,
+          "accuracy": 0.16666666666666666,
+          "invalid": 0
+        },
+        "predictive": {
+          "correct": 2,
+          "total": 7,
+          "accuracy": 0.2857142857142857,
+          "invalid": 0
+        }
+      },
+      "estimatedCompletedUsd": 0.020332000000000006,
+      "reservedUnknownUsd": 0,
+      "elapsedMs": 42915,
+      "successfulCalls": 25,
+      "failedCalls": 0
+    },
+    "jev": {
+      "correct": 71,
+      "total": 97,
+      "accuracy": 0.7319587628865979,
+      "invalid": 2,
+      "strata": {
+        "hash-selected": {
+          "correct": 57,
+          "total": 77,
+          "accuracy": 0.7402597402597403,
+          "invalid": 0
+        },
+        "memory-games": {
+          "correct": 14,
+          "total": 20,
+          "accuracy": 0.7,
+          "invalid": 2
+        }
+      },
+      "areas": {
+        "abstraction": {
+          "correct": 11,
+          "total": 20,
+          "accuracy": 0.55,
+          "invalid": 0
+        },
+        "memory": {
+          "correct": 1,
+          "total": 2,
+          "accuracy": 0.5,
+          "invalid": 0
+        },
+        "physics": {
+          "correct": 33,
+          "total": 45,
+          "accuracy": 0.7333333333333333,
+          "invalid": 2
+        },
+        "semantics": {
+          "correct": 26,
+          "total": 30,
+          "accuracy": 0.8666666666666667,
+          "invalid": 0
+        }
+      },
+      "reasoning": {
+        "counterfactual": {
+          "correct": 1,
+          "total": 4,
+          "accuracy": 0.25,
+          "invalid": 0
+        },
+        "descriptive": {
+          "correct": 64,
+          "total": 80,
+          "accuracy": 0.8,
+          "invalid": 1
+        },
+        "explanatory": {
+          "correct": 3,
+          "total": 6,
+          "accuracy": 0.5,
+          "invalid": 0
+        },
+        "predictive": {
+          "correct": 3,
+          "total": 7,
+          "accuracy": 0.42857142857142855,
+          "invalid": 1
+        }
+      },
+      "estimatedCompletedUsd": 0.0034641180000000004,
+      "reservedUnknownUsd": 0.02,
+      "elapsedMs": 6889,
+      "successfulCalls": 24,
+      "failedCalls": 1
+    }
+  }
+}

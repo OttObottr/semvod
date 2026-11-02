@@ -12,6 +12,7 @@ for(const [arm,result] of Object.entries(predictions)){
 }
 if(process.argv.includes('--publish')){
   // First gold access occurs only after exact coverage for all three arms above.
+  if(hash(fs.readFileSync(path.join(root,'.semvod/perception-v1/annotations.json')))!==read(path.join(dir,'source-receipt.json')).annotations.jsonSha256)throw Error('Official annotation source hash changed');
   const gold=read(path.join(root,'.semvod/perception-v1/gold.json'));
   const official=read(path.join(root,'.semvod/perception-v1/annotations.json'));
   for(const id of protocol.selection.ids)if(JSON.stringify(gold[id])!==JSON.stringify(official[id].mc_question))throw Error('Selected gold differs from official annotation records');

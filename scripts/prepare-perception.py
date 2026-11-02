@@ -1,5 +1,5 @@
 """Fetch preregistered benchmark members with stdlib HTTP ranges; never execute dataset code."""
-import hashlib, io, json, pathlib, re, urllib.request, zipfile, zlib
+import hashlib, io, json, pathlib, re, subprocess, sys, urllib.request, zipfile, zlib
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 OUT = ROOT / '.semvod/perception-v1'
 OUT.mkdir(parents=True, exist_ok=True)
@@ -7,6 +7,10 @@ PROTOCOL = json.loads((ROOT/'docs/verification/perception-v1/protocol.json').rea
 BASE = 'https://storage.googleapis.com/dm-perception-test/'
 def get(url):
     with urllib.request.urlopen(url, timeout=60) as r: return r.read()
+ids_bytes=get(PROTOCOL['selection']['idsUrl'])
+if hashlib.sha256(ids_bytes).hexdigest()!=PROTOCOL['selection']['idsSha256']: raise ValueError('Official population changed')
+ids=ids_bytes.decode().strip().split(',')
+ordered=sorted(ids,key=lambda name:hashlib.sha256((PROTOCOL['selection']['seed']+'\n'+name).encode()).hexdigest())
 class RemoteZip(io.RawIOBase):
     def __init__(self, url):
         self.url, self.pos, self.bytes = url, 0, 0
@@ -55,3 +59,15 @@ with zipfile.ZipFile(remote) as z:
 receipt['networkBytesThisRun']=remote.bytes
 (OUT/'source-receipt.json').write_text(json.dumps(receipt,indent=2)+'\n')
 print('Network bytes:',remote.bytes)
+cuts=json.loads((OUT/'cuts.json').read_text())
+selected=ordered[:20]+[name for name in ordered if name not in ordered[:20] and cuts.get(name,-1)>0][:5]
+if selected!=PROTOCOL['selection']['ids']: raise ValueError('Selection does not follow published hash rule')
+if '--extract' in sys.argv:
+    annotations=json.loads((OUT/'annotations.json').read_text());inputs=[];gold={}
+    for name in selected:
+        session=ROOT/'sessions'/('pt-'+name)
+        subprocess.run([str(ROOT/'.semvod/real-footage/extract'),str(OUT/(name+'.mp4')),str(session),'0','999',str(cuts[name])],check=True)
+        index=json.loads((session/'index.json').read_text());questions=annotations[name]['mc_question']
+        inputs.append({'id':name,'session':session.name,'cutFrame':cuts[name],'duration':index['duration'],'clipSha256':hashlib.sha256((session/'clip.mp4').read_bytes()).hexdigest(),'questions':[{k:q[k] for k in ['id','question','options']} for q in questions]})
+        gold[name]=questions
+    for name,data in [('inputs.json',inputs),('gold.json',gold)]: (OUT/name).write_text(json.dumps(data,indent=2)+'\n')

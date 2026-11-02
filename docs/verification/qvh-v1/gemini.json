@@ -1,0 +1,164 @@
+{
+  "arm": "gemini",
+  "protocolHash": "4575899bc0098fe1c4c3ee6518ea359e2e53aef89de4e260e12a0fc5a23ab401",
+  "contractHash": "0244857279b111d599e7944b33141eeb0f4dcb76528e50cc351cdbcb933af2cf",
+  "manifestHash": "db8ea8d5a5e25638041c246447ba9c7f95e76106690c10614c6bbc903851e93b",
+  "rows": [
+    {
+      "qid": 8967,
+      "vid": "_i9qWLsZToY_660.0_810.0",
+      "windows": [
+        [
+          112,
+          115,
+          8
+        ],
+        [
+          115,
+          122,
+          7
+        ]
+      ],
+      "intervals": [
+        {
+          "start": "01:52",
+          "end": "01:55",
+          "score": 8
+        },
+        {
+          "start": "01:55",
+          "end": "02:02",
+          "score": 7
+        }
+      ],
+      "estimatedUsd": 0.0046623,
+      "requests": [
+        {
+          "requestHash": "5be853e304710e4aa909688c2a19a498e33c44abd56c19ffe64f99ddbd46bcc2",
+          "responseId": "gen-1793661597-LTG4HH5zhkj2HpRZ8a0t",
+          "usage": {
+            "prompt_tokens": 37915,
+            "completion_tokens": 136,
+            "total_tokens": 38051,
+            "cost": 0.0046623,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 4082,
+              "video_tokens": 33664
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0046623,
+              "upstream_inference_prompt_cost": 0.0046079,
+              "upstream_inference_completions_cost": 0.0000544
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "estimatedUsd": 0.0046623,
+          "elapsedMs": 7379,
+          "replayed": false
+        }
+      ],
+      "failedRequests": [],
+      "reservedUnknownUsd": 0
+    },
+    {
+      "qid": 601,
+      "vid": "pu5p_ojK6BI_360.0_510.0",
+      "windows": [
+        [
+          33,
+          40,
+          9
+        ],
+        [
+          52,
+          61,
+          9
+        ],
+        [
+          61,
+          73,
+          9
+        ],
+        [
+          73,
+          84,
+          8
+        ],
+        [
+          122,
+          127,
+          8
+        ]
+      ],
+      "intervals": [
+        {
+          "start": "00:33",
+          "end": "00:40",
+          "score": 9
+        },
+        {
+          "start": "00:52",
+          "end": "01:01",
+          "score": 9
+        },
+        {
+          "start": "01:01",
+          "end": "01:13",
+          "score": 9
+        },
+        {
+          "start": "01:13",
+          "end": "01:24",
+          "score": 8
+        },
+        {
+          "start": "02:02",
+          "end": "02:07",
+          "score": 8
+        }
+      ],
+      "estimatedUsd": 0.0055966,
+      "requests": [
+        {
+          "requestHash": "9a467ba47e1bdc4b374f2fc263fb97d67af3d55667f21d53635b7cb4c48fd910",
+          "responseId": "gen-1793661607-LKCEp2Qe5nJdWYaVr6Ad",
+          "usage": {
+            "prompt_tokens": 44684,
+            "completion_tokens": 420,
+            "total_tokens": 45104,
+            "cost": 0.0055966,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 4801,
+              "video_tokens": 39713
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0055966,
+              "upstream_inference_prompt_cost": 0.0054286,
+              "upstream_inference_completions_cost": 0.000168
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "estimatedUsd": 0.0055966,
+          "elapsedMs": 10114,
+          "replayed": false
+        }
+      ],
+      "failedRequests": [],
+      "reservedUnknownUsd": 0
+    }
+  ]
+}
