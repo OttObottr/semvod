@@ -28,8 +28,24 @@
       "video_5082",
       "video_2781",
       "video_872",
-      "video_1663"
-    ]
+      "video_1663",
+      "video_9116",
+      "video_6570",
+      "video_6014",
+      "video_11463",
+      "video_8124"
+    ],
+    "additionalHardStratum": {
+      "rule": "Before inference/media/question inspection, add the first five hash-ordered official MCQA validation IDs with positive official cut-frame mapping, excluding the original twenty. Retain all original twenty. This deliberately stresses object tracking/memory games while preventing revealing endings.",
+      "ids": [
+        "video_9116",
+        "video_6570",
+        "video_6014",
+        "video_11463",
+        "video_8124"
+      ],
+      "disclosure": "Protocol amendment after observing that the original twenty had no positive cut-frame entries; no model predictions or question content had been inspected."
+    }
   },
   "evaluation": {
     "questions": "Every official MCQA question for selected videos, unchanged options/order; gold withheld from prompts and grading until all arms complete.",
@@ -41,7 +57,8 @@
       "typesafe/jev-1.14 frames",
       "google/gemini-2.5-flash-lite audiovisual"
     ],
-    "limits": "This is a capability audit of input representations/models, not an end-to-end SemVOD retrieval score; public data may have appeared in model pretraining."
+    "limits": "This is a capability audit of input representations/models, not an end-to-end SemVOD retrieval score; public data may have appeared in model pretraining.",
+    "cutConvention": "Keep only frame indices strictly less than the official cut frame; cut audio at the same presentation timestamp. -1 means full video."
   },
   "budget": {
     "sharedLedger": ".semvod/real-footage/spend.json",
