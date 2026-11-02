@@ -6,7 +6,17 @@ import AppKit
   let args=CommandLine.arguments
   let asset=AVURLAsset(url:URL(fileURLWithPath:args[1]))
   let duration=try await asset.load(.duration).seconds
-  let start=Double(args[3])!, length=min(Double(args[4])!,duration-start)
+  let start=Double(args[3])!
+  var length=min(Double(args[4])!,duration-start)
+  if args.count>5, let cut=Int(args[5]), cut>=0 {
+   let track=try await asset.loadTracks(withMediaType:.video)[0]
+   let reader=try AVAssetReader(asset:asset), output=AVAssetReaderTrackOutput(track:track,outputSettings:nil)
+   reader.add(output);reader.startReading();var times:[Double]=[]
+   while let sample=output.copyNextSampleBuffer(){times.append(CMSampleBufferGetPresentationTimeStamp(sample).seconds)}
+   times.sort();guard reader.status == .completed,cut<times.count else {throw NSError(domain:"Invalid cut frame",code:1)}
+   length=min(length,times[cut]-start)
+   print("Exclusive cut frame \(cut), actual presentation time \(times[cut])")
+  }
   let generator=AVAssetImageGenerator(asset:asset)
   generator.appliesPreferredTrackTransform=true
   generator.maximumSize=CGSize(width:384,height:216)
@@ -15,13 +25,15 @@ import AppKit
   let root=URL(fileURLWithPath:args[2]);try FileManager.default.createDirectory(at:root.appendingPathComponent("frames"),withIntermediateDirectories:true)
   var frames:[[String:Any]]=[]
   for offset in stride(from:0.0,to:length,by:2.0) {
-   let image=try await generator.image(at:CMTime(seconds:start+offset,preferredTimescale:60000)).image
+   let capture=try await generator.image(at:CMTime(seconds:start+offset,preferredTimescale:60000))
+   guard capture.actualTime.seconds<start+length else {continue}
+   let image=capture.image
    let file=String(format:"frames/%06d.jpg",frames.count)
    let rep=NSBitmapImageRep(cgImage:image)
    try rep.representation(using:.jpeg,properties:[.compressionFactor:0.85])!.write(to:root.appendingPathComponent(file))
    frames.append(["id":frames.count,"t":offset,"file":file])
   }
-  let session:[String:Any] = ["id":root.lastPathComponent,"title":"NASA real-footage evaluation", "startedAt":"2026-11-02T00:00:00Z","duration":length,"frames":frames,"status":"complete"]
+  let session:[String:Any] = ["id":root.lastPathComponent,"title":"Public benchmark evaluation", "startedAt":"2026-11-02T00:00:00Z","duration":length,"frames":frames,"status":"complete"]
   try JSONSerialization.data(withJSONObject:session,options:[.prettyPrinted,.sortedKeys]).write(to:root.appendingPathComponent("index.json"))
   let clip=root.appendingPathComponent("clip.mp4")
   if !FileManager.default.fileExists(atPath:clip.path) {
