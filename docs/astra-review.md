@@ -1,6 +1,6 @@
 # Astra follow-up review — November 2, 2026
 
-This work is **after submission**. The confirmed hackathon build remains on `main` at `8b74bbb` and tag `hackathon-2026-11-02`. This branch is a separate follow-up, not a claim that these changes were in the submitted demo.
+This work is **after submission**. The confirmed hackathon build is preserved at `8b74bbb` and tag `hackathon-2026-11-02`. These follow-up changes were not in the submitted demo.
 
 An independent Codex agent using GPT-6 Astra reviewed the source and then the patch read-only. It found no critical issue in its review scope; this is not a security certification or a guarantee of winning.
 
