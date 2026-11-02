@@ -43,5 +43,42 @@
       "reasoning_tokens": 0
     },
     "total_tokens": 537
+  },
+  "pipelineFollowup": {
+    "query": "cat",
+    "model": "gpt-6-luna",
+    "promptVersion": "decisions-v1",
+    "scope": "Separate full-pipeline search on the illustrated OBS session, not a false-positive rate. The predicate/choice answers above are a single-frame diagnostic.",
+    "stats": {
+      "sheets": 1,
+      "visionCalls": 4,
+      "cacheHits": 0,
+      "refined": 3,
+      "elapsedMs": 1913,
+      "inputTokens": 2538,
+      "outputTokens": 0
+    },
+    "falsePositiveHits": [
+      {
+        "frameId": 15,
+        "t": 30.129,
+        "score": 7.25
+      },
+      {
+        "frameId": 55,
+        "t": 110.481,
+        "score": 7.25
+      },
+      {
+        "frameId": 0,
+        "t": 0.008,
+        "score": 5.4
+      },
+      {
+        "frameId": 40,
+        "t": 80.34,
+        "score": 5.4
+      }
+    ]
   }
 }

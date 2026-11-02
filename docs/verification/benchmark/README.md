@@ -10,4 +10,6 @@ The initially omitted close negative `cat` exposed a failure: the Decisions pipe
 
 The sample is stylized artwork, not a representative gameplay corpus. Future evaluation needs held-out real streams, close negatives and small objects before changing engines or reducing resolution further. No claim of best-in-class accuracy, cost or speed follows from this experiment.
 
-Reproduce saved output: `node scripts/benchmark.mjs`. Paid rerun: `node scripts/benchmark.mjs --live` (six requests; no automatic retries). Official API references: https://developers.openai.com/api/docs/guides/decisions and https://developers.openai.com/api/docs/models/gpt-4.1-mini.
+The recorded 7.25/10 full-pipeline false positives are under `pipelineFollowup` in `cat-control.json`; the earlier predicate/choice answers are a different diagnostic on one frame. Reading saved receipts costs nothing; a new provider response is stochastic and is not guaranteed to repeat the same score.
+
+Replay saved output and the adversarial receipt: `node scripts/benchmark.mjs`. Paid rerun of the original three-query fixture only (does not rerun the cat diagnostic): `node scripts/benchmark.mjs --live` (six requests; no automatic retries). Official API references: https://developers.openai.com/api/docs/guides/decisions and https://developers.openai.com/api/docs/models/gpt-4.1-mini.

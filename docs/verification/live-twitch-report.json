@@ -18,5 +18,12 @@
     "sessionId": "2026-11-02T19-03-50-542Z",
     "note": "Received during a separate offline OBS capture after the broadcast ended."
   },
-  "visionApi": "pending API key"
+  "visionApi": {
+    "verified": true,
+    "model": "gpt-4.1-mini",
+    "evidence": "vision-report.json",
+    "laterCostMeasurement": "cost-and-quality.json",
+    "scope": "Subsequent real API calls on the same eight illustrated images; no representative gameplay accuracy or per-hour cost measurement."
+  },
+  "reportUpdated": "2026-11-02"
 }

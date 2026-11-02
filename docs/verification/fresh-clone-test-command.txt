@@ -1,0 +1,107 @@
+Before: npm test in an offline-installed checkout with no dist/
+
+
+> semvod@0.1.0 test
+> node --import ./tests/isolate.mjs --import tsx --test tests/*.test.ts
+
+✔ VOD clip API uses the broadcaster scope and end offset, with a real timestamp fallback on rejection (30.905333ms)
+✔ equivalent queries normalize to the same cache key (0.913959ms)
+✔ session IDs cannot traverse the filesystem (0.299667ms)
+✔ concurrent work is coalesced and rejection does not poison retry (17.136417ms)
+✔ vision JSON must contain one valid score per real cell (0.310334ms)
+✔ chat phrase relevance is distinct from visual evidence (1.092542ms)
+✔ hype catches emote bursts and handles an empty session (0.553ms)
+✔ top hits suppress adjacent near-identical moments (0.240208ms)
+✔ VOD matching requires the correct stream and time interval (0.187166ms)
+✔ clip offset is the end, includes recorder start delta, and clamps at VOD edges (0.135542ms)
+✔ offline sample supports four queries with zero model calls (8.273166ms)
+✔ contact sheets deduplicate exact frames and preserve all timestamps (64.520584ms)
+✔ atomic JSON creates owner-only files even under a permissive umask (0.765792ms)
+✔ EventSub subscribes with correct identities, deduplicates messages, and migrates without resubscribing (44.7575ms)
+✖ production server serves the demo and covers, and blocks cross-origin mutations (11.712125ms)
+✔ OBS v5 authentication, screenshot capture, and graceful stop preserve a session (21.071084ms)
+✔ test transports and OBS reject external network connections (1.0435ms)
+✔ stopping during OBS authentication waits for startup and leaves no recording running (28.16125ms)
+Capture: OBS disconnected
+✔ OBS disconnect is visible and capture resumes after reconnect (2009.26375ms)
+✔ live search memoizes paid calls, fans out duplicate frames, and invalidates when model changes (111.532042ms)
+✔ moderation rejects a flagged query before sending any frame (0.923292ms)
+✔ longer sessions process at most three sheets concurrently and count actual token usage (474.629417ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 21
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2636.916542
+
+✖ failing tests:
+
+test at tests/http.test.ts:1:414
+✖ production server serves the demo and covers, and blocks cross-origin mutations (11.712125ms)
+  Error: ENOENT: no such file or directory, lstat '<clean-checkout>/dist/client'
+      at async lstat (node:internal/fs/promises:1741:18)
+      at async Promise.all (index 0)
+      at async checkPaths (node:internal/fs/cp/cp:77:39)
+      at async cpFn (node:internal/fs/cp/cp:66:17)
+      at async Promise.all (index 1)
+      at async TestContext.<anonymous> (<clean-checkout>/tests/http.test.ts:13:2)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'lstat',
+    path: '<clean-checkout>/dist/client'
+  }
+
+After: same checkout, corrected package.json, npm test
+
+
+> semvod@0.1.0 test
+> npm run build && node --import ./tests/isolate.mjs --import tsx --test tests/*.test.ts
+
+
+> semvod@0.1.0 build
+> tsc --noEmit && vite build
+
+vite v7.3.7 building client environment for production...
+transforming...
+✓ 1578 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/client/index.html                   0.53 kB │ gzip:  0.34 kB
+dist/client/assets/index-D4FoUXq8.css   27.21 kB │ gzip:  6.52 kB
+dist/client/assets/index-qv-3O4HZ.js   219.58 kB │ gzip: 69.54 kB
+✓ built in 575ms
+✔ VOD clip API uses the broadcaster scope and end offset, with a real timestamp fallback on rejection (19.149791ms)
+✔ equivalent queries normalize to the same cache key (0.458ms)
+✔ session IDs cannot traverse the filesystem (0.151708ms)
+✔ concurrent work is coalesced and rejection does not poison retry (16.065375ms)
+✔ vision JSON must contain one valid score per real cell (0.233ms)
+✔ chat phrase relevance is distinct from visual evidence (0.465417ms)
+✔ hype catches emote bursts and handles an empty session (0.20425ms)
+✔ top hits suppress adjacent near-identical moments (0.098375ms)
+✔ VOD matching requires the correct stream and time interval (0.120125ms)
+✔ clip offset is the end, includes recorder start delta, and clamps at VOD edges (0.110667ms)
+✔ offline sample supports four queries with zero model calls (8.329792ms)
+✔ contact sheets deduplicate exact frames and preserve all timestamps (54.494792ms)
+✔ atomic JSON creates owner-only files even under a permissive umask (0.728166ms)
+✔ EventSub subscribes with correct identities, deduplicates messages, and migrates without resubscribing (34.137291ms)
+✔ production server serves the demo and covers, and blocks cross-origin mutations (274.378875ms)
+✔ OBS v5 authentication, screenshot capture, and graceful stop preserve a session (11.642125ms)
+✔ test transports and OBS reject external network connections (0.382125ms)
+✔ stopping during OBS authentication waits for startup and leaves no recording running (25.816875ms)
+Capture: OBS disconnected
+✔ OBS disconnect is visible and capture resumes after reconnect (2011.613333ms)
+✔ live search memoizes paid calls, fans out duplicate frames, and invalidates when model changes (70.413916ms)
+✔ moderation rejects a flagged query before sending any frame (0.894292ms)
+✔ longer sessions process at most three sheets concurrently and count actual token usage (463.593792ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2226.896167

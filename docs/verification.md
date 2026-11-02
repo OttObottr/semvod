@@ -25,15 +25,15 @@ See [the adversarial review and before/after receipts](adversarial-review.md) fo
 - Actual OBS 29.0.2 / WebSocket 5.1.0 capture passes in the network-disabled Linux sandbox; a captured image was visually inspected. Native macOS OBS remains intentionally uninstalled.
 - The artwork-only public Twitch test produced 63 captured frames, matched archive `2917774778`, and created confirmed clip `TardyResourcefulTurtleRuleFive-4N9rgxv50ZQTaF0g`. The channel was verified offline afterward.
 - Actual EventSub message `lol` from `ottobottr` was received while OBS frames were captured in a separate offline test session.
-- Real OpenAI moderation and `gpt-4.1-mini` vision requests passed for `dog` and `brightest blue` on the 63-frame Twitch recording. Eight unique frames share one detailed sheet. Nine paid vision requests were made during verification, including an initial compact-sheet accuracy check; token usage and dollar cost were not measured.
+- Real OpenAI moderation and `gpt-4.1-mini` vision requests passed for `dog` and `brightest blue` on the 63-frame Twitch recording. Eight unique frames share one detailed sheet. The initial vision check made nine paid requests without collecting token usage. A later fresh search did collect usage and a list-price estimate; see `verification/cost-and-quality.json`.
 - The first compact sheet missed the small illustrated dog. Short sheets now retain 384×216 frame detail; refinement also updates every exact duplicate timestamp. A regression test checks that a coarse false positive disappears from all its duplicates.
 - Repeated normalized queries and a fresh app process reused persisted scores with **zero paid vision calls**. See `verification/vision-report.json` and `screenshots/real-dog-search.png`.
 - The [public YouTube demo](https://www.youtube.com/watch?v=1-FCJHXmjm4) is published on Bellverse Labs. Signed-out incognito playback succeeded. The exported 1920×1080 H.264/AAC file is 141.967 seconds with an audio track. Page-only captures, original artwork, and OpenAI-generated narration with an on-screen disclosure keep the Mac desktop and microphone out of the video.
 - Sandbox configuration and evidence are recorded in `sandbox-testing.md`. Cleanup is complete: both test containers, the isolated network, all six test images, and the downloaded base image were removed. Docker lists no remaining containers or images. Temporary build folders were moved to Trash; temporary setup/proxy files were removed. The pre-existing OrbStack installation remains intact, and no native OBS app was installed.
 
-## Still requires real accounts/hardware
+## Submitted
 
-- Devpost sign-in and final submission.
+Devpost displayed **“Project submitted!”** for [SemVOD](https://devpost.com/software/semvod), listed under Codex x TwitchCon Hackathon, before the November 2 deadline. Public demo: https://www.youtube.com/watch?v=1-FCJHXmjm4.
 
 Source is published at https://github.com/OttObottr/semvod.
 
@@ -49,4 +49,9 @@ Official references are linked in the README. The app's implemented behavior and
 
 ### Final clean-checkout verification
 
-On November 2, a `git archive` checkout with no `.env`, OAuth tokens, or recordings passed `npm ci --offline --ignore-scripts --no-audit --no-fund`, `npm run build`, and all 22 tests. Test transports reject external fetch/WebSocket destinations; the HTTP test runs in a temporary directory with synthetic credentials. This is test isolation, not an OS-level sandbox. The release remains on Responses after the faster Decisions experiment failed a cat-versus-dog adversarial check. See the [raw model comparison](verification/benchmark/README.md) and [real semantic timelines](verification/semantic-comparison.png).
+On November 2, a `git archive` checkout with no `.env`, OAuth tokens, or recordings passed `npm ci --offline --ignore-scripts --no-audit --no-fund`, `npm run build`, and all 22 tests. Test transports reject external fetch/WebSocket destinations; the HTTP test runs in a temporary directory with synthetic credentials. This is test isolation, not an OS-level sandbox. The release remains on Responses after the faster Decisions experiment failed a cat-versus-dog adversarial check. See the [raw model comparison](verification/benchmark/README.md) and [illustrated-fixture search timelines](verification/semantic-comparison.png).
+
+
+### Fresh-clone test command correction
+
+A second clean checkout reproduced a missing `dist/client` failure when `npm test` ran before a build. The command now explicitly runs `npm run build` before the test runner. A `pretest` hook alone would be skipped by this repository’s `ignore-scripts=true` policy. The corrected `npm test` then built successfully and passed all 22 tests in that checkout. No runtime search behavior or dependencies changed.

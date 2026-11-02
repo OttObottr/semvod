@@ -8,9 +8,9 @@ A local app captures small frames from OBS, records Twitch chat, and scores visu
 
 **[Watch the 2:22 demo](https://www.youtube.com/watch?v=1-FCJHXmjm4)** · [Verified Twitch clip](https://www.twitch.tv/ottobottr/clip/TardyResourcefulTurtleRuleFive-4N9rgxv50ZQTaF0g) · [Integration evidence](docs/verification.md)
 
-![Real semantic timelines: dog, cat, and brightest blue on one fixed scale](docs/verification/semantic-comparison.png)
+![Illustrated-fixture search scores: dog, cat, and brightest blue on one fixed scale](docs/verification/semantic-comparison.png)
 
-Three searches on the same real OBS test broadcast. Each row shares the same 0–10 relevance scale; the stack shows relevance divided by ten, not probabilities. The absent `cat` query stays flat. [Raw scores](docs/verification/semantic-series.json) · [Rebuild the graphic](scripts/plot-comparison.mjs) · [App screenshot](docs/screenshots/real-dog-search.png)
+Three searches on a real OBS/Twitch test broadcast containing eight original illustrated images, not gameplay. Each row shares the same 0–10 relevance scale; the stack shows relevance divided by ten, not probabilities. The absent `cat` query stays flat. [Raw scores](docs/verification/semantic-series.json) · [Rebuild the graphic](scripts/plot-comparison.mjs) · [App screenshot](docs/screenshots/real-dog-search.png)
 
 ## Try it in a minute
 
@@ -59,7 +59,7 @@ This mode has no chat or associated Twitch VOD. It still supports AI search and 
 | `npm run semvod -- record` | Capture OBS frames + Twitch EventSub chat; Ctrl+C saves |
 | `npm run semvod -- index <session-id>` | Build/reuse contact sheets |
 | `npm run build` then `npm start` | Type-check, build, and run production UI |
-| `npm test` | Native Node tests; no real API calls or credentials used |
+| `npm test` | Builds the production UI, then runs native Node tests; no real API calls or credentials used |
 | `npm audit` / `npm audit signatures` | Check dependency advisories and registry signatures |
 | `npm run demo:generate` | Regenerate the bundled original sample |
 
@@ -98,6 +98,8 @@ The server binds to `127.0.0.1`, checks Host and Origin, and requires a custom h
 Dependencies are pinned with a committed integrity lockfile. `.npmrc` disables automatic installation scripts; `npm ci` does not run package lifecycle hooks. The only runtime packages are React, React DOM, Lucide icons, and Sharp. The build uses Vite, TypeScript, and tsx. `npm audit` reports known advisories, not proof that software is malware-free.
 
 ## Limits and troubleshooting
+
+**Accuracy is not established on real gameplay.** Current quality evidence is eight distinct illustrated images from one short test broadcast, with three initial queries and a cat close-negative follow-up. There is no representative precision/recall result or measured cost per stream-hour yet. Integration checks establish that the connections work; they do not establish search quality across arbitrary streams.
 
 - **OBS connection fails:** open OBS, enable its WebSocket server, check port/password, and use Setup → Test OBS connection. SemVOD restricts OBS to loopback.
 - **Chat unavailable:** reconnect Twitch with `user:read:chat`, check `TWITCH_CHANNEL`, and inspect the recording's `chatStatus` in `index.json`. Frames can continue if chat disconnects.
