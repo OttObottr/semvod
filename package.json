@@ -10,7 +10,7 @@
     "semvod": "tsx src/server/cli.ts",
     "build": "tsc --noEmit && vite build",
     "start": "tsx src/server/cli.ts serve",
-    "test": "npm run build && node --import ./tests/isolate.mjs --import tsx --test tests/*.test.ts",
+    "test": "npm run build && node --import ./tests/isolate.mjs --import tsx --test tests/*.test.*",
     "typecheck": "tsc --noEmit",
     "demo:generate": "tsx scripts/generate-demo.ts"
   },
