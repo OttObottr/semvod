@@ -1,0 +1,18 @@
+[
+  {
+    "session": "eval-nasa-lab",
+    "file": "sessions/eval-nasa-lab/clip.mp4",
+    "sha256": "51f9e89b3c5ab499d5328e58dde265216af055eaf46a722cd26fa08a0fa6df73",
+    "durationSeconds": 90,
+    "audioTracks": 1,
+    "videoTracks": 1
+  },
+  {
+    "session": "eval-nasa-kitchen",
+    "file": "sessions/eval-nasa-kitchen/clip.mp4",
+    "sha256": "8285192042ba33b2fcf8d5b95fc1bb1624b1002a9a302b62aae2ad64cc6ed516",
+    "durationSeconds": 90,
+    "audioTracks": 1,
+    "videoTracks": 1
+  }
+]
