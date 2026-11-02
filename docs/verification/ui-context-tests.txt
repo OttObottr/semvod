@@ -1,0 +1,55 @@
+
+> semvod@0.1.0 test
+> npm run build && node --import ./tests/isolate.mjs --import tsx --test tests/*.test.*
+
+
+> semvod@0.1.0 build
+> tsc --noEmit && vite build
+
+vite v7.3.7 building client environment for production...
+transforming...
+✓ 1579 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/client/index.html                   0.53 kB │ gzip:  0.34 kB
+dist/client/assets/index-D4FoUXq8.css   27.21 kB │ gzip:  6.52 kB
+dist/client/assets/index-BjsduKC7.js   220.32 kB │ gzip: 69.80 kB
+✓ built in 719ms
+✔ VOD clip API uses the broadcaster scope and end offset, with a real timestamp fallback on rejection (24.324833ms)
+✔ equivalent queries normalize to the same cache key (0.459667ms)
+✔ session IDs cannot traverse the filesystem (0.149458ms)
+✔ concurrent work is coalesced and rejection does not poison retry (16.13ms)
+✔ vision JSON must contain one valid score per real cell (0.26725ms)
+✔ chat phrase relevance is distinct from visual evidence (0.446042ms)
+✔ hype catches emote bursts and handles an empty session (0.207167ms)
+✔ top hits suppress adjacent near-identical moments (0.099667ms)
+✔ VOD matching requires the correct stream and time interval (0.122041ms)
+✔ clip offset is the end, includes recorder start delta, and clamps at VOD edges (0.10725ms)
+✔ offline sample supports four queries with zero model calls (6.966666ms)
+✔ contact sheets deduplicate exact frames and preserve all timestamps (48.104041ms)
+✔ atomic JSON creates owner-only files even under a permissive umask (1.0415ms)
+✔ evaluation budget serializes native fetch and stops queued spending after uncertainty (26.4145ms)
+✔ audited failed reservations remain charged, block their hash, and preserve sanitized HTTP errors (1.904042ms)
+✔ EventSub subscribes with correct identities, deduplicates messages, and migrates without resubscribing (29.488333ms)
+✔ production server serves the demo and covers, and blocks cross-origin mutations (274.15425ms)
+✔ changing moment or session suppresses late clip results, errors and cleanup (0.590041ms)
+✔ an older request cannot overwrite a newer result or reset its pending state (0.143083ms)
+✔ OBS v5 authentication, screenshot capture, and graceful stop preserve a session (14.549375ms)
+✔ test transports and OBS reject external network connections (0.92475ms)
+✔ stopping during OBS authentication waits for startup and leaves no recording running (26.329167ms)
+Capture: OBS disconnected
+✔ OBS disconnect is visible and capture resumes after reconnect (2011.786625ms)
+✔ QV frozen interval adapter respects gaps, edges, ranking and duplicate runs (0.841959ms)
+✔ QV checked-first ablation preserves threshold and spacing without upgrading coarse evidence (0.131125ms)
+✔ live search memoizes paid calls, fans out duplicate frames, and invalidates when model changes (79.647125ms)
+✔ a candidate beyond the ten-frame refinement budget remains explicitly provisional (129.794ms)
+✔ moderation rejects a flagged query before sending any frame (1.055916ms)
+✔ longer sessions process at most three sheets concurrently and count actual token usage (414.895709ms)
+ℹ tests 29
+ℹ suites 0
+ℹ pass 29
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2287.849125

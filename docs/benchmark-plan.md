@@ -15,7 +15,11 @@ Next useful evidence is independently reviewed, permitted real footage from seve
 
 - [OpusClip ClipAnything](https://www.opus.pro/clipanything) supports prompt-based clipping using visual/audio/sentiment cues. It is a direct competitor, not merely an automatic highlights tool.
 - [TwelveLabs search](https://docs.twelvelabs.io/docs/resources/playground/search) finds relevant video clips with natural-language or image queries and timestamps.
+- [Cutsio](https://cutsio.com/blog/how-to-find-highlights-from-long-gaming-streams-automatically) advertises visual/audio indexing and semantic search across a stream library.
+- [ChatClipThat](https://chatclipthat.com/features) advertises semantic searches using available visual, transcript, audio and chat context, followed by creator-controlled clipping. Its [support page](https://chatclipthat.com/support) describes both free and paid plans.
 - [Eklipse](https://eklipse.gg/) is an adjacent streamer highlight/clip workflow.
+
+Twitch itself offers [Stream Recaps and voice-triggered clipping](https://blog.twitch.tv/en/2026/10/20/stream-recaps/), and documents [Auto Clips alpha testing](https://help.twitch.tv/s/article/auto-clips). We have not found official documentation of the same arbitrary natural-language visual-and-chat VOD search workflow, but cannot infer the absence of every native or experimental feature. Public messaging should describe the implemented workflow and avoid claiming that Twitch has no related tools.
 
 We have not run these services on the same labeled footage, so we cannot claim superior accuracy, latency or price. SemVOD's demonstrated distinction is its small local OBS/Twitch workflow with user-controlled queries, caches and credentials—not exclusive ownership of semantic video search.
 
