@@ -1,0 +1,26 @@
+[
+  {
+    "arm": "gemini",
+    "resultSha256": "bd7f3a31ccca13b5eafb2179234ef46b98af25a66b9027073aaea71c62444fd8",
+    "queryIds": [
+      8967,
+      601
+    ]
+  },
+  {
+    "arm": "openai",
+    "resultSha256": "fd8361acea89cafadbd1d5902fce4f0731468c26fe9ab8de8f546944e88d42cf",
+    "queryIds": [
+      8967,
+      601
+    ]
+  },
+  {
+    "arm": "jev",
+    "resultSha256": "3d67039ea1c199abd1f81f82dc9425e8b5485e0cc0bb8861541691c6119a008b",
+    "queryIds": [
+      8967,
+      601
+    ]
+  }
+]
