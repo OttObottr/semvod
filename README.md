@@ -2,7 +2,7 @@
 
 **Ctrl+F for your stream.**
 
-Remember the dog that wandered on screen? The impossibly blue room? The moment chat lost it? SemVOD helps you find those moments without rewatching the whole stream.
+Find moments in your stream using visual descriptions and chat phrases.
 
 A local app captures small frames from OBS, records Twitch chat, and scores visual matches to your own search. A relevance heatmap sits beside chat energy. Select a moment, download a cover, and create a Twitch clip—or copy its VOD timestamp link.
 
@@ -21,7 +21,7 @@ npm ci
 npm run demo
 ```
 
-Open **http://localhost:5173**. Try `dog`, `hella insane`, `brightest blue`, or `when I fell off the map`. Select a peak or a result, enter an optional cover title, and download a 1280×720 JPEG.
+Open **http://localhost:5173**. Try `dog` or `brightest blue`. Select a peak or a result, enter an optional cover title, and download a 1280×720 JPEG.
 
 The sample contains **original procedural illustrations and synthetic chat**, with explicitly labeled, bundled search results. It makes **zero OpenAI calls**. It does not pretend to create Twitch clips. Other sample queries require your key and the “Use my key for real AI search” checkbox.
 
