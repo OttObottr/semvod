@@ -1,0 +1,23 @@
+{
+  "sourceCommit": "534f79b",
+  "checkout": "git archive HEAD; no .env, ignored caches, private recordings or API keys; existing installed node_modules shared via symlink",
+  "checks": [
+    "node scripts/grade-perception.mjs",
+    "node scripts/qvh-eval.mjs --score --official-gold",
+    "npm test"
+  ],
+  "perceptionCorrectOutOf97": {
+    "gemini": 61,
+    "openai": 54,
+    "jev": 71
+  },
+  "qvhRecallAtOneIoU70": {
+    "gemini": 0,
+    "openai": 0.5,
+    "jev": 0.5
+  },
+  "testsPassed": 29,
+  "modelCalls": 0,
+  "network": "Official public QVHighlights annotation download only; hash verified",
+  "cleanup": "Temporary checkout removed after all checks passed"
+}
