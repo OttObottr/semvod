@@ -1,0 +1,3038 @@
+{
+  "arm": "jev",
+  "labelHash": "b3d6e7ef16ebff58efbcad4e8944313cef2fc77eb5f57da859fc17585807adf6",
+  "model": "typesafe/jev-1.14 coarse + gpt-4.1-mini refinement",
+  "rows": [
+    {
+      "session": "eval-nasa-lab",
+      "query": "a man standing outdoors beside green trees",
+      "windows": [
+        [
+          0,
+          4
+        ]
+      ],
+      "estimatedUsd": 0.00040148600000000005,
+      "metrics": {
+        "hit1": 1,
+        "hit5": 1,
+        "precisionReturned": 1,
+        "returned": 1,
+        "falsePositives": 0
+      },
+      "hits": [
+        {
+          "file": "frames/000001.jpg",
+          "id": 1,
+          "t": 2,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "A man is clearly visible standing outdoors with green trees in the background."
+        }
+      ],
+      "scores": [
+        {
+          "file": "frames/000000.jpg",
+          "id": 0,
+          "t": 0,
+          "visualScore": 9.549999999999999,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 9.549999999999999,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000001.jpg",
+          "id": 1,
+          "t": 2,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "A man is clearly visible standing outdoors with green trees in the background."
+        },
+        {
+          "file": "frames/000002.jpg",
+          "id": 2,
+          "t": 4,
+          "visualScore": 9.3,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 9.3,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000003.jpg",
+          "id": 3,
+          "t": 6,
+          "visualScore": 2.6500000000000004,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.6500000000000004,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000004.jpg",
+          "id": 4,
+          "t": 8,
+          "visualScore": 1.35,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 1.35,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000005.jpg",
+          "id": 5,
+          "t": 10,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000006.jpg",
+          "id": 6,
+          "t": 12,
+          "visualScore": 0.44999999999999996,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.44999999999999996,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000007.jpg",
+          "id": 7,
+          "t": 14,
+          "visualScore": 0.35000000000000003,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.35000000000000003,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000008.jpg",
+          "id": 8,
+          "t": 16,
+          "visualScore": 0.5,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.5,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000009.jpg",
+          "id": 9,
+          "t": 18,
+          "visualScore": 0.4,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.4,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000010.jpg",
+          "id": 10,
+          "t": 20,
+          "visualScore": 0.15,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.15,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000011.jpg",
+          "id": 11,
+          "t": 22,
+          "visualScore": 0.15,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.15,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000012.jpg",
+          "id": 12,
+          "t": 24,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000013.jpg",
+          "id": 13,
+          "t": 26,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000014.jpg",
+          "id": 14,
+          "t": 28,
+          "visualScore": 0.35000000000000003,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.35000000000000003,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000015.jpg",
+          "id": 15,
+          "t": 30,
+          "visualScore": 0.4,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.4,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000016.jpg",
+          "id": 16,
+          "t": 32,
+          "visualScore": 0.4,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.4,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000017.jpg",
+          "id": 17,
+          "t": 34,
+          "visualScore": 0.3,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.3,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000018.jpg",
+          "id": 18,
+          "t": 36,
+          "visualScore": 0.5,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.5,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000019.jpg",
+          "id": 19,
+          "t": 38,
+          "visualScore": 0.3,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.3,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000020.jpg",
+          "id": 20,
+          "t": 40,
+          "visualScore": 0.35000000000000003,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.35000000000000003,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000021.jpg",
+          "id": 21,
+          "t": 42,
+          "visualScore": 0.6,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.6,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000022.jpg",
+          "id": 22,
+          "t": 44,
+          "visualScore": 0.35000000000000003,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.35000000000000003,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000023.jpg",
+          "id": 23,
+          "t": 46,
+          "visualScore": 0.4,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.4,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000024.jpg",
+          "id": 24,
+          "t": 48,
+          "visualScore": 0.4,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.4,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000025.jpg",
+          "id": 25,
+          "t": 50,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000026.jpg",
+          "id": 26,
+          "t": 52,
+          "visualScore": 0.3,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.3,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000027.jpg",
+          "id": 27,
+          "t": 54,
+          "visualScore": 0.35000000000000003,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.35000000000000003,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000028.jpg",
+          "id": 28,
+          "t": 56,
+          "visualScore": 0.35000000000000003,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.35000000000000003,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000029.jpg",
+          "id": 29,
+          "t": 58,
+          "visualScore": 0.3,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.3,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000030.jpg",
+          "id": 30,
+          "t": 60,
+          "visualScore": 0.2,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.2,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000031.jpg",
+          "id": 31,
+          "t": 62,
+          "visualScore": 0.44999999999999996,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.44999999999999996,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000032.jpg",
+          "id": 32,
+          "t": 64,
+          "visualScore": 0.4,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.4,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000033.jpg",
+          "id": 33,
+          "t": 66,
+          "visualScore": 0.3,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.3,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000034.jpg",
+          "id": 34,
+          "t": 68,
+          "visualScore": 0.35000000000000003,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.35000000000000003,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000035.jpg",
+          "id": 35,
+          "t": 70,
+          "visualScore": 0.3,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.3,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000036.jpg",
+          "id": 36,
+          "t": 72,
+          "visualScore": 0.3,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.3,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000037.jpg",
+          "id": 37,
+          "t": 74,
+          "visualScore": 0.44999999999999996,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.44999999999999996,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000038.jpg",
+          "id": 38,
+          "t": 76,
+          "visualScore": 0.2,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.2,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000039.jpg",
+          "id": 39,
+          "t": 78,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000040.jpg",
+          "id": 40,
+          "t": 80,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000041.jpg",
+          "id": 41,
+          "t": 82,
+          "visualScore": 0.35000000000000003,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.35000000000000003,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000042.jpg",
+          "id": 42,
+          "t": 84,
+          "visualScore": 0.3,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.3,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000043.jpg",
+          "id": 43,
+          "t": 86,
+          "visualScore": 0.3,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.3,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000044.jpg",
+          "id": 44,
+          "t": 88,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        }
+      ],
+      "stats": {
+        "sheets": 1,
+        "visionCalls": 2,
+        "cacheHits": 0,
+        "refined": 1,
+        "elapsedMs": 2665,
+        "inputTokens": 5787,
+        "outputTokens": 746
+      },
+      "repeatStats": {
+        "sheets": 1,
+        "visionCalls": 0,
+        "cacheHits": 2,
+        "refined": 1,
+        "elapsedMs": 13,
+        "inputTokens": 0,
+        "outputTokens": 0
+      }
+    },
+    {
+      "session": "eval-nasa-lab",
+      "query": "a person wearing a white laboratory coat",
+      "windows": [
+        [
+          46,
+          76
+        ]
+      ],
+      "estimatedUsd": 0.0010894860000000002,
+      "metrics": {
+        "hit1": 1,
+        "hit5": 1,
+        "precisionReturned": 1,
+        "returned": 3,
+        "falsePositives": 0
+      },
+      "hits": [
+        {
+          "file": "frames/000023.jpg",
+          "id": 23,
+          "t": 46,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "The person in the image is clearly wearing a white laboratory coat."
+        },
+        {
+          "file": "frames/000030.jpg",
+          "id": 30,
+          "t": 60,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "Person clearly wearing a white laboratory coat, matching the search query exactly."
+        },
+        {
+          "file": "frames/000036.jpg",
+          "id": 36,
+          "t": 72,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "The person in the image is clearly wearing a white laboratory coat while standing near scientific equipment."
+        }
+      ],
+      "scores": [
+        {
+          "file": "frames/000000.jpg",
+          "id": 0,
+          "t": 0,
+          "visualScore": 0.3,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.3,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000001.jpg",
+          "id": 1,
+          "t": 2,
+          "visualScore": 0.3,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.3,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000002.jpg",
+          "id": 2,
+          "t": 4,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000003.jpg",
+          "id": 3,
+          "t": 6,
+          "visualScore": 0.4,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.4,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000004.jpg",
+          "id": 4,
+          "t": 8,
+          "visualScore": 1.05,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 1.05,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000005.jpg",
+          "id": 5,
+          "t": 10,
+          "visualScore": 2.6,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.6,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000006.jpg",
+          "id": 6,
+          "t": 12,
+          "visualScore": 1.35,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 1.35,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000007.jpg",
+          "id": 7,
+          "t": 14,
+          "visualScore": 0.8,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.8,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000008.jpg",
+          "id": 8,
+          "t": 16,
+          "visualScore": 0.65,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.65,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000009.jpg",
+          "id": 9,
+          "t": 18,
+          "visualScore": 0.8999999999999999,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.8999999999999999,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000010.jpg",
+          "id": 10,
+          "t": 20,
+          "visualScore": 0.2,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.2,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000011.jpg",
+          "id": 11,
+          "t": 22,
+          "visualScore": 0.2,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.2,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000012.jpg",
+          "id": 12,
+          "t": 24,
+          "visualScore": 0.2,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.2,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000013.jpg",
+          "id": 13,
+          "t": 26,
+          "visualScore": 0.35000000000000003,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.35000000000000003,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000014.jpg",
+          "id": 14,
+          "t": 28,
+          "visualScore": 0.4,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.4,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000015.jpg",
+          "id": 15,
+          "t": 30,
+          "visualScore": 0.65,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.65,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000016.jpg",
+          "id": 16,
+          "t": 32,
+          "visualScore": 0.6,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.6,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000017.jpg",
+          "id": 17,
+          "t": 34,
+          "visualScore": 0.4,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.4,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000018.jpg",
+          "id": 18,
+          "t": 36,
+          "visualScore": 0.5,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.5,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000019.jpg",
+          "id": 19,
+          "t": 38,
+          "visualScore": 0.55,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.55,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000020.jpg",
+          "id": 20,
+          "t": 40,
+          "visualScore": 1.05,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 1.05,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000021.jpg",
+          "id": 21,
+          "t": 42,
+          "visualScore": 1,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 1,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000022.jpg",
+          "id": 22,
+          "t": 44,
+          "visualScore": 1.1,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 1.1,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000023.jpg",
+          "id": 23,
+          "t": 46,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "The person in the image is clearly wearing a white laboratory coat."
+        },
+        {
+          "file": "frames/000024.jpg",
+          "id": 24,
+          "t": 48,
+          "visualScore": 8.55,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 8.55,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000025.jpg",
+          "id": 25,
+          "t": 50,
+          "visualScore": 7.7,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 7.7,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000026.jpg",
+          "id": 26,
+          "t": 52,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "A person is clearly visible wearing a white laboratory coat in the image."
+        },
+        {
+          "file": "frames/000027.jpg",
+          "id": 27,
+          "t": 54,
+          "visualScore": 8.8,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 8.8,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000028.jpg",
+          "id": 28,
+          "t": 56,
+          "visualScore": 9.1,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 9.1,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000029.jpg",
+          "id": 29,
+          "t": 58,
+          "visualScore": 9,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 9,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000030.jpg",
+          "id": 30,
+          "t": 60,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "Person clearly wearing a white laboratory coat, matching the search query exactly."
+        },
+        {
+          "file": "frames/000031.jpg",
+          "id": 31,
+          "t": 62,
+          "visualScore": 8.85,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 8.85,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000032.jpg",
+          "id": 32,
+          "t": 64,
+          "visualScore": 8.85,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 8.85,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000033.jpg",
+          "id": 33,
+          "t": 66,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "The person in the image is clearly wearing a white laboratory coat."
+        },
+        {
+          "file": "frames/000034.jpg",
+          "id": 34,
+          "t": 68,
+          "visualScore": 8.85,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 8.85,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000035.jpg",
+          "id": 35,
+          "t": 70,
+          "visualScore": 8.85,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 8.85,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000036.jpg",
+          "id": 36,
+          "t": 72,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "The person in the image is clearly wearing a white laboratory coat while standing near scientific equipment."
+        },
+        {
+          "file": "frames/000037.jpg",
+          "id": 37,
+          "t": 74,
+          "visualScore": 8.75,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 8.75,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000038.jpg",
+          "id": 38,
+          "t": 76,
+          "visualScore": 0.35000000000000003,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.35000000000000003,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000039.jpg",
+          "id": 39,
+          "t": 78,
+          "visualScore": 0.95,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.95,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000040.jpg",
+          "id": 40,
+          "t": 80,
+          "visualScore": 0.8500000000000001,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.8500000000000001,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000041.jpg",
+          "id": 41,
+          "t": 82,
+          "visualScore": 0.8999999999999999,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.8999999999999999,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000042.jpg",
+          "id": 42,
+          "t": 84,
+          "visualScore": 0.55,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.55,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000043.jpg",
+          "id": 43,
+          "t": 86,
+          "visualScore": 0.44999999999999996,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.44999999999999996,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000044.jpg",
+          "id": 44,
+          "t": 88,
+          "visualScore": 0.35000000000000003,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.35000000000000003,
+          "reason": "Visual candidate"
+        }
+      ],
+      "stats": {
+        "sheets": 1,
+        "visionCalls": 6,
+        "cacheHits": 0,
+        "refined": 5,
+        "elapsedMs": 6414,
+        "inputTokens": 7003,
+        "outputTokens": 872
+      },
+      "repeatStats": {
+        "sheets": 1,
+        "visionCalls": 0,
+        "cacheHits": 6,
+        "refined": 5,
+        "elapsedMs": 37,
+        "inputTokens": 0,
+        "outputTokens": 0
+      }
+    },
+    {
+      "session": "eval-nasa-lab",
+      "query": "a person wearing a bright red shirt",
+      "windows": [],
+      "estimatedUsd": 0.00023016,
+      "metrics": {
+        "hit1": 0,
+        "hit5": 0,
+        "precisionReturned": null,
+        "returned": 0,
+        "falsePositives": 0
+      },
+      "hits": [],
+      "scores": [
+        {
+          "file": "frames/000000.jpg",
+          "id": 0,
+          "t": 0,
+          "visualScore": 0.4,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.4,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000001.jpg",
+          "id": 1,
+          "t": 2,
+          "visualScore": 0.35000000000000003,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.35000000000000003,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000002.jpg",
+          "id": 2,
+          "t": 4,
+          "visualScore": 0.55,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.55,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000003.jpg",
+          "id": 3,
+          "t": 6,
+          "visualScore": 0.55,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.55,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000004.jpg",
+          "id": 4,
+          "t": 8,
+          "visualScore": 0.65,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.65,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000005.jpg",
+          "id": 5,
+          "t": 10,
+          "visualScore": 0.5,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.5,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000006.jpg",
+          "id": 6,
+          "t": 12,
+          "visualScore": 0.55,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.55,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000007.jpg",
+          "id": 7,
+          "t": 14,
+          "visualScore": 0.5,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.5,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000008.jpg",
+          "id": 8,
+          "t": 16,
+          "visualScore": 0.55,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.55,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000009.jpg",
+          "id": 9,
+          "t": 18,
+          "visualScore": 0.8999999999999999,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.8999999999999999,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000010.jpg",
+          "id": 10,
+          "t": 20,
+          "visualScore": 0.15,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.15,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000011.jpg",
+          "id": 11,
+          "t": 22,
+          "visualScore": 0.1,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.1,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000012.jpg",
+          "id": 12,
+          "t": 24,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000013.jpg",
+          "id": 13,
+          "t": 26,
+          "visualScore": 0.15,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.15,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000014.jpg",
+          "id": 14,
+          "t": 28,
+          "visualScore": 0.8500000000000001,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.8500000000000001,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000015.jpg",
+          "id": 15,
+          "t": 30,
+          "visualScore": 0.8500000000000001,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.8500000000000001,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000016.jpg",
+          "id": 16,
+          "t": 32,
+          "visualScore": 0.44999999999999996,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.44999999999999996,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000017.jpg",
+          "id": 17,
+          "t": 34,
+          "visualScore": 0.44999999999999996,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.44999999999999996,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000018.jpg",
+          "id": 18,
+          "t": 36,
+          "visualScore": 0.7000000000000001,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.7000000000000001,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000019.jpg",
+          "id": 19,
+          "t": 38,
+          "visualScore": 0.55,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.55,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000020.jpg",
+          "id": 20,
+          "t": 40,
+          "visualScore": 0.8500000000000001,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.8500000000000001,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000021.jpg",
+          "id": 21,
+          "t": 42,
+          "visualScore": 0.7000000000000001,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.7000000000000001,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000022.jpg",
+          "id": 22,
+          "t": 44,
+          "visualScore": 1,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 1,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000023.jpg",
+          "id": 23,
+          "t": 46,
+          "visualScore": 0.65,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.65,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000024.jpg",
+          "id": 24,
+          "t": 48,
+          "visualScore": 0.3,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.3,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000025.jpg",
+          "id": 25,
+          "t": 50,
+          "visualScore": 0.3,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.3,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000026.jpg",
+          "id": 26,
+          "t": 52,
+          "visualScore": 0.3,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.3,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000027.jpg",
+          "id": 27,
+          "t": 54,
+          "visualScore": 0.55,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.55,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000028.jpg",
+          "id": 28,
+          "t": 56,
+          "visualScore": 0.3,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.3,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000029.jpg",
+          "id": 29,
+          "t": 58,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000030.jpg",
+          "id": 30,
+          "t": 60,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000031.jpg",
+          "id": 31,
+          "t": 62,
+          "visualScore": 0.3,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.3,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000032.jpg",
+          "id": 32,
+          "t": 64,
+          "visualScore": 0.2,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.2,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000033.jpg",
+          "id": 33,
+          "t": 66,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000034.jpg",
+          "id": 34,
+          "t": 68,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000035.jpg",
+          "id": 35,
+          "t": 70,
+          "visualScore": 0.3,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.3,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000036.jpg",
+          "id": 36,
+          "t": 72,
+          "visualScore": 0.3,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.3,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000037.jpg",
+          "id": 37,
+          "t": 74,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000038.jpg",
+          "id": 38,
+          "t": 76,
+          "visualScore": 0.15,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.15,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000039.jpg",
+          "id": 39,
+          "t": 78,
+          "visualScore": 0.2,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.2,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000040.jpg",
+          "id": 40,
+          "t": 80,
+          "visualScore": 0.2,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.2,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000041.jpg",
+          "id": 41,
+          "t": 82,
+          "visualScore": 0.2,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.2,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000042.jpg",
+          "id": 42,
+          "t": 84,
+          "visualScore": 0.15,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.15,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000043.jpg",
+          "id": 43,
+          "t": 86,
+          "visualScore": 0.15,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.15,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000044.jpg",
+          "id": 44,
+          "t": 88,
+          "visualScore": 0.1,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.1,
+          "reason": "Visual candidate"
+        }
+      ],
+      "stats": {
+        "sheets": 1,
+        "visionCalls": 1,
+        "cacheHits": 0,
+        "refined": 0,
+        "elapsedMs": 1173,
+        "inputTokens": 5480,
+        "outputTokens": 715
+      },
+      "repeatStats": {
+        "sheets": 1,
+        "visionCalls": 0,
+        "cacheHits": 1,
+        "refined": 0,
+        "elapsedMs": 10,
+        "inputTokens": 0,
+        "outputTokens": 0
+      }
+    },
+    {
+      "session": "eval-nasa-kitchen",
+      "query": "a close-up view of a food pouch held toward the camera",
+      "windows": [
+        [
+          38,
+          48
+        ]
+      ],
+      "estimatedUsd": 0.001234096,
+      "metrics": {
+        "hit1": 1,
+        "hit5": 1,
+        "precisionReturned": 0.3333333333333333,
+        "returned": 3,
+        "falsePositives": 2
+      },
+      "hits": [
+        {
+          "file": "frames/000023.jpg",
+          "id": 23,
+          "t": 46,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "The image shows a person holding a food pouch close to the camera, clearly visible as the main object in the frame."
+        },
+        {
+          "file": "frames/000001.jpg",
+          "id": 1,
+          "t": 2,
+          "visualScore": 5,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 5,
+          "reason": "The image shows a person holding a food pouch toward the camera, but it's not a close-up view since the person and background are clearly visible and the pouch is not filling the f"
+        },
+        {
+          "file": "frames/000029.jpg",
+          "id": 29,
+          "t": 58,
+          "visualScore": 4.1,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 4.1,
+          "reason": "Visual candidate"
+        }
+      ],
+      "scores": [
+        {
+          "file": "frames/000000.jpg",
+          "id": 0,
+          "t": 0,
+          "visualScore": 3.4000000000000004,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 3.4000000000000004,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000001.jpg",
+          "id": 1,
+          "t": 2,
+          "visualScore": 5,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 5,
+          "reason": "The image shows a person holding a food pouch toward the camera, but it's not a close-up view since the person and background are clearly visible and the pouch is not filling the f"
+        },
+        {
+          "file": "frames/000002.jpg",
+          "id": 2,
+          "t": 4,
+          "visualScore": 2.5,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.5,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000003.jpg",
+          "id": 3,
+          "t": 6,
+          "visualScore": 1.1,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 1.1,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000004.jpg",
+          "id": 4,
+          "t": 8,
+          "visualScore": 1,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 1,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000005.jpg",
+          "id": 5,
+          "t": 10,
+          "visualScore": 0.95,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.95,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000006.jpg",
+          "id": 6,
+          "t": 12,
+          "visualScore": 0.8999999999999999,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.8999999999999999,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000007.jpg",
+          "id": 7,
+          "t": 14,
+          "visualScore": 0.75,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.75,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000008.jpg",
+          "id": 8,
+          "t": 16,
+          "visualScore": 0.8500000000000001,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.8500000000000001,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000009.jpg",
+          "id": 9,
+          "t": 18,
+          "visualScore": 0.8,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.8,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000010.jpg",
+          "id": 10,
+          "t": 20,
+          "visualScore": 1.05,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 1.05,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000011.jpg",
+          "id": 11,
+          "t": 22,
+          "visualScore": 0.95,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.95,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000012.jpg",
+          "id": 12,
+          "t": 24,
+          "visualScore": 1.1500000000000001,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 1.1500000000000001,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000013.jpg",
+          "id": 13,
+          "t": 26,
+          "visualScore": 1,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 1,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000014.jpg",
+          "id": 14,
+          "t": 28,
+          "visualScore": 1.05,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 1.05,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000015.jpg",
+          "id": 15,
+          "t": 30,
+          "visualScore": 0.8500000000000001,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.8500000000000001,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000016.jpg",
+          "id": 16,
+          "t": 32,
+          "visualScore": 0.8,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.8,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000017.jpg",
+          "id": 17,
+          "t": 34,
+          "visualScore": 0.95,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.95,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000018.jpg",
+          "id": 18,
+          "t": 36,
+          "visualScore": 4.45,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 4.45,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000019.jpg",
+          "id": 19,
+          "t": 38,
+          "visualScore": 5.949999999999999,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 5.949999999999999,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000020.jpg",
+          "id": 20,
+          "t": 40,
+          "visualScore": 5,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 5,
+          "reason": "The image shows a person holding a food pouch close to the camera, but the focus is not entirely on the pouch, so match is possible but not very strong."
+        },
+        {
+          "file": "frames/000021.jpg",
+          "id": 21,
+          "t": 42,
+          "visualScore": 6.8500000000000005,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 6.8500000000000005,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000022.jpg",
+          "id": 22,
+          "t": 44,
+          "visualScore": 3.9000000000000004,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 3.9000000000000004,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000023.jpg",
+          "id": 23,
+          "t": 46,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "The image shows a person holding a food pouch close to the camera, clearly visible as the main object in the frame."
+        },
+        {
+          "file": "frames/000024.jpg",
+          "id": 24,
+          "t": 48,
+          "visualScore": 5.699999999999999,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 5.699999999999999,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000025.jpg",
+          "id": 25,
+          "t": 50,
+          "visualScore": 5.4,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 5.4,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000026.jpg",
+          "id": 26,
+          "t": 52,
+          "visualScore": 0,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "The image shows a man holding a food pouch, but not a close-up view; the pouch is held at a distance from the camera."
+        },
+        {
+          "file": "frames/000027.jpg",
+          "id": 27,
+          "t": 54,
+          "visualScore": 3.5999999999999996,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 3.5999999999999996,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000028.jpg",
+          "id": 28,
+          "t": 56,
+          "visualScore": 2.6,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.6,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000029.jpg",
+          "id": 29,
+          "t": 58,
+          "visualScore": 4.1,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 4.1,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000030.jpg",
+          "id": 30,
+          "t": 60,
+          "visualScore": 0,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "The image shows a person holding a food pouch, but it is not a close-up view; the pouch is held at arm's length and the person is fully visible."
+        },
+        {
+          "file": "frames/000031.jpg",
+          "id": 31,
+          "t": 62,
+          "visualScore": 2.45,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.45,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000032.jpg",
+          "id": 32,
+          "t": 64,
+          "visualScore": 2.3499999999999996,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.3499999999999996,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000033.jpg",
+          "id": 33,
+          "t": 66,
+          "visualScore": 2.8000000000000003,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.8000000000000003,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000034.jpg",
+          "id": 34,
+          "t": 68,
+          "visualScore": 2.05,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.05,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000035.jpg",
+          "id": 35,
+          "t": 70,
+          "visualScore": 2.05,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.05,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000036.jpg",
+          "id": 36,
+          "t": 72,
+          "visualScore": 2.3000000000000003,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.3000000000000003,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000037.jpg",
+          "id": 37,
+          "t": 74,
+          "visualScore": 2.9,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.9,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000038.jpg",
+          "id": 38,
+          "t": 76,
+          "visualScore": 2.3499999999999996,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.3499999999999996,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000039.jpg",
+          "id": 39,
+          "t": 78,
+          "visualScore": 1.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 1.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000040.jpg",
+          "id": 40,
+          "t": 80,
+          "visualScore": 1.9,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 1.9,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000041.jpg",
+          "id": 41,
+          "t": 82,
+          "visualScore": 2,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000042.jpg",
+          "id": 42,
+          "t": 84,
+          "visualScore": 1.2,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 1.2,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000043.jpg",
+          "id": 43,
+          "t": 86,
+          "visualScore": 1.1500000000000001,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 1.1500000000000001,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000044.jpg",
+          "id": 44,
+          "t": 88,
+          "visualScore": 1.4000000000000001,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 1.4000000000000001,
+          "reason": "Visual candidate"
+        }
+      ],
+      "stats": {
+        "sheets": 1,
+        "visionCalls": 6,
+        "cacheHits": 0,
+        "refined": 5,
+        "elapsedMs": 7031,
+        "inputTokens": 7033,
+        "outputTokens": 956
+      },
+      "repeatStats": {
+        "sheets": 1,
+        "visionCalls": 0,
+        "cacheHits": 6,
+        "refined": 5,
+        "elapsedMs": 35,
+        "inputTokens": 0,
+        "outputTokens": 0
+      }
+    },
+    {
+      "session": "eval-nasa-kitchen",
+      "query": "a close-up of hands at an open metal food preparation compartment, with no face visible",
+      "windows": [
+        [
+          68,
+          74
+        ]
+      ],
+      "estimatedUsd": 0.00204098,
+      "metrics": {
+        "hit1": 1,
+        "hit5": 1,
+        "precisionReturned": 0.5,
+        "returned": 2,
+        "falsePositives": 1
+      },
+      "hits": [
+        {
+          "file": "frames/000035.jpg",
+          "id": 35,
+          "t": 70,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "The image shows a close-up of hands interacting with an open metal compartment used for food preparation, with no face visible in the frame."
+        },
+        {
+          "file": "frames/000011.jpg",
+          "id": 11,
+          "t": 22,
+          "visualScore": 3.4499999999999997,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 3.4499999999999997,
+          "reason": "Visual candidate"
+        }
+      ],
+      "scores": [
+        {
+          "file": "frames/000000.jpg",
+          "id": 0,
+          "t": 0,
+          "visualScore": 1.6,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 1.6,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000001.jpg",
+          "id": 1,
+          "t": 2,
+          "visualScore": 1.7000000000000002,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 1.7000000000000002,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000002.jpg",
+          "id": 2,
+          "t": 4,
+          "visualScore": 2.05,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.05,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000003.jpg",
+          "id": 3,
+          "t": 6,
+          "visualScore": 2.7,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.7,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000004.jpg",
+          "id": 4,
+          "t": 8,
+          "visualScore": 2.9499999999999997,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.9499999999999997,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000005.jpg",
+          "id": 5,
+          "t": 10,
+          "visualScore": 0,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "The image shows a man standing near a wall with equipment and patches; no close-up of hands or an open metal food preparation compartment is visible."
+        },
+        {
+          "file": "frames/000006.jpg",
+          "id": 6,
+          "t": 12,
+          "visualScore": 2.6,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.6,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000007.jpg",
+          "id": 7,
+          "t": 14,
+          "visualScore": 2.5,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.5,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000008.jpg",
+          "id": 8,
+          "t": 16,
+          "visualScore": 2.3499999999999996,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.3499999999999996,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000009.jpg",
+          "id": 9,
+          "t": 18,
+          "visualScore": 2.9499999999999997,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.9499999999999997,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000010.jpg",
+          "id": 10,
+          "t": 20,
+          "visualScore": 0,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "The image shows a person working with hands, but the compartment is not a metal food preparation compartment and the view is not a close-up."
+        },
+        {
+          "file": "frames/000011.jpg",
+          "id": 11,
+          "t": 22,
+          "visualScore": 3.4499999999999997,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 3.4499999999999997,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000012.jpg",
+          "id": 12,
+          "t": 24,
+          "visualScore": 3.35,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 3.35,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000013.jpg",
+          "id": 13,
+          "t": 26,
+          "visualScore": 0,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "The image shows a person standing and operating a control panel in a compartment, but the hands are not shown in a close-up and the compartment is not a food preparation area."
+        },
+        {
+          "file": "frames/000014.jpg",
+          "id": 14,
+          "t": 28,
+          "visualScore": 3,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 3,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000015.jpg",
+          "id": 15,
+          "t": 30,
+          "visualScore": 3.15,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 3.15,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000016.jpg",
+          "id": 16,
+          "t": 32,
+          "visualScore": 2.7,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.7,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000017.jpg",
+          "id": 17,
+          "t": 34,
+          "visualScore": 0,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "The image shows a person with a visible face and no close-up of hands; the metal compartment is not clearly open for food preparation."
+        },
+        {
+          "file": "frames/000018.jpg",
+          "id": 18,
+          "t": 36,
+          "visualScore": 2.55,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.55,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000019.jpg",
+          "id": 19,
+          "t": 38,
+          "visualScore": 2.3499999999999996,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.3499999999999996,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000020.jpg",
+          "id": 20,
+          "t": 40,
+          "visualScore": 1.85,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 1.85,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000021.jpg",
+          "id": 21,
+          "t": 42,
+          "visualScore": 2.4,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.4,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000022.jpg",
+          "id": 22,
+          "t": 44,
+          "visualScore": 2.1,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.1,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000023.jpg",
+          "id": 23,
+          "t": 46,
+          "visualScore": 2,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000024.jpg",
+          "id": 24,
+          "t": 48,
+          "visualScore": 1.55,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 1.55,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000025.jpg",
+          "id": 25,
+          "t": 50,
+          "visualScore": 1.6,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 1.6,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000026.jpg",
+          "id": 26,
+          "t": 52,
+          "visualScore": 2.6500000000000004,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.6500000000000004,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000027.jpg",
+          "id": 27,
+          "t": 54,
+          "visualScore": 2.8499999999999996,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.8499999999999996,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000028.jpg",
+          "id": 28,
+          "t": 56,
+          "visualScore": 0,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "The image shows a person facing sideways with a considerable portion of the upper body and head visible. Hands are visible but not in a close-up, and there is no clear metal food p"
+        },
+        {
+          "file": "frames/000029.jpg",
+          "id": 29,
+          "t": 58,
+          "visualScore": 2.7,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.7,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000030.jpg",
+          "id": 30,
+          "t": 60,
+          "visualScore": 2.1,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.1,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000031.jpg",
+          "id": 31,
+          "t": 62,
+          "visualScore": 0,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "The image shows a person with a visible face operating equipment, not a close-up of hands at an open metal food preparation compartment with no face visible."
+        },
+        {
+          "file": "frames/000032.jpg",
+          "id": 32,
+          "t": 64,
+          "visualScore": 2.55,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.55,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000033.jpg",
+          "id": 33,
+          "t": 66,
+          "visualScore": 2.6500000000000004,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.6500000000000004,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000034.jpg",
+          "id": 34,
+          "t": 68,
+          "visualScore": 7.9,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 7.9,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000035.jpg",
+          "id": 35,
+          "t": 70,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "The image shows a close-up of hands interacting with an open metal compartment used for food preparation, with no face visible in the frame."
+        },
+        {
+          "file": "frames/000036.jpg",
+          "id": 36,
+          "t": 72,
+          "visualScore": 8.299999999999999,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 8.299999999999999,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000037.jpg",
+          "id": 37,
+          "t": 74,
+          "visualScore": 8.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 8.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000038.jpg",
+          "id": 38,
+          "t": 76,
+          "visualScore": 2.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000039.jpg",
+          "id": 39,
+          "t": 78,
+          "visualScore": 0,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Image shows a person standing in front of equipment with no close-up of hands or open metal food preparation compartment visible."
+        },
+        {
+          "file": "frames/000040.jpg",
+          "id": 40,
+          "t": 80,
+          "visualScore": 2.6,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.6,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000041.jpg",
+          "id": 41,
+          "t": 82,
+          "visualScore": 2.45,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.45,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000042.jpg",
+          "id": 42,
+          "t": 84,
+          "visualScore": 2.9,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.9,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000043.jpg",
+          "id": 43,
+          "t": 86,
+          "visualScore": 2.7,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2.7,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000044.jpg",
+          "id": 44,
+          "t": 88,
+          "visualScore": 0,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "The image shows a man interacting with equipment, but his face is visible and the shot is not a close-up of hands or a metal food preparation compartment."
+        }
+      ],
+      "stats": {
+        "sheets": 1,
+        "visionCalls": 10,
+        "cacheHits": 0,
+        "refined": 9,
+        "elapsedMs": 10888,
+        "inputTokens": 8316,
+        "outputTokens": 1140
+      },
+      "repeatStats": {
+        "sheets": 1,
+        "visionCalls": 0,
+        "cacheHits": 10,
+        "refined": 9,
+        "elapsedMs": 52,
+        "inputTokens": 0,
+        "outputTokens": 0
+      }
+    },
+    {
+      "session": "eval-nasa-kitchen",
+      "query": "a person wearing a tall white chef hat",
+      "windows": [],
+      "estimatedUsd": 0.00023037,
+      "metrics": {
+        "hit1": 0,
+        "hit5": 0,
+        "precisionReturned": null,
+        "returned": 0,
+        "falsePositives": 0
+      },
+      "hits": [],
+      "scores": [
+        {
+          "file": "frames/000000.jpg",
+          "id": 0,
+          "t": 0,
+          "visualScore": 0.3,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.3,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000001.jpg",
+          "id": 1,
+          "t": 2,
+          "visualScore": 0.2,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.2,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000002.jpg",
+          "id": 2,
+          "t": 4,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000003.jpg",
+          "id": 3,
+          "t": 6,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000004.jpg",
+          "id": 4,
+          "t": 8,
+          "visualScore": 0.2,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.2,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000005.jpg",
+          "id": 5,
+          "t": 10,
+          "visualScore": 0.2,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.2,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000006.jpg",
+          "id": 6,
+          "t": 12,
+          "visualScore": 0.15,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.15,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000007.jpg",
+          "id": 7,
+          "t": 14,
+          "visualScore": 0.15,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.15,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000008.jpg",
+          "id": 8,
+          "t": 16,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000009.jpg",
+          "id": 9,
+          "t": 18,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000010.jpg",
+          "id": 10,
+          "t": 20,
+          "visualScore": 0.3,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.3,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000011.jpg",
+          "id": 11,
+          "t": 22,
+          "visualScore": 0.3,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.3,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000012.jpg",
+          "id": 12,
+          "t": 24,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000013.jpg",
+          "id": 13,
+          "t": 26,
+          "visualScore": 0.2,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.2,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000014.jpg",
+          "id": 14,
+          "t": 28,
+          "visualScore": 0.2,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.2,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000015.jpg",
+          "id": 15,
+          "t": 30,
+          "visualScore": 0.2,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.2,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000016.jpg",
+          "id": 16,
+          "t": 32,
+          "visualScore": 0.3,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.3,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000017.jpg",
+          "id": 17,
+          "t": 34,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000018.jpg",
+          "id": 18,
+          "t": 36,
+          "visualScore": 0.3,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.3,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000019.jpg",
+          "id": 19,
+          "t": 38,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000020.jpg",
+          "id": 20,
+          "t": 40,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000021.jpg",
+          "id": 21,
+          "t": 42,
+          "visualScore": 0.2,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.2,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000022.jpg",
+          "id": 22,
+          "t": 44,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000023.jpg",
+          "id": 23,
+          "t": 46,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000024.jpg",
+          "id": 24,
+          "t": 48,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000025.jpg",
+          "id": 25,
+          "t": 50,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000026.jpg",
+          "id": 26,
+          "t": 52,
+          "visualScore": 0.2,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.2,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000027.jpg",
+          "id": 27,
+          "t": 54,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000028.jpg",
+          "id": 28,
+          "t": 56,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000029.jpg",
+          "id": 29,
+          "t": 58,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000030.jpg",
+          "id": 30,
+          "t": 60,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000031.jpg",
+          "id": 31,
+          "t": 62,
+          "visualScore": 0.2,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.2,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000032.jpg",
+          "id": 32,
+          "t": 64,
+          "visualScore": 0.2,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.2,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000033.jpg",
+          "id": 33,
+          "t": 66,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000034.jpg",
+          "id": 34,
+          "t": 68,
+          "visualScore": 0.44999999999999996,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.44999999999999996,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000035.jpg",
+          "id": 35,
+          "t": 70,
+          "visualScore": 0.5,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.5,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000036.jpg",
+          "id": 36,
+          "t": 72,
+          "visualScore": 0.4,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.4,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000037.jpg",
+          "id": 37,
+          "t": 74,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000038.jpg",
+          "id": 38,
+          "t": 76,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000039.jpg",
+          "id": 39,
+          "t": 78,
+          "visualScore": 0.3,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.3,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000040.jpg",
+          "id": 40,
+          "t": 80,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000041.jpg",
+          "id": 41,
+          "t": 82,
+          "visualScore": 0.25,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.25,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000042.jpg",
+          "id": 42,
+          "t": 84,
+          "visualScore": 0.2,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.2,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000043.jpg",
+          "id": 43,
+          "t": 86,
+          "visualScore": 0.3,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.3,
+          "reason": "Visual candidate"
+        },
+        {
+          "file": "frames/000044.jpg",
+          "id": 44,
+          "t": 88,
+          "visualScore": 0.3,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0.3,
+          "reason": "Visual candidate"
+        }
+      ],
+      "stats": {
+        "sheets": 1,
+        "visionCalls": 1,
+        "cacheHits": 0,
+        "refined": 0,
+        "elapsedMs": 900,
+        "inputTokens": 5485,
+        "outputTokens": 715
+      },
+      "repeatStats": {
+        "sheets": 1,
+        "visionCalls": 0,
+        "cacheHits": 1,
+        "refined": 0,
+        "elapsedMs": 16,
+        "inputTokens": 0,
+        "outputTokens": 0
+      }
+    }
+  ],
+  "summary": {
+    "positiveQueries": 4,
+    "hit1": 1,
+    "hit5": 1,
+    "precisionReturnedPositive": 0.6666666666666667,
+    "absentQueries": 2,
+    "absentQueriesWithHits": 0,
+    "visionCalls": 26,
+    "inputTokens": 39104,
+    "outputTokens": 5144,
+    "estimatedUsd": 0.005226578,
+    "elapsedMs": 29071
+  }
+}

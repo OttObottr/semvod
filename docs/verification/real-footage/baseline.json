@@ -1,0 +1,3022 @@
+{
+  "arm": "baseline",
+  "labelHash": "b3d6e7ef16ebff58efbcad4e8944313cef2fc77eb5f57da859fc17585807adf6",
+  "model": "gpt-4.1-mini",
+  "rows": [
+    {
+      "session": "eval-nasa-lab",
+      "query": "a man standing outdoors beside green trees",
+      "windows": [
+        [
+          0,
+          4
+        ]
+      ],
+      "metrics": {
+        "hit1": 1,
+        "hit5": 1,
+        "precisionReturned": 1,
+        "returned": 1,
+        "falsePositives": 0
+      },
+      "hits": [
+        {
+          "file": "frames/000000.jpg",
+          "id": 0,
+          "t": 0,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "A man with beard and gray hair is standing outdoors next to green trees and bushes."
+        }
+      ],
+      "scores": [
+        {
+          "file": "frames/000000.jpg",
+          "id": 0,
+          "t": 0,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "A man with beard and gray hair is standing outdoors next to green trees and bushes."
+        },
+        {
+          "file": "frames/000001.jpg",
+          "id": 1,
+          "t": 2,
+          "visualScore": 10,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "A man is standing outdoors near green trees clearly visible."
+        },
+        {
+          "file": "frames/000002.jpg",
+          "id": 2,
+          "t": 4,
+          "visualScore": 10,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "A man is outdoors with green trees around."
+        },
+        {
+          "file": "frames/000003.jpg",
+          "id": 3,
+          "t": 6,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Man is indoors in a hallway, no green trees visible."
+        },
+        {
+          "file": "frames/000004.jpg",
+          "id": 4,
+          "t": 8,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Man is indoors in a hallway, no green trees visible."
+        },
+        {
+          "file": "frames/000005.jpg",
+          "id": 5,
+          "t": 10,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Man is indoors in a hallway, no green trees visible."
+        },
+        {
+          "file": "frames/000006.jpg",
+          "id": 6,
+          "t": 12,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Man is indoors near a vending area, no green trees visible."
+        },
+        {
+          "file": "frames/000007.jpg",
+          "id": 7,
+          "t": 14,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Man is indoors near vending machines, no green trees visible."
+        },
+        {
+          "file": "frames/000008.jpg",
+          "id": 8,
+          "t": 16,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Man is indoors walking down a hallway, no green trees visible."
+        },
+        {
+          "file": "frames/000009.jpg",
+          "id": 9,
+          "t": 18,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Man is indoors hallway, no green trees visible."
+        },
+        {
+          "file": "frames/000010.jpg",
+          "id": 10,
+          "t": 20,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No man visible, image is of a yellow light fixture."
+        },
+        {
+          "file": "frames/000011.jpg",
+          "id": 11,
+          "t": 22,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No man visible, image is of a light bulb."
+        },
+        {
+          "file": "frames/000012.jpg",
+          "id": 12,
+          "t": 24,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No man visible, image is a dark circular object."
+        },
+        {
+          "file": "frames/000013.jpg",
+          "id": 13,
+          "t": 26,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No man visible, image is a white circular object."
+        },
+        {
+          "file": "frames/000014.jpg",
+          "id": 14,
+          "t": 28,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No man visible, image is a white circular object."
+        },
+        {
+          "file": "frames/000015.jpg",
+          "id": 15,
+          "t": 30,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Man indoors in hallway, no green trees visible."
+        },
+        {
+          "file": "frames/000016.jpg",
+          "id": 16,
+          "t": 32,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Man indoors in hallway, no green trees visible."
+        },
+        {
+          "file": "frames/000017.jpg",
+          "id": 17,
+          "t": 34,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Man indoors in hallway, no green trees visible."
+        },
+        {
+          "file": "frames/000018.jpg",
+          "id": 18,
+          "t": 36,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Man indoors in hallway, no green trees visible."
+        },
+        {
+          "file": "frames/000019.jpg",
+          "id": 19,
+          "t": 38,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Man indoors in hallway, no green trees visible."
+        },
+        {
+          "file": "frames/000020.jpg",
+          "id": 20,
+          "t": 40,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Man indoors by door, no green trees visible."
+        },
+        {
+          "file": "frames/000021.jpg",
+          "id": 21,
+          "t": 42,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Man indoors by posters on wall, no green trees visible."
+        },
+        {
+          "file": "frames/000022.jpg",
+          "id": 22,
+          "t": 44,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Two men indoors near an elevator, no green trees visible."
+        },
+        {
+          "file": "frames/000023.jpg",
+          "id": 23,
+          "t": 46,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Man indoors near coat rack, no green trees visible."
+        },
+        {
+          "file": "frames/000024.jpg",
+          "id": 24,
+          "t": 48,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Man indoors, wearing lab coat, no green trees visible."
+        },
+        {
+          "file": "frames/000025.jpg",
+          "id": 25,
+          "t": 50,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Man indoors, leaning on wall, no green trees visible."
+        },
+        {
+          "file": "frames/000026.jpg",
+          "id": 26,
+          "t": 52,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Man indoors in lab coat, no green trees visible."
+        },
+        {
+          "file": "frames/000027.jpg",
+          "id": 27,
+          "t": 54,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Man indoors in lab coat inside technical workspace, no green trees visible."
+        },
+        {
+          "file": "frames/000028.jpg",
+          "id": 28,
+          "t": 56,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Man indoors in lab workspace, no green trees visible."
+        },
+        {
+          "file": "frames/000029.jpg",
+          "id": 29,
+          "t": 58,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Man indoors in lab workspace, no green trees visible."
+        },
+        {
+          "file": "frames/000030.jpg",
+          "id": 30,
+          "t": 60,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Man indoors walking in lab hallway, no green trees visible."
+        },
+        {
+          "file": "frames/000031.jpg",
+          "id": 31,
+          "t": 62,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Man indoors in lab workspace, no green trees visible."
+        },
+        {
+          "file": "frames/000032.jpg",
+          "id": 32,
+          "t": 64,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Man indoors near a microscope, no green trees visible."
+        },
+        {
+          "file": "frames/000033.jpg",
+          "id": 33,
+          "t": 66,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Man indoors near a microscope, no green trees visible."
+        },
+        {
+          "file": "frames/000034.jpg",
+          "id": 34,
+          "t": 68,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Man indoors near microscope, no green trees visible."
+        },
+        {
+          "file": "frames/000035.jpg",
+          "id": 35,
+          "t": 70,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Man indoors near microscope, no green trees visible."
+        },
+        {
+          "file": "frames/000036.jpg",
+          "id": 36,
+          "t": 72,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Man indoors near microscope, no green trees visible."
+        },
+        {
+          "file": "frames/000037.jpg",
+          "id": 37,
+          "t": 74,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Man indoors near microscope, no green trees visible."
+        },
+        {
+          "file": "frames/000038.jpg",
+          "id": 38,
+          "t": 76,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Close up of electronic equipment, no man or trees visible."
+        },
+        {
+          "file": "frames/000039.jpg",
+          "id": 39,
+          "t": 78,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Electronic equipment with some kind of light effect, no man or trees visible."
+        },
+        {
+          "file": "frames/000040.jpg",
+          "id": 40,
+          "t": 80,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Close up of electronic equipment, no man or trees visible."
+        },
+        {
+          "file": "frames/000041.jpg",
+          "id": 41,
+          "t": 82,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Close up of electronic equipment, no man or trees visible."
+        },
+        {
+          "file": "frames/000042.jpg",
+          "id": 42,
+          "t": 84,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Electronic equipment, no man or trees visible."
+        },
+        {
+          "file": "frames/000043.jpg",
+          "id": 43,
+          "t": 86,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Electronic equipment, no man or trees visible."
+        },
+        {
+          "file": "frames/000044.jpg",
+          "id": 44,
+          "t": 88,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Electronic equipment, no man or trees visible."
+        }
+      ],
+      "stats": {
+        "sheets": 1,
+        "visionCalls": 2,
+        "cacheHits": 0,
+        "refined": 1,
+        "elapsedMs": 12088,
+        "inputTokens": 2104,
+        "outputTokens": 1037
+      },
+      "repeatStats": {
+        "sheets": 1,
+        "visionCalls": 0,
+        "cacheHits": 2,
+        "refined": 1,
+        "elapsedMs": 6,
+        "inputTokens": 0,
+        "outputTokens": 0
+      }
+    },
+    {
+      "session": "eval-nasa-lab",
+      "query": "a person wearing a white laboratory coat",
+      "windows": [
+        [
+          46,
+          76
+        ]
+      ],
+      "metrics": {
+        "hit1": 1,
+        "hit5": 1,
+        "precisionReturned": 1,
+        "returned": 3,
+        "falsePositives": 0
+      },
+      "hits": [
+        {
+          "file": "frames/000024.jpg",
+          "id": 24,
+          "t": 48,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "A person is clearly visible wearing a white laboratory coat."
+        },
+        {
+          "file": "frames/000030.jpg",
+          "id": 30,
+          "t": 60,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "The person in the image is clearly wearing a white laboratory coat."
+        },
+        {
+          "file": "frames/000036.jpg",
+          "id": 36,
+          "t": 72,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "A person is clearly wearing a white laboratory coat in a lab setting."
+        }
+      ],
+      "scores": [
+        {
+          "file": "frames/000000.jpg",
+          "id": 0,
+          "t": 0,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person wearing casual clothes, no white laboratory coat visible."
+        },
+        {
+          "file": "frames/000001.jpg",
+          "id": 1,
+          "t": 2,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing a dark blue shirt, no white laboratory coat."
+        },
+        {
+          "file": "frames/000002.jpg",
+          "id": 2,
+          "t": 4,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person viewed from side/back, wearing blue shirt, no white coat."
+        },
+        {
+          "file": "frames/000003.jpg",
+          "id": 3,
+          "t": 6,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person walking down hallway, wearing blue shirt, no white coat."
+        },
+        {
+          "file": "frames/000004.jpg",
+          "id": 4,
+          "t": 8,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person walking away, wearing blue shirt, no white coat."
+        },
+        {
+          "file": "frames/000005.jpg",
+          "id": 5,
+          "t": 10,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person walking inside building, wearing dark shirt, no white coat."
+        },
+        {
+          "file": "frames/000006.jpg",
+          "id": 6,
+          "t": 12,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person wearing casual clothes, no white laboratory coat."
+        },
+        {
+          "file": "frames/000007.jpg",
+          "id": 7,
+          "t": 14,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person at reception area wearing a blue t-shirt, no white coat."
+        },
+        {
+          "file": "frames/000008.jpg",
+          "id": 8,
+          "t": 16,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person walking down hallway, blue shirt, no white coat."
+        },
+        {
+          "file": "frames/000009.jpg",
+          "id": 9,
+          "t": 18,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person in hallway, dark clothing, no white coat."
+        },
+        {
+          "file": "frames/000010.jpg",
+          "id": 10,
+          "t": 20,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No person visible, image shows mechanical parts."
+        },
+        {
+          "file": "frames/000011.jpg",
+          "id": 11,
+          "t": 22,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No person visible, image shows mechanical parts."
+        },
+        {
+          "file": "frames/000012.jpg",
+          "id": 12,
+          "t": 24,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No person visible, image shows close-up of a component."
+        },
+        {
+          "file": "frames/000013.jpg",
+          "id": 13,
+          "t": 26,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No person visible, image shows close-up of a component."
+        },
+        {
+          "file": "frames/000014.jpg",
+          "id": 14,
+          "t": 28,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person in hallway wearing blue shirt, no white coat."
+        },
+        {
+          "file": "frames/000015.jpg",
+          "id": 15,
+          "t": 30,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person in hallway with blue shirt, no white coat."
+        },
+        {
+          "file": "frames/000016.jpg",
+          "id": 16,
+          "t": 32,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person in hallway with blue shirt, no white coat."
+        },
+        {
+          "file": "frames/000017.jpg",
+          "id": 17,
+          "t": 34,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person in hallway with blue shirt, no white coat."
+        },
+        {
+          "file": "frames/000018.jpg",
+          "id": 18,
+          "t": 36,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person in hallway with blue shirt, no white coat."
+        },
+        {
+          "file": "frames/000019.jpg",
+          "id": 19,
+          "t": 38,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person in hallway with blue shirt, no white coat."
+        },
+        {
+          "file": "frames/000020.jpg",
+          "id": 20,
+          "t": 40,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person in hallway with blue shirt, no white coat."
+        },
+        {
+          "file": "frames/000021.jpg",
+          "id": 21,
+          "t": 42,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person in hallway with blue shirt, no white coat."
+        },
+        {
+          "file": "frames/000022.jpg",
+          "id": 22,
+          "t": 44,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person with backpack, no white coat visible."
+        },
+        {
+          "file": "frames/000023.jpg",
+          "id": 23,
+          "t": 46,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person opening closet with hanging plastic covers, no white coat worn."
+        },
+        {
+          "file": "frames/000024.jpg",
+          "id": 24,
+          "t": 48,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "A person is clearly visible wearing a white laboratory coat."
+        },
+        {
+          "file": "frames/000025.jpg",
+          "id": 25,
+          "t": 50,
+          "visualScore": 10,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "Person clearly wearing white laboratory coat leaning against wall."
+        },
+        {
+          "file": "frames/000026.jpg",
+          "id": 26,
+          "t": 52,
+          "visualScore": 10,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "Person wearing a white laboratory coat in laboratory setting."
+        },
+        {
+          "file": "frames/000027.jpg",
+          "id": 27,
+          "t": 54,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "A person is clearly visible wearing a white laboratory coat from behind in a scientific or laboratory setting."
+        },
+        {
+          "file": "frames/000028.jpg",
+          "id": 28,
+          "t": 56,
+          "visualScore": 10,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "Person wearing white laboratory coat in laboratory environment."
+        },
+        {
+          "file": "frames/000029.jpg",
+          "id": 29,
+          "t": 58,
+          "visualScore": 10,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "Person in white laboratory coat walking inside lab."
+        },
+        {
+          "file": "frames/000030.jpg",
+          "id": 30,
+          "t": 60,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "The person in the image is clearly wearing a white laboratory coat."
+        },
+        {
+          "file": "frames/000031.jpg",
+          "id": 31,
+          "t": 62,
+          "visualScore": 10,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "Person in white laboratory coat in laboratory."
+        },
+        {
+          "file": "frames/000032.jpg",
+          "id": 32,
+          "t": 64,
+          "visualScore": 10,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "Person wearing white laboratory coat near microscope."
+        },
+        {
+          "file": "frames/000033.jpg",
+          "id": 33,
+          "t": 66,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "The person in the image is clearly wearing a white laboratory coat."
+        },
+        {
+          "file": "frames/000034.jpg",
+          "id": 34,
+          "t": 68,
+          "visualScore": 10,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "Person clearly wearing white laboratory coat near lab equipment."
+        },
+        {
+          "file": "frames/000035.jpg",
+          "id": 35,
+          "t": 70,
+          "visualScore": 10,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "Person in white laboratory coat near microscope."
+        },
+        {
+          "file": "frames/000036.jpg",
+          "id": 36,
+          "t": 72,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "A person is clearly wearing a white laboratory coat in a lab setting."
+        },
+        {
+          "file": "frames/000037.jpg",
+          "id": 37,
+          "t": 74,
+          "visualScore": 10,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "Person in white laboratory coat near microscope."
+        },
+        {
+          "file": "frames/000038.jpg",
+          "id": 38,
+          "t": 76,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No person wearing white laboratory coat, image shows technical equipment and screen."
+        },
+        {
+          "file": "frames/000039.jpg",
+          "id": 39,
+          "t": 78,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No person visible, image shows electronic equipment."
+        },
+        {
+          "file": "frames/000040.jpg",
+          "id": 40,
+          "t": 80,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No person visible, technical equipment only."
+        },
+        {
+          "file": "frames/000041.jpg",
+          "id": 41,
+          "t": 82,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No person visible, image shows machinery."
+        },
+        {
+          "file": "frames/000042.jpg",
+          "id": 42,
+          "t": 84,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No person visible, image of machines."
+        },
+        {
+          "file": "frames/000043.jpg",
+          "id": 43,
+          "t": 86,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No person visible, technical setup."
+        },
+        {
+          "file": "frames/000044.jpg",
+          "id": 44,
+          "t": 88,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No person visible, machinery only."
+        }
+      ],
+      "stats": {
+        "sheets": 1,
+        "visionCalls": 6,
+        "cacheHits": 0,
+        "refined": 5,
+        "elapsedMs": 15091,
+        "inputTokens": 3320,
+        "outputTokens": 1121
+      },
+      "repeatStats": {
+        "sheets": 1,
+        "visionCalls": 0,
+        "cacheHits": 6,
+        "refined": 5,
+        "elapsedMs": 31,
+        "inputTokens": 0,
+        "outputTokens": 0
+      }
+    },
+    {
+      "session": "eval-nasa-lab",
+      "query": "a person wearing a bright red shirt",
+      "windows": [],
+      "metrics": {
+        "hit1": 0,
+        "hit5": 0,
+        "precisionReturned": null,
+        "returned": 0,
+        "falsePositives": 0
+      },
+      "hits": [],
+      "scores": [
+        {
+          "file": "frames/000000.jpg",
+          "id": 0,
+          "t": 0,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing a dark blue shirt, not bright red."
+        },
+        {
+          "file": "frames/000001.jpg",
+          "id": 1,
+          "t": 2,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing a dark blue shirt, not bright red."
+        },
+        {
+          "file": "frames/000002.jpg",
+          "id": 2,
+          "t": 4,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing a dark blue shirt, not bright red."
+        },
+        {
+          "file": "frames/000003.jpg",
+          "id": 3,
+          "t": 6,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing a dark blue shirt, not bright red."
+        },
+        {
+          "file": "frames/000004.jpg",
+          "id": 4,
+          "t": 8,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing a dark blue shirt, not bright red."
+        },
+        {
+          "file": "frames/000005.jpg",
+          "id": 5,
+          "t": 10,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing a dark blue shirt, not bright red."
+        },
+        {
+          "file": "frames/000006.jpg",
+          "id": 6,
+          "t": 12,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing a light blue or gray shirt, not bright red."
+        },
+        {
+          "file": "frames/000007.jpg",
+          "id": 7,
+          "t": 14,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing a white or light-colored shirt, not bright red."
+        },
+        {
+          "file": "frames/000008.jpg",
+          "id": 8,
+          "t": 16,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing a dark blue shirt, not bright red."
+        },
+        {
+          "file": "frames/000009.jpg",
+          "id": 9,
+          "t": 18,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing a dark blue shirt, not bright red."
+        },
+        {
+          "file": "frames/000010.jpg",
+          "id": 10,
+          "t": 20,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No person with bright red shirt, image shows a ceiling light."
+        },
+        {
+          "file": "frames/000011.jpg",
+          "id": 11,
+          "t": 22,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No person with bright red shirt, image shows a metallic object."
+        },
+        {
+          "file": "frames/000012.jpg",
+          "id": 12,
+          "t": 24,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No person with bright red shirt, image shows a close-up of round object."
+        },
+        {
+          "file": "frames/000013.jpg",
+          "id": 13,
+          "t": 26,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No person with bright red shirt, image shows a white object."
+        },
+        {
+          "file": "frames/000014.jpg",
+          "id": 14,
+          "t": 28,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing a dark blue shirt, not bright red."
+        },
+        {
+          "file": "frames/000015.jpg",
+          "id": 15,
+          "t": 30,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing a dark blue shirt, not bright red."
+        },
+        {
+          "file": "frames/000016.jpg",
+          "id": 16,
+          "t": 32,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing a dark blue shirt, not bright red."
+        },
+        {
+          "file": "frames/000017.jpg",
+          "id": 17,
+          "t": 34,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing a dark blue shirt, not bright red."
+        },
+        {
+          "file": "frames/000018.jpg",
+          "id": 18,
+          "t": 36,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing a dark blue shirt, not bright red."
+        },
+        {
+          "file": "frames/000019.jpg",
+          "id": 19,
+          "t": 38,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing a dark blue shirt, not bright red."
+        },
+        {
+          "file": "frames/000020.jpg",
+          "id": 20,
+          "t": 40,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing a dark blue shirt, not bright red."
+        },
+        {
+          "file": "frames/000021.jpg",
+          "id": 21,
+          "t": 42,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing a dark blue shirt, not bright red."
+        },
+        {
+          "file": "frames/000022.jpg",
+          "id": 22,
+          "t": 44,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Persons visible are wearing dark blue and green shirts, no bright red shirt."
+        },
+        {
+          "file": "frames/000023.jpg",
+          "id": 23,
+          "t": 46,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing a white lab coat, no bright red shirt visible."
+        },
+        {
+          "file": "frames/000024.jpg",
+          "id": 24,
+          "t": 48,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing white lab coat, no bright red shirt."
+        },
+        {
+          "file": "frames/000025.jpg",
+          "id": 25,
+          "t": 50,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing white lab coat, no bright red shirt."
+        },
+        {
+          "file": "frames/000026.jpg",
+          "id": 26,
+          "t": 52,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing white lab coat, no bright red shirt."
+        },
+        {
+          "file": "frames/000027.jpg",
+          "id": 27,
+          "t": 54,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing white lab coat, no bright red shirt."
+        },
+        {
+          "file": "frames/000028.jpg",
+          "id": 28,
+          "t": 56,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing white lab coat, no bright red shirt."
+        },
+        {
+          "file": "frames/000029.jpg",
+          "id": 29,
+          "t": 58,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing white lab coat, no bright red shirt."
+        },
+        {
+          "file": "frames/000030.jpg",
+          "id": 30,
+          "t": 60,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing white lab coat, no bright red shirt."
+        },
+        {
+          "file": "frames/000031.jpg",
+          "id": 31,
+          "t": 62,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing white lab coat, no bright red shirt."
+        },
+        {
+          "file": "frames/000032.jpg",
+          "id": 32,
+          "t": 64,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing white lab coat, no bright red shirt."
+        },
+        {
+          "file": "frames/000033.jpg",
+          "id": 33,
+          "t": 66,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing white lab coat, no bright red shirt."
+        },
+        {
+          "file": "frames/000034.jpg",
+          "id": 34,
+          "t": 68,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing white lab coat, no bright red shirt."
+        },
+        {
+          "file": "frames/000035.jpg",
+          "id": 35,
+          "t": 70,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing white lab coat, no bright red shirt."
+        },
+        {
+          "file": "frames/000036.jpg",
+          "id": 36,
+          "t": 72,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing white lab coat, no bright red shirt."
+        },
+        {
+          "file": "frames/000037.jpg",
+          "id": 37,
+          "t": 74,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is wearing white lab coat, no bright red shirt."
+        },
+        {
+          "file": "frames/000038.jpg",
+          "id": 38,
+          "t": 76,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No person wearing bright red shirt visible."
+        },
+        {
+          "file": "frames/000039.jpg",
+          "id": 39,
+          "t": 78,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No person wearing bright red shirt visible."
+        },
+        {
+          "file": "frames/000040.jpg",
+          "id": 40,
+          "t": 80,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No person wearing bright red shirt visible."
+        },
+        {
+          "file": "frames/000041.jpg",
+          "id": 41,
+          "t": 82,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No person wearing bright red shirt visible."
+        },
+        {
+          "file": "frames/000042.jpg",
+          "id": 42,
+          "t": 84,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No person wearing bright red shirt visible."
+        },
+        {
+          "file": "frames/000043.jpg",
+          "id": 43,
+          "t": 86,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No person wearing bright red shirt visible."
+        },
+        {
+          "file": "frames/000044.jpg",
+          "id": 44,
+          "t": 88,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No person wearing bright red shirt visible."
+        }
+      ],
+      "stats": {
+        "sheets": 1,
+        "visionCalls": 1,
+        "cacheHits": 0,
+        "refined": 0,
+        "elapsedMs": 9018,
+        "inputTokens": 1800,
+        "outputTokens": 1029
+      },
+      "repeatStats": {
+        "sheets": 1,
+        "visionCalls": 0,
+        "cacheHits": 1,
+        "refined": 0,
+        "elapsedMs": 6,
+        "inputTokens": 0,
+        "outputTokens": 0
+      }
+    },
+    {
+      "session": "eval-nasa-kitchen",
+      "query": "a close-up view of a food pouch held toward the camera",
+      "windows": [
+        [
+          38,
+          48
+        ]
+      ],
+      "metrics": {
+        "hit1": 1,
+        "hit5": 1,
+        "precisionReturned": 0.3333333333333333,
+        "returned": 3,
+        "falsePositives": 2
+      },
+      "hits": [
+        {
+          "file": "frames/000020.jpg",
+          "id": 20,
+          "t": 40,
+          "visualScore": 7,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 7,
+          "reason": "Food pouch held toward the camera more prominently but not very close-up."
+        },
+        {
+          "file": "frames/000026.jpg",
+          "id": 26,
+          "t": 52,
+          "visualScore": 7,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 7,
+          "reason": "Food pouch held toward the camera visibly but still some distance."
+        },
+        {
+          "file": "frames/000000.jpg",
+          "id": 0,
+          "t": 0,
+          "visualScore": 5,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 5,
+          "reason": "The person is holding a food pouch toward the camera, but the view is not very close-up."
+        }
+      ],
+      "scores": [
+        {
+          "file": "frames/000000.jpg",
+          "id": 0,
+          "t": 0,
+          "visualScore": 5,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 5,
+          "reason": "The person is holding a food pouch toward the camera, but the view is not very close-up."
+        },
+        {
+          "file": "frames/000001.jpg",
+          "id": 1,
+          "t": 2,
+          "visualScore": 5,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 5,
+          "reason": "Similar to cell 1, food pouch is held toward the camera but still not very close-up."
+        },
+        {
+          "file": "frames/000002.jpg",
+          "id": 2,
+          "t": 4,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "The food pouch is not pointed toward the camera."
+        },
+        {
+          "file": "frames/000003.jpg",
+          "id": 3,
+          "t": 6,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No food pouch held toward the camera, person is interacting with nearby equipment."
+        },
+        {
+          "file": "frames/000004.jpg",
+          "id": 4,
+          "t": 8,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No food pouch visible."
+        },
+        {
+          "file": "frames/000005.jpg",
+          "id": 5,
+          "t": 10,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No food pouch visible."
+        },
+        {
+          "file": "frames/000006.jpg",
+          "id": 6,
+          "t": 12,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No food pouch visible."
+        },
+        {
+          "file": "frames/000007.jpg",
+          "id": 7,
+          "t": 14,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No food pouch visible."
+        },
+        {
+          "file": "frames/000008.jpg",
+          "id": 8,
+          "t": 16,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No food pouch held toward the camera."
+        },
+        {
+          "file": "frames/000009.jpg",
+          "id": 9,
+          "t": 18,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No food pouch visible."
+        },
+        {
+          "file": "frames/000010.jpg",
+          "id": 10,
+          "t": 20,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No food pouch visible."
+        },
+        {
+          "file": "frames/000011.jpg",
+          "id": 11,
+          "t": 22,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No food pouch visible."
+        },
+        {
+          "file": "frames/000012.jpg",
+          "id": 12,
+          "t": 24,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No food pouch visible."
+        },
+        {
+          "file": "frames/000013.jpg",
+          "id": 13,
+          "t": 26,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No food pouch visible."
+        },
+        {
+          "file": "frames/000014.jpg",
+          "id": 14,
+          "t": 28,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No food pouch visible."
+        },
+        {
+          "file": "frames/000015.jpg",
+          "id": 15,
+          "t": 30,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No food pouch visible."
+        },
+        {
+          "file": "frames/000016.jpg",
+          "id": 16,
+          "t": 32,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No food pouch held toward the camera."
+        },
+        {
+          "file": "frames/000017.jpg",
+          "id": 17,
+          "t": 34,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No food pouch held toward the camera."
+        },
+        {
+          "file": "frames/000018.jpg",
+          "id": 18,
+          "t": 36,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No food pouch close-up or held toward camera."
+        },
+        {
+          "file": "frames/000019.jpg",
+          "id": 19,
+          "t": 38,
+          "visualScore": 5,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 5,
+          "reason": "Image shows a person holding a pouch of food toward the camera; the view is relatively close-up though some background is visible."
+        },
+        {
+          "file": "frames/000020.jpg",
+          "id": 20,
+          "t": 40,
+          "visualScore": 7,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 7,
+          "reason": "Food pouch held toward the camera more prominently but not very close-up."
+        },
+        {
+          "file": "frames/000021.jpg",
+          "id": 21,
+          "t": 42,
+          "visualScore": 7,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 7,
+          "reason": "Food pouch held closer toward camera, partial close-up."
+        },
+        {
+          "file": "frames/000022.jpg",
+          "id": 22,
+          "t": 44,
+          "visualScore": 0,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "The image shows a man holding an object, but it is blurry and not clearly a close-up view of a food pouch held toward the camera."
+        },
+        {
+          "file": "frames/000023.jpg",
+          "id": 23,
+          "t": 46,
+          "visualScore": 7,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 7,
+          "reason": "Food pouch clearly held toward the camera, fairly close-up."
+        },
+        {
+          "file": "frames/000024.jpg",
+          "id": 24,
+          "t": 48,
+          "visualScore": 7,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 7,
+          "reason": "Food pouch held more toward the camera and visible, though some distance remains."
+        },
+        {
+          "file": "frames/000025.jpg",
+          "id": 25,
+          "t": 50,
+          "visualScore": 5,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 5,
+          "reason": "The person is holding a food pouch toward the camera, but it is not very close-up as the pouch is held at a distance."
+        },
+        {
+          "file": "frames/000026.jpg",
+          "id": 26,
+          "t": 52,
+          "visualScore": 7,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 7,
+          "reason": "Food pouch held toward the camera visibly but still some distance."
+        },
+        {
+          "file": "frames/000027.jpg",
+          "id": 27,
+          "t": 54,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No pouch held toward the camera."
+        },
+        {
+          "file": "frames/000028.jpg",
+          "id": 28,
+          "t": 56,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Food pouch not held toward camera."
+        },
+        {
+          "file": "frames/000029.jpg",
+          "id": 29,
+          "t": 58,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No food pouch held toward the camera."
+        },
+        {
+          "file": "frames/000030.jpg",
+          "id": 30,
+          "t": 60,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No pouch held toward camera."
+        },
+        {
+          "file": "frames/000031.jpg",
+          "id": 31,
+          "t": 62,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No pouch held toward camera."
+        },
+        {
+          "file": "frames/000032.jpg",
+          "id": 32,
+          "t": 64,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No food pouch held toward camera."
+        },
+        {
+          "file": "frames/000033.jpg",
+          "id": 33,
+          "t": 66,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No food pouch held toward camera."
+        },
+        {
+          "file": "frames/000034.jpg",
+          "id": 34,
+          "t": 68,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Hands near equipment, no food pouch held toward camera."
+        },
+        {
+          "file": "frames/000035.jpg",
+          "id": 35,
+          "t": 70,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No food pouch visible."
+        },
+        {
+          "file": "frames/000036.jpg",
+          "id": 36,
+          "t": 72,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No food pouch visible."
+        },
+        {
+          "file": "frames/000037.jpg",
+          "id": 37,
+          "t": 74,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No food pouch visible."
+        },
+        {
+          "file": "frames/000038.jpg",
+          "id": 38,
+          "t": 76,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No food pouch held toward camera."
+        },
+        {
+          "file": "frames/000039.jpg",
+          "id": 39,
+          "t": 78,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No food pouch held toward camera."
+        },
+        {
+          "file": "frames/000040.jpg",
+          "id": 40,
+          "t": 80,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No food pouch held toward camera."
+        },
+        {
+          "file": "frames/000041.jpg",
+          "id": 41,
+          "t": 82,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No food pouch held toward camera."
+        },
+        {
+          "file": "frames/000042.jpg",
+          "id": 42,
+          "t": 84,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No food pouch held toward camera."
+        },
+        {
+          "file": "frames/000043.jpg",
+          "id": 43,
+          "t": 86,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No food pouch held toward camera."
+        },
+        {
+          "file": "frames/000044.jpg",
+          "id": 44,
+          "t": 88,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No food pouch held toward camera."
+        }
+      ],
+      "stats": {
+        "sheets": 1,
+        "visionCalls": 5,
+        "cacheHits": 0,
+        "refined": 4,
+        "elapsedMs": 12910,
+        "inputTokens": 3041,
+        "outputTokens": 1053
+      },
+      "repeatStats": {
+        "sheets": 1,
+        "visionCalls": 0,
+        "cacheHits": 5,
+        "refined": 4,
+        "elapsedMs": 31,
+        "inputTokens": 0,
+        "outputTokens": 0
+      }
+    },
+    {
+      "session": "eval-nasa-kitchen",
+      "query": "a close-up of hands at an open metal food preparation compartment, with no face visible",
+      "windows": [
+        [
+          68,
+          74
+        ]
+      ],
+      "metrics": {
+        "hit1": 1,
+        "hit5": 1,
+        "precisionReturned": 1,
+        "returned": 1,
+        "falsePositives": 0
+      },
+      "hits": [
+        {
+          "file": "frames/000037.jpg",
+          "id": 37,
+          "t": 74,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "Close-up of hands at an open metal compartment used for food preparation, no face visible."
+        }
+      ],
+      "scores": [
+        {
+          "file": "frames/000000.jpg",
+          "id": 0,
+          "t": 0,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Wide shot including face, not a close-up of hands."
+        },
+        {
+          "file": "frames/000001.jpg",
+          "id": 1,
+          "t": 2,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, no close-up on hands."
+        },
+        {
+          "file": "frames/000002.jpg",
+          "id": 2,
+          "t": 4,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000003.jpg",
+          "id": 3,
+          "t": 6,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000004.jpg",
+          "id": 4,
+          "t": 8,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000005.jpg",
+          "id": 5,
+          "t": 10,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000006.jpg",
+          "id": 6,
+          "t": 12,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000007.jpg",
+          "id": 7,
+          "t": 14,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000008.jpg",
+          "id": 8,
+          "t": 16,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000009.jpg",
+          "id": 9,
+          "t": 18,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000010.jpg",
+          "id": 10,
+          "t": 20,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000011.jpg",
+          "id": 11,
+          "t": 22,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000012.jpg",
+          "id": 12,
+          "t": 24,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000013.jpg",
+          "id": 13,
+          "t": 26,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000014.jpg",
+          "id": 14,
+          "t": 28,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000015.jpg",
+          "id": 15,
+          "t": 30,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000016.jpg",
+          "id": 16,
+          "t": 32,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000017.jpg",
+          "id": 17,
+          "t": 34,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000018.jpg",
+          "id": 18,
+          "t": 36,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000019.jpg",
+          "id": 19,
+          "t": 38,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000020.jpg",
+          "id": 20,
+          "t": 40,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000021.jpg",
+          "id": 21,
+          "t": 42,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000022.jpg",
+          "id": 22,
+          "t": 44,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000023.jpg",
+          "id": 23,
+          "t": 46,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000024.jpg",
+          "id": 24,
+          "t": 48,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000025.jpg",
+          "id": 25,
+          "t": 50,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000026.jpg",
+          "id": 26,
+          "t": 52,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000027.jpg",
+          "id": 27,
+          "t": 54,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000028.jpg",
+          "id": 28,
+          "t": 56,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000029.jpg",
+          "id": 29,
+          "t": 58,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000030.jpg",
+          "id": 30,
+          "t": 60,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000031.jpg",
+          "id": 31,
+          "t": 62,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000032.jpg",
+          "id": 32,
+          "t": 64,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000033.jpg",
+          "id": 33,
+          "t": 66,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000034.jpg",
+          "id": 34,
+          "t": 68,
+          "visualScore": 5,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 5,
+          "reason": "Close-up of hands interacting with an open metal compartment used for food preparation, no faces visible but compartment details and hand position are somewhat visible."
+        },
+        {
+          "file": "frames/000035.jpg",
+          "id": 35,
+          "t": 70,
+          "visualScore": 7,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 7,
+          "reason": "Close-up of hands at open metal compartment, no face visible, but no clear food preparation evidence."
+        },
+        {
+          "file": "frames/000036.jpg",
+          "id": 36,
+          "t": 72,
+          "visualScore": 7,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 7,
+          "reason": "Close-up of hands at open metal compartment, no face visible, context unclear if food related."
+        },
+        {
+          "file": "frames/000037.jpg",
+          "id": 37,
+          "t": 74,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "Close-up of hands at an open metal compartment used for food preparation, no face visible."
+        },
+        {
+          "file": "frames/000038.jpg",
+          "id": 38,
+          "t": 76,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000039.jpg",
+          "id": 39,
+          "t": 78,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000040.jpg",
+          "id": 40,
+          "t": 80,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000041.jpg",
+          "id": 41,
+          "t": 82,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000042.jpg",
+          "id": 42,
+          "t": 84,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000043.jpg",
+          "id": 43,
+          "t": 86,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        },
+        {
+          "file": "frames/000044.jpg",
+          "id": 44,
+          "t": 88,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Medium shot including face, hands visible but not close-up."
+        }
+      ],
+      "stats": {
+        "sheets": 1,
+        "visionCalls": 3,
+        "cacheHits": 0,
+        "refined": 2,
+        "elapsedMs": 14654,
+        "inputTokens": 2438,
+        "outputTokens": 1146
+      },
+      "repeatStats": {
+        "sheets": 1,
+        "visionCalls": 0,
+        "cacheHits": 3,
+        "refined": 2,
+        "elapsedMs": 13,
+        "inputTokens": 0,
+        "outputTokens": 0
+      }
+    },
+    {
+      "session": "eval-nasa-kitchen",
+      "query": "a person wearing a tall white chef hat",
+      "windows": [],
+      "metrics": {
+        "hit1": 0,
+        "hit5": 0,
+        "precisionReturned": null,
+        "returned": 0,
+        "falsePositives": 0
+      },
+      "hits": [],
+      "scores": [
+        {
+          "file": "frames/000000.jpg",
+          "id": 0,
+          "t": 0,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is not wearing any hat, especially not a tall white chef hat."
+        },
+        {
+          "file": "frames/000001.jpg",
+          "id": 1,
+          "t": 2,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Person is still not wearing a tall white chef hat."
+        },
+        {
+          "file": "frames/000002.jpg",
+          "id": 2,
+          "t": 4,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000003.jpg",
+          "id": 3,
+          "t": 6,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000004.jpg",
+          "id": 4,
+          "t": 8,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000005.jpg",
+          "id": 5,
+          "t": 10,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000006.jpg",
+          "id": 6,
+          "t": 12,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000007.jpg",
+          "id": 7,
+          "t": 14,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000008.jpg",
+          "id": 8,
+          "t": 16,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000009.jpg",
+          "id": 9,
+          "t": 18,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000010.jpg",
+          "id": 10,
+          "t": 20,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000011.jpg",
+          "id": 11,
+          "t": 22,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000012.jpg",
+          "id": 12,
+          "t": 24,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000013.jpg",
+          "id": 13,
+          "t": 26,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000014.jpg",
+          "id": 14,
+          "t": 28,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000015.jpg",
+          "id": 15,
+          "t": 30,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000016.jpg",
+          "id": 16,
+          "t": 32,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000017.jpg",
+          "id": 17,
+          "t": 34,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000018.jpg",
+          "id": 18,
+          "t": 36,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000019.jpg",
+          "id": 19,
+          "t": 38,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000020.jpg",
+          "id": 20,
+          "t": 40,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000021.jpg",
+          "id": 21,
+          "t": 42,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000022.jpg",
+          "id": 22,
+          "t": 44,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000023.jpg",
+          "id": 23,
+          "t": 46,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000024.jpg",
+          "id": 24,
+          "t": 48,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000025.jpg",
+          "id": 25,
+          "t": 50,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000026.jpg",
+          "id": 26,
+          "t": 52,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000027.jpg",
+          "id": 27,
+          "t": 54,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000028.jpg",
+          "id": 28,
+          "t": 56,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000029.jpg",
+          "id": 29,
+          "t": 58,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000030.jpg",
+          "id": 30,
+          "t": 60,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000031.jpg",
+          "id": 31,
+          "t": 62,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000032.jpg",
+          "id": 32,
+          "t": 64,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000033.jpg",
+          "id": 33,
+          "t": 66,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000034.jpg",
+          "id": 34,
+          "t": 68,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible, only close-ups of hands."
+        },
+        {
+          "file": "frames/000035.jpg",
+          "id": 35,
+          "t": 70,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible, only close-ups of hands."
+        },
+        {
+          "file": "frames/000036.jpg",
+          "id": 36,
+          "t": 72,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible, only close-ups of hands."
+        },
+        {
+          "file": "frames/000037.jpg",
+          "id": 37,
+          "t": 74,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible, only close-ups of hands."
+        },
+        {
+          "file": "frames/000038.jpg",
+          "id": 38,
+          "t": 76,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000039.jpg",
+          "id": 39,
+          "t": 78,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000040.jpg",
+          "id": 40,
+          "t": 80,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000041.jpg",
+          "id": 41,
+          "t": 82,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000042.jpg",
+          "id": 42,
+          "t": 84,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000043.jpg",
+          "id": 43,
+          "t": 86,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        },
+        {
+          "file": "frames/000044.jpg",
+          "id": 44,
+          "t": 88,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No tall white chef hat visible."
+        }
+      ],
+      "stats": {
+        "sheets": 1,
+        "visionCalls": 1,
+        "cacheHits": 0,
+        "refined": 0,
+        "elapsedMs": 8190,
+        "inputTokens": 1801,
+        "outputTokens": 852
+      },
+      "repeatStats": {
+        "sheets": 1,
+        "visionCalls": 0,
+        "cacheHits": 1,
+        "refined": 0,
+        "elapsedMs": 5,
+        "inputTokens": 0,
+        "outputTokens": 0
+      }
+    }
+  ],
+  "summary": {
+    "positiveQueries": 4,
+    "hit1": 1,
+    "hit5": 1,
+    "precisionReturnedPositive": 0.75,
+    "absentQueries": 2,
+    "absentQueriesWithHits": 0,
+    "visionCalls": 18,
+    "inputTokens": 14504,
+    "outputTokens": 6238,
+    "estimatedUsd": 0.015782400000000002,
+    "elapsedMs": 71951
+  }
+}

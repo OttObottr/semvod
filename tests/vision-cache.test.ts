@@ -13,7 +13,7 @@ test('live search memoizes paid calls, fans out duplicate frames, and invalidate
  globalThis.fetch=async(input,init)=>{
   const url=String(input),body=JSON.parse(String(init?.body));
   if(url.endsWith('/moderations')){moderationCalls++;return Response.json({results:[{flagged:false}]});}
-  if(url.endsWith('/responses')){visionCalls++;assert.equal(body.store,false);const count=Number(/all (\d+) numbered/.exec(body.input[0].content[0].text)?.[1]);const scores=Array.from({length:count},(_,i)=>({cell:i+1,score:count===1?2:8,reason:count===1?'refined: weak evidence':'coarse candidate'}));return Response.json({usage:{input_tokens:100,output_tokens:20},output:[{content:[{type:'output_text',text:JSON.stringify({scores})}]}]});}
+  if(url.endsWith('/responses')){visionCalls++;assert.equal(body.store,false);const count=Number(/all (\d+) numbered/.exec(body.input[0].content[0].text)?.[1]);assert.equal(body.text.format.schema.properties.scores.items.required.includes('reason'),count===1);const scores=Array.from({length:count},(_,i)=>({cell:i+1,score:count===1?2:8,...(count===1?{reason:'refined: weak evidence'}:{})}));return Response.json({usage:{input_tokens:100,output_tokens:20},output:[{content:[{type:'output_text',text:JSON.stringify({scores})}]}]});}
   throw new Error(`Unexpected network request in test: ${url}`);
  };
  config.openaiKey='test-only-not-a-real-key';

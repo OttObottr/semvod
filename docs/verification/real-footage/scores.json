@@ -1,0 +1,3022 @@
+{
+  "arm": "scores",
+  "labelHash": "b3d6e7ef16ebff58efbcad4e8944313cef2fc77eb5f57da859fc17585807adf6",
+  "model": "gpt-4.1-mini",
+  "rows": [
+    {
+      "session": "eval-nasa-lab",
+      "query": "a man standing outdoors beside green trees",
+      "windows": [
+        [
+          0,
+          4
+        ]
+      ],
+      "metrics": {
+        "hit1": 1,
+        "hit5": 1,
+        "precisionReturned": 1,
+        "returned": 1,
+        "falsePositives": 0
+      },
+      "hits": [
+        {
+          "file": "frames/000000.jpg",
+          "id": 0,
+          "t": 0,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "A man is clearly standing outdoors next to green trees and bushes."
+        }
+      ],
+      "scores": [
+        {
+          "file": "frames/000000.jpg",
+          "id": 0,
+          "t": 0,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "A man is clearly standing outdoors next to green trees and bushes."
+        },
+        {
+          "file": "frames/000001.jpg",
+          "id": 1,
+          "t": 2,
+          "visualScore": 10,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000002.jpg",
+          "id": 2,
+          "t": 4,
+          "visualScore": 10,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000003.jpg",
+          "id": 3,
+          "t": 6,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000004.jpg",
+          "id": 4,
+          "t": 8,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000005.jpg",
+          "id": 5,
+          "t": 10,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000006.jpg",
+          "id": 6,
+          "t": 12,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000007.jpg",
+          "id": 7,
+          "t": 14,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000008.jpg",
+          "id": 8,
+          "t": 16,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000009.jpg",
+          "id": 9,
+          "t": 18,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000010.jpg",
+          "id": 10,
+          "t": 20,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000011.jpg",
+          "id": 11,
+          "t": 22,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000012.jpg",
+          "id": 12,
+          "t": 24,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000013.jpg",
+          "id": 13,
+          "t": 26,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000014.jpg",
+          "id": 14,
+          "t": 28,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000015.jpg",
+          "id": 15,
+          "t": 30,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000016.jpg",
+          "id": 16,
+          "t": 32,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000017.jpg",
+          "id": 17,
+          "t": 34,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000018.jpg",
+          "id": 18,
+          "t": 36,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000019.jpg",
+          "id": 19,
+          "t": 38,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000020.jpg",
+          "id": 20,
+          "t": 40,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000021.jpg",
+          "id": 21,
+          "t": 42,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000022.jpg",
+          "id": 22,
+          "t": 44,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000023.jpg",
+          "id": 23,
+          "t": 46,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000024.jpg",
+          "id": 24,
+          "t": 48,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000025.jpg",
+          "id": 25,
+          "t": 50,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000026.jpg",
+          "id": 26,
+          "t": 52,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000027.jpg",
+          "id": 27,
+          "t": 54,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000028.jpg",
+          "id": 28,
+          "t": 56,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000029.jpg",
+          "id": 29,
+          "t": 58,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000030.jpg",
+          "id": 30,
+          "t": 60,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000031.jpg",
+          "id": 31,
+          "t": 62,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000032.jpg",
+          "id": 32,
+          "t": 64,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000033.jpg",
+          "id": 33,
+          "t": 66,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000034.jpg",
+          "id": 34,
+          "t": 68,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000035.jpg",
+          "id": 35,
+          "t": 70,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000036.jpg",
+          "id": 36,
+          "t": 72,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000037.jpg",
+          "id": 37,
+          "t": 74,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000038.jpg",
+          "id": 38,
+          "t": 76,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000039.jpg",
+          "id": 39,
+          "t": 78,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000040.jpg",
+          "id": 40,
+          "t": 80,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000041.jpg",
+          "id": 41,
+          "t": 82,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000042.jpg",
+          "id": 42,
+          "t": 84,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000043.jpg",
+          "id": 43,
+          "t": 86,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000044.jpg",
+          "id": 44,
+          "t": 88,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        }
+      ],
+      "stats": {
+        "sheets": 1,
+        "visionCalls": 2,
+        "cacheHits": 0,
+        "refined": 1,
+        "elapsedMs": 5853,
+        "inputTokens": 2090,
+        "outputTokens": 396
+      },
+      "repeatStats": {
+        "sheets": 1,
+        "visionCalls": 0,
+        "cacheHits": 2,
+        "refined": 1,
+        "elapsedMs": 18,
+        "inputTokens": 0,
+        "outputTokens": 0
+      }
+    },
+    {
+      "session": "eval-nasa-lab",
+      "query": "a person wearing a white laboratory coat",
+      "windows": [
+        [
+          46,
+          76
+        ]
+      ],
+      "metrics": {
+        "hit1": 1,
+        "hit5": 1,
+        "precisionReturned": 1,
+        "returned": 3,
+        "falsePositives": 0
+      },
+      "hits": [
+        {
+          "file": "frames/000024.jpg",
+          "id": 24,
+          "t": 48,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "A person is clearly wearing a white laboratory coat, fully visible from the back, matching the query exactly."
+        },
+        {
+          "file": "frames/000030.jpg",
+          "id": 30,
+          "t": 60,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "The image clearly shows a person wearing a white laboratory coat from the back."
+        },
+        {
+          "file": "frames/000036.jpg",
+          "id": 36,
+          "t": 72,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "The person in the image is clearly wearing a white laboratory coat."
+        }
+      ],
+      "scores": [
+        {
+          "file": "frames/000000.jpg",
+          "id": 0,
+          "t": 0,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000001.jpg",
+          "id": 1,
+          "t": 2,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000002.jpg",
+          "id": 2,
+          "t": 4,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000003.jpg",
+          "id": 3,
+          "t": 6,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000004.jpg",
+          "id": 4,
+          "t": 8,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000005.jpg",
+          "id": 5,
+          "t": 10,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000006.jpg",
+          "id": 6,
+          "t": 12,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000007.jpg",
+          "id": 7,
+          "t": 14,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000008.jpg",
+          "id": 8,
+          "t": 16,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000009.jpg",
+          "id": 9,
+          "t": 18,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000010.jpg",
+          "id": 10,
+          "t": 20,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000011.jpg",
+          "id": 11,
+          "t": 22,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000012.jpg",
+          "id": 12,
+          "t": 24,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000013.jpg",
+          "id": 13,
+          "t": 26,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000014.jpg",
+          "id": 14,
+          "t": 28,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000015.jpg",
+          "id": 15,
+          "t": 30,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000016.jpg",
+          "id": 16,
+          "t": 32,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000017.jpg",
+          "id": 17,
+          "t": 34,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000018.jpg",
+          "id": 18,
+          "t": 36,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000019.jpg",
+          "id": 19,
+          "t": 38,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000020.jpg",
+          "id": 20,
+          "t": 40,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000021.jpg",
+          "id": 21,
+          "t": 42,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000022.jpg",
+          "id": 22,
+          "t": 44,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000023.jpg",
+          "id": 23,
+          "t": 46,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000024.jpg",
+          "id": 24,
+          "t": 48,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "A person is clearly wearing a white laboratory coat, fully visible from the back, matching the query exactly."
+        },
+        {
+          "file": "frames/000025.jpg",
+          "id": 25,
+          "t": 50,
+          "visualScore": 10,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000026.jpg",
+          "id": 26,
+          "t": 52,
+          "visualScore": 10,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000027.jpg",
+          "id": 27,
+          "t": 54,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "The image shows a person clearly wearing a white laboratory coat walking in what appears to be a laboratory or technical facility."
+        },
+        {
+          "file": "frames/000028.jpg",
+          "id": 28,
+          "t": 56,
+          "visualScore": 10,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000029.jpg",
+          "id": 29,
+          "t": 58,
+          "visualScore": 10,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000030.jpg",
+          "id": 30,
+          "t": 60,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "The image clearly shows a person wearing a white laboratory coat from the back."
+        },
+        {
+          "file": "frames/000031.jpg",
+          "id": 31,
+          "t": 62,
+          "visualScore": 10,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000032.jpg",
+          "id": 32,
+          "t": 64,
+          "visualScore": 10,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000033.jpg",
+          "id": 33,
+          "t": 66,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "The person in the image is clearly wearing a white laboratory coat."
+        },
+        {
+          "file": "frames/000034.jpg",
+          "id": 34,
+          "t": 68,
+          "visualScore": 10,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000035.jpg",
+          "id": 35,
+          "t": 70,
+          "visualScore": 10,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000036.jpg",
+          "id": 36,
+          "t": 72,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "The person in the image is clearly wearing a white laboratory coat."
+        },
+        {
+          "file": "frames/000037.jpg",
+          "id": 37,
+          "t": 74,
+          "visualScore": 10,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000038.jpg",
+          "id": 38,
+          "t": 76,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000039.jpg",
+          "id": 39,
+          "t": 78,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000040.jpg",
+          "id": 40,
+          "t": 80,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000041.jpg",
+          "id": 41,
+          "t": 82,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000042.jpg",
+          "id": 42,
+          "t": 84,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000043.jpg",
+          "id": 43,
+          "t": 86,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000044.jpg",
+          "id": 44,
+          "t": 88,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        }
+      ],
+      "stats": {
+        "sheets": 1,
+        "visionCalls": 6,
+        "cacheHits": 0,
+        "refined": 5,
+        "elapsedMs": 10194,
+        "inputTokens": 3306,
+        "outputTokens": 536
+      },
+      "repeatStats": {
+        "sheets": 1,
+        "visionCalls": 0,
+        "cacheHits": 6,
+        "refined": 5,
+        "elapsedMs": 36,
+        "inputTokens": 0,
+        "outputTokens": 0
+      }
+    },
+    {
+      "session": "eval-nasa-lab",
+      "query": "a person wearing a bright red shirt",
+      "windows": [],
+      "metrics": {
+        "hit1": 0,
+        "hit5": 0,
+        "precisionReturned": null,
+        "returned": 0,
+        "falsePositives": 0
+      },
+      "hits": [],
+      "scores": [
+        {
+          "file": "frames/000000.jpg",
+          "id": 0,
+          "t": 0,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000001.jpg",
+          "id": 1,
+          "t": 2,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000002.jpg",
+          "id": 2,
+          "t": 4,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000003.jpg",
+          "id": 3,
+          "t": 6,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000004.jpg",
+          "id": 4,
+          "t": 8,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000005.jpg",
+          "id": 5,
+          "t": 10,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000006.jpg",
+          "id": 6,
+          "t": 12,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000007.jpg",
+          "id": 7,
+          "t": 14,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000008.jpg",
+          "id": 8,
+          "t": 16,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000009.jpg",
+          "id": 9,
+          "t": 18,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000010.jpg",
+          "id": 10,
+          "t": 20,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000011.jpg",
+          "id": 11,
+          "t": 22,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000012.jpg",
+          "id": 12,
+          "t": 24,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000013.jpg",
+          "id": 13,
+          "t": 26,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000014.jpg",
+          "id": 14,
+          "t": 28,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000015.jpg",
+          "id": 15,
+          "t": 30,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000016.jpg",
+          "id": 16,
+          "t": 32,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000017.jpg",
+          "id": 17,
+          "t": 34,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000018.jpg",
+          "id": 18,
+          "t": 36,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000019.jpg",
+          "id": 19,
+          "t": 38,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000020.jpg",
+          "id": 20,
+          "t": 40,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000021.jpg",
+          "id": 21,
+          "t": 42,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000022.jpg",
+          "id": 22,
+          "t": 44,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000023.jpg",
+          "id": 23,
+          "t": 46,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000024.jpg",
+          "id": 24,
+          "t": 48,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000025.jpg",
+          "id": 25,
+          "t": 50,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000026.jpg",
+          "id": 26,
+          "t": 52,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000027.jpg",
+          "id": 27,
+          "t": 54,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000028.jpg",
+          "id": 28,
+          "t": 56,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000029.jpg",
+          "id": 29,
+          "t": 58,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000030.jpg",
+          "id": 30,
+          "t": 60,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000031.jpg",
+          "id": 31,
+          "t": 62,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000032.jpg",
+          "id": 32,
+          "t": 64,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000033.jpg",
+          "id": 33,
+          "t": 66,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000034.jpg",
+          "id": 34,
+          "t": 68,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000035.jpg",
+          "id": 35,
+          "t": 70,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000036.jpg",
+          "id": 36,
+          "t": 72,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000037.jpg",
+          "id": 37,
+          "t": 74,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000038.jpg",
+          "id": 38,
+          "t": 76,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000039.jpg",
+          "id": 39,
+          "t": 78,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000040.jpg",
+          "id": 40,
+          "t": 80,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000041.jpg",
+          "id": 41,
+          "t": 82,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000042.jpg",
+          "id": 42,
+          "t": 84,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000043.jpg",
+          "id": 43,
+          "t": 86,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000044.jpg",
+          "id": 44,
+          "t": 88,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        }
+      ],
+      "stats": {
+        "sheets": 1,
+        "visionCalls": 1,
+        "cacheHits": 0,
+        "refined": 0,
+        "elapsedMs": 4227,
+        "inputTokens": 1786,
+        "outputTokens": 366
+      },
+      "repeatStats": {
+        "sheets": 1,
+        "visionCalls": 0,
+        "cacheHits": 1,
+        "refined": 0,
+        "elapsedMs": 4,
+        "inputTokens": 0,
+        "outputTokens": 0
+      }
+    },
+    {
+      "session": "eval-nasa-kitchen",
+      "query": "a close-up view of a food pouch held toward the camera",
+      "windows": [
+        [
+          38,
+          48
+        ]
+      ],
+      "metrics": {
+        "hit1": 1,
+        "hit5": 1,
+        "precisionReturned": 0.3333333333333333,
+        "returned": 3,
+        "falsePositives": 2
+      },
+      "hits": [
+        {
+          "file": "frames/000021.jpg",
+          "id": 21,
+          "t": 42,
+          "visualScore": 10,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000014.jpg",
+          "id": 14,
+          "t": 28,
+          "visualScore": 9,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 9,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000001.jpg",
+          "id": 1,
+          "t": 2,
+          "visualScore": 8,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 8,
+          "reason": "No strong match"
+        }
+      ],
+      "scores": [
+        {
+          "file": "frames/000000.jpg",
+          "id": 0,
+          "t": 0,
+          "visualScore": 5,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 5,
+          "reason": "The man is holding a food pouch toward the camera, with a clear view of the pouch in his hand, though not an extreme close-up."
+        },
+        {
+          "file": "frames/000001.jpg",
+          "id": 1,
+          "t": 2,
+          "visualScore": 8,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 8,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000002.jpg",
+          "id": 2,
+          "t": 4,
+          "visualScore": 7,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 7,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000003.jpg",
+          "id": 3,
+          "t": 6,
+          "visualScore": 0,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "Image shows a person in a room with equipment, no close-up view of a food pouch held toward the camera."
+        },
+        {
+          "file": "frames/000004.jpg",
+          "id": 4,
+          "t": 8,
+          "visualScore": 5,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 5,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000005.jpg",
+          "id": 5,
+          "t": 10,
+          "visualScore": 4,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 4,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000006.jpg",
+          "id": 6,
+          "t": 12,
+          "visualScore": 0,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "The image shows a person in a room with equipment; no close-up view of a food pouch held toward the camera is visible."
+        },
+        {
+          "file": "frames/000007.jpg",
+          "id": 7,
+          "t": 14,
+          "visualScore": 2,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000008.jpg",
+          "id": 8,
+          "t": 16,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000009.jpg",
+          "id": 9,
+          "t": 18,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000010.jpg",
+          "id": 10,
+          "t": 20,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000011.jpg",
+          "id": 11,
+          "t": 22,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000012.jpg",
+          "id": 12,
+          "t": 24,
+          "visualScore": 0,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No close-up view of a food pouch held toward the camera; the image shows a man in a room with equipment and patches on the wall."
+        },
+        {
+          "file": "frames/000013.jpg",
+          "id": 13,
+          "t": 26,
+          "visualScore": 8,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 8,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000014.jpg",
+          "id": 14,
+          "t": 28,
+          "visualScore": 9,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 9,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000015.jpg",
+          "id": 15,
+          "t": 30,
+          "visualScore": 0,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "The image shows a man standing in a room with equipment, no close-up view of a food pouch held toward the camera is present."
+        },
+        {
+          "file": "frames/000016.jpg",
+          "id": 16,
+          "t": 32,
+          "visualScore": 3,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 3,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000017.jpg",
+          "id": 17,
+          "t": 34,
+          "visualScore": 2,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 2,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000018.jpg",
+          "id": 18,
+          "t": 36,
+          "visualScore": 7,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 7,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000019.jpg",
+          "id": 19,
+          "t": 38,
+          "visualScore": 9,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 9,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000020.jpg",
+          "id": 20,
+          "t": 40,
+          "visualScore": 5,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 5,
+          "reason": "The person holds a food pouch close to the camera, though the pouch and its contents are somewhat visible in a close-up manner."
+        },
+        {
+          "file": "frames/000021.jpg",
+          "id": 21,
+          "t": 42,
+          "visualScore": 10,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000022.jpg",
+          "id": 22,
+          "t": 44,
+          "visualScore": 5,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 5,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000023.jpg",
+          "id": 23,
+          "t": 46,
+          "visualScore": 7,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 7,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000024.jpg",
+          "id": 24,
+          "t": 48,
+          "visualScore": 10,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "Close-up view of a food pouch clearly held toward the camera by the person."
+        },
+        {
+          "file": "frames/000025.jpg",
+          "id": 25,
+          "t": 50,
+          "visualScore": 8,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 8,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000026.jpg",
+          "id": 26,
+          "t": 52,
+          "visualScore": 7,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 7,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000027.jpg",
+          "id": 27,
+          "t": 54,
+          "visualScore": 0,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No close-up view of a food pouch held toward the camera; image shows a person holding some items but not close or focused on a food pouch."
+        },
+        {
+          "file": "frames/000028.jpg",
+          "id": 28,
+          "t": 56,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000029.jpg",
+          "id": 29,
+          "t": 58,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000030.jpg",
+          "id": 30,
+          "t": 60,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000031.jpg",
+          "id": 31,
+          "t": 62,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000032.jpg",
+          "id": 32,
+          "t": 64,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000033.jpg",
+          "id": 33,
+          "t": 66,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000034.jpg",
+          "id": 34,
+          "t": 68,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000035.jpg",
+          "id": 35,
+          "t": 70,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000036.jpg",
+          "id": 36,
+          "t": 72,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000037.jpg",
+          "id": 37,
+          "t": 74,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000038.jpg",
+          "id": 38,
+          "t": 76,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000039.jpg",
+          "id": 39,
+          "t": 78,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000040.jpg",
+          "id": 40,
+          "t": 80,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000041.jpg",
+          "id": 41,
+          "t": 82,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000042.jpg",
+          "id": 42,
+          "t": 84,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000043.jpg",
+          "id": 43,
+          "t": 86,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000044.jpg",
+          "id": 44,
+          "t": 88,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        }
+      ],
+      "stats": {
+        "sheets": 1,
+        "visionCalls": 9,
+        "cacheHits": 0,
+        "refined": 8,
+        "elapsedMs": 12736,
+        "inputTokens": 4263,
+        "outputTokens": 708
+      },
+      "repeatStats": {
+        "sheets": 1,
+        "visionCalls": 0,
+        "cacheHits": 9,
+        "refined": 8,
+        "elapsedMs": 49,
+        "inputTokens": 0,
+        "outputTokens": 0
+      }
+    },
+    {
+      "session": "eval-nasa-kitchen",
+      "query": "a close-up of hands at an open metal food preparation compartment, with no face visible",
+      "windows": [
+        [
+          68,
+          74
+        ]
+      ],
+      "metrics": {
+        "hit1": 1,
+        "hit5": 1,
+        "precisionReturned": 1,
+        "returned": 1,
+        "falsePositives": 0
+      },
+      "hits": [
+        {
+          "file": "frames/000037.jpg",
+          "id": 37,
+          "t": 74,
+          "visualScore": 10,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "No strong match"
+        }
+      ],
+      "scores": [
+        {
+          "file": "frames/000000.jpg",
+          "id": 0,
+          "t": 0,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000001.jpg",
+          "id": 1,
+          "t": 2,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000002.jpg",
+          "id": 2,
+          "t": 4,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000003.jpg",
+          "id": 3,
+          "t": 6,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000004.jpg",
+          "id": 4,
+          "t": 8,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000005.jpg",
+          "id": 5,
+          "t": 10,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000006.jpg",
+          "id": 6,
+          "t": 12,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000007.jpg",
+          "id": 7,
+          "t": 14,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000008.jpg",
+          "id": 8,
+          "t": 16,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000009.jpg",
+          "id": 9,
+          "t": 18,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000010.jpg",
+          "id": 10,
+          "t": 20,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000011.jpg",
+          "id": 11,
+          "t": 22,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000012.jpg",
+          "id": 12,
+          "t": 24,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000013.jpg",
+          "id": 13,
+          "t": 26,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000014.jpg",
+          "id": 14,
+          "t": 28,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000015.jpg",
+          "id": 15,
+          "t": 30,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000016.jpg",
+          "id": 16,
+          "t": 32,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000017.jpg",
+          "id": 17,
+          "t": 34,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000018.jpg",
+          "id": 18,
+          "t": 36,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000019.jpg",
+          "id": 19,
+          "t": 38,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000020.jpg",
+          "id": 20,
+          "t": 40,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000021.jpg",
+          "id": 21,
+          "t": 42,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000022.jpg",
+          "id": 22,
+          "t": 44,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000023.jpg",
+          "id": 23,
+          "t": 46,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000024.jpg",
+          "id": 24,
+          "t": 48,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000025.jpg",
+          "id": 25,
+          "t": 50,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000026.jpg",
+          "id": 26,
+          "t": 52,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000027.jpg",
+          "id": 27,
+          "t": 54,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000028.jpg",
+          "id": 28,
+          "t": 56,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000029.jpg",
+          "id": 29,
+          "t": 58,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000030.jpg",
+          "id": 30,
+          "t": 60,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000031.jpg",
+          "id": 31,
+          "t": 62,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000032.jpg",
+          "id": 32,
+          "t": 64,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000033.jpg",
+          "id": 33,
+          "t": 66,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000034.jpg",
+          "id": 34,
+          "t": 68,
+          "visualScore": 5,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 5,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000035.jpg",
+          "id": 35,
+          "t": 70,
+          "visualScore": 5,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 5,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000036.jpg",
+          "id": 36,
+          "t": 72,
+          "visualScore": 8,
+          "visualStage": "refined",
+          "chatScore": 0,
+          "score": 8,
+          "reason": "Close-up view of hands interacting with an open metal compartment that appears to be part of a food preparation or storage device. No face is visible."
+        },
+        {
+          "file": "frames/000037.jpg",
+          "id": 37,
+          "t": 74,
+          "visualScore": 10,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 10,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000038.jpg",
+          "id": 38,
+          "t": 76,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000039.jpg",
+          "id": 39,
+          "t": 78,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000040.jpg",
+          "id": 40,
+          "t": 80,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000041.jpg",
+          "id": 41,
+          "t": 82,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000042.jpg",
+          "id": 42,
+          "t": 84,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000043.jpg",
+          "id": 43,
+          "t": 86,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000044.jpg",
+          "id": 44,
+          "t": 88,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        }
+      ],
+      "stats": {
+        "sheets": 1,
+        "visionCalls": 2,
+        "cacheHits": 0,
+        "refined": 1,
+        "elapsedMs": 8098,
+        "inputTokens": 2110,
+        "outputTokens": 412
+      },
+      "repeatStats": {
+        "sheets": 1,
+        "visionCalls": 0,
+        "cacheHits": 2,
+        "refined": 1,
+        "elapsedMs": 20,
+        "inputTokens": 0,
+        "outputTokens": 0
+      }
+    },
+    {
+      "session": "eval-nasa-kitchen",
+      "query": "a person wearing a tall white chef hat",
+      "windows": [],
+      "metrics": {
+        "hit1": 0,
+        "hit5": 0,
+        "precisionReturned": null,
+        "returned": 0,
+        "falsePositives": 0
+      },
+      "hits": [],
+      "scores": [
+        {
+          "file": "frames/000000.jpg",
+          "id": 0,
+          "t": 0,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000001.jpg",
+          "id": 1,
+          "t": 2,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000002.jpg",
+          "id": 2,
+          "t": 4,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000003.jpg",
+          "id": 3,
+          "t": 6,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000004.jpg",
+          "id": 4,
+          "t": 8,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000005.jpg",
+          "id": 5,
+          "t": 10,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000006.jpg",
+          "id": 6,
+          "t": 12,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000007.jpg",
+          "id": 7,
+          "t": 14,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000008.jpg",
+          "id": 8,
+          "t": 16,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000009.jpg",
+          "id": 9,
+          "t": 18,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000010.jpg",
+          "id": 10,
+          "t": 20,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000011.jpg",
+          "id": 11,
+          "t": 22,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000012.jpg",
+          "id": 12,
+          "t": 24,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000013.jpg",
+          "id": 13,
+          "t": 26,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000014.jpg",
+          "id": 14,
+          "t": 28,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000015.jpg",
+          "id": 15,
+          "t": 30,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000016.jpg",
+          "id": 16,
+          "t": 32,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000017.jpg",
+          "id": 17,
+          "t": 34,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000018.jpg",
+          "id": 18,
+          "t": 36,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000019.jpg",
+          "id": 19,
+          "t": 38,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000020.jpg",
+          "id": 20,
+          "t": 40,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000021.jpg",
+          "id": 21,
+          "t": 42,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000022.jpg",
+          "id": 22,
+          "t": 44,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000023.jpg",
+          "id": 23,
+          "t": 46,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000024.jpg",
+          "id": 24,
+          "t": 48,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000025.jpg",
+          "id": 25,
+          "t": 50,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000026.jpg",
+          "id": 26,
+          "t": 52,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000027.jpg",
+          "id": 27,
+          "t": 54,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000028.jpg",
+          "id": 28,
+          "t": 56,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000029.jpg",
+          "id": 29,
+          "t": 58,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000030.jpg",
+          "id": 30,
+          "t": 60,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000031.jpg",
+          "id": 31,
+          "t": 62,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000032.jpg",
+          "id": 32,
+          "t": 64,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000033.jpg",
+          "id": 33,
+          "t": 66,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000034.jpg",
+          "id": 34,
+          "t": 68,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000035.jpg",
+          "id": 35,
+          "t": 70,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000036.jpg",
+          "id": 36,
+          "t": 72,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000037.jpg",
+          "id": 37,
+          "t": 74,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000038.jpg",
+          "id": 38,
+          "t": 76,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000039.jpg",
+          "id": 39,
+          "t": 78,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000040.jpg",
+          "id": 40,
+          "t": 80,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000041.jpg",
+          "id": 41,
+          "t": 82,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000042.jpg",
+          "id": 42,
+          "t": 84,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000043.jpg",
+          "id": 43,
+          "t": 86,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        },
+        {
+          "file": "frames/000044.jpg",
+          "id": 44,
+          "t": 88,
+          "visualScore": 0,
+          "visualStage": "coarse",
+          "chatScore": 0,
+          "score": 0,
+          "reason": "No strong match"
+        }
+      ],
+      "stats": {
+        "sheets": 1,
+        "visionCalls": 1,
+        "cacheHits": 0,
+        "refined": 0,
+        "elapsedMs": 5125,
+        "inputTokens": 1787,
+        "outputTokens": 366
+      },
+      "repeatStats": {
+        "sheets": 1,
+        "visionCalls": 0,
+        "cacheHits": 1,
+        "refined": 0,
+        "elapsedMs": 7,
+        "inputTokens": 0,
+        "outputTokens": 0
+      }
+    }
+  ],
+  "summary": {
+    "positiveQueries": 4,
+    "hit1": 1,
+    "hit5": 1,
+    "precisionReturnedPositive": 0.75,
+    "absentQueries": 2,
+    "absentQueriesWithHits": 0,
+    "visionCalls": 21,
+    "inputTokens": 15342,
+    "outputTokens": 2784,
+    "estimatedUsd": 0.0105912,
+    "elapsedMs": 46233
+  }
+}
