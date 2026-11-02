@@ -10,11 +10,12 @@ import AppKit
   var length=min(Double(args[4])!,duration-start)
   if args.count>5, let cut=Int(args[5]), cut>=0 {
    let track=try await asset.loadTracks(withMediaType:.video)[0]
-   let reader=try AVAssetReader(asset:asset), output=AVAssetReaderTrackOutput(track:track,outputSettings:nil)
+   // Decode to presentation timestamps: compressed packets include edit offsets and non-frame markers.
+   let reader=try AVAssetReader(asset:asset), output=AVAssetReaderTrackOutput(track:track,outputSettings:[kCVPixelBufferPixelFormatTypeKey as String:kCVPixelFormatType_32BGRA])
    reader.add(output);reader.startReading();var times:[Double]=[]
    while let sample=output.copyNextSampleBuffer(){times.append(CMSampleBufferGetPresentationTimeStamp(sample).seconds)}
-   times.sort();guard reader.status == .completed,cut<times.count else {throw NSError(domain:"Invalid cut frame",code:1)}
-   length=min(length,times[cut]-start)
+   times.sort();guard reader.status == .completed,times.allSatisfy({$0.isFinite}),cut<times.count else {throw NSError(domain:"Invalid cut frame",code:1)}
+   length=min(length,floor((times[cut]-start)*60000)/60000)
    print("Exclusive cut frame \(cut), actual presentation time \(times[cut])")
   }
   let generator=AVAssetImageGenerator(asset:asset)
