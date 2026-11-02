@@ -1025,8 +1025,8 @@
       "elapsedMs": 0
     }
   },
-  "hella insane": {
-    "query": "hella insane",
+  "great moment": {
+    "query": "great moment",
     "hits": [
       {
         "id": 61,
@@ -1036,7 +1036,7 @@
         "visualScore": 0,
         "chatScore": 10,
         "score": 9.200000000000001,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 67,
@@ -1046,7 +1046,7 @@
         "visualScore": 0,
         "chatScore": 10,
         "score": 9.200000000000001,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       }
     ],
     "scores": [
@@ -1058,7 +1058,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 1,
@@ -1068,7 +1068,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 2,
@@ -1078,7 +1078,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 3,
@@ -1088,7 +1088,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 4,
@@ -1098,7 +1098,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 5,
@@ -1108,7 +1108,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 6,
@@ -1118,7 +1118,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 7,
@@ -1128,7 +1128,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 8,
@@ -1138,7 +1138,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 9,
@@ -1148,7 +1148,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 10,
@@ -1158,7 +1158,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 11,
@@ -1168,7 +1168,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 12,
@@ -1178,7 +1178,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 13,
@@ -1188,7 +1188,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 14,
@@ -1198,7 +1198,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 15,
@@ -1208,7 +1208,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 16,
@@ -1218,7 +1218,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 17,
@@ -1228,7 +1228,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 18,
@@ -1238,7 +1238,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 19,
@@ -1248,7 +1248,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 20,
@@ -1258,7 +1258,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 21,
@@ -1268,7 +1268,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 22,
@@ -1278,7 +1278,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 23,
@@ -1288,7 +1288,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 24,
@@ -1298,7 +1298,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 25,
@@ -1308,7 +1308,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 26,
@@ -1318,7 +1318,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 27,
@@ -1328,7 +1328,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 28,
@@ -1338,7 +1338,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 29,
@@ -1348,7 +1348,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 30,
@@ -1358,7 +1358,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 31,
@@ -1368,7 +1368,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 32,
@@ -1378,7 +1378,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 33,
@@ -1388,7 +1388,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 34,
@@ -1398,7 +1398,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 35,
@@ -1408,7 +1408,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 36,
@@ -1418,7 +1418,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 37,
@@ -1428,7 +1428,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 38,
@@ -1438,7 +1438,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 39,
@@ -1448,7 +1448,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 40,
@@ -1458,7 +1458,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 41,
@@ -1468,7 +1468,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 42,
@@ -1478,7 +1478,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 43,
@@ -1488,7 +1488,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 44,
@@ -1498,7 +1498,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 45,
@@ -1508,7 +1508,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 46,
@@ -1518,7 +1518,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 47,
@@ -1528,7 +1528,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 48,
@@ -1538,7 +1538,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 49,
@@ -1548,7 +1548,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 50,
@@ -1558,7 +1558,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 51,
@@ -1568,7 +1568,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 52,
@@ -1578,7 +1578,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 53,
@@ -1588,7 +1588,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 54,
@@ -1598,7 +1598,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 55,
@@ -1608,7 +1608,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 56,
@@ -1618,7 +1618,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 57,
@@ -1628,7 +1628,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 58,
@@ -1638,7 +1638,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 59,
@@ -1648,7 +1648,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 60,
@@ -1658,7 +1658,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 61,
@@ -1668,7 +1668,7 @@
         "visualScore": 0,
         "chatScore": 10,
         "score": 9.200000000000001,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 62,
@@ -1678,7 +1678,7 @@
         "visualScore": 0,
         "chatScore": 10,
         "score": 9.200000000000001,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 63,
@@ -1688,7 +1688,7 @@
         "visualScore": 0,
         "chatScore": 10,
         "score": 9.200000000000001,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 64,
@@ -1698,7 +1698,7 @@
         "visualScore": 0,
         "chatScore": 10,
         "score": 9.200000000000001,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 65,
@@ -1708,7 +1708,7 @@
         "visualScore": 0,
         "chatScore": 10,
         "score": 9.200000000000001,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 66,
@@ -1718,7 +1718,7 @@
         "visualScore": 0,
         "chatScore": 10,
         "score": 9.200000000000001,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 67,
@@ -1728,7 +1728,7 @@
         "visualScore": 0,
         "chatScore": 10,
         "score": 9.200000000000001,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 68,
@@ -1738,7 +1738,7 @@
         "visualScore": 0,
         "chatScore": 10,
         "score": 9.200000000000001,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 69,
@@ -1748,7 +1748,7 @@
         "visualScore": 0,
         "chatScore": 10,
         "score": 9.200000000000001,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 70,
@@ -1758,7 +1758,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 71,
@@ -1768,7 +1768,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 72,
@@ -1778,7 +1778,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 73,
@@ -1788,7 +1788,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 74,
@@ -1798,7 +1798,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 75,
@@ -1808,7 +1808,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 76,
@@ -1818,7 +1818,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 77,
@@ -1828,7 +1828,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 78,
@@ -1838,7 +1838,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 79,
@@ -1848,7 +1848,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 80,
@@ -1858,7 +1858,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 81,
@@ -1868,7 +1868,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 82,
@@ -1878,7 +1878,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 83,
@@ -1888,7 +1888,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 84,
@@ -1898,7 +1898,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 85,
@@ -1908,7 +1908,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 86,
@@ -1918,7 +1918,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 87,
@@ -1928,7 +1928,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 88,
@@ -1938,7 +1938,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 89,
@@ -1948,7 +1948,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 90,
@@ -1958,7 +1958,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 91,
@@ -1968,7 +1968,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 92,
@@ -1978,7 +1978,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 93,
@@ -1988,7 +1988,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 94,
@@ -1998,7 +1998,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       },
       {
         "id": 95,
@@ -2008,7 +2008,7 @@
         "visualScore": 0,
         "chatScore": 0,
         "score": 0,
-        "reason": "Chat: “hella insane”"
+        "reason": "Chat: “great moment”"
       }
     ],
     "cached": true,

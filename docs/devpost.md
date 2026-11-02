@@ -4,7 +4,7 @@
 
 **Tagline:** Ctrl+F for your stream.
 
-**Elevator pitch:** Search your OBS captures in plain words, follow Twitch chat energy, and turn the moment into a cover and a real Twitch clip. Runs locally with your own key.
+**Elevator pitch:** Search your OBS captures in plain words, inspect Twitch chat activity, create a cover, and request a Twitch clip for a selected moment. Runs locally with your own key.
 
 ## Inspiration
 
@@ -34,7 +34,7 @@ Human feedback pushed the implementation toward smaller dependencies and lower i
 
 **Codex build session ID:** `01a19d28-f0f4-7e53-8bda-dd046fd0c3a8`
 
-## Technical choices we’re proud of
+## Technical choices
 
 Forty-eight small numbered frames share one vision call. A second pass refines at most ten separated candidates. Scores are cached by image content, query, model, and prompt version; simultaneous identical requests share work. The UI reports vision calls and cache hits. Moderation runs before a live query can send any frame.
 
@@ -46,7 +46,7 @@ A recording may start well after a Twitch broadcast begins. Clip offsets must ac
 
 Still images also have limits: they do not establish spoken words or every action. SemVOD shows chat and visual evidence separately and labels the offline sample explicitly.
 
-Live testing exposed an accuracy tradeoff: 192-pixel tiles missed a small illustrated dog. Short sessions now keep 384-pixel detail, while long sessions retain compact sheets. Refinement corrections propagate to every duplicate timestamp. The real `dog` and `brightest blue` searches passed, and restarting the app preserved zero-call cache reuse.
+Live testing exposed an accuracy tradeoff: 192-pixel tiles missed a small illustrated dog. Short sessions now keep 384-pixel detail, while long sessions retain compact sheets. Refinement corrections propagate to every duplicate timestamp. Live API searches for `dog` and `brightest blue` found the expected frames in that illustrated test, and restarting the app preserved zero-call cache reuse.
 
 ## What’s next
 
@@ -56,15 +56,15 @@ A moderator replay queue, automatic stream chapters, higher-quality optional cov
 
 TypeScript, Node.js, React, Vite, Sharp, OBS WebSocket v5, Twitch OAuth, Twitch EventSub, Twitch Clips API, OpenAI vision and moderation, OpenAI Codex.
 
-## Submission fields to complete
+## Submission references
 
 - Repository URL: https://github.com/OttObottr/semvod
 - Public YouTube demo URL: https://www.youtube.com/watch?v=1-FCJHXmjm4 (2:22)
 - Codex session ID: `01a19d28-f0f4-7e53-8bda-dd046fd0c3a8`
 - Verified Twitch archive: https://www.twitch.tv/videos/2917774778
 - Verified app-created clip: https://www.twitch.tv/ottobottr/clip/TardyResourcefulTurtleRuleFive-4N9rgxv50ZQTaF0g
-- Live integration claims above describe implemented functionality. Confirm the actual tested paths in `docs/verification.md` and show them in the video before submission.
+- Tested integration paths and their limitations are documented in `docs/verification.md`.
 
 
 ## Semantic comparison gallery
-Real dog / cat / brightest blue scores share one fixed 0–10 timeline scale, plus a stacked sum of relevance divided by ten. The absent cat query stays flat. This is a reproducible analysis graphic; the UI currently searches one query at a time. See `verification/semantic-comparison.png` and the published raw arrays.
+Live API scores for dog, cat, and brightest blue on the illustrated test share one fixed 0–10 timeline scale, plus a stacked sum of relevance divided by ten. The absent cat query stays flat in this recorded comparison. This graphic describes that fixture; it does not establish accuracy on other footage. The UI searches one query at a time. See `verification/semantic-comparison.png` and the published raw arrays.

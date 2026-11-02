@@ -35,14 +35,14 @@ for(let i=0;i<96;i++){const file=`frames/${String(i).padStart(6,'0')}.jpg`;const
 const session:Session={id:'demo',title:'A little lost in Wander Valley',startedAt:'2026-11-01T22:00:00.000Z',duration:192,frames,status:'complete',demo:true,channel:'semvod_sample',chatStatus:'sample'};
 const chat:ChatMessage[]=[];
 for(let t=1;t<192;t+=4){chat.push({t,user:['mossyboots','lunara','pixelpals','cozycat'][Math.floor(t/4)%4],text:['the music is so good','this is beautiful','which way are we going?','cozy stream'][Math.floor(t/4)%4]});}
-for(const [t,text] of [[43,'DOG!!'],[45,'pet the dog'],[48,'we have a new friend'],[51,'the dog is following you 😭'],[58,'good boy'],[90,'brightest blue I have ever seen'],[95,'that gate is GLOWING'],[130,'hella insane'],[132,'LUL LUL LUL'],[133,'KEKW'],[134,'when you fell off the map LUL'],[135,'NOOOO'],[136,'POG KEKW'],[143,'the dog waited for us'],[146,'DOG is back']] as [number,string][]){for(let n=0;n<(t>=130&&t<=136?5:2);n++)chat.push({t:t+n*.2,user:['fernfriend','pixelpals','lunara','mossyboots','cozycat'][n],text});}
+for(const [t,text] of [[43,'DOG!!'],[45,'pet the dog'],[48,'we have a new friend'],[51,'the dog is following you 😭'],[58,'good boy'],[90,'brightest blue I have ever seen'],[95,'that gate is GLOWING'],[130,'great moment'],[132,'LUL LUL LUL'],[133,'KEKW'],[134,'when you fell off the map LUL'],[135,'NOOOO'],[136,'POG KEKW'],[143,'the dog waited for us'],[146,'DOG is back']] as [number,string][]){for(let n=0;n<(t>=130&&t<=136?5:2);n++)chat.push({t:t+n*.2,user:['fernfriend','pixelpals','lunara','mossyboots','cozycat'][n],text});}
 chat.sort((a,b)=>a.t-b.t);await atomicJson(path.join(dir,'index.json'),session);await fs.writeFile(path.join(dir,'chat.jsonl'),chat.map(m=>JSON.stringify(m)).join('\n')+'\n');
 const fixtures:Record<string,SearchResult>={};
-for(const query of ['dog','hella insane','brightest blue','when I fell off the map']){
+for(const query of ['dog','great moment','brightest blue','when I fell off the map']){
  const scores:Hit[]=frames.map(f=>{let v=0;if(query==='dog')v=(f.t>=38&&f.t<=76||f.t>=140&&f.t<=158)?8+(Math.sin(f.id)*.5+.5)*1.7:.2;
  if(query==='brightest blue')v=f.t>=82&&f.t<=122?8+Math.sin(f.id)*.8:.4;
  if(query==='when I fell off the map')v=f.t>=126&&f.t<=140?7+Math.sin(f.id)*1.5:0;
- const c=chatRelevance(query,f.t,chat);return {...f,visualScore:v,chatScore:c.score,score:Math.max(v,c.score*.92),reason:query==='hella insane'?'Chat: “hella insane”':query==='dog'?'A golden dog beside the player':query==='brightest blue'?'A luminous cyan gate in the ruins':'The character falls into a gap in the path'};});
+ const c=chatRelevance(query,f.t,chat);return {...f,visualScore:v,chatScore:c.score,score:Math.max(v,c.score*.92),reason:query==='great moment'?'Chat: “great moment”':query==='dog'?'A golden dog beside the player':query==='brightest blue'?'A luminous cyan gate in the ruins':'The character falls into a gap in the path'};});
  fixtures[query.toLowerCase()]={query,hits:distinctHits(scores),scores,cached:true,mode:'demo',stats:{sheets:2,visionCalls:0,cacheHits:1,refined:0,elapsedMs:0}};
 }
 await atomicJson(path.join(dir,'searches.json'),fixtures);await buildSheets('demo');console.log('Generated 96 original sample frames, chat, sheets, and offline search fixtures.');
