@@ -1,0 +1,35 @@
+{
+  "name": "semvod",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Ctrl+F for your stream. Local OBS capture, semantic search, and Twitch clips.",
+  "scripts": {
+    "dev": "tsx src/server/cli.ts serve --dev",
+    "demo": "tsx src/server/cli.ts demo --dev",
+    "semvod": "tsx src/server/cli.ts",
+    "build": "tsc --noEmit && vite build",
+    "start": "tsx src/server/cli.ts serve",
+    "test": "node --import ./tests/isolate.mjs --import tsx --test tests/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "demo:generate": "tsx scripts/generate-demo.ts"
+  },
+  "dependencies": {
+    "lucide-react": "0.468.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "sharp": "0.35.5"
+  },
+  "devDependencies": {
+    "@types/node": "24.0.0",
+    "@types/react": "19.2.0",
+    "@types/react-dom": "19.2.0",
+    "@vitejs/plugin-react": "5.0.4",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3",
+    "vite": "7.3.7"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

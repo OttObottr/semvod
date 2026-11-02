@@ -1,0 +1,33 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { spawn } from 'node:child_process';
+import { createServer } from 'node:net';
+import { request as httpRequest } from 'node:http';
+import { promises as fs } from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import sharp from 'sharp';
+test('production server serves the demo and covers, and blocks cross-origin mutations',async()=>{
+ const probe=createServer();await new Promise<void>(r=>probe.listen(0,'127.0.0.1',r));const port=(probe.address() as {port:number}).port;await new Promise<void>(r=>probe.close(()=>r()));
+ const dir=await fs.mkdtemp(path.join(os.tmpdir(),'semvod-http-'));
+ await Promise.all(['sample','dist/client'].map(file=>fs.cp(path.resolve(file),path.join(dir,file),{recursive:true})));
+ const server=spawn(process.execPath,['--import',import.meta.resolve('tsx'),path.resolve('src/server/cli.ts'),'serve'],{cwd:dir,env:{...process.env,PORT:String(port)},stdio:['ignore','pipe','pipe']});
+ let log='';server.stdout.on('data',s=>{log+=s;});server.stderr.on('data',s=>{log+=s;});
+ try{
+  await new Promise<void>((resolve,reject)=>{const timer=setTimeout(()=>reject(new Error(log||'Server timeout')),10000);server.stdout.on('data',()=>{if(log.includes('SemVOD →')){clearTimeout(timer);resolve();}});server.on('exit',()=>{clearTimeout(timer);reject(new Error(log));});});
+  const base=`http://127.0.0.1:${port}`;
+  const page=await fetch(base);assert.equal(page.status,200);assert.match(await page.text(),/SemVOD/);
+  const status=await fetch(base+'/api/status').then(r=>r.json());assert.equal(status.openai,false);assert.equal(status.twitch,null);
+  const session=await fetch(base+'/api/session?id=demo').then(r=>r.json());assert.equal(session.frames.length,96);
+  const post=(data:unknown,headers:Record<string,string>={})=>fetch(base+'/api/search',{method:'POST',headers:{'Content-Type':'application/json','X-Semvod-Client':'1',...headers},body:JSON.stringify(data)});
+  const result=await post({sessionId:'demo',query:'dog'}).then(r=>r.json());assert.equal(result.mode,'demo');assert.equal(result.stats.visionCalls,0);
+  assert.equal((await post({sessionId:'demo',query:'dog'},{Origin:'https://evil.example'})).status,403);
+  assert.equal((await post({sessionId:'demo',query:'dog'},{Origin:'null'})).status,403);
+  const forgedHost=await new Promise<number>(resolve=>{const req=httpRequest({host:'127.0.0.1',port,path:'/api/status',headers:{Host:'evil.example'}},res=>{res.resume();resolve(res.statusCode!);});req.end();});assert.equal(forgedHost,403);
+  for(const data of [{sessionId:'../../.env',query:'dog'},{sessionId:'demo',query:['dog']},{sessionId:'demo',query:'x'.repeat(201)}])assert.equal((await post(data)).status,400);
+  assert.equal((await fetch(base+'/api/record/start',{method:'POST'})).status,403);
+  assert.equal((await fetch(base+'/api/session?id=..')).status,400);
+  assert.equal((await fetch(base+'/auth/twitch/callback?state=wrong&code=x')).status,400);
+  const cover=await fetch(base+'/media/demo/cover/33?title=%3Cscript%3Eno%3C%2Fscript%3E');assert.equal(cover.status,200);assert.match(cover.headers.get('content-disposition')!,/attachment/);const meta=await sharp(Buffer.from(await cover.arrayBuffer())).metadata();assert.equal(meta.width,1280);assert.equal(meta.height,720);
+ }finally{if(server.exitCode===null&&server.signalCode===null){server.kill('SIGTERM');await new Promise(r=>server.once('close',r));}await fs.rm(dir,{recursive:true,force:true});}
+});

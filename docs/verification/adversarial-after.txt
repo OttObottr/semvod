@@ -1,0 +1,35 @@
+
+> semvod@0.1.0 test
+> node --import ./tests/isolate.mjs --import tsx --test tests/*.test.ts
+
+✔ VOD clip API uses the broadcaster scope and end offset, with a real timestamp fallback on rejection (31.065042ms)
+✔ equivalent queries normalize to the same cache key (1.020375ms)
+✔ session IDs cannot traverse the filesystem (0.337792ms)
+✔ concurrent work is coalesced and rejection does not poison retry (18.283042ms)
+✔ vision JSON must contain one valid score per real cell (0.277209ms)
+✔ chat phrase relevance is distinct from visual evidence (0.489542ms)
+✔ hype catches emote bursts and handles an empty session (0.230459ms)
+✔ top hits suppress adjacent near-identical moments (0.169209ms)
+✔ VOD matching requires the correct stream and time interval (0.128083ms)
+✔ clip offset is the end, includes recorder start delta, and clamps at VOD edges (0.115292ms)
+✔ offline sample supports four queries with zero model calls (7.671709ms)
+✔ contact sheets deduplicate exact frames and preserve all timestamps (57.600208ms)
+✔ atomic JSON creates owner-only files even under a permissive umask (1.010708ms)
+✔ EventSub subscribes with correct identities, deduplicates messages, and migrates without resubscribing (42.15975ms)
+✔ production server serves the demo and covers, and blocks cross-origin mutations (316.584166ms)
+✔ OBS v5 authentication, screenshot capture, and graceful stop preserve a session (15.980625ms)
+✔ test transports and OBS reject external network connections (0.749792ms)
+✔ stopping during OBS authentication waits for startup and leaves no recording running (26.548917ms)
+Capture: OBS disconnected
+✔ OBS disconnect is visible and capture resumes after reconnect (2007.445792ms)
+✔ live search memoizes paid calls, fans out duplicate frames, and invalidates when model changes (102.029083ms)
+✔ moderation rejects a flagged query before sending any frame (1.645375ms)
+✔ longer sessions process at most three sheets concurrently and count actual token usage (531.593291ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2534.294375
