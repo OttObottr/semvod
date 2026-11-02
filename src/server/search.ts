@@ -7,7 +7,7 @@ import { buildSheets, chatRelevance } from './indexer.js';
 import type { Frame, Hit, SearchResult } from '../shared/types.js';
 const PROMPT_VERSION='visual-v3';
 const cacheRoot=path.join(process.cwd(),'.semvod','cache');
-export interface ScoredCell {cell:number;score:number;reason:string}
+export interface ScoredCell {cell:number;score:number;reason:string;refined?:boolean}
 async function openai(endpoint:string,body:unknown) {
   if(!config.openaiKey)throw new Error('Add OPENAI_API_KEY to .env and restart for AI search. Sample searches work without a key.');
   const response=await fetch(`https://api.openai.com/v1/${endpoint}`,{method:'POST',headers:{Authorization:`Bearer ${config.openaiKey}`,'Content-Type':'application/json'},body:JSON.stringify(body),signal:AbortSignal.timeout(90000)});
@@ -51,7 +51,7 @@ async function cachedScore(query:string,image:Buffer,count:number,stats:SearchRe
   try{if(exists)stats.cacheHits++;else stats.visionCalls++;return await pendingScores(key);}finally{if(!exists)scoreJobs.delete(key);}
 }
 function rank(frames:Frame[],visual:Map<number,ScoredCell>,query:string,chat:Awaited<ReturnType<typeof loadChat>>):Hit[]{
-  return frames.map(f=>{const v=visual.get(f.id);const c=chatRelevance(query,f.t,chat);return {...f,visualScore:v?.score??0,chatScore:c.score,score:Math.max(v?.score??0,c.score*.92),reason:c.score*.92>(v?.score??0)?`Chat: “${c.reason}”`:v?.reason||'No strong match'};});
+  return frames.map(f=>{const v=visual.get(f.id);const c=chatRelevance(query,f.t,chat);return {...f,visualScore:v?.score??0,visualStage:v?(v.refined?'refined':'coarse'):undefined,chatScore:c.score,score:Math.max(v?.score??0,c.score*.92),reason:c.score*.92>(v?.score??0)?`Chat: “${c.reason}”`:v?.reason||'No strong match'};});
 }
 export function distinctHits(scores:Hit[],limit=5,gap=12){
   const hits:Hit[]=[];
@@ -80,7 +80,7 @@ export async function search(id:string,rawQuery:string,liveDemo=false):Promise<S
   for(const frame of candidates){
     const image=await sharp(path.join(sessionDir(id),frame.file)).resize({width:768,withoutEnlargement:true}).jpeg({quality:78}).toBuffer();
     const fingerprint=hash(image);let score=refinedHashes.get(fingerprint);
-    if(!score){[score]=await cachedScore(query,image,1,stats);refinedHashes.set(fingerprint,score);}for(const id of aliases.get(frame.id)??[frame.id])visual.set(id,score);stats.refined++;
+    if(!score){[score]=await cachedScore(query,image,1,stats);refinedHashes.set(fingerprint,score);}for(const id of aliases.get(frame.id)??[frame.id])visual.set(id,{...score,refined:true});stats.refined++;
   }
   scores=rank(session.frames,visual,query,chat);stats.elapsedMs=Date.now()-started;
   const result:SearchResult={query:rawQuery,hits:distinctHits(scores),scores,cached:stats.visionCalls===0,mode:'vision',stats};
