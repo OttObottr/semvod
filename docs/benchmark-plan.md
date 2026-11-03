@@ -50,8 +50,16 @@ We have not run these services on the same labeled footage, so we cannot claim s
 
 No embedding runtime, vector database, model-training framework, third-party SDK, or new package was added. Current runtime remains four pinned packages. External model experiments use native HTTP and remain outside the shipped search engine. The [hackathon rules](https://twitchcon-codex.devpost.com/rules) require a Twitch-connected project built with Codex and allow authorized third-party integrations; they do not require an OpenAI-only runtime. All these experiments occurred after the submitted snapshot.
 
-## Temporal-context pilot commitment
+## Temporal-context pilot
 
 Before inference: compare production refinement with three chronological frames (center and nearest ±4 seconds, letterboxed) on four previously untested source videos. Selection uses a fixed 3 GiB archive prefix and excludes all 30 earlier parents; all four selected queries remain in the denominator. Coarse requests, model, ranking and interval adapter are shared; no retries or replacements. Combined cap: $0.08 within the existing ledger. Contract SHA-256 `aa9602efcc94ed75124c932e9c9d2f2bf66e3d355e85ae4e7802110794e2f25d`. Media and tooling stay in the separate benchmark workspace; predictions must be committed before grading.
 
 Complete predictions committed before grading: baseline SHA-256 `138168c651f40e4055d3800cf6bf2553e1fbda1d2327faa2f34fb31941df720c`; temporal SHA-256 `09d63461ff9e8a8c1d2f248c6d3d18aaf3498bbf8ed7a90d4eef9cc91d61bf95`.
+
+Both arms completed all four queries: **3/4 at temporal IoU 0.5, 2/4 at 0.7**, zero failures. One raw IoU improved from 0 to 0.2083 without crossing either threshold. Independent review reconciled all predictions and 60 new response receipts. New spend was **$0.0220544**, with no unknown charges; eight coarse responses were reused. Including that reused work, temporal reference cost was $0.0173072 versus baseline $0.0135128. No threshold gain was demonstrated, so temporal refinement remains outside the app. This tiny access-constrained pilot cannot establish general superiority.
+
+## Local frame-reduction diagnostics
+
+On the prior 24-video development set, four conservative RGB-difference thresholds removed at most 60/1,774 frames but reduced no contact sheets. An external Swift helper using [Apple Vision feature prints](https://developer.apple.com/documentation/vision/analyzing-image-similarity-with-feature-print) tested distances 0.05, 0.10, 0.20 and 0.30, with a maximum ten-second anchor gap. At 0.30 it retained 1,502/1,774 frames, projecting **45 instead of 48 sheets**; all 38 annotated windows retained a sampled frame. Extraction and comparisons took 7.53 seconds locally. Earlier thresholds saved no sheets. These are coverage and preprocessing measurements, not proven retrieval accuracy or billed savings; no production pruning was enabled.
+
+The helper uses existing macOS frameworks and stays outside the app. No packages or model calls were added for these diagnostics. [DINOv3](https://github.com/facebookresearch/dinov3) is a separate feature-model option requiring weights and an inference runtime; it was researched, not executed. Model similarity alone does not establish that skipped frames are interchangeable for every query. Full threshold outputs and tools remain in the separate benchmark workspace.
