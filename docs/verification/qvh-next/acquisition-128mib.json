@@ -1,0 +1,13 @@
+{
+  "protocolSha256": "6e0d27d916927f441d9f117d6a8622cfd5acd6e764e200bb470a50f0f63e5254",
+  "archivePrefixSha256": "e31e2271be7e02e4cc70b5dc1accb101603b72246dff078155a1d125118630e7",
+  "downloadBytes": 134217728,
+  "completeVideos": [],
+  "queryIds": [],
+  "queriesSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "goldSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "incompletePrefixReached": true,
+  "newSpendUsd": 0,
+  "inferenceCalls": 0,
+  "status": "Prepared, NOT SCORED. Frozen inputs; labels and query text not published; media not redistributed."
+}
