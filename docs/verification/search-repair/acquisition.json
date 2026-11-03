@@ -1,0 +1,66 @@
+{
+  "protocolSha256": "6a7c4b752df5c001a074c8568493d0d883fa180e0321b12b75508e55a3f0078d",
+  "completeVideos": [
+    {
+      "id": "_i9qWLsZToY_660.0_810.0",
+      "preparedSession": ".semvod/qvh-v1/sessions/qvh-0",
+      "indexSha256": "a3e6ea2a13d1d03a99dae54e0ee8dd918aebe63d49894770544d4ccd7ce08f95"
+    },
+    {
+      "id": "pu5p_ojK6BI_360.0_510.0",
+      "preparedSession": ".semvod/qvh-v1/sessions/qvh-1",
+      "indexSha256": "5c138e08577b0a257728b21a645764702084a24d39cb3d583bdc1e1b5fba1b3d"
+    },
+    {
+      "id": "UDEfgewcr5E_60.0_210.0",
+      "preparedSession": ".semvod/qvh-next/sessions/qvhn-0",
+      "indexSha256": "7d5ab8fb6e46a871f73a178c1f5aa00d6c5bc64e5d91dce8738425f0d60d9d62"
+    },
+    {
+      "id": "OckIALHg9Uc_60.0_210.0",
+      "preparedSession": ".semvod/qvh-next/sessions/qvhn-1",
+      "indexSha256": "aa78a33f64d8380e15ffbfb1454e670c429a1a8b60a37af8bc04ee519251bded"
+    },
+    {
+      "id": "XWLHTkh1fAI_660.0_810.0",
+      "preparedSession": ".semvod/qvh-next/sessions/qvhn-2",
+      "indexSha256": "9dd6f6da01a17180585ea0c6af7cd23716e0a358ef875083786b8ad0646b5c3b"
+    },
+    {
+      "id": "ioWAoEVYaP0_60.0_210.0",
+      "preparedSession": ".semvod/qvh-next/sessions/qvhn-3",
+      "indexSha256": "7e6245bcac93766c9244be5cfc51d73ce71f377ef60fc125c69c9887f38bd446"
+    },
+    {
+      "id": "eval-nasa-lab",
+      "preparedSession": "sessions/eval-nasa-lab",
+      "indexSha256": "b411a596c71f17fdb38f97a6e991a227556e842d352fb83682545e9710899895"
+    },
+    {
+      "id": "eval-nasa-kitchen",
+      "preparedSession": "sessions/eval-nasa-kitchen",
+      "indexSha256": "55b95b7ea57f4279b0cc553a27f7083a422fe4c661c4584b621e78275d2e2050"
+    }
+  ],
+  "queryIds": [
+    8967,
+    601,
+    9367,
+    8976,
+    617,
+    609,
+    "nasa-0",
+    "nasa-1",
+    "nasa-2",
+    "nasa-3",
+    "nasa-4",
+    "nasa-5"
+  ],
+  "queriesSha256": "487409b1ec70a02312474b1b527c318e9d16367ffbe54c51bd878c8d50aad38a",
+  "goldSha256": "44b406c64a9cc80de4b4f32bd2cb1ba4237ab6249271fb64f7078f137d6bcf26",
+  "sourceManifests": {
+    "qvh-v1": "db8ea8d5a5e25638041c246447ba9c7f95e76106690c10614c6bbc903851e93b",
+    "qvh-next": "011a2b723c3da0d46f1acfd2618a9b8ef7829350cd73c1137ead401699bbed81"
+  },
+  "nasaLabelsSha256": "b3d6e7ef16ebff58efbcad4e8944313cef2fc77eb5f57da859fc17585807adf6"
+}

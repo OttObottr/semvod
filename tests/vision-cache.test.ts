@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
-import { config } from '../src/server/config.js';
+import { config, visionConfig } from '../src/server/config.js';
 import { atomicJson, hash, readJson, sessionDir } from '../src/server/store.js';
 import { search, runSearch } from '../src/server/search.js';
 import { cachedScore } from '../src/server/vision.js';
@@ -15,14 +15,15 @@ const visionResponse = (scores: unknown[]) => Response.json({
  output: [{ content: [{ type: 'output_text', text: JSON.stringify({ scores }) }] }],
 });
 
-test('image work shares one request across callers, recovers after failure, and retains old cache keys',async()=>{
+test('image cache coalesces work, recovers from failure, and isolates scoring contracts',{timeout:5000},async()=>{
  const original=globalThis.fetch,oldKey=config.openaiKey,query=`shared-image-${Date.now()}`,image=Buffer.from('synthetic test image');
  const cacheFile=(version:string,count:number)=>path.join(process.cwd(),'.semvod/cache',`${hash(`${version}:${config.model}:${query}:${count}:${hash(image)}`)}.json`);
- const single=cacheFile('visual-v3',1),coarse=cacheFile('visual-v4-score-only',2);
+ const single=cacheFile(visionConfig.singleFrameVersion,1),coarse=cacheFile(visionConfig.coarseVersion,2),old=cacheFile('visual-v3',1);
  const stats=():SearchResult['stats']=>({sheets:0,visionCalls:0,cacheHits:0,refined:0,elapsedMs:0,inputTokens:0,outputTokens:0});
  let started!:()=>void,release!:()=>void,calls=0;
  const requestStarted=new Promise<void>(resolve=>{started=resolve;}),gate=new Promise<void>(resolve=>{release=resolve;});
  config.openaiKey='test-only';
+ await atomicJson(old,[{cell:1,score:10,reason:'old rubric must not be reused'}]);
  globalThis.fetch=async()=>{
   calls++;
   if(calls===1){started();await gate;return Response.json({error:{message:'temporary failure'}},{status:500});}
@@ -40,7 +41,7 @@ test('image work shares one request across callers, recovers after failure, and 
   globalThis.fetch=async()=>{throw Error('Compatible disk caches must not send another request');};
   const warm=stats();await cachedScore(query,image,1,warm);await cachedScore(query,image,2,warm);
   assert.equal(warm.visionCalls,0);assert.equal(warm.cacheHits,2);
- }finally{release();globalThis.fetch=original;config.openaiKey=oldKey;await Promise.all([single,coarse].map(file=>fs.rm(file,{force:true})));}
+ }finally{release();globalThis.fetch=original;config.openaiKey=oldKey;await Promise.all([single,coarse,old].map(file=>fs.rm(file,{force:true})));}
 });
 
 test('live search memoizes paid calls, fans out duplicate frames, and invalidates when model changes',async()=>{
@@ -88,4 +89,24 @@ test('longer sessions process at most three sheets concurrently and count actual
  config.openaiKey='test-only';globalThis.fetch=async(input,init)=>{if(String(input).endsWith('/moderations'))return Response.json({results:[{flagged:false}]});const body=JSON.parse(String(init?.body)),count=Number(/all (\d+) numbered/.exec(body.input[0].content[0].text)![1]);active++;maximum=Math.max(active,maximum);calls++;await new Promise(r=>setTimeout(r,30));active--;return visionResponse(Array.from({length:count},(_,i)=>({cell:i+1,score:0,reason:'absent'})));};
  try{await fs.mkdir(path.join(dir,'frames'),{recursive:true});const frames=Array.from({length:145},(_,i)=>({id:i,t:i*2,file:`frames/${i}.jpg`}));await Promise.all(frames.map(async f=>sharp({create:{width:32,height:18,channels:3,background:{r:f.id,g:(f.id*3)%256,b:(f.id*7)%256}}}).jpeg({quality:100}).toFile(path.join(dir,f.file))));await atomicJson(path.join(dir,'index.json'),{id,title:'test',startedAt:new Date().toISOString(),duration:290,status:'complete',frames});const r=await search(id,`parallel ${Date.now()}`);assert.equal(r.stats.sheets,4);assert.equal(maximum,3);assert.equal(calls,4);assert.equal(r.stats.inputTokens,400);assert.equal(r.stats.outputTokens,80);assert.equal(r.hits.length,0);}
  finally{globalThis.fetch=native;config.openaiKey=oldKey;await fs.rm(dir,{recursive:true,force:true});}
+});
+
+test('chat matches cannot displace stronger visual evidence from the refinement budget',async()=>{
+ const id=`test-modality-${Date.now()}`,dir=sessionDir(id),native=globalThis.fetch,oldKey=config.openaiKey,query=`visual object ${Date.now()}`;
+ config.openaiKey='test-only';
+ globalThis.fetch=async(url,options)=>{
+  if(String(url).endsWith('/moderations'))return Response.json({results:[{flagged:false}]});
+  const body=JSON.parse(String(options?.body)),count=Number(/all (\d+) numbered/.exec(body.input[0].content[0].text)![1]);
+  return visionResponse(Array.from({length:count},(_,i)=>({cell:i+1,score:count===1?0:i===10?8:3,...(count===1?{reason:'not visually present'}:{})})));
+ };
+ try{
+  await fs.mkdir(path.join(dir,'frames'),{recursive:true});
+  const frames=Array.from({length:11},(_,i)=>({id:i,t:i*20,file:`frames/${i}.jpg`}));
+  await Promise.all(frames.map(f=>sharp({create:{width:32,height:18,channels:3,background:{r:f.id*20,g:90,b:70}}}).jpeg().toFile(path.join(dir,f.file))));
+  await atomicJson(path.join(dir,'index.json'),{id,title:'modality allocation',startedAt:new Date().toISOString(),duration:220,status:'complete',frames});
+  await fs.writeFile(path.join(dir,'chat.jsonl'),frames.slice(0,10).map(f=>JSON.stringify({t:f.t,user:'viewer',text:query})).join('\n'));
+  const result=await search(id,query);
+  assert.equal(result.stats.refined,10);assert.equal(result.scores[10].visualStage,'refined');assert.equal(result.scores[10].visualScore,0);
+  assert.equal(result.scores[9].visualStage,'coarse');assert.equal(result.scores[9].chatScore,10);
+ }finally{globalThis.fetch=native;config.openaiKey=oldKey;await fs.rm(dir,{recursive:true,force:true});}
 });

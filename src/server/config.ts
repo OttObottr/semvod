@@ -30,8 +30,8 @@ export const searchConfig = {
   chatWeight: chatScoreWeight,
 } as const;
 export const visionConfig = {
-  coarseVersion: 'visual-v4-score-only',
-  singleFrameVersion: 'visual-v3',
+  coarseVersion: 'visual-v5-whole-query-score-only',
+  singleFrameVersion: 'visual-v5-whole-query',
   requestTimeoutMs: 90000,
   moderationTtlMs: 86400000,
   minimumOutputTokens: 900,

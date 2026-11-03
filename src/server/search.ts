@@ -68,8 +68,9 @@ export async function search(id: string, rawQuery: string, liveDemo = false): Pr
     }));
   }
 
+  // Chat already supplies literal evidence; spend visual checks on the strongest visual candidates.
   const candidates = distinctHits(
-    rank(session.frames, visual, query, chat).filter(hit => hit.visualScore >= searchConfig.minScore && aliases.get(hit.id)?.[0] === hit.id),
+    rank(session.frames, visual, query, []).filter(hit => hit.visualScore >= searchConfig.minScore && aliases.get(hit.id)?.[0] === hit.id),
     searchConfig.maxRefinements,
     searchConfig.refinementGapSeconds,
   );
