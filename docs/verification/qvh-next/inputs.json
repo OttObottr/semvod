@@ -1,7 +1,7 @@
 {
   "acquisitionHash": "bf449658fc9340ab2244fb6a6ba747a04d0e4ce006b54d0d03c05504de7c25a5",
   "sources": {
-    "scripts/qvh-expansion.mjs": "8af1d5c6a2725cd279f8481c023d3d0a8823d23b108d6bb06d1d5528958b1eb2",
+    "scripts/qvh-expansion.mjs": "9d9fcf9f17cd558fe88e83b86d30ee6fc0bf314f35b9b09b0a3a6bd7357de8b0",
     "scripts/eval-budget.mjs": "98158d33a76bb91183f481a8516754d9c2249f38783697c44c22c3456d989695",
     "src/server/search.ts": "6091f48808aaa98e2ce818ccd799a32d10096d935c15f53142bb649b2d1ff0ff",
     "src/server/vision.ts": "b3584b655a76a1bfbf761c76240a1eaf21eea6cb2eb3f42c43c3f84a09d1559f",

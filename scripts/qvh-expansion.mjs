@@ -39,9 +39,13 @@ if(process.argv.includes('--prepare')){
  if(JSON.stringify(manifest.sources)!==JSON.stringify(sourceHashes())||manifest.queriesHash!==hash(fs.readFileSync(queriesFile)))throw Error('Frozen source/query changed');
  for(const v of manifest.videos){const folder=path.join(scratch,'sessions',v.session);if(hash(fs.readFileSync(path.join(folder,'index.json')))!==v.indexSha256||v.frames.some(f=>hash(fs.readFileSync(path.join(folder,f.file)))!==f.sha256))throw Error('Frame inputs changed');}
  process.loadEnvFile(path.join(root,'.env'));if(!process.env.OPENAI_API_KEY)throw Error('Missing local OpenAI key');process.env.NODE_ENV='test';process.env.OPENAI_MODEL=manifest.model;
- const nativeFetch=globalThis.fetch,ledgerFile=path.join(root,'.semvod/real-footage/spend.json'),start=read(ledgerFile).requests.length,pay=evaluationBudget(root);
+ const nativeFetch=globalThis.fetch,ledgerFile=path.join(root,'.semvod/real-footage/spend.json');
+ if(read(ledgerFile).requests.some(r=>r.arm==='qvh-next-openai'))throw Error('This phase already attempted inference; no automatic restart');
+ const pay=evaluationBudget(root);
  const result={manifestHash:hash(fs.readFileSync(manifestFile)),model:manifest.model,phaseCapUsd:.10,rows:[],requests:[]};let queue=Promise.resolve(),stop=false;
- const spent=()=>read(ledgerFile).requests.slice(start).reduce((s,r)=>s+(r.estimatedUsd??r.reservedUsd),0);
+ write(predictionsFile,result); // Persist the one-shot marker before the first network request.
+ const phaseRequests=()=>read(ledgerFile).requests.filter(r=>r.arm==='qvh-next-openai');
+ const spent=()=>phaseRequests().reduce((s,r)=>s+(r.estimatedUsd??r.reservedUsd),0);
  globalThis.fetch=(url,options)=>{
   if(String(url)==='https://api.openai.com/v1/moderations')return nativeFetch(url,options);
   return queue=queue.then(async()=>{
@@ -60,7 +64,7 @@ if(process.argv.includes('--prepare')){
   if(stop)row.error='Unattempted after budget or transport failure';else try{const output=await search(video.session,q.query),repeat=await search(video.session,q.query);if(repeat.stats.visionCalls!==0)throw Error('Repeat cache missed');Object.assign(row,{windows:windows(output.hits,output.scores,video.duration),hits:output.hits.map(({reason,...r})=>r),scores:output.scores.map(({reason,...r})=>r),stats:output.stats,repeatStats:repeat.stats});}catch(e){row.error=e.message;if(!e.message.includes('flagged by moderation'))stop=true;}
   result.rows.push(row);result.accountedUsd=spent();write(predictionsFile,result);console.log(`Recorded query ${q.qid}: ${row.error?'failure':'complete'}; accounted $${spent().toFixed(6)}`);
  }
- await Promise.allSettled([queue]);result.accountedUsd=spent();result.newRequests=read(ledgerFile).requests.slice(start);write(predictionsFile,result);
+ await Promise.allSettled([queue]);result.accountedUsd=spent();result.newRequests=phaseRequests();write(predictionsFile,result);
 }else if(process.argv.includes('--grade')){
  const manifest=read(manifestFile),predictions=read(predictionsFile),goldFile=path.join(scratch,'gold.jsonl');
  if(predictions.manifestHash!==hash(fs.readFileSync(manifestFile))||hash(fs.readFileSync(goldFile))!==manifest.goldHash)throw Error('Frozen inputs differ');
