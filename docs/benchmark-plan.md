@@ -23,9 +23,13 @@ The next three videos in the fixed CC-BY validation hash order supplied 12 offic
 | --- | ---: | ---: |
 | Consensus R@1 / R@5 | 1/12 / 3/12 | 3/12 / 6/12 |
 | Mean temporal IoU | 22.92% | 45.14% |
+| Mean absolute midpoint offset, answered queries | 6.81 s | 4.75 s |
+| Queries returning an interval | 9/12 | 12/12 |
 | Unsupported matches on completed absence controls | 0/3 | 2/3 |
 | Cost across both groups | $0.0127324 | $0.0071604 |
 | Image requests across both groups | 35 | 15 |
+
+Timing error compares the first raw predicted interval's midpoint with each annotator interval's midpoint, averaging absolute offsets within each query, then across answered queries. Labels use five-second bins, so this is not exact-frame error. Misses are excluded from that mean and shown in coverage; rejecting answers can lower the mean without improving their timestamps.
 
 Five separate absence controls were manually reviewed against all sampled frames before inference; two were blocked by moderation and are excluded from the completed-control denominator. These are sampled-evidence controls, not official negative labels or proof of full-video absence. The candidate invented support for a train stopping beside the camera and a crab walking across the seabed. It also lost one existing top-five success on the official queries.
 
