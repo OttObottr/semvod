@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight, Check, ChevronRight, LoaderCircle, Monitor, Radio, ShieldCheck, X } from 'lucide-react';
 import { defaultRedirectUri } from '../shared/settings';
 import type { Session } from '../shared/types';
 import { api, formatTime, frameUrl, type Status } from './ui';
+
+const focusable = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 interface WorkspaceDialogProps {
   mode: 'setup' | 'library' | null;
@@ -20,6 +22,23 @@ export default function WorkspaceDialog({
 }: WorkspaceDialogProps) {
   // Keep this component mounted while closed, preserving the last OBS test result.
   const [obsTest, setObsTest] = useState('');
+  const dialog = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (!mode) return;
+    const previous = document.activeElement as HTMLElement | null;
+    const focusFirst = () => dialog.current?.querySelector<HTMLElement>(focusable)?.focus();
+    const keepFocus = (event: FocusEvent) => {
+      if (!dialog.current?.contains(event.target as Node)) focusFirst();
+    };
+    focusFirst();
+    document.addEventListener('focusin', keepFocus);
+    return () => {
+      document.removeEventListener('focusin', keepFocus);
+      if (previous?.isConnected && !previous.matches(':disabled')) previous.focus();
+      else document.querySelector<HTMLElement>('[aria-label="Search your stream"]')?.focus();
+    };
+  }, [mode]);
 
   async function testObs() {
     setObsTest('Testing…');
@@ -37,7 +56,18 @@ export default function WorkspaceDialog({
     <div className="modal-backdrop" onMouseDown={event => {
       if (event.target === event.currentTarget) onClose();
     }}>
-      <section className="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <section ref={dialog} className="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" onKeyDown={event => {
+        event.stopPropagation();
+        if (event.key === 'Escape') { event.preventDefault(); onClose(); return; }
+        if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); return; }
+        if (event.key !== 'Tab') return;
+        const targets = Array.from(event.currentTarget.querySelectorAll<HTMLElement>(focusable));
+        const first = targets[0], last = targets.at(-1);
+        const target = event.shiftKey
+          ? document.activeElement === first ? last : undefined
+          : document.activeElement === last ? first : undefined;
+        if (target) { event.preventDefault(); target.focus(); }
+      }}>
         <button className="modal-close" aria-label="Close" onClick={onClose}><X size={19} /></button>
         <span className="eyebrow">YOUR LOCAL WORKSPACE</span>
         <h2 id="modal-title">{mode === 'setup' ? 'From stream to searchable.' : 'Your session library.'}</h2>

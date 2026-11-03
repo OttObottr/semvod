@@ -136,6 +136,7 @@ export default function App() {
   function selectMoment(hit?: Hit) {
     clipRequests.invalidate();
     linkRequests.invalidate();
+    setNotice('');
     setClipBusy(false);
     setSelected(hit);
     setCoverTitle('');
@@ -147,7 +148,6 @@ export default function App() {
     setQuery(nextQuery);
     setSearchBusy(true);
     setError('');
-    setNotice('');
     setResult(undefined);
     selectMoment();
     const generation = sessionGeneration.current;
