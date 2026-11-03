@@ -92,6 +92,8 @@ The subsequent no-hit audit traced all 16 abstentions: 15 queries received only 
 
 Contain comparison, frozen before new inference: repeat all 48 queries using the corrected sheets, identical model/prompt/ranking/interval adapter, and a pinned copy of the 185 prior image/moderation cache files. Preserve prior blocked queries and abstentions in the denominator; report every per-query regression and reference token cost including reused responses. No retries or parameter sweep. New spend capped at $0.06 within the existing shared cap, retaining the $0.02 request reservation. Hybrid cached/live wall time is not cold latency. This is a known-label development comparison, not a fresh holdout. Contract SHA-256: `cac0e14a61d01a78123bcb7d7c3474bd6b4c2a141a9b01b4fc12af4bbe0efcaf`.
 
+Contain comparison predictions frozen before grading: SHA-256 `a1e1b441e1ac01f7a43800b534d2cba15e284d930dbb0c103796a51006570ea8`.
+
 ## Reproduction and historical evidence
 
 The [immutable research snapshot](https://github.com/OttObottr/semvod/tree/53ecc81bd8d586265e0476db1ac6d61012e4f98a) preserves runners, protocols, raw published receipts, evaluation tests, failed attempts and limitations. [README instructions](../README.md#code-and-evidence) open it in a separate checkout. Current app tests stay in this repository; research tooling stays outside the working app.
