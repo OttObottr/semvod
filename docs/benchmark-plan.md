@@ -71,6 +71,8 @@ Independent preparation audits verified selection, media hashes, timestamps and 
 
 Before inference: all 48 prepared queries, unchanged production search, no chat/audio, one cold search followed by an identical warm search. Phase cap $0.12 within the existing shared cap; $0.02 reserved per request, no retries or fallback. Frozen interval adapter ranks all 21 official candidates by lexicographic overlap with existing ranked app windows (clip candidate seconds to available media; unavailable bins last; ties shorter then earlier). The [author’s evaluator](https://github.com/LisaAnne/LocalizingMoments/blob/b6a555c8134581305d0ed4716fbc192860e0b88c/utils/eval.py) averages the three best annotator ranks for R@1/R@5 and the three best top-prediction IoUs for mIoU, preserving duplicate votes and inclusive bin coordinates. Failures, unattempted queries and abstentions receive zero, retaining all 48 in the denominator. This evaluates production outputs through a fixed adapter, not a native DiDeMo model or a full-split leaderboard submission. Contract SHA-256: `9861592ebf9c4d4476feae42c1cb794d91ab7a76342310f047986a9501ad0821`.
 
+Complete predictions frozen before grading: SHA-256 `18b9d043a44d0973bfd464108ee85f44c4e5308dc2c2fd90f750db18479c0406`.
+
 ## Reproduction and historical evidence
 
 The [immutable research snapshot](https://github.com/OttObottr/semvod/tree/53ecc81bd8d586265e0476db1ac6d61012e4f98a) preserves runners, protocols, raw published receipts, evaluation tests, failed attempts and limitations. [README instructions](../README.md#code-and-evidence) open it in a separate checkout. Current app tests stay in this repository; research tooling stays outside the working app.
