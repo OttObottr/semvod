@@ -53,3 +53,5 @@ No embedding runtime, vector database, model-training framework, third-party SDK
 ## Temporal-context pilot commitment
 
 Before inference: compare production refinement with three chronological frames (center and nearest ±4 seconds, letterboxed) on four previously untested source videos. Selection uses a fixed 3 GiB archive prefix and excludes all 30 earlier parents; all four selected queries remain in the denominator. Coarse requests, model, ranking and interval adapter are shared; no retries or replacements. Combined cap: $0.08 within the existing ledger. Contract SHA-256 `aa9602efcc94ed75124c932e9c9d2f2bf66e3d355e85ae4e7802110794e2f25d`. Media and tooling stay in the separate benchmark workspace; predictions must be committed before grading.
+
+Complete predictions committed before grading: baseline SHA-256 `138168c651f40e4055d3800cf6bf2553e1fbda1d2327faa2f34fb31941df720c`; temporal SHA-256 `09d63461ff9e8a8c1d2f248c6d3d18aaf3498bbf8ed7a90d4eef9cc91d61bf95`.
