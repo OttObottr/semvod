@@ -9,19 +9,24 @@ The available evidence supports limited, reproducible comparisons rather than le
 | [Ego4D natural-language queries](https://ego4d-data.org/docs/benchmarks/episodic-memory/) | Hard everyday scenes, small objects and temporal relationships. Common metrics are R@1/R@5 at temporal IoU 0.3/0.5. | Requires a [dataset agreement and approved access](https://ego4d-data.org/docs/start-here/); not a no-account sample download. Use an untouched evaluation split, not prompt tuning on test labels. |
 | [Video-MME](https://github.com/MME-Benchmarks/Video-MME) | Supplemental audiovisual QA: 900 videos and 2,700 multiple-choice questions. Useful for audio-on/off comparisons. | Answer accuracy is not moment-retrieval accuracy. Published terms are academic research only, with commercial use/redistribution prohibited without permission. No dataset was downloaded for this product evaluation. |
 
-## Next frozen evaluation
+## QVHighlights holdout
 
-Preparation only, **$0 model spend**. The next QVHighlights set uses complete validation MP4s within the first 2 GiB of the authors' archive (ETag `217742cf39-5f48976492b8f`; 4 GiB decompression and 64 MiB member limits). Exclude the six original YouTube parents in [qvh-v1](verification/qvh-v1/inputs.json) and [qvh-next](verification/qvh-next/inputs.json). Sort remaining clip IDs by SHA-256 of `semvod-qvh-holdout-v2\n<clip ID>` and take at most 24 distinct parents, including every official query for each clip. Fewer than 12 parents means incomplete preparation; no outcome-based replacement. This is an access-constrained sample, not a hardest-case or representative benchmark.
+Current production `gpt-4.1-mini` search completed all **24 queries on 24 new source videos**: 1,774 frames, approximately 59.1 minutes, without chat or audio. This includes every eligible validation clip in the fixed 2 GiB archive prefix after excluding previously tested parents. The frozen hash rule ordered the entire eligible pool. [Selection and input commitments](https://github.com/OttObottr/semvod/blob/20f3dd1/docs/benchmark-plan.md#next-frozen-evaluation) preceded inference; this access-constrained sample is not representative of all streams.
 
-Media, separate query/gold files, preparation tools and detailed checks live outside this repository in a local `semvod-benchmarks/qvh-holdout` workspace. The frozen protocol SHA-256 is `c5ffef20f333f902547826812f9fa41b41b58e492e9aba31dc4784ee3536f8d7`; the preparer is `2dded198137fbc6a3d026faadf798d7d872ace8b59ead32af8115992d585e089`. No API keys or paid entry point are used during preparation.
+| Measure | Result |
+| --- | ---: |
+| R@1, temporal IoU ≥ 0.5 | 11/24 (45.8%) |
+| R@1, temporal IoU ≥ 0.7 | 10/24 (41.7%) |
+| Completed / operational failures | 24 / 0 |
+| Median successful-query latency, cold / warm | 14.293 s / 24.793 ms |
+| Warm-search network calls | 0 across all 24 |
+| Estimated total cost / uncertain charges | $0.0797524 / $0 |
 
-A future run must freeze its model, source and any comparison arm before inference, then freeze complete predictions before grading with the existing QV interval adapter. Report R@1 at temporal IoU 0.5/0.7, per-parent averages, failures, cold/warm latency and measured usage-based cost; retain all selected queries in the denominator. Proposed combined spending cap: **$0.20**, including uncertain charges, with no automatic retries. No spending is authorized by this preparation. Verified absent-event controls remain separate work: annotation gaps and mismatched queries are not trustworthy negative labels. Publish a compact, complete summary; keep raw logs local.
+The unchanged interval adapter and ranking were used with serial charged requests, isolated caches and no retries. Per-parent averages equal query averages because each video has one query. Cost covers 193 responses (116,437 input and 20,736 output tokens) at [published prices](https://developers.openai.com/api/docs/models/gpt-4.1-mini), conservatively ignoring cached-input discounts, within the $0.20 cap. It is not an account billing statement or a measured per-stream-hour price. Verified absent-event controls remain untested.
 
-**Prepared, not scored:** all 24 eligible clips from distinct new parents, 24 official queries, 1,774 frames, approximately 59.1 minutes. The hash rule ordered the whole eligible pool; it did not sample a larger population. Selection was frozen in `109fd19` before acquisition. Independent review verified every input/source hash and the decoder binary; no query text, gold windows or footage was viewed. Local manifest SHA-256: `0603e19952dc588e80f62773ae7cd2476f7a66f695d40601a882aea52443ab0c`. No paid calls or accuracy results yet.
+Independent review reconstructed every frame score, all 75 ranked hits, intervals and metrics from original receipts. Localization accuracy remains limited; this establishes a baseline, not an improvement or competitor comparison. Footage, separate query/gold files, tools and raw logs stay outside the repo in `semvod-benchmarks/qvh-holdout`.
 
-The separately authorized baseline run uses current production `gpt-4.1-mini` search, no chat/audio, isolated caches and the existing interval adapter and budget guard. Its $0.20 cap includes uncertain charges. Execution contract SHA-256, frozen before inference: `53adce1b9aae3de4735a36473d5caad6bd31ac8ca09e1d8a4f3abbec77088559`. Predictions and complete request receipts remain in the external benchmark workspace.
-
-All 24 predictions completed; their SHA-256 is `16d282383e035049c92cbae0c0795465485be32369f8f5861f92e71d5fefb3de`, committed before opening gold for grading.
+Execution contract SHA-256 `53adce1b9aae3de4735a36473d5caad6bd31ac8ca09e1d8a4f3abbec77088559` was committed in `06e9131` before inference. Complete predictions SHA-256 `16d282383e035049c92cbae0c0795465485be32369f8f5861f92e71d5fefb3de` was committed in `faa90bc` before gold grading.
 
 ## Competition exists
 
