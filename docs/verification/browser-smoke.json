@@ -1,0 +1,29 @@
+{
+  "commit": "bf0d75d4d37d48305987fa1a1d89f5eeb042f3de",
+  "browser": "Installed Google Chrome, headless; native CDP, no added packages",
+  "isolation": "Temporary profile and credential-free app/session copies; no user browser profile or screen capture",
+  "checks": [
+    "Initial sample loads 96 frames in real Chrome",
+    "Example search: dog",
+    "Example search: great moment",
+    "Example search: brightest blue",
+    "Example search: when I fell off the map",
+    "Unsupported sample query displays an error and clears old hits",
+    "Search recovers after an error",
+    "Hit selection updates preview",
+    "Timeline selection changes preview",
+    "Browser downloads a titled 1280x720 JPEG cover",
+    "Sample blocks real clip and VOD actions",
+    "Setup displays configured custom-port Twitch callback",
+    "Session switch clears previous search results",
+    "Command-K focuses search",
+    "390px viewport has no horizontal overflow",
+    "No uncaught JS exceptions or external page requests"
+  ],
+  "paidCalls": 0,
+  "limitations": [
+    "No OBS capture, live AI inference, OAuth or real Twitch clip creation in this run."
+  ],
+  "screenshotDesktop": "../screenshots/browser-smoke-desktop.png",
+  "screenshotMobile": "../screenshots/browser-smoke-mobile.png"
+}

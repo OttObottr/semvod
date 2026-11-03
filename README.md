@@ -103,6 +103,8 @@ Dependencies are pinned with a committed integrity lockfile. `.npmrc` disables a
 
 `npm test` builds with strict unused-code checks and runs 30 offline regression tests. Mock provider responses share a small fixture helper; the cases cover distinct cache, recording, clipping, UI race, security and evaluation-budget failures. No test requires an API key or external network. The [refactor receipt](docs/verification/modular-refactor.json) records before/after equivalence checks and their limits. The [Git-history credential audit](docs/verification/git-secret-audit.json) records what was scanned and what the scan cannot prove.
 
+[Real Chrome validation](docs/verification/browser-smoke.json) passed 16 checks on the offline workflow, including error recovery, timeline selection, cover download, session switching and the mobile layout. [Desktop](docs/screenshots/browser-smoke-desktop.png) · [Mobile](docs/screenshots/browser-smoke-mobile.png). The browser used an isolated profile and credential-free app; this run made no paid calls or real Twitch clips.
+
 ## Limits and troubleshooting
 
 **Accuracy is not established on real gameplay.** The submitted demo used eight distinct illustrated images. A post-submission [real-footage pilot](docs/verification/real-footage/README.md) adds 90 distinct NASA video frames and six visual queries: 4/4 positive first hits, 6/8 returned positive-query hits relevant, and 0/2 absent-query false alarms under provisional labels. Score-only coarse output reduced measured pilot cost by 32.9%. This is not a representative precision/recall result or a measured hour-long workload. Integration checks establish that the connections work; they do not establish search quality across arbitrary streams.
