@@ -19,6 +19,8 @@ A future run must freeze its model, source and any comparison arm before inferen
 
 **Prepared, not scored:** all 24 eligible clips from distinct new parents, 24 official queries, 1,774 frames, approximately 59.1 minutes. The hash rule ordered the whole eligible pool; it did not sample a larger population. Selection was frozen in `109fd19` before acquisition. Independent review verified every input/source hash and the decoder binary; no query text, gold windows or footage was viewed. Local manifest SHA-256: `0603e19952dc588e80f62773ae7cd2476f7a66f695d40601a882aea52443ab0c`. No paid calls or accuracy results yet.
 
+The separately authorized baseline run uses current production `gpt-4.1-mini` search, no chat/audio, isolated caches and the existing interval adapter and budget guard. Its $0.20 cap includes uncertain charges. Execution contract SHA-256, frozen before inference: `53adce1b9aae3de4735a36473d5caad6bd31ac8ca09e1d8a4f3abbec77088559`. Predictions and complete request receipts remain in the external benchmark workspace.
+
 ## Competition exists
 
 - [OpusClip ClipAnything](https://www.opus.pro/clipanything) supports prompt-based clipping using visual/audio/sentiment cues. It is a direct competitor, not merely an automatic highlights tool.
