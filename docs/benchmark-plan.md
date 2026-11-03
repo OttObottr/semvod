@@ -36,6 +36,20 @@ Before inference: compare fixed Apple Vision distance 0.30 with production searc
 
 Complete predictions frozen before grading: baseline SHA-256 `6d5b943fa3a4396275faccc29372b18d5941501938ef590c02c08d6b587f0a60`; grouped SHA-256 `dae036fb9e7abb00281bf16a1524542d9d444962337eb44315cddab437aefdeb`.
 
+All 30 queries completed in both arms. Reference token cost includes reused Responses; actual new spend for both arms was **$0.0706448**, across 146 new responses, with zero unknown charges. All 60 warm repeats made zero network calls.
+
+| Measure | Baseline | Grouped |
+| --- | ---: | ---: |
+| QV R@1, IoU ≥ 0.5 | 11/24 | 14/24 |
+| QV R@1, IoU ≥ 0.7 | 10/24 | 11/24 |
+| QV any top-five hit in a labeled window | 21/24 | 22/24 |
+| NASA positive first-hit matches | 3/4 | 4/4 |
+| Absent controls with hits | 0/2 | 0/2 |
+| Logical vision calls / coarse sheets | 217 / 54 | 210 / 51 |
+| Reference token cost | $0.0908828 | $0.0820700 |
+
+Independent review reconstructed all paired metrics, alias mappings and spend. **Not adopted.** Reference savings were 9.7%, below the fixed 10% gate. More importantly, QV queries 32, 657 and 8977 lost an existing threshold success or top-five match despite better aggregate results. A separate top-five coverage check rose from 28/38 to 31/38 windows but lost two previously covered windows (queries 666 and 8977). Grouping used 1,568 representatives for 1,864 frames, but 11 returned hits inherited another frame's evidence. NASA baseline was refreshed under the current schema, so its first-hit result differs from the older pilot. Cold wall times mix live inference and receipt replay and cannot establish a latency improvement. Runtime code and dependencies remain unchanged. This is development evidence, not a representative stream-quality guarantee.
+
 ## Reproduction and historical evidence
 
 The [immutable research snapshot](https://github.com/OttObottr/semvod/tree/53ecc81bd8d586265e0476db1ac6d61012e4f98a) preserves runners, protocols, raw published receipts, evaluation tests, failed attempts and limitations. [README instructions](../README.md#code-and-evidence) open it in a separate checkout. Current app tests stay in this repository; research tooling stays outside the working app.
