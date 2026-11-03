@@ -43,6 +43,7 @@ export async function search(id: string, rawQuery: string, liveDemo = false): Pr
   const query = normalizeQuery(rawQuery);
   if (!query || query.length > inputLimits.query) throw new Error(`Enter a search between 1 and ${inputLimits.query} characters.`);
   const [session, chat] = await Promise.all([loadSession(id), loadChat(id)]);
+  if (!session.frames.length) throw new Error('This session has no frames yet. Record a stream or choose another session.');
   const stats = { sheets: 0, visionCalls: 0, cacheHits: 0, refined: 0, elapsedMs: 0, inputTokens: 0, outputTokens: 0 };
   if (session.demo && !liveDemo) {
     const fixture = await readJson<Record<string, SearchResult>>(path.join(sessionDir(id), 'searches.json'));

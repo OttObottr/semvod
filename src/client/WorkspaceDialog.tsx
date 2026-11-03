@@ -75,7 +75,7 @@ export default function WorkspaceDialog({
           <div className="session-list">
             {sessions.map(session => (
               <button key={session.id} onClick={() => onSelectSession(session.id)}>
-                <img src={frameUrl(session.id, 0)} alt="" />
+                {session.frameCount ? <img src={frameUrl(session.id, 0)} alt="" /> : <div className="session-art"><Monitor size={24} aria-hidden="true" /></div>}
                 <div>
                   <strong>{session.title}</strong>
                   <span>

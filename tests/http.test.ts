@@ -26,6 +26,9 @@ test('production server serves the demo and covers, and blocks cross-origin muta
   const session=await fetch(base+'/api/session?id=demo').then(r=>r.json());assert.equal(session.frames.length,96);
   const post=(data:unknown,headers:Record<string,string>={})=>fetch(base+'/api/search',{method:'POST',headers:{'Content-Type':'application/json','X-Semvod-Client':'1',...headers},body:JSON.stringify(data)});
   const result=await post({sessionId:'demo',query:'dog'}).then(r=>r.json());assert.equal(result.mode,'demo');assert.equal(result.stats.visionCalls,0);
+  await fs.mkdir(path.join(dir,'sessions/empty'),{recursive:true});
+  await fs.writeFile(path.join(dir,'sessions/empty/index.json'),JSON.stringify({...session,id:'empty',demo:false,frames:[]}));
+  const empty=await post({sessionId:'empty',query:'dog'});assert.equal(empty.status,400);assert.match((await empty.json()).error,/no frames yet/);
   assert.equal((await post({sessionId:'demo',query:'dog'},{Origin:'https://evil.example'})).status,403);
   assert.equal((await post({sessionId:'demo',query:'dog'},{Origin:'null'})).status,403);
   const forgedHost=await new Promise<number>(resolve=>{const req=httpRequest({host:'127.0.0.1',port,path:'/api/status',headers:{Host:'evil.example'}},res=>{res.resume();resolve(res.statusCode!);});req.end();});assert.equal(forgedHost,403);

@@ -36,6 +36,7 @@ export default function App() {
   const sessionGeneration = useRef(0);
   const clipRequests = useRef(latestRequest()).current;
   const linkRequests = useRef(latestRequest()).current;
+  const hasFrames = !!session?.frames.length;
 
   async function refresh() {
     const [nextStatus, nextSessions] = await Promise.all([
@@ -144,7 +145,7 @@ export default function App() {
   }
 
   async function runSearch(nextQuery = query) {
-    if (!nextQuery.trim() || searchBusy || !session) return;
+    if (!nextQuery.trim() || searchBusy || !hasFrames) return;
     setQuery(nextQuery);
     setSearchBusy(true);
     setError('');
@@ -266,7 +267,9 @@ export default function App() {
           </div>
           <section className="session-strip">
             <div className="session-art">
-              <img src={frameUrl(sessionId, session?.frames[Math.floor((session?.frames.length || 1) / 3)]?.id || 0)} alt="Current session thumbnail" />
+              {session?.frames.length
+                ? <img src={frameUrl(sessionId, session.frames[Math.floor(session.frames.length / 3)].id)} alt="Current session thumbnail" />
+                : <Film size={24} aria-hidden="true" />}
             </div>
             <div className="session-label">
               <span className="micro">CURRENT SESSION {session?.demo && <span className="sample-pill">ILLUSTRATED SAMPLE</span>}</span>
@@ -284,7 +287,7 @@ export default function App() {
               <div><Clock3 size={15} /><strong>{formatTime(session?.duration || 0)}</strong><span>duration</span></div>
               <div><MessageSquare size={15} /><strong>{session?.chat.length || 0}</strong><span>messages</span></div>
             </div>
-            <span className="ready-badge"><span />{session?.status === 'recording' ? 'Recording' : 'Ready to explore'}</span>
+            <span className="ready-badge"><span />{!session ? 'Loading…' : session.status === 'recording' ? 'Recording' : hasFrames ? 'Ready to explore' : 'No frames yet'}</span>
           </section>
           <section className="search-section">
             <form className={`search-box ${searchBusy ? 'searching' : ''}`} onSubmit={event => {
@@ -295,13 +298,13 @@ export default function App() {
               <input
                 ref={searchRef}
                 aria-label="Search your stream"
-                placeholder="What are you looking for in your stream?"
+                placeholder={session && !hasFrames ? 'Record a stream or choose another session' : 'What are you looking for in your stream?'}
                 maxLength={inputLimits.query}
                 value={query}
                 onChange={event => setQuery(event.target.value)}
               />
               <kbd>⌘ K</kbd>
-              <button className="search-submit" disabled={searchBusy || !query.trim()}>
+              <button className="search-submit" disabled={searchBusy || !hasFrames || !query.trim()}>
                 {searchBusy ? <LoaderCircle size={16} className="spin" /> : <Sparkles size={16} />}
                 <span>{searchBusy ? 'Finding moments…' : 'Find moments'}</span>
                 {!searchBusy && <span className="enter-key">↵</span>}
@@ -310,7 +313,7 @@ export default function App() {
             <div className="search-hints">
               <span>Example searches</span>
               {sampleQueries.map(query => (
-                <button key={query} disabled={searchBusy} onClick={() => void runSearch(query)}>
+                <button key={query} disabled={searchBusy || !hasFrames} onClick={() => void runSearch(query)}>
                   {query}<ArrowUpRight size={11} />
                 </button>
               ))}
