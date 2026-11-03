@@ -30,6 +30,10 @@ Cost covers 193 responses, 116,437 input and 20,736 output tokens, at the record
 
 The temporal pilot used four hash-selected new videos from eight eligible clips in a fixed 3 GiB prefix, excluding all 30 earlier parents. Both arms completed without failures; eight coarse responses were reused. Local frame reduction was a development diagnostic, not a fresh holdout. No extra runtime package was added.
 
+## Frame-grouping comparison
+
+Before inference: compare fixed Apple Vision distance 0.30 with production search on all 24 prior QVHighlights queries and all six NASA controls (four positive, two absent). Preserve original timestamps and disclose representative-frame aliases. Reuse exact requests; refresh missing current-schema NASA controls within the same combined $0.10 cap. No retries or replacement queries. Adoption requires all 30 complete, no lost per-query QV IoU 0.5/0.7 or hit@5 successes, no NASA hit@1 loss/new absent-query hits, and at least 10% lower reference token cost including reused calls. This is a development comparison with known labels, not a new holdout. Tools and preflight diagnostics stay outside the app. Execution contract SHA-256: `23f208fb6af8998c1dfe64ed89aba8e3ca361848b45d581b1ffe28cb4299ba66`.
+
 ## Reproduction and historical evidence
 
 The [immutable research snapshot](https://github.com/OttObottr/semvod/tree/53ecc81bd8d586265e0476db1ac6d61012e4f98a) preserves runners, protocols, raw published receipts, evaluation tests, failed attempts and limitations. [README instructions](../README.md#code-and-evidence) open it in a separate checkout. Current app tests stay in this repository; research tooling stays outside the working app.
