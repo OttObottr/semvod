@@ -99,6 +99,8 @@ Independent comparison: R@1 stayed **4/48**, R@5 changed **9→10/48**, and mean
 
 Sequence experiment frozen before inference: all 48 known development queries, identical contained sheets and model, one request returning up to five ranked start/end cell spans. Chronological interpretation replaces independent-frame scoring and single-frame refinement together; this is a [NumPro-inspired](https://arxiv.org/abs/2411.10332) adaptation, not a replication or isolated component ablation. Cell endpoints map to frame times ±1 second, clipped to duration, then use the same 21-candidate overlap ranking and official consensus evaluator. Valid cached moderation blocks, empty answers and failures stay in the denominator. No retries or tuning; $0.06 phase cap within the unchanged shared allowance, with $0.02 reserved before each request. Runner/media remain outside the app. Contract SHA-256: `c5fa94b56cf2582aa4f864d89ba05248bb4a53d0f626bd58df812d406b6d8147` (preflight review added baseline/label integrity checks before any inference).
 
+Sequence predictions frozen before grading: SHA-256 `835808869773322e71e789273db853b6e12e60a02f067a38ce9d43f3cbec59a9`.
+
 ## Reproduction and historical evidence
 
 The [immutable research snapshot](https://github.com/OttObottr/semvod/tree/53ecc81bd8d586265e0476db1ac6d61012e4f98a) preserves runners, protocols, raw published receipts, evaluation tests, failed attempts and limitations. [README instructions](../README.md#code-and-evidence) open it in a separate checkout. Current app tests stay in this repository; research tooling stays outside the working app.
