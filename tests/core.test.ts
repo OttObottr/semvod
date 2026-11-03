@@ -21,7 +21,7 @@ test('top hits suppress adjacent near-identical moments',()=>{const hits=[0,2,4,
 test('VOD matching requires the correct stream and time interval',()=>{assert.equal(matchVod(session,[{...vod,stream_id:'wrong'},vod],30)?.id,'123');assert.equal(matchVod(session,[{...vod,created_at:'2026-11-02T10:00:00Z'}],30),undefined);assert.equal(vodDuration('1h2m3s'),3723);assert.equal(vodDuration('25s'),25);});
 test('clip offset is the end, includes recorder start delta, and clamps at VOD edges',()=>{assert.deepEqual(clipWindow(session,vod,30),{vodOffset:945,duration:30,moment:930});assert.equal(clipWindow({...session,startedAt:vod.created_at},vod,1).vodOffset,30);assert.equal(clipWindow({...session,startedAt:vod.created_at},vod,3720).vodOffset,3723);assert.throws(()=>clipWindow(session,{...vod,duration:'4s'},0));assert.equal(vodTimestampUrl('123',3661),'https://www.twitch.tv/videos/123?t=1h1m1s');});
 test('offline sample supports four queries with zero model calls',async()=>{for(const query of ['dog','great moment','brightest blue','when I fell off the map']){const r=await search('demo',query);assert.equal(r.mode,'demo');assert.equal(r.stats.visionCalls,0);assert.ok(r.hits.length>0);}await assert.rejects(search('demo','an arbitrary uncached query'),/offline sample/i);assert.equal((await loadSession('demo')).frames.length,96);assert.ok((await loadChat('demo')).length>0);});
-test('contact sheets deduplicate frames and publish complete images under concurrency',async()=>{
+test('contact sheets preserve frame edges, deduplicate and publish complete images under concurrency',async()=>{
  const id=`test-sheets-${Date.now()}`,dir=sessionDir(id);
  await fs.mkdir(path.join(dir,'frames'),{recursive:true});
  const toFile=sharp.prototype.toFile,rename=fs.rename;
@@ -37,13 +37,17 @@ test('contact sheets deduplicate frames and publish complete images under concur
   return rename(from,to);
  };
  try{
-  const image=await sharp({create:{width:384,height:216,channels:3,background:'#7799aa'}}).jpeg().toBuffer();
+  const image=await sharp(Buffer.from('<svg width="320" height="240"><path fill="#7799aa" d="M0 0h320v240H0z"/><path fill="red" d="M0 0h320v24H0z"/><path fill="lime" d="M0 216h320v24H0z"/></svg>')).jpeg().toBuffer();
   await fs.writeFile(path.join(dir,'frames/0.jpg'),image);await fs.writeFile(path.join(dir,'frames/1.jpg'),image);
   await atomicJson(path.join(dir,'index.json'),{...session,id,frames:[{id:0,t:0,file:'frames/0.jpg'},{id:1,t:2,file:'frames/1.jpg'}]});
   first=buildSheets(id);await writing;
   const [concurrent]=await buildSheets(id);
   const metadata=await sharp(path.join(dir,concurrent.file)).metadata();
   assert.equal(metadata.width,384);assert.equal(metadata.height,216);
+  const pixels=await sharp(path.join(dir,concurrent.file)).removeAlpha().raw().toBuffer();
+  const top=(8*384+192)*3,bottom=(208*384+192)*3;
+  assert.ok(pixels[top]>200&&pixels[top+1]<40,'top-edge content must survive');
+  assert.ok(pixels[bottom+1]>200&&pixels[bottom]<40,'bottom-edge content must survive');
   release();const [sheet]=await first;
   assert.equal(sheet.frames.length,1);assert.deepEqual(sheet.frames[0].duplicates,[1]);assert.equal(concurrent.hash,sheet.hash);
   const before=(await fs.stat(path.join(dir,sheet.file))).mtimeMs;

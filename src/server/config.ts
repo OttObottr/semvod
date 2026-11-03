@@ -43,7 +43,7 @@ export const visionConfig = {
 export const captureConfig = { intervalMs: 2000, width: 384, jpegQuality: 75 } as const;
 // Bump version when changing layout or rendering; existing paid image caches remain reusable.
 export const sheetConfig = {
-  version: 'sheet-v4-short-session-detail',
+  version: 'sheet-v5-preserve-frame',
   maxFrames: 48,
   detailedMaxFrames: 12,
   detailedWidth: 384,

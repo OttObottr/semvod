@@ -37,7 +37,7 @@ export async function buildSheets(id: string): Promise<Sheet[]> {
       const tiles = await Promise.all(frames.map(async (frame,i) => {
         const image=await fs.readFile(path.join(dir,frame.file));
         const label = Buffer.from(`<svg width="${width}" height="${height}"><rect width="31" height="23" fill="#101114"/><text x="7" y="16" fill="white" font-family="sans-serif" font-size="15" font-weight="bold">${i+1}</text></svg>`);
-        return {input:await sharp(image).resize(width,height,{fit:'cover'}).composite([{input:label}]).jpeg({quality:sheetConfig.tileQuality}).toBuffer(),left:(i%columns)*width,top:Math.floor(i/columns)*height};
+        return {input:await sharp(image).resize(width,height,{fit:'contain',background:'#151619'}).composite([{input:label}]).jpeg({quality:sheetConfig.tileQuality}).toBuffer(),left:(i%columns)*width,top:Math.floor(i/columns)*height};
       }));
       const image = await sharp({create:{width:columns*width,height:Math.ceil(frames.length/columns)*height,channels:3,background:'#151619'}}).composite(tiles).jpeg({quality:sheetConfig.sheetQuality}).toBuffer();
       await atomicWrite(path.join(dir,file), image);
