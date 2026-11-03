@@ -17,7 +17,7 @@ test('production server serves the demo and covers, and blocks cross-origin muta
   await new Promise<void>((resolve,reject)=>{const timer=setTimeout(()=>reject(new Error(log||'Server timeout')),10000);server.stdout.on('data',()=>{if(log.includes('SemVOD →')){clearTimeout(timer);resolve();}});server.on('exit',()=>{clearTimeout(timer);reject(new Error(log));});});
   const base=`http://127.0.0.1:${port}`;
   const page=await fetch(base);assert.equal(page.status,200);assert.match(await page.text(),/SemVOD/);
-  const status=await fetch(base+'/api/status').then(r=>r.json());assert.equal(status.openai,false);assert.equal(status.twitch,null);
+  const status=await fetch(base+'/api/status').then(r=>r.json());assert.equal(status.openai,false);assert.equal(status.twitch,null);assert.equal(status.redirectUri,`http://localhost:${port}/auth/twitch/callback`);
   const session=await fetch(base+'/api/session?id=demo').then(r=>r.json());assert.equal(session.frames.length,96);
   const post=(data:unknown,headers:Record<string,string>={})=>fetch(base+'/api/search',{method:'POST',headers:{'Content-Type':'application/json','X-Semvod-Client':'1',...headers},body:JSON.stringify(data)});
   const result=await post({sessionId:'demo',query:'dog'}).then(r=>r.json());assert.equal(result.mode,'demo');assert.equal(result.stats.visionCalls,0);

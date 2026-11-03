@@ -1,4 +1,5 @@
 import path from 'node:path';
+import { defaultClipTitle, inputLimits } from '../shared/settings.js';
 import { config } from './config.js';
 import { atomicJson, readJson, root } from './store.js';
 import type { Session } from '../shared/types.js';
@@ -70,7 +71,7 @@ export async function createClip(session: Session,t: number,title: string) {
   try {
     if (identity.user_id!==session.broadcasterId) throw new Error('Connect the broadcaster account that owns this recording.');
     if (!identity.scopes.includes('channel:manage:clips')) throw new Error('Reconnect Twitch to grant channel:manage:clips.');
-    const params = new URLSearchParams({editor_id:identity.user_id,broadcaster_id:session.broadcasterId!,vod_id:vod.id,vod_offset:String(window.vodOffset),duration:String(window.duration),title:title.slice(0,140)||'A moment found with SemVOD'});
+    const params = new URLSearchParams({editor_id:identity.user_id,broadcaster_id:session.broadcasterId!,vod_id:vod.id,vod_offset:String(window.vodOffset),duration:String(window.duration),title:title.slice(0,inputLimits.clipTitle)||defaultClipTitle});
     const result = await helix<{data:{id:string;edit_url:string}[]}>(`videos/clips?${params}`,'POST');
     const clip = result.data[0]; if (!clip) throw new Error('Twitch did not return a clip.');
     return {...clip,url:`https://clips.twitch.tv/${encodeURIComponent(clip.id)}`,fallbackUrl,pending:true};

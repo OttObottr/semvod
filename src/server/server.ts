@@ -4,7 +4,8 @@ import path from 'node:path';
 import { randomBytes, timingSafeEqual } from 'node:crypto';
 import sharp from 'sharp';
 import { config } from './config.js';
-import { loadSession, listSessions, loadChat, sessionDir, root, xml } from './store.js';
+import { inputLimits, defaultClipTitle } from '../shared/settings.js';
+import { loadSession, listSessions, loadChat, sessionDir, root, xml, normalizeQuery } from './store.js';
 import { buildHype, buildSheets } from './indexer.js';
 import { runSearch } from './search.js';
 import { Recorder } from './recorder.js';
@@ -13,7 +14,7 @@ import { createClip, clipStatus, exchangeCode, resolveVod, SCOPES, validateIdent
 export const recorder=new Recorder();
 async function body(req:IncomingMessage){let raw='';for await(const chunk of req){raw+=chunk;if(Buffer.byteLength(raw)>8192)throw new Error('Request too large');}return raw?JSON.parse(raw):{};}
 function json(res:ServerResponse,data:unknown,status=200){res.writeHead(status,{'Content-Type':'application/json','Cache-Control':'no-store'});res.end(JSON.stringify(data));}
-function textInput(value:unknown,max=200){if(typeof value!=='string'||!value.trim()||value.length>max)throw new Error(`Expected text between 1 and ${max} characters`);return value.trim();}
+function textInput(value:unknown,max:number=inputLimits.query){if(typeof value!=='string'||!value.trim()||value.length>max)throw new Error(`Expected text between 1 and ${max} characters`);return value.trim();}
 function seconds(value:unknown,duration:number){const n=Number(value);if(!Number.isFinite(n)||n<0||n>duration)throw new Error('Invalid moment timestamp');return n;}
 const oauthStates=new Map<string,number>();
 export async function startServer(dev=false,demo=false){
@@ -29,23 +30,23 @@ export async function startServer(dev=false,demo=false){
     if(req.method!=='GET'&&req.method!=='HEAD'&&req.headers['x-semvod-client']!=='1')return json(res,{error:'Missing local client header'},403);
     if(p==='/api/status'){
       const identity=await validateIdentity().catch(()=>null);
-      return json(res,{demo,openai:!!config.openaiKey,model:config.model,twitchConfigured:!!config.twitchClientId&&!!config.twitchSecret,twitch:identity?{login:identity.login,id:identity.user_id}:null,obsConfigured:!!config.obsPassword,recording:recorder.session?.status==='recording'?recorder.session.id:null});
+      return json(res,{demo,openai:!!config.openaiKey,model:config.model,redirectUri:config.redirectUri,twitchConfigured:!!config.twitchClientId&&!!config.twitchSecret,twitch:identity?{login:identity.login,id:identity.user_id}:null,obsConfigured:!!config.obsPassword,recording:recorder.session?.status==='recording'?recorder.session.id:null});
     }
     if(p==='/api/sessions'&&req.method==='GET')return json(res,(await listSessions()).map(s=>({...s,frames:undefined,frameCount:s.frames.length})));
     if(p==='/api/session'&&req.method==='GET'){
       const id=url.searchParams.get('id')||'demo';const session=await loadSession(id);const chat=await loadChat(id);return json(res,{...session,chat,hype:buildHype(chat,session.duration)});
     }
     if(p==='/api/search'&&req.method==='POST'){
-      const b=await body(req);const id=textInput(b.sessionId,100),query=textInput(b.query);return json(res,await runSearch(JSON.stringify({id,query:query.normalize('NFKC').trim().replace(/\s+/g,' ').toLowerCase(),liveDemo:b.liveDemo===true})));
+      const b=await body(req);const id=textInput(b.sessionId,inputLimits.sessionId),query=textInput(b.query);return json(res,await runSearch(JSON.stringify({id,query:normalizeQuery(query),liveDemo:b.liveDemo===true})));
     }
     if(p==='/api/obs/test'&&req.method==='POST'){
       const obs=new OBSClient();try{await obs.connect(config.obsUrl,config.obsPassword);const result=await obs.call('GetCurrentProgramScene');return json(res,{ok:true,scene:result.currentProgramSceneName});}finally{obs.close();}
     }
     if(p==='/api/record/start'&&req.method==='POST'){const b=await body(req);return json(res,await recorder.start(b.chat!==false));}
     if(p==='/api/record/stop'&&req.method==='POST'){const session=await recorder.stop();if(session)await buildSheets(session.id);return json(res,session||{error:'No active recording'});}
-    if(p==='/api/clip'&&req.method==='POST'){const b=await body(req);const s=await loadSession(textInput(b.sessionId,100));return json(res,await createClip(s,seconds(b.t,s.duration),textInput(b.title||'Found with SemVOD',140)));}
+    if(p==='/api/clip'&&req.method==='POST'){const b=await body(req);const s=await loadSession(textInput(b.sessionId,inputLimits.sessionId));return json(res,await createClip(s,seconds(b.t,s.duration),textInput(b.title||defaultClipTitle,inputLimits.clipTitle)));}
     if(p==='/api/clip/status'&&req.method==='GET')return json(res,await clipStatus(textInput(url.searchParams.get('id'),150)));
-    if(p==='/api/vod-link'&&req.method==='POST'){const b=await body(req);const s=await loadSession(textInput(b.sessionId,100));const {vod,window}=await resolveVod(s,seconds(b.t,s.duration));return json(res,{url:vodTimestampUrl(vod.id,window.moment)});}
+    if(p==='/api/vod-link'&&req.method==='POST'){const b=await body(req);const s=await loadSession(textInput(b.sessionId,inputLimits.sessionId));const {vod,window}=await resolveVod(s,seconds(b.t,s.duration));return json(res,{url:vodTimestampUrl(vod.id,window.moment)});}
     if(p==='/auth/twitch'&&req.method==='GET'){
       if(!config.twitchClientId||!config.twitchSecret)throw new Error('Add TWITCH_CLIENT_ID and TWITCH_CLIENT_SECRET to .env, then restart.');
       for(const [state,expires] of oauthStates)if(expires<Date.now())oauthStates.delete(state);
@@ -64,7 +65,7 @@ export async function startServer(dev=false,demo=false){
       const [,id,type,n]=media;const session=await loadSession(id);const frame=session.frames.find(f=>f.id===Number(n));if(!frame)throw new Error('Frame not found');
       const source=path.join(sessionDir(id),frame.file);
       if(type==='frame'){res.writeHead(200,{'Content-Type':'image/jpeg','Cache-Control':'private, max-age=3600'});return res.end(await fs.readFile(source));}
-      const title=(url.searchParams.get('title')||'').slice(0,100);
+      const title=(url.searchParams.get('title')||'').slice(0,inputLimits.coverTitle);
       let image=sharp(source).resize(1280,720,{fit:'cover'});
       if(title){const chars=Array.from(title);const lines=chars.length<=24?[title]:Array.from({length:Math.ceil(chars.length/32)},(_,i)=>chars.slice(i*32,i*32+32).join(''));const overlay=Buffer.from(`<svg width="1280" height="720"><defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".85"/></linearGradient></defs><path d="M0 450h1280v270H0z" fill="url(#bg)"/>${lines.map((line,i)=>`<text x="50" y="${660-(lines.length-1-i)*42}" font-family="sans-serif" font-size="${chars.length<=24?48:36}" font-weight="bold" fill="white">${xml(line)}</text>`).join('')}</svg>`);image=image.composite([{input:overlay}]);}
       res.writeHead(200,{'Content-Type':'image/jpeg','Content-Disposition':`attachment; filename="semvod-${id}-${n}.jpg"`});return res.end(await image.jpeg({quality:90}).toBuffer());

@@ -97,6 +97,12 @@ The server binds to `127.0.0.1`, checks Host and Origin, and requires a custom h
 
 Dependencies are pinned with a committed integrity lockfile. `.npmrc` disables automatic installation scripts; `npm ci` does not run package lifecycle hooks. The only runtime packages are React, React DOM, Lucide icons, and Sharp. The build uses Vite, TypeScript, and tsx. `npm audit` reports known advisories, not proof that software is malware-free.
 
+## Code layout and checks
+
+`src/client/App.tsx` owns application state; `Timeline`, `MomentPanel`, and `WorkspaceDialog` own their views. `src/server/search.ts` coordinates ranking and refinement; `vision.ts` owns provider requests and reusable image scores. Public input limits live in `src/shared/settings.ts`; server-only tuning and environment configuration live in `src/server/config.ts`. Secrets never belong in shared settings.
+
+`npm test` builds with strict unused-code checks and runs 30 offline regression tests. Mock provider responses share a small fixture helper; the cases cover distinct cache, recording, clipping, UI race, security and evaluation-budget failures. No test requires an API key or external network. The [refactor receipt](docs/verification/modular-refactor.json) records before/after equivalence checks and their limits. The [Git-history credential audit](docs/verification/git-secret-audit.json) records what was scanned and what the scan cannot prove.
+
 ## Limits and troubleshooting
 
 **Accuracy is not established on real gameplay.** The submitted demo used eight distinct illustrated images. A post-submission [real-footage pilot](docs/verification/real-footage/README.md) adds 90 distinct NASA video frames and six visual queries: 4/4 positive first hits, 6/8 returned positive-query hits relevant, and 0/2 absent-query false alarms under provisional labels. Score-only coarse output reduced measured pilot cost by 32.9%. This is not a representative precision/recall result or a measured hour-long workload. Integration checks establish that the connections work; they do not establish search quality across arbitrary streams.

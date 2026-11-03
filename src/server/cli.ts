@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import { config } from './config.js';
 import { buildSheets } from './indexer.js';
 import { Recorder } from './recorder.js';
 const [command='serve',...args]=process.argv.slice(2);

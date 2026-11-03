@@ -1,7 +1,8 @@
+import { sampleQueries } from '../src/shared/settings.js';
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
-import { atomicJson, hash, xml } from '../src/server/store.js';
+import { atomicJson, hash } from '../src/server/store.js';
 import { chatRelevance, buildSheets } from '../src/server/indexer.js';
 import { distinctHits } from '../src/server/search.js';
 import type { ChatMessage, Frame, Hit, SearchResult, Session } from '../src/shared/types.js';
@@ -38,7 +39,7 @@ for(let t=1;t<192;t+=4){chat.push({t,user:['mossyboots','lunara','pixelpals','co
 for(const [t,text] of [[43,'DOG!!'],[45,'pet the dog'],[48,'we have a new friend'],[51,'the dog is following you 😭'],[58,'good boy'],[90,'brightest blue I have ever seen'],[95,'that gate is GLOWING'],[130,'great moment'],[132,'LUL LUL LUL'],[133,'KEKW'],[134,'when you fell off the map LUL'],[135,'NOOOO'],[136,'POG KEKW'],[143,'the dog waited for us'],[146,'DOG is back']] as [number,string][]){for(let n=0;n<(t>=130&&t<=136?5:2);n++)chat.push({t:t+n*.2,user:['fernfriend','pixelpals','lunara','mossyboots','cozycat'][n],text});}
 chat.sort((a,b)=>a.t-b.t);await atomicJson(path.join(dir,'index.json'),session);await fs.writeFile(path.join(dir,'chat.jsonl'),chat.map(m=>JSON.stringify(m)).join('\n')+'\n');
 const fixtures:Record<string,SearchResult>={};
-for(const query of ['dog','great moment','brightest blue','when I fell off the map']){
+for(const query of sampleQueries){
  const scores:Hit[]=frames.map(f=>{let v=0;if(query==='dog')v=(f.t>=38&&f.t<=76||f.t>=140&&f.t<=158)?8+(Math.sin(f.id)*.5+.5)*1.7:.2;
  if(query==='brightest blue')v=f.t>=82&&f.t<=122?8+Math.sin(f.id)*.8:.4;
  if(query==='when I fell off the map')v=f.t>=126&&f.t<=140?7+Math.sin(f.id)*1.5:0;

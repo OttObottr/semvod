@@ -4,8 +4,44 @@ import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
 import { config } from '../src/server/config.js';
-import { atomicJson, sessionDir } from '../src/server/store.js';
+import { atomicJson, hash, readJson, sessionDir } from '../src/server/store.js';
 import { search, runSearch } from '../src/server/search.js';
+import { cachedScore } from '../src/server/vision.js';
+import type { SearchResult } from '../src/shared/types.js';
+
+// Keep provider transport scaffolding shared; each test supplies its own evidence and assertions.
+const visionResponse = (scores: unknown[]) => Response.json({
+ usage: { input_tokens: 100, output_tokens: 20 },
+ output: [{ content: [{ type: 'output_text', text: JSON.stringify({ scores }) }] }],
+});
+
+test('image work shares one request across callers, recovers after failure, and retains old cache keys',async()=>{
+ const original=globalThis.fetch,oldKey=config.openaiKey,query=`shared-image-${Date.now()}`,image=Buffer.from('synthetic test image');
+ const cacheFile=(version:string,count:number)=>path.join(process.cwd(),'.semvod/cache',`${hash(`${version}:${config.model}:${query}:${count}:${hash(image)}`)}.json`);
+ const single=cacheFile('visual-v3',1),coarse=cacheFile('visual-v4-score-only',2);
+ const stats=():SearchResult['stats']=>({sheets:0,visionCalls:0,cacheHits:0,refined:0,elapsedMs:0,inputTokens:0,outputTokens:0});
+ let started!:()=>void,release!:()=>void,calls=0;
+ const requestStarted=new Promise<void>(resolve=>{started=resolve;}),gate=new Promise<void>(resolve=>{release=resolve;});
+ config.openaiKey='test-only';
+ globalThis.fetch=async()=>{
+  calls++;
+  if(calls===1){started();await gate;return Response.json({error:{message:'temporary failure'}},{status:500});}
+  return visionResponse([{cell:1,score:7,reason:'test evidence'}]);
+ };
+ try{
+  const a=stats(),b=stats(),first=cachedScore(query,image,1,a);await requestStarted;
+  const outcomes=Promise.allSettled([first,cachedScore(query,image,1,b)]);
+  const deadline=Date.now()+1000;while(!b.cacheHits&&Date.now()<deadline)await new Promise(resolve=>setTimeout(resolve,5));
+  assert.equal(b.cacheHits,1);release();assert.ok((await outcomes).every(r=>r.status==='rejected'));
+  assert.equal(calls,1);assert.equal(a.visionCalls+b.visionCalls,1);
+  const retry=stats();await cachedScore(query,image,1,retry);assert.equal(calls,2);assert.equal(retry.inputTokens,100);
+  assert.deepEqual(await readJson(single),[{cell:1,score:7,reason:'test evidence'}]);
+  await atomicJson(coarse,[{cell:1,score:4},{cell:2,score:0}]);
+  globalThis.fetch=async()=>{throw Error('Compatible disk caches must not send another request');};
+  const warm=stats();await cachedScore(query,image,1,warm);await cachedScore(query,image,2,warm);
+  assert.equal(warm.visionCalls,0);assert.equal(warm.cacheHits,2);
+ }finally{release();globalThis.fetch=original;config.openaiKey=oldKey;await Promise.all([single,coarse].map(file=>fs.rm(file,{force:true})));}
+});
 
 test('live search memoizes paid calls, fans out duplicate frames, and invalidates when model changes',async()=>{
  const id=`test-vision-${Date.now()}`;const dir=sessionDir(id);const originalFetch=globalThis.fetch;const originalKey=config.openaiKey;const originalModel=config.model;
@@ -13,7 +49,7 @@ test('live search memoizes paid calls, fans out duplicate frames, and invalidate
  globalThis.fetch=async(input,init)=>{
   const url=String(input),body=JSON.parse(String(init?.body));
   if(url.endsWith('/moderations')){moderationCalls++;return Response.json({results:[{flagged:false}]});}
-  if(url.endsWith('/responses')){visionCalls++;assert.equal(body.store,false);const count=Number(/all (\d+) numbered/.exec(body.input[0].content[0].text)?.[1]);assert.equal(body.text.format.schema.properties.scores.items.required.includes('reason'),count===1);const scores=Array.from({length:count},(_,i)=>({cell:i+1,score:count===1?2:8,...(count===1?{reason:'refined: weak evidence'}:{})}));return Response.json({usage:{input_tokens:100,output_tokens:20},output:[{content:[{type:'output_text',text:JSON.stringify({scores})}]}]});}
+  if(url.endsWith('/responses')){visionCalls++;assert.equal(body.store,false);const count=Number(/all (\d+) numbered/.exec(body.input[0].content[0].text)?.[1]);assert.equal(body.text.format.schema.properties.scores.items.required.includes('reason'),count===1);const scores=Array.from({length:count},(_,i)=>({cell:i+1,score:count===1?2:8,...(count===1?{reason:'refined: weak evidence'}:{})}));return visionResponse(scores);}
   throw new Error(`Unexpected network request in test: ${url}`);
  };
  config.openaiKey='test-only-not-a-real-key';
@@ -32,7 +68,7 @@ test('a candidate beyond the ten-frame refinement budget remains explicitly prov
  config.openaiKey='test-only';globalThis.fetch=async(input,init)=>{
   if(String(input).endsWith('/moderations'))return Response.json({results:[{flagged:false}]});
   const body=JSON.parse(String(init?.body)),count=Number(/all (\d+) numbered/.exec(body.input[0].content[0].text)![1]);calls++;
-  return Response.json({output:[{content:[{type:'output_text',text:JSON.stringify({scores:Array.from({length:count},(_,i)=>({cell:i+1,score:count===1?0:9,reason:count===1?'rejected on inspection':'sheet candidate'}))})}]}]});
+  return visionResponse(Array.from({length:count},(_,i)=>({cell:i+1,score:count===1?0:9,reason:count===1?'rejected on inspection':'sheet candidate'})));
  };
  try{
   await fs.mkdir(path.join(dir,'frames'),{recursive:true});const frames=Array.from({length:11},(_,i)=>({id:i,t:i*20,file:`frames/${i}.jpg`}));
@@ -49,7 +85,7 @@ test('moderation rejects a flagged query before sending any frame',async()=>{
 
 test('longer sessions process at most three sheets concurrently and count actual token usage',async()=>{
  const id=`test-parallel-${Date.now()}`,dir=sessionDir(id),native=globalThis.fetch,oldKey=config.openaiKey;let active=0,maximum=0,calls=0;
- config.openaiKey='test-only';globalThis.fetch=async(input,init)=>{if(String(input).endsWith('/moderations'))return Response.json({results:[{flagged:false}]});const body=JSON.parse(String(init?.body)),count=Number(/all (\d+) numbered/.exec(body.input[0].content[0].text)![1]);active++;maximum=Math.max(active,maximum);calls++;await new Promise(r=>setTimeout(r,30));active--;return Response.json({usage:{input_tokens:100,output_tokens:20},output:[{content:[{type:'output_text',text:JSON.stringify({scores:Array.from({length:count},(_,i)=>({cell:i+1,score:0,reason:'absent'}))})}]}]});};
+ config.openaiKey='test-only';globalThis.fetch=async(input,init)=>{if(String(input).endsWith('/moderations'))return Response.json({results:[{flagged:false}]});const body=JSON.parse(String(init?.body)),count=Number(/all (\d+) numbered/.exec(body.input[0].content[0].text)![1]);active++;maximum=Math.max(active,maximum);calls++;await new Promise(r=>setTimeout(r,30));active--;return visionResponse(Array.from({length:count},(_,i)=>({cell:i+1,score:0,reason:'absent'})));};
  try{await fs.mkdir(path.join(dir,'frames'),{recursive:true});const frames=Array.from({length:145},(_,i)=>({id:i,t:i*2,file:`frames/${i}.jpg`}));await Promise.all(frames.map(async f=>sharp({create:{width:32,height:18,channels:3,background:{r:f.id,g:(f.id*3)%256,b:(f.id*7)%256}}}).jpeg({quality:100}).toFile(path.join(dir,f.file))));await atomicJson(path.join(dir,'index.json'),{id,title:'test',startedAt:new Date().toISOString(),duration:290,status:'complete',frames});const r=await search(id,`parallel ${Date.now()}`);assert.equal(r.stats.sheets,4);assert.equal(maximum,3);assert.equal(calls,4);assert.equal(r.stats.inputTokens,400);assert.equal(r.stats.outputTokens,80);assert.equal(r.hits.length,0);}
  finally{globalThis.fetch=native;config.openaiKey=oldKey;await fs.rm(dir,{recursive:true,force:true});}
 });

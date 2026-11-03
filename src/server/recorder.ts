@@ -1,6 +1,6 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
-import { config } from './config.js';
+import { config, captureConfig } from './config.js';
 import { OBSClient } from './obs.js';
 import { atomicJson, hash, sessionDir } from './store.js';
 import { helix, validateIdentity } from './twitch.js';
@@ -40,13 +40,13 @@ export class Recorder {
   private chatState(status:string){if(this.session){this.session.chatStatus=status;void this.save().catch(console.error);}}
   private tick(){
     if(this.stopped)return;
-    this.capturePending=this.capture().catch(async error=>{this.session!.captureError=error.message;await this.save().catch(console.error);console.error('Capture:',error.message);}).finally(()=>{if(!this.stopped)this.timer=setTimeout(()=>this.tick(),2000);});
+    this.capturePending=this.capture().catch(async error=>{this.session!.captureError=error.message;await this.save().catch(console.error);console.error('Capture:',error.message);}).finally(()=>{if(!this.stopped)this.timer=setTimeout(()=>this.tick(),captureConfig.intervalMs);});
   }
   private async capture(){
     if(!this.obs.connected)await this.obs.connect(config.obsUrl,config.obsPassword);
     const {currentProgramSceneName}=await this.obs.call<{currentProgramSceneName:string}>('GetCurrentProgramScene');
     const t=this.elapsed();
-    const {imageData}=await this.obs.call<{imageData:string}>('GetSourceScreenshot',{sourceName:currentProgramSceneName,imageFormat:'jpg',imageWidth:384,imageCompressionQuality:75});
+    const {imageData}=await this.obs.call<{imageData:string}>('GetSourceScreenshot',{sourceName:currentProgramSceneName,imageFormat:'jpg',imageWidth:captureConfig.width,imageCompressionQuality:captureConfig.jpegQuality});
     const image=Buffer.from(imageData.split(',')[1],'base64');const id=this.session!.frames.length;
     const file=`frames/${String(id).padStart(6,'0')}.jpg`;await fs.writeFile(path.join(sessionDir(this.session!.id),file),image,{mode:0o600});
     this.session!.captureError=undefined;this.session!.frames.push({id,t:Number(t.toFixed(3)),file,hash:hash(image)});this.session!.duration=this.elapsed();await this.save();
