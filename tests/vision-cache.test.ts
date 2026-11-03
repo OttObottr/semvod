@@ -18,7 +18,7 @@ const visionResponse = (scores: unknown[]) => Response.json({
 test('image cache coalesces work, recovers from failure, and isolates scoring contracts',{timeout:5000},async()=>{
  const original=globalThis.fetch,oldKey=config.openaiKey,query=`shared-image-${Date.now()}`,image=Buffer.from('synthetic test image');
  const cacheFile=(version:string,count:number)=>path.join(process.cwd(),'.semvod/cache',`${hash(`${version}:${config.model}:${query}:${count}:${hash(image)}`)}.json`);
- const single=cacheFile(visionConfig.singleFrameVersion,1),coarse=cacheFile(visionConfig.coarseVersion,2),old=cacheFile('visual-v3',1);
+ const single=cacheFile(visionConfig.singleFrameVersion,1),coarse=cacheFile(visionConfig.coarseVersion,2),old=cacheFile('visual-v5-whole-query',1);
  const stats=():SearchResult['stats']=>({sheets:0,visionCalls:0,cacheHits:0,refined:0,elapsedMs:0,inputTokens:0,outputTokens:0});
  let started!:()=>void,release!:()=>void,calls=0;
  const requestStarted=new Promise<void>(resolve=>{started=resolve;}),gate=new Promise<void>(resolve=>{release=resolve;});
@@ -50,7 +50,7 @@ test('live search memoizes paid calls, fans out duplicate frames, and invalidate
  globalThis.fetch=async(input,init)=>{
   const url=String(input),body=JSON.parse(String(init?.body));
   if(url.endsWith('/moderations')){moderationCalls++;return Response.json({results:[{flagged:false}]});}
-  if(url.endsWith('/responses')){visionCalls++;assert.equal(body.store,false);const count=Number(/all (\d+) numbered/.exec(body.input[0].content[0].text)?.[1]);assert.equal(body.text.format.schema.properties.scores.items.required.includes('reason'),count===1);const scores=Array.from({length:count},(_,i)=>({cell:i+1,score:count===1?2:8,...(count===1?{reason:'refined: weak evidence'}:{})}));return visionResponse(scores);}
+  if(url.endsWith('/responses')){visionCalls++;assert.equal(body.store,false);const count=Number(/all (\d+) numbered/.exec(body.input[0].content[0].text)?.[1]);assert.equal(body.text.format.schema.properties.scores.minItems,count);assert.equal(body.text.format.schema.properties.scores.maxItems,count);assert.equal(body.text.format.schema.properties.scores.items.properties.cell.maximum,count);assert.equal(body.text.format.schema.properties.scores.items.properties.score.maximum,10);assert.equal(body.text.format.schema.properties.scores.items.required.includes('reason'),count===1);const scores=Array.from({length:count},(_,i)=>({cell:i+1,score:count===1?2:8,...(count===1?{reason:'refined: weak evidence'}:{})}));return visionResponse(scores);}
   throw new Error(`Unexpected network request in test: ${url}`);
  };
  config.openaiKey='test-only-not-a-real-key';
