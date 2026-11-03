@@ -26,8 +26,8 @@
     "No fresh AI inference, OBS capture, OAuth or Twitch clip creation in this pass.",
     "Temporary profiles and blocked provider transports are test isolation, not an OS sandbox."
   ],
-  "screenshotDesktop": "../screenshots/browser-smoke-desktop.png",
-  "screenshotMobile": "../screenshots/browser-smoke-mobile.png",
+  "screenshotDesktop": "https://github.com/OttObottr/semvod/blob/53ecc81bd8d586265e0476db1ac6d61012e4f98a/docs/screenshots/browser-smoke-desktop.png",
+  "screenshotMobile": "https://github.com/OttObottr/semvod/blob/53ecc81bd8d586265e0476db1ac6d61012e4f98a/docs/screenshots/browser-smoke-mobile.png",
   "modes": [
     "production",
     "development"
@@ -86,5 +86,21 @@
     "beforeMedianMs": 9.895333,
     "afterMedianMs": 0.066542,
     "scope": "15-run isolated CPU medians after warmup; not end-to-end search latency."
+  },
+  "cleanupRecheck": {
+    "checkedAt": "2026-11-03T04:09:07.967813+00:00",
+    "baseCommit": "53ecc81bd8d586265e0476db1ac6d61012e4f98a",
+    "scope": "Working-tree archive cleanup; runtime, sample, build config and retained app tests byte-identical to base. Lighthouse not rerun.",
+    "appCasesPassed": 28,
+    "archivedEvaluationCasesPassed": 4,
+    "browserChecksPerMode": 17,
+    "modes": [
+      "development",
+      "production"
+    ],
+    "realVideoSessions": 24,
+    "frameScoresMatched": 1774,
+    "coversVerified": 24,
+    "paidCalls": 0
   }
 }

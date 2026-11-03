@@ -1,8 +1,0 @@
-Shipped SemVOD: Ctrl+F for livestreams.
-
-Search captured visuals and chat, find matching moments on a timeline, and create clips.
-
-Open source. Built with OpenAI Codex for the Codex x TwitchCon Hackathon.
-
-Demo: https://youtube.com/watch?v=1-FCJHXmjm4
-Code: https://github.com/OttObottr/semvod

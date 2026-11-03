@@ -1,7 +1,0 @@
-{
-  "policy":"Frozen before audiovisual inference. Provisional speech windows derived from NASA's published captions, shifted by the 30-second excerpt offset. Caption timing is not independently human-adjudicated. These two additional queries are reported separately from the six visual queries. The model receives neither captions nor labels.",
-  "queries":[
-    {"session":"eval-nasa-lab","query":"when the speaker says the drop tower provides about five seconds of microgravity","windows":[[17.286,24.366]],"source":"https://images-assets.nasa.gov/video/GRC-2016-CM-0129.3/GRC-2016-CM-0129.3.vtt"},
-    {"session":"eval-nasa-kitchen","query":"when the speaker says the chicken needs 100 milliliters of hot water","windows":[[13.276,19.956]],"source":"https://images-assets.nasa.gov/video/jsc2023m000216_Frank_Rubio_SpaceKitchen_Cocina%20espacial_Spanish_HighQuality_1080_MP4/jsc2023m000216_Frank_Rubio_SpaceKitchen_Cocina%20espacial_Spanish_HighQuality_1080_MP4.srt"}
-  ]
-}

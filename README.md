@@ -1,139 +1,104 @@
 # SemVOD
 
-**Ctrl+F for your stream.**
+**Ctrl+F for your stream.** Search captured visuals and Twitch chat, find a moment on the timeline, download a cover, and create a Twitch clip.
 
-Find moments in your stream using visual descriptions and chat phrases.
+A local Node app captures small frames from OBS. Your OpenAI key pays only for uncached searches. No hosted backend, database, or account is needed for the sample.
 
-A local app captures small frames from OBS, records Twitch chat, and scores visual matches to your own search. A relevance heatmap sits beside chat energy. Select a moment, download a cover, and create a Twitch clip—or copy its VOD timestamp link.
+**[Demo video](https://www.youtube.com/watch?v=1-FCJHXmjm4)** · [Real Twitch clip](https://www.twitch.tv/ottobottr/clip/TardyResourcefulTurtleRuleFive-4N9rgxv50ZQTaF0g) · [Verification](docs/verification.md) · [Benchmarks](docs/benchmark-plan.md)
 
-**[Watch the 2:22 demo](https://www.youtube.com/watch?v=1-FCJHXmjm4)** · [Verified Twitch clip](https://www.twitch.tv/ottobottr/clip/TardyResourcefulTurtleRuleFive-4N9rgxv50ZQTaF0g) · [Integration evidence](docs/verification.md)
+![Visual-query timelines for dog, cat, and brightest blue](docs/verification/semantic-comparison.png)
 
-![Illustrated-fixture search scores: dog, cat, and brightest blue on one fixed scale](docs/verification/semantic-comparison.png)
+These timelines come from a test broadcast of eight original illustrations, not gameplay. All rows share a 0–10 relevance scale, not probabilities. The absent `cat` query stays flat. [Scores](https://github.com/OttObottr/semvod/blob/53ecc81bd8d586265e0476db1ac6d61012e4f98a/docs/verification/semantic-series.json) · [Plotting tool](https://github.com/OttObottr/semvod/blob/53ecc81bd8d586265e0476db1ac6d61012e4f98a/scripts/plot-comparison.mjs).
 
-Three searches on a real OBS/Twitch test broadcast containing eight original illustrated images, not gameplay. Each row shares the same 0–10 relevance scale; the stack shows relevance divided by ten, not probabilities. The absent `cat` query stays flat. [Raw scores](docs/verification/semantic-series.json) · [Rebuild the graphic](scripts/plot-comparison.mjs) · [App screenshot](docs/screenshots/real-dog-search.png)
+## Try it
 
-## Try it in a minute
-
-Requires **Node.js 24+** and npm. No accounts, OBS, or keys are needed for the sample.
+Requires **Node.js 24+** and npm:
 
 ```sh
 npm ci
 npm run demo
 ```
 
-Open **http://localhost:5173**. Try `dog` or `brightest blue`. Select a peak or a result, enter an optional cover title, and download a 1280×720 JPEG.
+Open **http://localhost:5173**. Try `dog` or `brightest blue`, select a result, and download a titled 1280×720 cover.
 
-The sample contains **original procedural illustrations and synthetic chat**, with explicitly labeled, bundled search results. It makes **zero OpenAI calls**. It does not pretend to create Twitch clips. Other sample queries require your key and the “Use my key for real AI search” checkbox.
+The bundled sample uses original procedural illustrations, synthetic chat, and explicitly labeled saved results. It makes **zero model calls** and cannot create real Twitch clips. Other sample queries require your key and the “Use my key for real AI search” checkbox.
 
-## Use your stream
-
-Copy the environment template; keep credentials local:
+## Record your stream
 
 ```sh
 cp .env.example .env
 chmod 600 .env
 ```
 
-1. **OpenAI:** create an [API key](https://platform.openai.com/api-keys), enable API billing, and set `OPENAI_API_KEY`. A ChatGPT subscription does not configure API billing. The default vision model is `gpt-4.1-mini`; `OPENAI_MODEL` is configurable.
-2. **Twitch:** sign in to the [developer console](https://dev.twitch.tv/console/apps). Verify your email and enable 2FA. Register a **confidential** app, category **Application Integration**, with redirect **`http://localhost:5173/auth/twitch/callback`**. Set `TWITCH_CLIENT_ID` and `TWITCH_CLIENT_SECRET` from its Manage page. Restart SemVOD, open **Setup → Connect Twitch**, and authorize the broadcaster account. Set `TWITCH_CHANNEL` only to override the recording channel.
-3. **OBS:** install [OBS Studio](https://obsproject.com/download), version 28+. Add a scene with a screen/window source. Open **Tools → WebSocket Server Settings**, enable the server on port **4455**, keep authentication enabled, and set `OBS_PASSWORD` to its password. On macOS, allow OBS to capture the intended window when macOS asks.
-4. **Twitch archives:** enable **Store past broadcasts** in Creator Dashboard → Settings → Stream, and allow clips. Connect OBS to Twitch in OBS → Settings → Stream. Start your broadcast, then select **Record a stream** in SemVOD. Stop SemVOD when finished, then stop the broadcast. Allow Twitch time to process the archive.
-5. Search the saved session. For phrases, SemVOD searches **chat text**; it does not record audio or transcribe speech. Visual queries describe what appears in captured stills. A still cannot establish every motion or event.
+1. **OpenAI:** create an [API key](https://platform.openai.com/api-keys), enable API billing, and set `OPENAI_API_KEY`. A ChatGPT subscription does not include API billing. The default model is `gpt-4.1-mini`; `OPENAI_MODEL` is configurable.
+2. **Twitch:** enable 2FA and register a **confidential** app in the [developer console](https://dev.twitch.tv/console/apps), category **Application Integration**, redirect **`http://localhost:5173/auth/twitch/callback`**. Set `TWITCH_CLIENT_ID` and `TWITCH_CLIENT_SECRET`. Restart SemVOD, then use **Setup → Connect Twitch** with the broadcaster account.
+3. **OBS 28+:** configure your intended source. Enable **Tools → WebSocket Server Settings** on port **4455**, keep authentication enabled, and set `OBS_PASSWORD`. SemVOD captures the current program scene; check its contents before broadcasting.
+4. **Broadcast:** enable **Store past broadcasts** and clips in Twitch. Connect OBS to Twitch and start the broadcast. Select **Record a stream** in SemVOD. Stop recording when finished, then stop broadcasting and allow the archive to process.
+5. Search the saved session. Select a result to download a cover or create a clip. If clipping is unavailable, copy the matching VOD timestamp link.
 
-Restart after editing `.env`. Login tokens are saved in ignored `.semvod/twitch.json` with owner-only permissions. Twitch authorization requests `user:read:chat` and `channel:manage:clips`. Connect the recording's broadcaster account to create VOD clips.
-
-For OBS-only capture without Twitch:
-
-```sh
-npm run semvod -- record --no-chat
-```
-
-This mode has no chat or associated Twitch VOD. It still supports AI search and covers.
+Restart after editing `.env`. Set `TWITCH_CHANNEL` only to override the recording channel. Authorization needs `user:read:chat` and `channel:manage:clips`. For OBS-only capture, use `npm run semvod -- record --no-chat`; this has no chat or linked Twitch archive.
 
 ## Commands
 
 | Command | Purpose |
 | --- | --- |
-| `npm run demo` | Local sample with development UI |
-| `npm run dev` | Local UI and real-session controls |
-| `npm run semvod -- record` | Capture OBS frames + Twitch EventSub chat; Ctrl+C saves |
+| `npm run demo` | Sample with development UI |
+| `npm run dev` | UI and recording controls |
+| `npm run semvod -- record` | Record frames and chat; Ctrl+C saves |
 | `npm run semvod -- index <session-id>` | Build/reuse contact sheets |
-| `npm run build` then `npm start` | Type-check, build, and run production UI |
-| `npm test` | Builds the production UI, then runs native Node tests; no real API calls or credentials used |
-| `npm audit` / `npm audit signatures` | Check dependency advisories and registry signatures |
-| `npm run demo:generate` | Regenerate the bundled original sample |
+| `npm run build` then `npm start` | Build and run production UI |
+| `npm test` | Build, then offline app regression tests |
+| `npm run demo:generate` | Regenerate original sample assets |
+| `npm audit` / `npm audit signatures` | Dependency advisory/signature checks |
 
-## How it works—and avoids repeat spend
+## Search and cost
 
-One Node process serves a React screen over loopback. Native HTTP, fetch, and WebSocket APIs handle the integrations; Sharp handles images. No database or cloud backend.
+- **Capture:** roughly one 384px JPEG every two seconds, plus EventSub chat. Frames, timestamps and chat persist locally during recording.
+- **Coarse search:** exact duplicate images share scores. Numbered contact sheets hold up to 48 distinct 192×108 tiles; sheets of at most 12 frames use 384×216 tiles. The model returns scores without written explanations.
+- **Refinement:** up to ten separated visual candidates get individual scores and short reasons. Images are capped at 768px without enlarging small inputs.
+- **Caching:** normalized query, model, prompt version, cell count and image hash identify reusable scores. Successful calls are saved immediately across sessions and restarts; concurrent identical requests share work. Errors have no automatic retries or model upgrades.
+- **Moderation:** live queries are checked before images are sent. Decisions are cached for one day; blocked queries and provider errors fail visibly.
+- **Chat:** literal phrase matches contribute separately from visual relevance. A ten-second chat-energy line shows message/emote activity.
 
-- **Capture:** the OBS program scene is sampled about every two seconds as a 384px-wide JPEG. Session offsets and actual capture times are persisted incrementally. EventSub chat is appended as JSONL; repeated message IDs are ignored. Reconnects migrate subscriptions.
-- **First pass:** exact duplicate images are collapsed. Up to 48 distinct frames fit in an 8×6 contact sheet, using numbered 192×108 tiles in a JPEG capped at 1536×648. Short sheets with at most 12 frames use 384×216 tiles in up to four columns so small objects remain visible. Larger sheets use the compact tiles; partial sheets omit blank rows and columns. All duplicate timestamps inherit their frame's score. The coarse pass returns scores only; individual refinements request short visual reasons.
-- **Refinement:** at most ten separated candidates with visual evidence are rescored individually at their native resolution, capped at 768px wide. Tiny inputs are never enlarged for a paid call. This improves attention to detail, not the underlying captured resolution.
-- **Memoization:** normalized query + model + prompt version + image hash identify cached scores. Cache entries persist across restarts and sessions. Each successful call is saved immediately, so retries resume without repaying for completed images. Concurrent identical requests share work. Changing the image, model, or prompt invalidates the applicable score.
-- **Moderation:** live queries pass through `omni-moderation-latest` before any frame is sent. Decisions are cached for one day. Missing keys, blocked queries, and API failures fail visibly; there are no hidden retries or automatic model upgrades.
-- **Spend:** only uncached live searches incur vision charges. At most three contact sheets run concurrently; refinements run sequentially. An uncached session needs one call per distinct contact sheet plus up to ten refinements; the UI reports calls and cache hits. No token/dollar estimate is claimed. Use a dedicated OpenAI project and its billing controls for your budget.
-- **Chat:** ten-second message/emote buckets show community energy independently of the query. Nearby literal chat matches and visual relevance have separate scores; explanations identify the evidence.
-- **Clips:** the app matches an archive to the recording's stream ID and time, adds the recorder-start delta, and calls `POST /helix/videos/clips`. Twitch's `vod_offset` is the clip **end**, so SemVOD centers the window around the selected moment and clamps it to the VOD. Returned clips are polled for confirmation. If creation is rejected, the matching timestamp link remains available.
+An uncached query needs one call per distinct sheet plus up to ten refinements. The UI reports calls and cache hits, not a dollar quote. Use a dedicated OpenAI project and its billing controls. Model experiments and perceptual frame pruning are **not** shipped features.
 
-## Local data and safety
+## Privacy and limits
 
+`.env`, `.semvod/` credentials/cache, and `sessions/` recordings are ignored by Git. OAuth tokens use owner-only permissions. For live search, your query and compressed images go to OpenAI with `store:false`; see [provider data controls](https://developers.openai.com/api/docs/guides/your-data). This does not guarantee zero provider retention.
+
+The server binds to loopback, checks Host/Origin, requires a custom mutation header, and validates short-lived OAuth state. Do not expose it through a public tunnel. Dependencies are pinned; `.npmrc` disables installation lifecycle scripts. Runtime packages are React, React DOM, Lucide and Sharp. An advisory scan cannot prove absence of malware.
+
+The app searches **sampled stills and chat, not audio**. It can miss brief events, infer motion incorrectly, or return false matches. Covers upscale captured frames. Chat latency can shift alignment. Clips require the recording's broadcaster and a matching archive among the latest 100 VODs; the app will not silently choose an unrelated archive.
+
+If OBS fails, check its WebSocket settings and use **Setup → Test OBS connection**. For chat errors, reconnect Twitch and inspect the session's `chatStatus`. For clipping errors, check archive/clip settings and use the VOD-link fallback. For quota errors, fix billing before retrying; completed scoring calls are reused.
+
+## Code and evidence
+
+`src/client/` contains the UI; `src/server/` contains capture, search, storage and integrations; `src/shared/` contains types and public limits. `tests/` covers app regressions, `sample/` holds the offline demo, and `scripts/generate-demo.ts` regenerates it.
+
+`npm test` checks unused TypeScript code and runs **28 offline app regression cases**, with external provider transports blocked. Historical evaluation tooling and its four tests remain in the [immutable research snapshot](https://github.com/OttObottr/semvod/tree/53ecc81bd8d586265e0476db1ac6d61012e4f98a). No application test was removed during cleanup.
+
+[Browser verification](docs/verification.md) covers 17 workflows and replay of 24 real-video sessions, including all 1,774 saved scores and 24 covers. Earlier Lighthouse runs scored 100 in all four categories on desktop/mobile; page-load lab scores do not measure search accuracy.
+
+The [24-video retrieval benchmark](docs/benchmark-plan.md) achieved **11/24 at temporal IoU 0.5** and **10/24 at 0.7**, costing an estimated **$0.07975**. All queries completed; warm repeats made zero network calls. This access-constrained sample establishes a limited baseline, not superior accuracy or a leaderboard rank.
+
+Historical review logs, benchmark runners/results and submission materials are preserved at [revision `53ecc81`](https://github.com/OttObottr/semvod/tree/53ecc81bd8d586265e0476db1ac6d61012e4f98a). To inspect or replay them separately:
+
+```sh
+git worktree add --detach ../semvod-research 53ecc81bd8d586265e0476db1ac6d61012e4f98a
+cd ../semvod-research
+npm ci
+node scripts/benchmark.mjs
 ```
-sessions/<id>/
-  index.json          # start time, frames, timestamps, Twitch linkage
-  frames/*.jpg
-  chat.jsonl
-  sheets/             # content-addressed contact sheets
-  cache/              # query result manifests
-.semvod/
-  twitch.json         # OAuth tokens (ignored)
-  cache/              # reusable model scores and moderation decisions (ignored)
-sample/               # bundled, non-private judge sample
-```
 
-Raw frames and chat stay on disk. For live AI searches, the query and compressed images go directly to OpenAI using your key; Responses requests use `store:false`. This is not a promise of zero provider retention—see [OpenAI data controls](https://developers.openai.com/api/docs/guides/your-data). Covers are upscaled from small captured frames, not recovered high-resolution video.
-
-The server binds to `127.0.0.1`, checks Host and Origin, and requires a custom header for mutations. OAuth checks short-lived state bound to an HttpOnly cookie. Secrets are never sent to the frontend. `.env`, tokens, caches, and real sessions are ignored by Git. Do not expose the localhost server through a public tunnel or put private recordings in the repo.
-
-Dependencies are pinned with a committed integrity lockfile. `.npmrc` disables automatic installation scripts; `npm ci` does not run package lifecycle hooks. The only runtime packages are React, React DOM, Lucide icons, and Sharp. The build uses Vite, TypeScript, and tsx. `npm audit` reports known advisories, not proof that software is malware-free.
-
-## Code layout and checks
-
-`src/client/App.tsx` owns application state; `Timeline`, `MomentPanel`, and `WorkspaceDialog` own their views. `src/server/search.ts` coordinates ranking and refinement; `vision.ts` owns provider requests and reusable image scores. Public input limits live in `src/shared/settings.ts`; server-only tuning and environment configuration live in `src/server/config.ts`. Secrets never belong in shared settings.
-
-`npm test` builds with strict unused-code checks and runs 32 offline regression tests. Mock provider responses share a small fixture helper; the cases cover distinct cache, recording, clipping, UI race, security and evaluation-budget failures. No test requires an API key or external network. The [refactor receipt](docs/verification/modular-refactor.json) records before/after equivalence checks and their limits. The [Git-history credential audit](docs/verification/git-secret-audit.json) records what was scanned and what the scan cannot prove.
-
-[Chrome validation](docs/verification/browser-smoke.json) passed 17 workflow checks in development and production, then replayed 24 real-video sessions with unchanged scores and valid covers. Lighthouse 13 scored **100 in all four categories** on desktop and mobile; these are page-load lab scores, not search accuracy. Isolated profiles; zero paid calls. [Desktop](docs/screenshots/browser-smoke-desktop.png) · [Mobile](docs/screenshots/browser-smoke-mobile.png).
-
-## Limits and troubleshooting
-
-**Accuracy is limited.** The submitted demo uses eight distinct illustrated images. [Public-footage evaluations](#evaluation) measure retrieval separately from integration checks; they do not establish accuracy across arbitrary streams or gameplay.
-
-- **OBS connection fails:** open OBS, enable its WebSocket server, check port/password, and use Setup → Test OBS connection. SemVOD restricts OBS to loopback.
-- **Chat unavailable:** reconnect Twitch with `user:read:chat`, check `TWITCH_CHANNEL`, and inspect the recording's `chatStatus` in `index.json`. Frames can continue if chat disconnects.
-- **No matching VOD:** ensure archives were enabled **before** streaming, finish the broadcast, and wait for processing. SemVOD will not silently clip an unrelated latest archive.
-- **Clips blocked:** check broadcaster ownership, clip settings, and `channel:manage:clips`; use the timestamp-link fallback. The VOD clip endpoint's availability is controlled by Twitch.
-- **Rate limit/no quota:** the error is shown. Fix billing or wait, then retry; completed score batches are reused.
-- Capture has roughly two-second granularity, can miss very brief events, and does not include audio. Chat timestamps reflect Twitch event times; stream delivery latency can shift perceived alignment. Cover quality is limited by capture resolution. Archive lookup covers the latest 100 VODs.
+That command replays saved fixture receipts without paid inference. Dataset access and benchmark-specific instructions remain with each archived experiment. Failed attempts and limitations remain available there.
 
 ## Built with Codex
 
-This project was built in one Codex thread: architecture, native OBS/EventSub adapters, search memoization, UI, original procedural sample art, tests, and documentation. Human decisions shaped the product and explicitly pushed for lower spend and fewer dependencies. Codex checked official API contracts and used tests to catch a substring-matching bug and recording-state races.
+Built in one Codex thread: architecture, OBS/EventSub integrations, memoized search, UI, procedural sample art, tests and documentation. Human direction emphasized low cost, privacy and minimal dependencies.
 
-**Build session ID:** `01a19d28-f0f4-7e53-8bda-dd046fd0c3a8` (also verify with `/status` in the build thread).
+**Build session:** `01a19d28-f0f4-7e53-8bda-dd046fd0c3a8`.
 
-Isolated OBS/Twitch integration test: [sandbox restrictions and evidence](docs/sandbox-testing.md).
+The [submitted hackathon build](https://github.com/OttObottr/semvod/tree/hackathon-2026-11-02) is preserved; later `main` changes are post-submission development. [Submission materials](https://github.com/OttObottr/semvod/tree/53ecc81bd8d586265e0476db1ac6d61012e4f98a/docs).
 
-Submission materials: [demo script](docs/demo-script.md), [Devpost draft](docs/devpost.md), [live setup walkthrough](docs/live-setup.md), and [verification status](docs/verification.md).
-
-API references: [Twitch VOD clips](https://dev.twitch.tv/docs/api/reference/#create-clip-from-vod), [EventSub chat](https://dev.twitch.tv/docs/eventsub/eventsub-subscription-types/#channelchatmessage), [OBS protocol](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md), [OpenAI vision](https://developers.openai.com/api/docs/guides/images-vision), [OpenAI moderation](https://developers.openai.com/api/docs/guides/moderation).
-
-MIT licensed. Sample artwork is original and regenerated by `scripts/generate-demo.ts`; dependency licenses remain with their authors.
-
-## Evaluation
-
-The latest [QVHighlights holdout](docs/benchmark-plan.md#qvhighlights-holdout) covers 24 previously untested source videos and 24 official queries. All searches completed: **11/24** first intervals passed temporal IoU 0.5 and **10/24** passed 0.7. Total estimated cost was **$0.07975**; median cold/warm latency was **14.293 s / 24.793 ms**, with zero repeat-search network calls. Predictions were frozen before grading and independently checked. This access-constrained baseline leaves substantial room to improve localization.
-
-The [benchmark summary](docs/benchmark-plan.md) describes selection, costs and limitations. Detailed new artifacts stay in the separate benchmark workspace. Earlier development evidence remains available: [Perception Test](docs/verification/perception-v1/README.md), [NASA/model comparisons](docs/verification/real-footage/README.md), and [reliability fixes](docs/verification/search-repair/README.md). Audio/video model experiments are tooling; the app searches still frames and chat.
-
-The [submitted hackathon build](https://github.com/OttObottr/semvod/tree/hackathon-2026-11-02) is preserved. Changes on `main` after that tag are post-submission development. `node scripts/benchmark.mjs` replays the original fixture receipts for free; its explicit `--live` option is paid.
+MIT licensed. Sample art is original; dependency licenses remain with their authors.

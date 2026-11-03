@@ -1,65 +1,49 @@
-# Benchmark and model-selection plan
+# Benchmarks
 
-The available evidence supports limited, reproducible comparisons rather than leaderboard claims. The [real-footage pilot](verification/real-footage/README.md) is development evidence. The [official Perception Test subset](verification/perception-v1/README.md) evaluates 97 questions across 25 preregistered videos; the [QVHighlights check](verification/qvh-v1/README.md) covers only two official queries. Accuracy, first-hit relevance, false alarms, cache efficiency, latency and dollars can trade off; no aggregate score should conceal regressions.
-
-| Benchmark | Why it fits | What must be respected |
-|---|---|---|
-| [Perception Test](https://github.com/google-deepmind/perception_test) | Supplemental video understanding: memory, abstraction, physics and semantics. We ran every official MCQA question for 20 hash-selected validation videos plus five hash-selected memory games. | Official reveal cuts are mandatory. Multiple-choice accuracy is not timestamp retrieval; models may exploit language priors or prior exposure to public data. The image configurations use identical frames, while native Gemini also receives audio and denser video. See the [frozen protocol and complete results](verification/perception-v1/README.md). |
-| [QVHighlights](https://github.com/jayleicn/moment_detr) | Closest task: language queries → relevant temporal windows and highlight saliency. Official measures include R@1 at temporal IoU 0.5/0.7, retrieval mAP and highlight mAP/Hit@1. | SemVOD currently returns points, so the official interval evaluator requires a declared conversion or genuine interval retrieval. Annotations are CC BY-NC-SA 4.0; underlying YouTube footage is described as research/fair-use material, not generally redistributable. The [official evaluator](https://github.com/jayleicn/moment_detr/tree/main/standalone_eval) says CodaLab closed and test labels were released; do not call a local result a live leaderboard rank. |
-| [Ego4D natural-language queries](https://ego4d-data.org/docs/benchmarks/episodic-memory/) | Hard everyday scenes, small objects and temporal relationships. Common metrics are R@1/R@5 at temporal IoU 0.3/0.5. | Requires a [dataset agreement and approved access](https://ego4d-data.org/docs/start-here/); not a no-account sample download. Use an untouched evaluation split, not prompt tuning on test labels. |
-| [Video-MME](https://github.com/MME-Benchmarks/Video-MME) | Supplemental audiovisual QA: 900 videos and 2,700 multiple-choice questions. Useful for audio-on/off comparisons. | Answer accuracy is not moment-retrieval accuracy. Published terms are academic research only, with commercial use/redistribution prohibited without permission. No dataset was downloaded for this product evaluation. |
+SemVOD's integration works; retrieval accuracy remains limited. These measurements support a reproducible baseline, not a claim of superiority. The app searches sampled stills and literal chat, not audio. Model comparisons and frame-pruning experiments remain outside production.
 
 ## QVHighlights holdout
 
-Current production `gpt-4.1-mini` search completed all **24 queries on 24 new source videos**: 1,774 frames, approximately 59.1 minutes, without chat or audio. This includes every eligible validation clip in the fixed 2 GiB archive prefix after excluding previously tested parents. The frozen hash rule ordered the entire eligible pool. [Selection and input commitments](https://github.com/OttObottr/semvod/blob/20f3dd1/docs/benchmark-plan.md#next-frozen-evaluation) preceded inference; this access-constrained sample is not representative of all streams.
+Production search completed all **24 official queries on 24 previously untested source videos**: 1,774 frames, approximately 59.1 minutes, without chat or audio. Selection included every eligible validation clip in a fixed 2 GiB archive prefix, excluding earlier source videos, then ordered them by a frozen hash rule. This access-constrained sample is not representative of all streams.
 
 | Measure | Result |
 | --- | ---: |
 | R@1, temporal IoU ≥ 0.5 | 11/24 (45.8%) |
 | R@1, temporal IoU ≥ 0.7 | 10/24 (41.7%) |
 | Completed / operational failures | 24 / 0 |
-| Median successful-query latency, cold / warm | 14.293 s / 24.793 ms |
-| Warm-search network calls | 0 across all 24 |
+| Median cold / warm latency | 14.293 s / 24.793 ms |
+| Warm network calls | 0 across all 24 |
 | Estimated total cost / uncertain charges | $0.0797524 / $0 |
 
-The unchanged interval adapter and ranking were used with serial charged requests, isolated caches and no retries. Per-parent averages equal query averages because each video has one query. Cost covers 193 responses (116,437 input and 20,736 output tokens) at [published prices](https://developers.openai.com/api/docs/models/gpt-4.1-mini), conservatively ignoring cached-input discounts, within the $0.20 cap. It is not an account billing statement or a measured per-stream-hour price. Verified absent-event controls remain untested.
+Predictions were committed before grading. Independent review reconstructed every frame score, all 75 ranked hits, intervals and metrics. The unchanged interval adapter converts point results into contiguous above-threshold windows. Requests were serialized with a shared budget ledger and no retries.
 
-Independent review reconstructed every frame score, all 75 ranked hits, intervals and metrics from original receipts. Localization accuracy remains limited; this establishes a baseline, not an improvement or competitor comparison. Footage, separate query/gold files, tools and raw logs stay outside the repo in `semvod-benchmarks/qvh-holdout`.
+Cost covers 193 responses, 116,437 input and 20,736 output tokens, at the recorded $0.40/$1.60 per million token rates, ignoring cached-input discounts. It is not an account statement or a measured per-stream-hour price. Verified absent-event controls were not included in this holdout.
 
-Execution contract SHA-256 `53adce1b9aae3de4735a36473d5caad6bd31ac8ca09e1d8a4f3abbec77088559` was committed in `06e9131` before inference. Complete predictions SHA-256 `16d282383e035049c92cbae0c0795465485be32369f8f5861f92e71d5fefb3de` was committed in `faa90bc` before gold grading.
+## Experiments
 
-## Competition exists
+| Comparison | Evidence and decision |
+| --- | --- |
+| Score-only coarse output | Development pilot saved 32.9% with unchanged aggregate hit metrics. Adopted; refinement still supplies reasons. |
+| Three-frame temporal refinement | Four new source videos; both arms scored 3/4 at IoU 0.5 and 2/4 at 0.7. One raw IoU improved without crossing either threshold. New spend $0.0220544, zero unknown charges. Including reused coarse work, temporal reference cost was $0.0173072 versus $0.0135128 baseline. Not adopted. |
+| RGB frame differences | Four thresholds on the prior 24-video set removed at most 60/1,774 frames; no reduction in sheets. Not adopted. |
+| Apple Vision feature prints | At distance 0.30 with ten-second anchors, retained 1,502/1,774 frames, projecting 45 instead of 48 sheets. All 38 annotated windows retained a frame; local preprocessing took 7.53 s. Retrieval quality and billed savings remain untested. Not adopted. |
 
-- [OpusClip ClipAnything](https://www.opus.pro/clipanything) supports prompt-based clipping using visual/audio/sentiment cues. It is a direct competitor, not merely an automatic highlights tool.
-- [TwelveLabs search](https://docs.twelvelabs.io/docs/resources/playground/search) finds relevant video clips with natural-language or image queries and timestamps.
-- [Cutsio](https://cutsio.com/blog/how-to-find-highlights-from-long-gaming-streams-automatically) advertises visual/audio indexing and semantic search across a stream library.
-- [ChatClipThat](https://chatclipthat.com/features) advertises semantic searches using available visual, transcript, audio and chat context, followed by creator-controlled clipping. Its [support page](https://chatclipthat.com/support) describes both free and paid plans.
-- [Eklipse](https://eklipse.gg/) is an adjacent streamer highlight/clip workflow.
+The temporal pilot used four hash-selected new videos from eight eligible clips in a fixed 3 GiB prefix, excluding all 30 earlier parents. Both arms completed without failures; eight coarse responses were reused. Local frame reduction was a development diagnostic, not a fresh holdout. No extra runtime package was added.
 
-Twitch itself offers [Stream Recaps and voice-triggered clipping](https://blog.twitch.tv/en/2026/10/20/stream-recaps/), and documents [Auto Clips alpha testing](https://help.twitch.tv/s/article/auto-clips). We have not found official documentation of the same arbitrary natural-language visual-and-chat VOD search workflow, but cannot infer the absence of every native or experimental feature. Public messaging should describe the implemented workflow and avoid claiming that Twitch has no related tools.
+## Reproduction and historical evidence
 
-We have not run these services on the same labeled footage, so we cannot claim superior accuracy, latency or price. SemVOD's demonstrated distinction is its small local OBS/Twitch workflow with user-controlled queries, caches and credentials—not exclusive ownership of semantic video search.
+The [immutable research snapshot](https://github.com/OttObottr/semvod/tree/53ecc81bd8d586265e0476db1ac6d61012e4f98a) preserves runners, protocols, raw published receipts, evaluation tests, failed attempts and limitations. [README instructions](../README.md#code-and-evidence) open it in a separate checkout. Current app tests stay in this repository; research tooling stays outside the working app.
 
-## Cheap techniques worth testing
+Earlier results include [97 Perception Test questions](https://github.com/OttObottr/semvod/blob/53ecc81bd8d586265e0476db1ac6d61012e4f98a/docs/verification/perception-v1/README.md), [NASA/model comparisons](https://github.com/OttObottr/semvod/blob/53ecc81bd8d586265e0476db1ac6d61012e4f98a/docs/verification/real-footage/README.md), and [retrieval reliability fixes](https://github.com/OttObottr/semvod/blob/53ecc81bd8d586265e0476db1ac6d61012e4f98a/docs/verification/search-repair/README.md). These are different tasks and development subsets; do not combine them into a leaderboard score.
 
-1. **Score-only coarse output:** measured and adopted. Reasons remain on individual refinement calls. In this pilot it saved 32.9% without changing aggregate hit metrics; larger evaluation is still needed.
-2. **Typed decisions over a shared sheet:** [Jev](https://openrouter.ai/docs/guides/community/jev) evaluates many named questions over one image without prose output. [TypeSafe's context rules](https://docs.typesafe.ai/models) say shared state is ingested once. Our Jev cascade was cheaper but had an extra off-target candidate; keep it experimental. Confidence is not proof of calibration on this task.
-3. **Audio/video intervals with strict timestamps:** [Gemini video understanding](https://ai.google.dev/gemini-api/docs/video-understanding) supports audiovisual input. Our exploratory result improved when the output contract used explicit `MM:SS` intervals instead of a long score array or ambiguous decimal times. This is a representation improvement, not proof of model superiority. Preserve raw timestamps, validate ranges, and evaluate boundary error.
-4. **Spend only on unresolved evidence:** a cheap candidate pass followed by detailed checks is useful only if candidate recall stays high. Measure missed moments before discarding low-scoring frames. Perceptual deduplication and lower sampling rates can erase small but decisive changes; exact dedup is currently safer and reproducible.
-5. **Reuse input and outputs:** content-addressed results avoid calls entirely. Stable shared-image/video prefixes can additionally benefit from provider prompt caching; inspect actual cached-token usage, not an assumed discount. A transcript computed once could support repeated spoken-word searches, but it does not detect all sounds or motion.
+New holdout/pilot media, gold files, runners and full receipts remain in the separate local `semvod-benchmarks` workspace. They are not bundled with a fresh clone; hashes establish commitments, not independent access to those artifacts. QVHighlights footage is not generally redistributable. See the [frozen selection and dataset discussion](https://github.com/OttObottr/semvod/blob/53ecc81bd8d586265e0476db1ac6d61012e4f98a/docs/benchmark-plan.md).
 
-No embedding runtime, vector database, model-training framework, third-party SDK, or new package was added. Current runtime remains four pinned packages. External model experiments use native HTTP and remain outside the shipped search engine. The [hackathon rules](https://twitchcon-codex.devpost.com/rules) require a Twitch-connected project built with Codex and allow authorized third-party integrations; they do not require an OpenAI-only runtime. All these experiments occurred after the submitted snapshot.
+SHA-256 commitments, retained verbatim for audit tooling:
 
-## Temporal-context pilot
+- Holdout execution contract: `53adce1b9aae3de4735a36473d5caad6bd31ac8ca09e1d8a4f3abbec77088559` (committed in `06e9131` before inference).
+- Holdout predictions: `16d282383e035049c92cbae0c0795465485be32369f8f5861f92e71d5fefb3de` (committed in `faa90bc` before grading).
+- Temporal contract: `aa9602efcc94ed75124c932e9c9d2f2bf66e3d355e85ae4e7802110794e2f25d` (committed in `5e821e6` before inference).
+- Temporal baseline predictions: `138168c651f40e4055d3800cf6bf2553e1fbda1d2327faa2f34fb31941df720c`.
+- Temporal candidate predictions: `09d63461ff9e8a8c1d2f248c6d3d18aaf3498bbf8ed7a90d4eef9cc91d61bf95` (both prediction hashes committed in `23bb22b` before grading).
 
-Before inference: compare production refinement with three chronological frames (center and nearest ±4 seconds, letterboxed) on four previously untested source videos. Selection uses a fixed 3 GiB archive prefix and excludes all 30 earlier parents; all four selected queries remain in the denominator. Coarse requests, model, ranking and interval adapter are shared; no retries or replacements. Combined cap: $0.08 within the existing ledger. Contract SHA-256 `aa9602efcc94ed75124c932e9c9d2f2bf66e3d355e85ae4e7802110794e2f25d`. Media and tooling stay in the separate benchmark workspace; predictions must be committed before grading.
-
-Complete predictions committed before grading: baseline SHA-256 `138168c651f40e4055d3800cf6bf2553e1fbda1d2327faa2f34fb31941df720c`; temporal SHA-256 `09d63461ff9e8a8c1d2f248c6d3d18aaf3498bbf8ed7a90d4eef9cc91d61bf95`.
-
-Both arms completed all four queries: **3/4 at temporal IoU 0.5, 2/4 at 0.7**, zero failures. One raw IoU improved from 0 to 0.2083 without crossing either threshold. Independent review reconciled all predictions and 60 new response receipts. New spend was **$0.0220544**, with no unknown charges; eight coarse responses were reused. Including that reused work, temporal reference cost was $0.0173072 versus baseline $0.0135128. No threshold gain was demonstrated, so temporal refinement remains outside the app. This tiny access-constrained pilot cannot establish general superiority.
-
-## Local frame-reduction diagnostics
-
-On the prior 24-video development set, four conservative RGB-difference thresholds removed at most 60/1,774 frames but reduced no contact sheets. An external Swift helper using [Apple Vision feature prints](https://developer.apple.com/documentation/vision/analyzing-image-similarity-with-feature-print) tested distances 0.05, 0.10, 0.20 and 0.30, with a maximum ten-second anchor gap. At 0.30 it retained 1,502/1,774 frames, projecting **45 instead of 48 sheets**; all 38 annotated windows retained a sampled frame. Extraction and comparisons took 7.53 seconds locally. Earlier thresholds saved no sheets. These are coverage and preprocessing measurements, not proven retrieval accuracy or billed savings; no production pruning was enabled.
-
-The helper uses existing macOS frameworks and stays outside the app. No packages or model calls were added for these diagnostics. [DINOv3](https://github.com/facebookresearch/dinov3) is a separate feature-model option requiring weights and an inference runtime; it was researched, not executed. Model similarity alone does not establish that skipped frames are interchangeable for every query. Full threshold outputs and tools remain in the separate benchmark workspace.
+Semantic video search already exists in commercial products. No matched competitor evaluation was run. [Prior competitive research and candidate benchmarks](https://github.com/OttObottr/semvod/blob/53ecc81bd8d586265e0476db1ac6d61012e4f98a/docs/benchmark-plan.md#competition-exists) remain available; nothing here establishes a first-place ranking.
