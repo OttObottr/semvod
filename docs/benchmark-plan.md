@@ -21,6 +21,8 @@ A future run must freeze its model, source and any comparison arm before inferen
 
 The separately authorized baseline run uses current production `gpt-4.1-mini` search, no chat/audio, isolated caches and the existing interval adapter and budget guard. Its $0.20 cap includes uncertain charges. Execution contract SHA-256, frozen before inference: `53adce1b9aae3de4735a36473d5caad6bd31ac8ca09e1d8a4f3abbec77088559`. Predictions and complete request receipts remain in the external benchmark workspace.
 
+All 24 predictions completed; their SHA-256 is `16d282383e035049c92cbae0c0795465485be32369f8f5861f92e71d5fefb3de`, committed before opening gold for grading.
+
 ## Competition exists
 
 - [OpusClip ClipAnything](https://www.opus.pro/clipanything) supports prompt-based clipping using visual/audio/sentiment cues. It is a direct competitor, not merely an automatic highlights tool.
