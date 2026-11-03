@@ -46,7 +46,15 @@ Independent scorers agreed on all 120 app/prior grades and reproduced the author
 
 A fixed equal-weight blend of coarse and refined scores improved cached development results, then failed fresh validation on the next three licensed videos in the frozen hash order, excluding all 24 previously selected videos. All eight official queries and three sampled-evidence absence controls completed. R@1 and R@5 both fell from 2/8 to 1/8; mIoU fell from 30.97% to 29.58%. Both methods returned no hits on the controls. The 37 shared inference requests cost an estimated $0.0100032, with no uncertain charges. Predictions were frozen before grading. **Decision: reject the blend; retain current scoring.**
 
-On the same now-reviewed eight queries and three controls, GPT-6 Luna with reasoning disabled reduced R@1 from 2/8 to 0/8; R@5 stayed 2/8 and mIoU fell from 30.97% to 20.56%. All cases completed, controls remained empty, and warm repeats made no network calls. Its 29 requests cost a conservative estimated $0.0024944 versus the saved baseline's $0.0100032, using $0.125/$0.50 per million input/output tokens with a cache-write allowance ([pricing](https://developers.openai.com/api/docs/models/gpt-6-luna)). This paired screen is not fresh validation or a full-split model comparison. **Decision: retain GPT-4.1 mini; the cheaper candidate lost accuracy.**
+A paired model screen reused the same eight now-reviewed queries, three sampled-evidence controls, and frame inputs. New models used reasoning disabled; other scoring rules were fixed. All cases completed, and warm repeats made no network calls.
+
+| Model | R@1 | R@5 | mIoU | Estimated inference cost | Absent controls with hits |
+| --- | --- | --- | --- | --- | --- |
+| Current GPT-4.1 mini | 2/8 | 2/8 | 30.97% | $0.0100032 | 0/3 |
+| GPT-6 Luna | 0/8 | 2/8 | 20.56% | $0.0024944 | 0/3 |
+| GPT-6.1 Terra | 0/8 | 3/8 | 48.96% | $0.0286363 | 1/3 |
+
+Luna used 29 inference requests and Terra 36. Conservative input/output rates were $0.125/$0.50 and $1.25/$5 per million respectively, including a cache-write allowance ([Luna pricing](https://developers.openai.com/api/docs/models/gpt-6-luna), [Terra pricing](https://developers.openai.com/api/docs/models/gpt-6.1-terra)). Terra also used 36 non-generating token-count preflights, reported separately from inference charges. These estimates are not invoices. **Decision: retain current scoring and model.** Neither candidate passed the fixed accuracy/control gate. Terra’s cat hit was an unrefined coarse candidate; nearby individual checks correctly rejected cat. This reviewed-subset screen is not fresh validation or a full-split model comparison.
 
 ## Evidence and reproduction
 
