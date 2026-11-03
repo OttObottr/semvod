@@ -94,6 +94,9 @@ Contain comparison, frozen before new inference: repeat all 48 queries using the
 
 Contain comparison predictions frozen before grading: SHA-256 `a1e1b441e1ac01f7a43800b534d2cba15e284d930dbb0c103796a51006570ea8`.
 
+Independent comparison: R@1 stayed **4/48**, R@5 changed **9→10/48**, and mean IoU **20.76%→22.75%**. Three abstentions recovered and three new ones appeared; total abstentions remained 16. R@5 gained queries 42548/46009 and lost 17820; raw IoU improved on five queries and worsened on seven. All 20 queries on unchanged widescreen sheets retained identical scores/hits. The 135 logical image responses include 92 reused and 43 new; full reference token cost was **$0.0420176 versus $0.0423984 (0.90% lower)**, while incremental spending was **$0.0174156**, with zero unknown charges. All 45 warm repeats made zero calls, and the isolated Chrome replay verified all 48 cases, 628 scores/heatmap values and 45 cover downloads without paid access. This verifies a rendering correction with mixed retrieval outcomes, not a general accuracy or cost breakthrough.
+
+
 ## Reproduction and historical evidence
 
 The [immutable research snapshot](https://github.com/OttObottr/semvod/tree/53ecc81bd8d586265e0476db1ac6d61012e4f98a) preserves runners, protocols, raw published receipts, evaluation tests, failed attempts and limitations. [README instructions](../README.md#code-and-evidence) open it in a separate checkout. Current app tests stay in this repository; research tooling stays outside the working app.
