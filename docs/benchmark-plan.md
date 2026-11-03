@@ -54,6 +54,8 @@ Independent review reconstructed all paired metrics, alias mappings and spend. *
 
 Before replay: one fixed tie-break orders existing top-five results by unchanged score, then mean full-trace neighbor score within ±2 seconds, then time. It preserves every hit and score; empty neighborhoods score zero. All 40 saved cases remain: 24 QVHighlights, two earlier pilot cases (including one failure), four continuation cases, four temporal-baseline cases, and six current NASA controls. Require a new QV IoU 0.5/0.7 pass with no per-case threshold or first-hit-containment losses. No parameter sweep, inference, or network. Known-label development evidence only; neighboring scores are not independent confirmation. Protocol SHA-256: `c3ede483d913a1ce65043a18e09641bcd0fe13ff6957f661026d346cebadc1b3`.
 
+Complete ranking predictions committed before grading: SHA-256 `0bfd458778f8876edce3cd65b70a852cebf3c51b62e32afce72010d68f674c9c`.
+
 ## Reproduction and historical evidence
 
 The [immutable research snapshot](https://github.com/OttObottr/semvod/tree/53ecc81bd8d586265e0476db1ac6d61012e4f98a) preserves runners, protocols, raw published receipts, evaluation tests, failed attempts and limitations. [README instructions](../README.md#code-and-evidence) open it in a separate checkout. Current app tests stay in this repository; research tooling stays outside the working app.
