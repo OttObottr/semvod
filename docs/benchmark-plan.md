@@ -56,6 +56,8 @@ Before replay: one fixed tie-break orders existing top-five results by unchanged
 
 Complete ranking predictions committed before grading: SHA-256 `0bfd458778f8876edce3cd65b70a852cebf3c51b62e32afce72010d68f674c9c`.
 
+**Not adopted.** Independent replay checked all 40 cases and 2,719 saved scores with zero network calls or spend. The 24-query set improved from 11→14 at IoU 0.5 and 10→11 at 0.7, but continuation query 8976 fell from IoU 0.636 to 0 and lost first-hit relevance (that set fell 2→1 at IoU 0.5). Other QV threshold totals were unchanged; NASA positive first-hit matches rose 3→4/4 and absent controls remained 0/2. All hit memberships, top-five coverage and false-hit counts were unchanged; the earlier failed query remained counted. Neighbor agreement promoted a wrong moment, so the aggregate gains do not pass the frozen no-regression gate. Production ranking remains unchanged.
+
 ## Reproduction and historical evidence
 
 The [immutable research snapshot](https://github.com/OttObottr/semvod/tree/53ecc81bd8d586265e0476db1ac6d61012e4f98a) preserves runners, protocols, raw published receipts, evaluation tests, failed attempts and limitations. [README instructions](../README.md#code-and-evidence) open it in a separate checkout. Current app tests stay in this repository; research tooling stays outside the working app.
