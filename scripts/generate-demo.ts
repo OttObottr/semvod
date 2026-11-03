@@ -1,4 +1,4 @@
-import { sampleQueries } from '../src/shared/settings.js';
+import { chatScoreWeight, sampleQueries } from '../src/shared/settings.js';
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
@@ -43,7 +43,7 @@ for(const query of sampleQueries){
  const scores:Hit[]=frames.map(f=>{let v=0;if(query==='dog')v=(f.t>=38&&f.t<=76||f.t>=140&&f.t<=158)?8+(Math.sin(f.id)*.5+.5)*1.7:.2;
  if(query==='brightest blue')v=f.t>=82&&f.t<=122?8+Math.sin(f.id)*.8:.4;
  if(query==='when I fell off the map')v=f.t>=126&&f.t<=140?7+Math.sin(f.id)*1.5:0;
- const c=chatRelevance(query,f.t,chat);return {...f,visualScore:v,chatScore:c.score,score:Math.max(v,c.score*.92),reason:query==='great moment'?'Chat: “great moment”':query==='dog'?'A golden dog beside the player':query==='brightest blue'?'A luminous cyan gate in the ruins':'The character falls into a gap in the path'};});
+ const c=chatRelevance(query,f.t,chat);return {...f,visualScore:v,chatScore:c.score,score:Math.max(v,c.score*chatScoreWeight),reason:query==='great moment'?'Chat: “great moment”':query==='dog'?'A golden dog beside the player':query==='brightest blue'?'A luminous cyan gate in the ruins':'The character falls into a gap in the path'};});
  fixtures[query.toLowerCase()]={query,hits:distinctHits(scores),scores,cached:true,mode:'demo',stats:{sheets:2,visionCalls:0,cacheHits:1,refined:0,elapsedMs:0}};
 }
 await atomicJson(path.join(dir,'searches.json'),fixtures);console.log('Generated 96 original sample frames, chat, and offline search fixtures.');

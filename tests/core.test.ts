@@ -9,6 +9,7 @@ import { distinctHits, search } from '../src/server/search.js';
 import { validateCells } from '../src/server/vision.js';
 import { clipWindow, matchVod, vodDuration, vodTimestampUrl, type Vod } from '../src/server/twitch.js';
 import type { Hit, Session } from '../src/shared/types.js';
+import { chatScoreWeight } from '../src/shared/settings.js';
 const session:Session={id:'test',title:'test',startedAt:'2026-11-01T10:15:00Z',duration:120,status:'complete',frames:[],streamId:'stream-1'};
 const vod:Vod={id:'123',stream_id:'stream-1',created_at:'2026-11-01T10:00:00Z',duration:'1h2m3s',url:'https://twitch.tv/videos/123'};
 test('equivalent queries normalize to the same cache key',()=>{assert.equal(normalizeQuery('  DOG \n  Friend  '),'dog friend');assert.equal(normalizeQuery('ＤＯＧ'),'dog');});
@@ -20,7 +21,15 @@ test('hype catches emote bursts and handles an empty session',()=>{const b=build
 test('top hits suppress adjacent near-identical moments',()=>{const hits=[0,2,4,20,40].map((t,i)=>({id:i,t,file:'x',score:10-i,visualScore:10-i,chatScore:0,reason:'x'} as Hit));assert.deepEqual(distinctHits(hits).map(h=>h.t),[0,20,40]);});
 test('VOD matching requires the correct stream and time interval',()=>{assert.equal(matchVod(session,[{...vod,stream_id:'wrong'},vod],30)?.id,'123');assert.equal(matchVod(session,[{...vod,created_at:'2026-11-02T10:00:00Z'}],30),undefined);assert.equal(vodDuration('1h2m3s'),3723);assert.equal(vodDuration('25s'),25);});
 test('clip offset is the end, includes recorder start delta, and clamps at VOD edges',()=>{assert.deepEqual(clipWindow(session,vod,30),{vodOffset:945,duration:30,moment:930});assert.equal(clipWindow({...session,startedAt:vod.created_at},vod,1).vodOffset,30);assert.equal(clipWindow({...session,startedAt:vod.created_at},vod,3720).vodOffset,3723);assert.throws(()=>clipWindow(session,{...vod,duration:'4s'},0));assert.equal(vodTimestampUrl('123',3661),'https://www.twitch.tv/videos/123?t=1h1m1s');});
-test('offline sample supports four queries with zero model calls',async()=>{for(const query of ['dog','great moment','brightest blue','when I fell off the map']){const r=await search('demo',query);assert.equal(r.mode,'demo');assert.equal(r.stats.visionCalls,0);assert.ok(r.hits.length>0);}await assert.rejects(search('demo','an arbitrary uncached query'),/offline sample/i);assert.equal((await loadSession('demo')).frames.length,96);assert.ok((await loadChat('demo')).length>0);});
+test('offline sample supports four queries with zero model calls',async()=>{
+ const chat=await loadChat('demo');assert.ok(chat.length>0);
+ for(const query of ['dog','great moment','brightest blue','when I fell off the map']){
+  const r=await search('demo',query);assert.equal(r.mode,'demo');assert.equal(r.stats.visionCalls,0);assert.ok(r.hits.length>0);
+  for(const frame of r.scores){assert.equal(frame.chatScore,chatRelevance(query,frame.t,chat).score);assert.equal(frame.score,Math.max(frame.visualScore,frame.chatScore*chatScoreWeight));}
+  assert.deepEqual(r.hits,distinctHits(r.scores));
+ }
+ await assert.rejects(search('demo','an arbitrary uncached query'),/offline sample/i);assert.equal((await loadSession('demo')).frames.length,96);
+});
 test('contact sheets preserve frame edges, deduplicate and publish complete images under concurrency',async()=>{
  const id=`test-sheets-${Date.now()}`,dir=sessionDir(id);
  await fs.mkdir(path.join(dir,'frames'),{recursive:true});

@@ -18,7 +18,7 @@
         "file": "frames/000077.jpg",
         "hash": "da695ed2b3d6604f7948846248a4b2be4cbb36410ffda3c662f454f48ca08cac",
         "visualScore": 9.69959213479362,
-        "chatScore": 10,
+        "chatScore": 9.024999999999999,
         "score": 9.69959213479362,
         "reason": "A golden dog beside the player"
       },
@@ -28,7 +28,7 @@
         "file": "frames/000027.jpg",
         "hash": "8fcc0d27ba2fae5c26eb1cdfb90ab74b339a88e0450d565069841e87c10d19a3",
         "visualScore": 9.662919539143827,
-        "chatScore": 10,
+        "chatScore": 9.65,
         "score": 9.662919539143827,
         "reason": "A golden dog beside the player"
       },
@@ -38,7 +38,7 @@
         "file": "frames/000071.jpg",
         "hash": "c6f41e4f992619ff9e1556d7e08ee0c1d1e03b0748d8b67a1a763f379a0f671b",
         "visualScore": 9.65839645526622,
-        "chatScore": 10,
+        "chatScore": 9.875,
         "score": 9.65839645526622,
         "reason": "A golden dog beside the player"
       },
@@ -48,7 +48,7 @@
         "file": "frames/000020.jpg",
         "hash": "48ab7fa434a07949793cf28efd07707c1ab51bdfd24610a74bdc9bc97c135fec",
         "visualScore": 9.626003463118483,
-        "chatScore": 10,
+        "chatScore": 9.625,
         "score": 9.626003463118483,
         "reason": "A golden dog beside the player"
       }
@@ -240,8 +240,8 @@
         "file": "frames/000018.jpg",
         "hash": "dc613704081c321f39daa39a85fee10e61e80e7cd5cfa70f0de35e80e796b98f",
         "visualScore": 0.2,
-        "chatScore": 10,
-        "score": 9.200000000000001,
+        "chatScore": 9.125,
+        "score": 8.395,
         "reason": "A golden dog beside the player"
       },
       {
@@ -250,8 +250,8 @@
         "file": "frames/000019.jpg",
         "hash": "bf10356ad348b3ad9536abd1e04ac5ad46376154f74de32ca17499cddc35c876",
         "visualScore": 8.97739562821351,
-        "chatScore": 10,
-        "score": 9.200000000000001,
+        "chatScore": 9.375,
+        "score": 8.97739562821351,
         "reason": "A golden dog beside the player"
       },
       {
@@ -260,7 +260,7 @@
         "file": "frames/000020.jpg",
         "hash": "48ab7fa434a07949793cf28efd07707c1ab51bdfd24610a74bdc9bc97c135fec",
         "visualScore": 9.626003463118483,
-        "chatScore": 10,
+        "chatScore": 9.625,
         "score": 9.626003463118483,
         "reason": "A golden dog beside the player"
       },
@@ -270,7 +270,7 @@
         "file": "frames/000021.jpg",
         "hash": "e65928b0e10b9696238f94ce4e0c83a750172920e32ffca624a0be3771137e21",
         "visualScore": 9.561157292755647,
-        "chatScore": 10,
+        "chatScore": 9.875,
         "score": 9.561157292755647,
         "reason": "A golden dog beside the player"
       },
@@ -280,8 +280,8 @@
         "file": "frames/000022.jpg",
         "hash": "8d3e0a7ecf2c97c8d247be966adec7bac35bd0eaa6f840eada733341d1231da2",
         "visualScore": 8.842476387103156,
-        "chatScore": 10,
-        "score": 9.200000000000001,
+        "chatScore": 9.9,
+        "score": 9.108,
         "reason": "A golden dog beside the player"
       },
       {
@@ -290,8 +290,8 @@
         "file": "frames/000023.jpg",
         "hash": "c26c5b50953c04119230acc7e93977098467caee809c249caedef4dadbd0df85",
         "visualScore": 8.130712656451104,
-        "chatScore": 10,
-        "score": 9.200000000000001,
+        "chatScore": 9.9,
+        "score": 9.108,
         "reason": "A golden dog beside the player"
       },
       {
@@ -300,8 +300,8 @@
         "file": "frames/000024.jpg",
         "hash": "df683273dd34d407d0c587f909f6a279c654a38dcc57b23d3130996e2dfd5255",
         "visualScore": 8.08025839229437,
-        "chatScore": 10,
-        "score": 9.200000000000001,
+        "chatScore": 9.65,
+        "score": 8.878,
         "reason": "A golden dog beside the player"
       },
       {
@@ -310,8 +310,8 @@
         "file": "frames/000025.jpg",
         "hash": "2e600480975ffd5154d470c803583edeaf8f1750e9e56e18cea56a0447083803",
         "visualScore": 8.737501012416892,
-        "chatScore": 10,
-        "score": 9.200000000000001,
+        "chatScore": 9.875,
+        "score": 9.085,
         "reason": "A golden dog beside the player"
       },
       {
@@ -320,7 +320,7 @@
         "file": "frames/000026.jpg",
         "hash": "0b4fe9bf51e814bdc302c91c7f162e6cb6e9399a55d044821834e07a78362447",
         "visualScore": 9.498174682907662,
-        "chatScore": 10,
+        "chatScore": 9.9,
         "score": 9.498174682907662,
         "reason": "A golden dog beside the player"
       },
@@ -330,7 +330,7 @@
         "file": "frames/000027.jpg",
         "hash": "8fcc0d27ba2fae5c26eb1cdfb90ab74b339a88e0450d565069841e87c10d19a3",
         "visualScore": 9.662919539143827,
-        "chatScore": 10,
+        "chatScore": 9.65,
         "score": 9.662919539143827,
         "reason": "A golden dog beside the player"
       },
@@ -340,8 +340,8 @@
         "file": "frames/000028.jpg",
         "hash": "243d0d8c9f46e74055112ec55daf2989e4d7ea3f8f7d39d541d0c2cd91dede67",
         "visualScore": 9.080269920061689,
-        "chatScore": 10,
-        "score": 9.200000000000001,
+        "chatScore": 9.4,
+        "score": 9.080269920061689,
         "reason": "A golden dog beside the player"
       },
       {
@@ -350,8 +350,8 @@
         "file": "frames/000029.jpg",
         "hash": "1b09450f25a2a1db50c76de6735d5a7e9540ba60e868e5c110e8a9156b6dcdcb",
         "visualScore": 8.285911198418978,
-        "chatScore": 10,
-        "score": 9.200000000000001,
+        "chatScore": 9.15,
+        "score": 8.418000000000001,
         "reason": "A golden dog beside the player"
       },
       {
@@ -740,8 +740,8 @@
         "file": "frames/000068.jpg",
         "hash": "a26ac8b21514e03336a21843a8d1c3bbdb3f937efdb384e658113926599d1761",
         "visualScore": 0.2,
-        "chatScore": 10,
-        "score": 9.200000000000001,
+        "chatScore": 9.125,
+        "score": 8.395,
         "reason": "A golden dog beside the player"
       },
       {
@@ -750,8 +750,8 @@
         "file": "frames/000069.jpg",
         "hash": "0aca76bbd536338f9fbd01e5a2ba8bec74dfe95d77ea515e3aecf2249ca97f78",
         "visualScore": 0.2,
-        "chatScore": 10,
-        "score": 9.200000000000001,
+        "chatScore": 9.375,
+        "score": 8.625,
         "reason": "A golden dog beside the player"
       },
       {
@@ -760,7 +760,7 @@
         "file": "frames/000070.jpg",
         "hash": "5b213dfd0ceb9ad82db4a0c33400cb7cca84566d4bce989ab789847a876859e3",
         "visualScore": 9.507807079324206,
-        "chatScore": 10,
+        "chatScore": 9.625,
         "score": 9.507807079324206,
         "reason": "A golden dog beside the player"
       },
@@ -770,7 +770,7 @@
         "file": "frames/000071.jpg",
         "hash": "c6f41e4f992619ff9e1556d7e08ee0c1d1e03b0748d8b67a1a763f379a0f671b",
         "visualScore": 9.65839645526622,
-        "chatScore": 10,
+        "chatScore": 9.875,
         "score": 9.65839645526622,
         "reason": "A golden dog beside the player"
       },
@@ -780,8 +780,8 @@
         "file": "frames/000072.jpg",
         "hash": "a93ed9f10f569a71cbe18115bdf3bafd2c52dd3b1708f1a0e979b0a8e0f246d8",
         "visualScore": 9.065749858347731,
-        "chatScore": 10,
-        "score": 9.200000000000001,
+        "chatScore": 9.899999999999999,
+        "score": 9.107999999999999,
         "reason": "A golden dog beside the player"
       },
       {
@@ -800,8 +800,8 @@
         "file": "frames/000074.jpg",
         "hash": "607c044910ef56e572de273fa2242b3efb7d32a90185d8fe40fe3b5f6532e40a",
         "visualScore": 8.01262567860199,
-        "chatScore": 10,
-        "score": 9.200000000000001,
+        "chatScore": 9.774999999999999,
+        "score": 8.992999999999999,
         "reason": "A golden dog beside the player"
       },
       {
@@ -810,8 +810,8 @@
         "file": "frames/000075.jpg",
         "hash": "7c55f477712497759670e7cabcc83c2bccf2fe48501bdefefdca1c7e2bfd44a7",
         "visualScore": 8.520385609901984,
-        "chatScore": 10,
-        "score": 9.200000000000001,
+        "chatScore": 9.524999999999999,
+        "score": 8.763,
         "reason": "A golden dog beside the player"
       },
       {
@@ -820,7 +820,7 @@
         "file": "frames/000076.jpg",
         "hash": "2ac389adf855c997db317e6a0528489ca562fd7c70aa61a5b9e302d448d68628",
         "visualScore": 9.331191491363453,
-        "chatScore": 10,
+        "chatScore": 9.274999999999999,
         "score": 9.331191491363453,
         "reason": "A golden dog beside the player"
       },
@@ -830,7 +830,7 @@
         "file": "frames/000077.jpg",
         "hash": "da695ed2b3d6604f7948846248a4b2be4cbb36410ffda3c662f454f48ca08cac",
         "visualScore": 9.69959213479362,
-        "chatScore": 10,
+        "chatScore": 9.024999999999999,
         "score": 9.69959213479362,
         "reason": "A golden dog beside the player"
       },
@@ -1029,20 +1029,10 @@
     "query": "great moment",
     "hits": [
       {
-        "id": 61,
-        "t": 122,
-        "file": "frames/000061.jpg",
-        "hash": "b95fe4e29a9120d4a90355d941e368622072771b6a44df80bde6fd82b777f78a",
-        "visualScore": 0,
-        "chatScore": 10,
-        "score": 9.200000000000001,
-        "reason": "Chat: “great moment”"
-      },
-      {
-        "id": 67,
-        "t": 134,
-        "file": "frames/000067.jpg",
-        "hash": "5c231a42821b2da7ddb860234de5ae5b1a31bd865aa8e3ede09136167374f79e",
+        "id": 65,
+        "t": 130,
+        "file": "frames/000065.jpg",
+        "hash": "55a2af2ca784a752bf4d148d620123880a5e769cb92fb339fa261720588797a1",
         "visualScore": 0,
         "chatScore": 10,
         "score": 9.200000000000001,
@@ -1666,8 +1656,8 @@
         "file": "frames/000061.jpg",
         "hash": "b95fe4e29a9120d4a90355d941e368622072771b6a44df80bde6fd82b777f78a",
         "visualScore": 0,
-        "chatScore": 10,
-        "score": 9.200000000000001,
+        "chatScore": 9,
+        "score": 8.280000000000001,
         "reason": "Chat: “great moment”"
       },
       {
@@ -1676,8 +1666,8 @@
         "file": "frames/000062.jpg",
         "hash": "8076289861131000bf93f3b10f35fd8837fa9d6e982d58560dd7e6ebc5b6181a",
         "visualScore": 0,
-        "chatScore": 10,
-        "score": 9.200000000000001,
+        "chatScore": 9.25,
+        "score": 8.51,
         "reason": "Chat: “great moment”"
       },
       {
@@ -1686,8 +1676,8 @@
         "file": "frames/000063.jpg",
         "hash": "2c5218dc35f786a2e7abaa96d0cfbeefb3044fc334900ad54b45e2bfee35eed8",
         "visualScore": 0,
-        "chatScore": 10,
-        "score": 9.200000000000001,
+        "chatScore": 9.5,
+        "score": 8.74,
         "reason": "Chat: “great moment”"
       },
       {
@@ -1696,8 +1686,8 @@
         "file": "frames/000064.jpg",
         "hash": "c63efa6202f86398505dc5377c35708c30f2bfac8797fb824477a5d61d532e15",
         "visualScore": 0,
-        "chatScore": 10,
-        "score": 9.200000000000001,
+        "chatScore": 9.75,
+        "score": 8.97,
         "reason": "Chat: “great moment”"
       },
       {
@@ -1716,8 +1706,8 @@
         "file": "frames/000066.jpg",
         "hash": "3a59a49daa57663813ba18506d48b2fec1e70698edc8fbeae7f187b2a1cb1899",
         "visualScore": 0,
-        "chatScore": 10,
-        "score": 9.200000000000001,
+        "chatScore": 9.850000000000001,
+        "score": 9.062000000000001,
         "reason": "Chat: “great moment”"
       },
       {
@@ -1726,8 +1716,8 @@
         "file": "frames/000067.jpg",
         "hash": "5c231a42821b2da7ddb860234de5ae5b1a31bd865aa8e3ede09136167374f79e",
         "visualScore": 0,
-        "chatScore": 10,
-        "score": 9.200000000000001,
+        "chatScore": 9.600000000000001,
+        "score": 8.832000000000003,
         "reason": "Chat: “great moment”"
       },
       {
@@ -1736,8 +1726,8 @@
         "file": "frames/000068.jpg",
         "hash": "a26ac8b21514e03336a21843a8d1c3bbdb3f937efdb384e658113926599d1761",
         "visualScore": 0,
-        "chatScore": 10,
-        "score": 9.200000000000001,
+        "chatScore": 9.350000000000001,
+        "score": 8.602000000000002,
         "reason": "Chat: “great moment”"
       },
       {
@@ -1746,8 +1736,8 @@
         "file": "frames/000069.jpg",
         "hash": "0aca76bbd536338f9fbd01e5a2ba8bec74dfe95d77ea515e3aecf2249ca97f78",
         "visualScore": 0,
-        "chatScore": 10,
-        "score": 9.200000000000001,
+        "chatScore": 9.100000000000001,
+        "score": 8.372000000000002,
         "reason": "Chat: “great moment”"
       },
       {
@@ -2025,21 +2015,11 @@
     "query": "brightest blue",
     "hits": [
       {
-        "id": 41,
-        "t": 82,
-        "file": "frames/000041.jpg",
-        "hash": "00c6fc8bbf292cf4a22ce5d6398fe9d0a3306f8a62bfcd2ffdf942470e08d14f",
-        "visualScore": 7.873101864956233,
-        "chatScore": 10,
-        "score": 9.200000000000001,
-        "reason": "A luminous cyan gate in the ruins"
-      },
-      {
-        "id": 47,
-        "t": 94,
-        "file": "frames/000047.jpg",
-        "hash": "a731645672f78a6c6ef259fa4e0c34036286f6c40cdaf1ec1c45dfa0d52cb494",
-        "visualScore": 8.09885849819618,
+        "id": 45,
+        "t": 90,
+        "file": "frames/000045.jpg",
+        "hash": "c1621919807fdf0612d1479ddda906434afd1b0304637b4789b65a6ca48164e3",
+        "visualScore": 8.680722819627295,
         "chatScore": 10,
         "score": 9.200000000000001,
         "reason": "A luminous cyan gate in the ruins"
@@ -2052,6 +2032,16 @@
         "visualScore": 8.79429811846763,
         "chatScore": 0,
         "score": 8.79429811846763,
+        "reason": "A luminous cyan gate in the ruins"
+      },
+      {
+        "id": 52,
+        "t": 104,
+        "file": "frames/000052.jpg",
+        "hash": "b6b2ac74622d3af30601118ef213c14b80ce98ea0100c92f73e1e058f26f15a1",
+        "visualScore": 8.789302073632388,
+        "chatScore": 0,
+        "score": 8.789302073632388,
         "reason": "A luminous cyan gate in the ruins"
       }
     ],
@@ -2472,8 +2462,8 @@
         "file": "frames/000041.jpg",
         "hash": "00c6fc8bbf292cf4a22ce5d6398fe9d0a3306f8a62bfcd2ffdf942470e08d14f",
         "visualScore": 7.873101864956233,
-        "chatScore": 10,
-        "score": 9.200000000000001,
+        "chatScore": 9,
+        "score": 8.280000000000001,
         "reason": "A luminous cyan gate in the ruins"
       },
       {
@@ -2482,8 +2472,8 @@
         "file": "frames/000042.jpg",
         "hash": "f37020f417692d379ed28c8e5e9be1f7f9e8b556b2dcb7ead87accd1ec3c2ad8",
         "visualScore": 7.266782761667493,
-        "chatScore": 10,
-        "score": 9.200000000000001,
+        "chatScore": 9.25,
+        "score": 8.51,
         "reason": "A luminous cyan gate in the ruins"
       },
       {
@@ -2492,8 +2482,8 @@
         "file": "frames/000043.jpg",
         "hash": "e055433be334e4050eae5452be2e8af90b9a36b0d2cb1eb953a308d316fb35a3",
         "visualScore": 7.3345802058971215,
-        "chatScore": 10,
-        "score": 9.200000000000001,
+        "chatScore": 9.5,
+        "score": 8.74,
         "reason": "A luminous cyan gate in the ruins"
       },
       {
@@ -2502,8 +2492,8 @@
         "file": "frames/000044.jpg",
         "hash": "22ad0aebaf34ebed983f93d4008773e4df227d97f74b9948cb9ca510a104fd7a",
         "visualScore": 8.01416154008433,
-        "chatScore": 10,
-        "score": 9.200000000000001,
+        "chatScore": 9.75,
+        "score": 8.97,
         "reason": "A luminous cyan gate in the ruins"
       },
       {
@@ -2522,8 +2512,8 @@
         "file": "frames/000046.jpg",
         "hash": "a4a414edefbdcde05cf7311773f3d4b2de97949780dc2772a5f07184d9fceaef",
         "visualScore": 8.721430678119047,
-        "chatScore": 10,
-        "score": 9.200000000000001,
+        "chatScore": 9.775,
+        "score": 8.993,
         "reason": "A luminous cyan gate in the ruins"
       },
       {
@@ -2532,8 +2522,8 @@
         "file": "frames/000047.jpg",
         "hash": "a731645672f78a6c6ef259fa4e0c34036286f6c40cdaf1ec1c45dfa0d52cb494",
         "visualScore": 8.09885849819618,
-        "chatScore": 10,
-        "score": 9.200000000000001,
+        "chatScore": 9.525,
+        "score": 8.763,
         "reason": "A luminous cyan gate in the ruins"
       },
       {
@@ -2542,8 +2532,8 @@
         "file": "frames/000048.jpg",
         "hash": "6260de29d707037887869ea3ddcf5f24845f740b53a20be14547e7a96289d207",
         "visualScore": 7.385396270941067,
-        "chatScore": 10,
-        "score": 9.200000000000001,
+        "chatScore": 9.275,
+        "score": 8.533000000000001,
         "reason": "A luminous cyan gate in the ruins"
       },
       {
@@ -2552,8 +2542,8 @@
         "file": "frames/000049.jpg",
         "hash": "587539ab37be18c92b2f7e079fb20d750be478ab76a3bd9b740b893dfee869cb",
         "visualScore": 7.236997877792422,
-        "chatScore": 10,
-        "score": 9.200000000000001,
+        "chatScore": 9.025,
+        "score": 8.303,
         "reason": "A luminous cyan gate in the ruins"
       },
       {
@@ -3036,7 +3026,7 @@
         "file": "frames/000064.jpg",
         "hash": "c63efa6202f86398505dc5377c35708c30f2bfac8797fb824477a5d61d532e15",
         "visualScore": 8.380039057295186,
-        "chatScore": 6.666666666666667,
+        "chatScore": 6.166666666666667,
         "score": 8.380039057295186,
         "reason": "The character falls into a gap in the path"
       },
@@ -3046,7 +3036,7 @@
         "file": "frames/000070.jpg",
         "hash": "5b213dfd0ceb9ad82db4a0c33400cb7cca84566d4bce989ab789847a876859e3",
         "visualScore": 8.160836022336834,
-        "chatScore": 6.666666666666667,
+        "chatScore": 6.233333333333334,
         "score": 8.160836022336834,
         "reason": "The character falls into a gap in the path"
       }
@@ -3058,8 +3048,8 @@
         "file": "frames/000000.jpg",
         "hash": "4759b33ff625ee0423ed9ca71a9401c7e58794e07ffe1843f929acee6b886ed7",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.3166666666666667,
+        "score": 1.2113333333333334,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3068,8 +3058,8 @@
         "file": "frames/000001.jpg",
         "hash": "bb28ac654f150100b45cb911a664ed8d88a422c1a7dc1364ccb4fe9228a03e92",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.3166666666666667,
+        "score": 1.2113333333333334,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3078,8 +3068,8 @@
         "file": "frames/000002.jpg",
         "hash": "615c162f2d5201bc19fad53b540e6d10c2dc3b4d32343293407c35e0b73ff423",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2833333333333332,
+        "score": 1.1806666666666665,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3088,8 +3078,8 @@
         "file": "frames/000003.jpg",
         "hash": "3a87a14a12ff2cc74c2caf89cdeb01554d1221845d7bb5ad9a10be3aee869247",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.25,
+        "score": 1.1500000000000001,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3098,8 +3088,8 @@
         "file": "frames/000004.jpg",
         "hash": "7ad9d5a630cec821d4b2bbbae4eed9f7998c2d26d3306ba621f894e4cc417a04",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2166666666666666,
+        "score": 1.1193333333333333,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3108,8 +3098,8 @@
         "file": "frames/000005.jpg",
         "hash": "ff5914d08d8f33493bf8efa5731bc235a15824973c3b40da0dee5d620a1ca218",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2166666666666666,
+        "score": 1.1193333333333333,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3118,8 +3108,8 @@
         "file": "frames/000006.jpg",
         "hash": "483e19269d46a22e984c5c074c0640ed2f4661f73eb8f138331f0e0396328126",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.25,
+        "score": 1.1500000000000001,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3128,8 +3118,8 @@
         "file": "frames/000007.jpg",
         "hash": "9d78ed753ee833f59676425fe7be15cef49a879875c64ddee41edd1d34977431",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2833333333333332,
+        "score": 1.1806666666666665,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3138,8 +3128,8 @@
         "file": "frames/000008.jpg",
         "hash": "4a140d87fca24254e6d898d90b21296ed4c9e9d9c5c9e40a1b3a57e2144f0c8b",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.3166666666666667,
+        "score": 1.2113333333333334,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3148,8 +3138,8 @@
         "file": "frames/000009.jpg",
         "hash": "40a939d458733ae020a0cae0b3e66d399e1e00af7feba7712bea25955ad4ee95",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.3166666666666667,
+        "score": 1.2113333333333334,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3158,8 +3148,8 @@
         "file": "frames/000010.jpg",
         "hash": "4d31e50cea3d58f3f1a73868efe2bbc87313bb5a59e5c21202b70cbeb8c8a492",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2833333333333332,
+        "score": 1.1806666666666665,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3168,8 +3158,8 @@
         "file": "frames/000011.jpg",
         "hash": "b798d2432808ea6dde05d06b56f485429429b6887991a3b46d4ee3a0ec86568b",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.25,
+        "score": 1.1500000000000001,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3178,8 +3168,8 @@
         "file": "frames/000012.jpg",
         "hash": "f71788a079c45830d61f419d5e8bfbd8c7f58af30524f1ba09d41cb7d858ac6f",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2166666666666666,
+        "score": 1.1193333333333333,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3188,8 +3178,8 @@
         "file": "frames/000013.jpg",
         "hash": "2d9a4aec470326da1ac752e648df0e45dbe2bbf2ed4499779238d116d5e4e3c6",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2166666666666666,
+        "score": 1.1193333333333333,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3198,8 +3188,8 @@
         "file": "frames/000014.jpg",
         "hash": "06aeb383cb84a7730a602e92bed821024be554bef371f80071f9b535fb0b9891",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.25,
+        "score": 1.1500000000000001,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3208,8 +3198,8 @@
         "file": "frames/000015.jpg",
         "hash": "7555de68dc4a7e0582d8d41c77b470455eb74414c512302cedae3c315ecd8318",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2833333333333332,
+        "score": 1.1806666666666665,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3218,8 +3208,8 @@
         "file": "frames/000016.jpg",
         "hash": "bcecd01a4b14ba72c6f7fbab259220fa2d43e5b34e29a49ff728663bb28c430a",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.3166666666666667,
+        "score": 1.2113333333333334,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3228,8 +3218,8 @@
         "file": "frames/000017.jpg",
         "hash": "d55fa421fac2f38a0073bcc61a40194bd65278b4999244b20aef7499a59fd1a4",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.3166666666666667,
+        "score": 1.2113333333333334,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3238,8 +3228,8 @@
         "file": "frames/000018.jpg",
         "hash": "dc613704081c321f39daa39a85fee10e61e80e7cd5cfa70f0de35e80e796b98f",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2833333333333332,
+        "score": 1.1806666666666665,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3248,8 +3238,8 @@
         "file": "frames/000019.jpg",
         "hash": "bf10356ad348b3ad9536abd1e04ac5ad46376154f74de32ca17499cddc35c876",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.25,
+        "score": 1.1500000000000001,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3258,8 +3248,8 @@
         "file": "frames/000020.jpg",
         "hash": "48ab7fa434a07949793cf28efd07707c1ab51bdfd24610a74bdc9bc97c135fec",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.25,
+        "score": 1.1500000000000001,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3268,8 +3258,8 @@
         "file": "frames/000021.jpg",
         "hash": "e65928b0e10b9696238f94ce4e0c83a750172920e32ffca624a0be3771137e21",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2833333333333332,
+        "score": 1.1806666666666665,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3278,8 +3268,8 @@
         "file": "frames/000022.jpg",
         "hash": "8d3e0a7ecf2c97c8d247be966adec7bac35bd0eaa6f840eada733341d1231da2",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.3166666666666667,
+        "score": 1.2113333333333334,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3288,8 +3278,8 @@
         "file": "frames/000023.jpg",
         "hash": "c26c5b50953c04119230acc7e93977098467caee809c249caedef4dadbd0df85",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.3199999999999998,
+        "score": 1.2144,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3298,8 +3288,8 @@
         "file": "frames/000024.jpg",
         "hash": "df683273dd34d407d0c587f909f6a279c654a38dcc57b23d3130996e2dfd5255",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.3166666666666667,
+        "score": 1.2113333333333334,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3308,8 +3298,8 @@
         "file": "frames/000025.jpg",
         "hash": "2e600480975ffd5154d470c803583edeaf8f1750e9e56e18cea56a0447083803",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.3166666666666667,
+        "score": 1.2113333333333334,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3318,8 +3308,8 @@
         "file": "frames/000026.jpg",
         "hash": "0b4fe9bf51e814bdc302c91c7f162e6cb6e9399a55d044821834e07a78362447",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.3199999999999998,
+        "score": 1.2144,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3328,8 +3318,8 @@
         "file": "frames/000027.jpg",
         "hash": "8fcc0d27ba2fae5c26eb1cdfb90ab74b339a88e0450d565069841e87c10d19a3",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2866666666666666,
+        "score": 1.1837333333333333,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3338,8 +3328,8 @@
         "file": "frames/000028.jpg",
         "hash": "243d0d8c9f46e74055112ec55daf2989e4d7ea3f8f7d39d541d0c2cd91dede67",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2533333333333334,
+        "score": 1.1530666666666667,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3348,8 +3338,8 @@
         "file": "frames/000029.jpg",
         "hash": "1b09450f25a2a1db50c76de6735d5a7e9540ba60e868e5c110e8a9156b6dcdcb",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.22,
+        "score": 1.1224,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3358,8 +3348,8 @@
         "file": "frames/000030.jpg",
         "hash": "41da1ff9a87da9889825c34e294c85563b793d6a8714ee39fb4812444d91ee1e",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.25,
+        "score": 1.1500000000000001,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3368,8 +3358,8 @@
         "file": "frames/000031.jpg",
         "hash": "9c7ca44513659334b56692b2ccd9552b93fba63c20bb837e80948df777a2fddb",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2833333333333332,
+        "score": 1.1806666666666665,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3378,8 +3368,8 @@
         "file": "frames/000032.jpg",
         "hash": "670f6794d82476b0d06dad50c21d464b0425d359f3b163b22bbfcd66232982bc",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.3166666666666667,
+        "score": 1.2113333333333334,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3388,8 +3378,8 @@
         "file": "frames/000033.jpg",
         "hash": "da695ed2b3d6604f7948846248a4b2be4cbb36410ffda3c662f454f48ca08cac",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.3166666666666667,
+        "score": 1.2113333333333334,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3398,8 +3388,8 @@
         "file": "frames/000034.jpg",
         "hash": "fd832c4adf2d5da6a570d974673d621fdeda15b060422bcb383153aae54dd2b3",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2833333333333332,
+        "score": 1.1806666666666665,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3408,8 +3398,8 @@
         "file": "frames/000035.jpg",
         "hash": "5e33ff0dc45573e566f73c3c4f2594484425e4cb04fb388f917840eb8c45367a",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.25,
+        "score": 1.1500000000000001,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3418,8 +3408,8 @@
         "file": "frames/000036.jpg",
         "hash": "31d34f0f654533794053a10dcc3a1decd6db413c7ec76bb6230b882f8d121dfa",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2166666666666666,
+        "score": 1.1193333333333333,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3428,8 +3418,8 @@
         "file": "frames/000037.jpg",
         "hash": "b21d6dcaf82540df4567d3ac02427919e1a40011ff89f01c9a2a180b49975a5a",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2166666666666666,
+        "score": 1.1193333333333333,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3438,8 +3428,8 @@
         "file": "frames/000038.jpg",
         "hash": "4878e454fa7c6129fdacb42b542ace127b0ac057a360d0bdd18cb0abd447cdeb",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.25,
+        "score": 1.1500000000000001,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3448,8 +3438,8 @@
         "file": "frames/000039.jpg",
         "hash": "d67938c00d07888e015d880af2d0cf37a04101e2800cf1e4af79ef9ef3fc106e",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2833333333333332,
+        "score": 1.1806666666666665,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3458,8 +3448,8 @@
         "file": "frames/000040.jpg",
         "hash": "9b478a16d8fe7b43ed658afd96eddf18f3560f3f661ebc84af97cb3118455833",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.3166666666666667,
+        "score": 1.2113333333333334,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3468,8 +3458,8 @@
         "file": "frames/000041.jpg",
         "hash": "00c6fc8bbf292cf4a22ce5d6398fe9d0a3306f8a62bfcd2ffdf942470e08d14f",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.3166666666666667,
+        "score": 1.2113333333333334,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3478,8 +3468,8 @@
         "file": "frames/000042.jpg",
         "hash": "f37020f417692d379ed28c8e5e9be1f7f9e8b556b2dcb7ead87accd1ec3c2ad8",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2833333333333332,
+        "score": 1.1806666666666665,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3488,8 +3478,8 @@
         "file": "frames/000043.jpg",
         "hash": "e055433be334e4050eae5452be2e8af90b9a36b0d2cb1eb953a308d316fb35a3",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2666666666666666,
+        "score": 1.1653333333333333,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3498,8 +3488,8 @@
         "file": "frames/000044.jpg",
         "hash": "22ad0aebaf34ebed983f93d4008773e4df227d97f74b9948cb9ca510a104fd7a",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2999999999999998,
+        "score": 1.196,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3518,8 +3508,8 @@
         "file": "frames/000046.jpg",
         "hash": "a4a414edefbdcde05cf7311773f3d4b2de97949780dc2772a5f07184d9fceaef",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.3033333333333332,
+        "score": 1.1990666666666667,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3528,8 +3518,8 @@
         "file": "frames/000047.jpg",
         "hash": "a731645672f78a6c6ef259fa4e0c34036286f6c40cdaf1ec1c45dfa0d52cb494",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2833333333333332,
+        "score": 1.1806666666666665,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3538,8 +3528,8 @@
         "file": "frames/000048.jpg",
         "hash": "6260de29d707037887869ea3ddcf5f24845f740b53a20be14547e7a96289d207",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.3166666666666667,
+        "score": 1.2113333333333334,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3548,8 +3538,8 @@
         "file": "frames/000049.jpg",
         "hash": "587539ab37be18c92b2f7e079fb20d750be478ab76a3bd9b740b893dfee869cb",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.3166666666666667,
+        "score": 1.2113333333333334,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3558,8 +3548,8 @@
         "file": "frames/000050.jpg",
         "hash": "36491e16a00eae46fafbde36ce828439a4796b3acf807458269b87501be92a0e",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2833333333333332,
+        "score": 1.1806666666666665,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3568,8 +3558,8 @@
         "file": "frames/000051.jpg",
         "hash": "fe2a5b419225455fbeda9662c0226b89da5a045958a68750f694ff44b3d18a6d",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.25,
+        "score": 1.1500000000000001,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3578,8 +3568,8 @@
         "file": "frames/000052.jpg",
         "hash": "b6b2ac74622d3af30601118ef213c14b80ce98ea0100c92f73e1e058f26f15a1",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2166666666666666,
+        "score": 1.1193333333333333,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3588,8 +3578,8 @@
         "file": "frames/000053.jpg",
         "hash": "c376509177888c735c5d5bfebe3b5334d360a74d22de988edf782b217217a81b",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2166666666666666,
+        "score": 1.1193333333333333,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3598,8 +3588,8 @@
         "file": "frames/000054.jpg",
         "hash": "8409fd3f49fdc6efad16fbca5242552e8b5f8baeb58e1d9339db26f66712e247",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.25,
+        "score": 1.1500000000000001,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3608,8 +3598,8 @@
         "file": "frames/000055.jpg",
         "hash": "dc9a606afde848e06053021a8f916be9b77ab607ca23930cf10883561c0002f5",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2833333333333332,
+        "score": 1.1806666666666665,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3618,8 +3608,8 @@
         "file": "frames/000056.jpg",
         "hash": "9ef90f6edb65a30335f728fe61fd73869f866b0257def40e1d4211e88bcb9bf9",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.3166666666666667,
+        "score": 1.2113333333333334,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3628,8 +3618,8 @@
         "file": "frames/000057.jpg",
         "hash": "02dd463e0e95865c179f93d4feb2ff267d391c06be59cdb81ed4407d25e5f79c",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.3166666666666667,
+        "score": 1.2113333333333334,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3638,8 +3628,8 @@
         "file": "frames/000058.jpg",
         "hash": "8a9b5fbda811850fc27933a099fdb0355b5576a2b66e22d86c39b5833849fc56",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2833333333333332,
+        "score": 1.1806666666666665,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3648,8 +3638,8 @@
         "file": "frames/000059.jpg",
         "hash": "0568d83b644c41fed2f594a4561958521cfd70a1848b99876a95faec66eb8e0b",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.25,
+        "score": 1.1500000000000001,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3658,8 +3648,8 @@
         "file": "frames/000060.jpg",
         "hash": "30be067941ee300ff0245027f5132edd5e27fd669482b2eaccce094829a36d80",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2166666666666666,
+        "score": 1.1193333333333333,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3668,8 +3658,8 @@
         "file": "frames/000061.jpg",
         "hash": "b95fe4e29a9120d4a90355d941e368622072771b6a44df80bde6fd82b777f78a",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2166666666666666,
+        "score": 1.1193333333333333,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3678,8 +3668,8 @@
         "file": "frames/000062.jpg",
         "hash": "8076289861131000bf93f3b10f35fd8837fa9d6e982d58560dd7e6ebc5b6181a",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.25,
+        "score": 1.1500000000000001,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3688,7 +3678,7 @@
         "file": "frames/000063.jpg",
         "hash": "2c5218dc35f786a2e7abaa96d0cfbeefb3044fc334900ad54b45e2bfee35eed8",
         "visualScore": 7.251033550454211,
-        "chatScore": 6.666666666666667,
+        "chatScore": 6,
         "score": 7.251033550454211,
         "reason": "The character falls into a gap in the path"
       },
@@ -3698,7 +3688,7 @@
         "file": "frames/000064.jpg",
         "hash": "c63efa6202f86398505dc5377c35708c30f2bfac8797fb824477a5d61d532e15",
         "visualScore": 8.380039057295186,
-        "chatScore": 6.666666666666667,
+        "chatScore": 6.166666666666667,
         "score": 8.380039057295186,
         "reason": "The character falls into a gap in the path"
       },
@@ -3708,7 +3698,7 @@
         "file": "frames/000065.jpg",
         "hash": "55a2af2ca784a752bf4d148d620123880a5e769cb92fb339fa261720588797a1",
         "visualScore": 8.240243019235155,
-        "chatScore": 6.666666666666667,
+        "chatScore": 6.333333333333333,
         "score": 8.240243019235155,
         "reason": "The character falls into a gap in the path"
       },
@@ -3718,7 +3708,7 @@
         "file": "frames/000066.jpg",
         "hash": "3a59a49daa57663813ba18506d48b2fec1e70698edc8fbeae7f187b2a1cb1899",
         "visualScore": 6.960173268964049,
-        "chatScore": 6.666666666666667,
+        "chatScore": 6.5,
         "score": 6.960173268964049,
         "reason": "The character falls into a gap in the path"
       },
@@ -3738,8 +3728,8 @@
         "file": "frames/000068.jpg",
         "hash": "a26ac8b21514e03336a21843a8d1c3bbdb3f937efdb384e658113926599d1761",
         "visualScore": 5.653108478966063,
-        "chatScore": 6.666666666666667,
-        "score": 6.133333333333334,
+        "chatScore": 6.566666666666667,
+        "score": 6.041333333333334,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3748,7 +3738,7 @@
         "file": "frames/000069.jpg",
         "hash": "0aca76bbd536338f9fbd01e5a2ba8bec74dfe95d77ea515e3aecf2249ca97f78",
         "visualScore": 6.827822779325219,
-        "chatScore": 6.666666666666667,
+        "chatScore": 6.400000000000001,
         "score": 6.827822779325219,
         "reason": "The character falls into a gap in the path"
       },
@@ -3758,7 +3748,7 @@
         "file": "frames/000070.jpg",
         "hash": "5b213dfd0ceb9ad82db4a0c33400cb7cca84566d4bce989ab789847a876859e3",
         "visualScore": 8.160836022336834,
-        "chatScore": 6.666666666666667,
+        "chatScore": 6.233333333333334,
         "score": 8.160836022336834,
         "reason": "The character falls into a gap in the path"
       },
@@ -3768,8 +3758,8 @@
         "file": "frames/000071.jpg",
         "hash": "c6f41e4f992619ff9e1556d7e08ee0c1d1e03b0748d8b67a1a763f379a0f671b",
         "visualScore": 0,
-        "chatScore": 6.666666666666667,
-        "score": 6.133333333333334,
+        "chatScore": 6.066666666666668,
+        "score": 5.581333333333335,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3778,8 +3768,8 @@
         "file": "frames/000072.jpg",
         "hash": "a93ed9f10f569a71cbe18115bdf3bafd2c52dd3b1708f1a0e979b0a8e0f246d8",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.3199999999999998,
+        "score": 1.2144,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3788,8 +3778,8 @@
         "file": "frames/000073.jpg",
         "hash": "6d8b2bbf861186f50dd1376b7c301306fc76a788a93967cc58379c300e9412e2",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.3166666666666667,
+        "score": 1.2113333333333334,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3798,8 +3788,8 @@
         "file": "frames/000074.jpg",
         "hash": "607c044910ef56e572de273fa2242b3efb7d32a90185d8fe40fe3b5f6532e40a",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2833333333333332,
+        "score": 1.1806666666666665,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3808,8 +3798,8 @@
         "file": "frames/000075.jpg",
         "hash": "7c55f477712497759670e7cabcc83c2bccf2fe48501bdefefdca1c7e2bfd44a7",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.25,
+        "score": 1.1500000000000001,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3818,8 +3808,8 @@
         "file": "frames/000076.jpg",
         "hash": "2ac389adf855c997db317e6a0528489ca562fd7c70aa61a5b9e302d448d68628",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2166666666666666,
+        "score": 1.1193333333333333,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3828,8 +3818,8 @@
         "file": "frames/000077.jpg",
         "hash": "da695ed2b3d6604f7948846248a4b2be4cbb36410ffda3c662f454f48ca08cac",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2166666666666666,
+        "score": 1.1193333333333333,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3838,8 +3828,8 @@
         "file": "frames/000078.jpg",
         "hash": "190781a77f1b22076ca3a0fa57ed2c063ed83e4e63367b2376df24825071014e",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.25,
+        "score": 1.1500000000000001,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3848,8 +3838,8 @@
         "file": "frames/000079.jpg",
         "hash": "d4bad6eafc937f06ccee008708fd2063ffc0b656a92b9f3c74ea7dd2c875caf0",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2833333333333332,
+        "score": 1.1806666666666665,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3858,8 +3848,8 @@
         "file": "frames/000080.jpg",
         "hash": "4977c22f948c61d4fc90f6c0007e684cc00003eee4f5558084a10235195359cf",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.3166666666666667,
+        "score": 1.2113333333333334,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3868,8 +3858,8 @@
         "file": "frames/000081.jpg",
         "hash": "cc65154437aab4772da317bc976c8690cf77bf4a33e7fcb89e880aecf0d2e0ec",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.3166666666666667,
+        "score": 1.2113333333333334,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3878,8 +3868,8 @@
         "file": "frames/000082.jpg",
         "hash": "0b737168a4a22cff78822a53ca95360b7f37eba252759eeb7c21fe2e72f24b36",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2833333333333332,
+        "score": 1.1806666666666665,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3888,8 +3878,8 @@
         "file": "frames/000083.jpg",
         "hash": "c47ea303a18ebe87b1f465db06907948f7267c612905f2b0181e306e43a0ee5c",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.25,
+        "score": 1.1500000000000001,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3898,8 +3888,8 @@
         "file": "frames/000084.jpg",
         "hash": "32f591d8d7143adbf2c1111a3543b9015a9172a56c91725553973e15b053ba8d",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2166666666666666,
+        "score": 1.1193333333333333,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3908,8 +3898,8 @@
         "file": "frames/000085.jpg",
         "hash": "a281e86906c79ff7fdab6a158a6aa132aa81fff9bdb2e62d2b3a9a0c752dbadd",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2166666666666666,
+        "score": 1.1193333333333333,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3918,8 +3908,8 @@
         "file": "frames/000086.jpg",
         "hash": "96b7217d8cacb95d4a93d46cabf585bebd41df46ddff836b2d8e7e4ba4cf9ebe",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.25,
+        "score": 1.1500000000000001,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3928,8 +3918,8 @@
         "file": "frames/000087.jpg",
         "hash": "cef0c90406f1ec02afc20a429ad711ac9d28af43326b51676fc1b705e127de48",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2833333333333332,
+        "score": 1.1806666666666665,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3938,8 +3928,8 @@
         "file": "frames/000088.jpg",
         "hash": "efd4d6735a57164643391433f129a5bbd457cf314a696407ddbc509bec16d020",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.3166666666666667,
+        "score": 1.2113333333333334,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3948,8 +3938,8 @@
         "file": "frames/000089.jpg",
         "hash": "8f5eb846970998cb5a8092ea078960d7f3daaa4ac9648e424f0d27e8dcda13bd",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.3166666666666667,
+        "score": 1.2113333333333334,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3958,8 +3948,8 @@
         "file": "frames/000090.jpg",
         "hash": "e050239891e47c54d66f913777eb7aab02c6a60e7c779f193a7fe32a882826ef",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2833333333333332,
+        "score": 1.1806666666666665,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3968,8 +3958,8 @@
         "file": "frames/000091.jpg",
         "hash": "bbcdaa1b8435bb0309a7b876a57d2055b3fbbbe8a01e40dbb629a36bfc22f4f4",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.25,
+        "score": 1.1500000000000001,
         "reason": "The character falls into a gap in the path"
       },
       {
@@ -3978,8 +3968,8 @@
         "file": "frames/000092.jpg",
         "hash": "62b0e6eabab8001ad70bbcb090964f61adbe244fc9bacee478ee45ecf236b889",
         "visualScore": 0,
-        "chatScore": 1.3333333333333333,
-        "score": 1.2266666666666666,
+        "chatScore": 1.2166666666666666,
+        "score": 1.1193333333333333,
         "reason": "The character falls into a gap in the path"
       },
       {
