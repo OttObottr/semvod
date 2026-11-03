@@ -44,6 +44,8 @@ We also replayed frozen search predictions against the [author's training-freque
 
 Independent scorers agreed on all 120 app/prior grades and reproduced the author's full-validation prior scores. This check used no new inference. The prior cannot detect absence; it is a diagnostic baseline, not a product change. Search does not consistently beat it, so these results do not support a leading-accuracy claim.
 
+A fixed equal-weight blend of coarse and refined scores improved cached development results, then failed fresh validation on the next three licensed videos in the frozen hash order, excluding all 24 previously selected videos. All eight official queries and three sampled-evidence absence controls completed. R@1 and R@5 both fell from 2/8 to 1/8; mIoU fell from 30.97% to 29.58%. Both methods returned no hits on the controls. The 37 shared inference requests cost an estimated $0.0100032, with no uncertain charges. Predictions were frozen before grading. **Decision: reject the blend; retain current scoring.**
+
 ## Evidence and reproduction
 
 Costs use recorded input/output tokens at $0.40/$1.60 per million, including reused inference and excluding cached-input discounts. They are estimates, not billing statements or per-stream-hour prices. No uncertain charges occurred in these runs.
