@@ -1,0 +1,117 @@
+{
+  "sourceCommit": "0eb3af82f478a2766c434223753673745d1e899c",
+  "kind": "Current-code offline regression on previously evaluated public footage; not new independent accuracy evidence",
+  "labelHash": "b3d6e7ef16ebff58efbcad4e8944313cef2fc77eb5f57da859fc17585807adf6",
+  "rows": [
+    {
+      "session": "eval-nasa-lab",
+      "query": "a man standing outdoors beside green trees",
+      "positive": true,
+      "returned": 1,
+      "relevantReturned": 1,
+      "hit1": true,
+      "hit5": true,
+      "precisionAt5": 0.2,
+      "elapsedMs": 11,
+      "pipelineCacheMisses": 0
+    },
+    {
+      "session": "eval-nasa-lab",
+      "query": "a person wearing a white laboratory coat",
+      "positive": true,
+      "returned": 3,
+      "relevantReturned": 3,
+      "hit1": true,
+      "hit5": true,
+      "precisionAt5": 0.6,
+      "elapsedMs": 25,
+      "pipelineCacheMisses": 1
+    },
+    {
+      "session": "eval-nasa-lab",
+      "query": "a person wearing a bright red shirt",
+      "positive": false,
+      "returned": 0,
+      "relevantReturned": 0,
+      "hit1": false,
+      "hit5": false,
+      "precisionAt5": 0,
+      "elapsedMs": 4,
+      "pipelineCacheMisses": 1
+    },
+    {
+      "session": "eval-nasa-kitchen",
+      "query": "a close-up view of a food pouch held toward the camera",
+      "positive": true,
+      "returned": 3,
+      "relevantReturned": 1,
+      "hit1": true,
+      "hit5": true,
+      "precisionAt5": 0.2,
+      "elapsedMs": 26,
+      "pipelineCacheMisses": 1
+    },
+    {
+      "session": "eval-nasa-kitchen",
+      "query": "a close-up of hands at an open metal food preparation compartment, with no face visible",
+      "positive": true,
+      "returned": 1,
+      "relevantReturned": 1,
+      "hit1": true,
+      "hit5": true,
+      "precisionAt5": 0.2,
+      "elapsedMs": 8,
+      "pipelineCacheMisses": 1
+    },
+    {
+      "session": "eval-nasa-kitchen",
+      "query": "a person wearing a tall white chef hat",
+      "positive": false,
+      "returned": 0,
+      "relevantReturned": 0,
+      "hit1": false,
+      "hit5": false,
+      "precisionAt5": 0,
+      "elapsedMs": 5,
+      "pipelineCacheMisses": 1
+    }
+  ],
+  "summary": {
+    "positiveHit1": "4/4",
+    "positiveHit5": "4/4",
+    "precisionAt5Positive": 0.3,
+    "precisionAmongReturnedPositive": 0.75,
+    "absentQueriesWithHits": 0,
+    "absentQueries": 2,
+    "networkAttempts": 0,
+    "replayedRequests": 5,
+    "paidCalls": 0,
+    "newSpendUsd": 0,
+    "offlineMedianMs": 9.5,
+    "latencyMeaning": "Local disk/receipt replay only; not cold model latency"
+  },
+  "limitations": [
+    "Six queries over two 90-second NASA clips, with provisional windows; not representative creator streams.",
+    "Precision@5 uses a fixed five-slot denominator; empty slots count as nonrelevant. This differs from precision among returned hits.",
+    "Numeric scores, stages and rankings match; generic coarse explanations changed from No strong match to Visual candidate in earlier UI work.",
+    "No continuous-time recall, calibrated probabilities, cold-query latency or measured stream-hour cost is established."
+  ],
+  "officialQvRegression": {
+    "rows": [
+      {
+        "qid": 8967,
+        "moderationBlocked": true,
+        "retainedAsMiss": true
+      },
+      {
+        "qid": 601,
+        "numericScoresAndRankingIdentical": true,
+        "visionCalls": 0
+      }
+    ],
+    "networkAttempts": 0,
+    "paidCalls": 0,
+    "originalMetric": "R@1 IoU .5/.7 remains 1/2, including moderation block as a miss"
+  },
+  "method": "Run current production search against exact saved provider responses and compatible disk caches; missing response fails closed. Every query repeated with zero pipeline cache misses. No API requests sent."
+}
