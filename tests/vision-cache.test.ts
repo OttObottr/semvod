@@ -6,7 +6,7 @@ import sharp from 'sharp';
 import { config, visionConfig } from '../src/server/config.js';
 import { atomicJson, hash, readJson, sessionDir } from '../src/server/store.js';
 import { search, runSearch } from '../src/server/search.js';
-import { cachedScore } from '../src/server/vision.js';
+import { cachedScore, moderate } from '../src/server/vision.js';
 import type { SearchResult } from '../src/shared/types.js';
 
 // Keep provider transport scaffolding shared; each test supplies its own evidence and assertions.
@@ -78,10 +78,21 @@ test('a candidate beyond the ten-frame refinement budget remains explicitly prov
   const result=await search(id,`provisional ${Date.now()}`);assert.equal(result.stats.refined,10);assert.equal(calls,11);assert.equal(result.hits.length,1);assert.equal(result.hits[0].id,10);assert.equal(result.hits[0].visualStage,'coarse');assert.ok(result.scores.slice(0,10).every(s=>s.visualStage==='refined'&&s.visualScore===0));
  }finally{globalThis.fetch=native;config.openaiKey=oldKey;await fs.rm(dir,{recursive:true,force:true});}
 });
-test('moderation rejects a flagged query before sending any frame',async()=>{
+test('moderation rejects flagged or malformed decisions before sending any frame',async()=>{
  const original=globalThis.fetch;const key=config.openaiKey;config.openaiKey='test-key';let vision=0;
  globalThis.fetch=async(input)=>{if(String(input).endsWith('/moderations'))return Response.json({results:[{flagged:true}]});vision++;throw new Error('No image should be sent');};
- try{await assert.rejects(search('demo',`flagged-test-${Date.now()}`,true),/flagged/);assert.equal(vision,0);}finally{globalThis.fetch=original;config.openaiKey=key;}
+ const query=`moderation-test-${Date.now()}`,file=path.join(process.cwd(),'.semvod/cache',`${hash(`moderation-v1:${query}`)}.json`);
+ try{
+  await assert.rejects(search('demo',query,true),/flagged/);assert.equal(vision,0);
+  for(const cached of [{safe:'false',at:Date.now()},{safe:true,at:Date.now()+60000},{safe:true,at:String(Date.now())},{safe:true,at:{valueOf:0,toString:0}}]){
+   await atomicJson(file,cached);await assert.rejects(moderate(query),/flagged/);
+  }
+  await fs.rm(file,{force:true});
+  for(const results of [[{}],[{flagged:null}],[{flagged:'false'}],{0:{flagged:false}},[{flagged:false},{flagged:true}],[]]){
+   globalThis.fetch=async(input)=>{if(String(input).endsWith('/moderations'))return Response.json({results});vision++;throw Error('No image should be sent');};
+   await assert.rejects(search('demo',query,true),/Moderation returned/);assert.equal(vision,0);
+  }
+ }finally{globalThis.fetch=original;config.openaiKey=key;await fs.rm(file,{force:true});}
 });
 
 test('longer sessions process at most three sheets concurrently and count actual token usage',async()=>{

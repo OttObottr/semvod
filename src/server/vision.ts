@@ -27,14 +27,15 @@ export const moderate = memoizeAsync(async (query: string) => {
     at: number;
   }>(file).catch(() => null);
   // Moderation decisions expire daily; cached vision results never bypass moderation for live queries.
-  if (cached && Date.now() - cached.at < visionConfig.moderationTtlMs) {
+  const age = cached && Number.isFinite(cached.at) ? Date.now() - cached.at : NaN;
+  if (cached && typeof cached.safe === 'boolean' && age >= 0 && age < visionConfig.moderationTtlMs) {
     if (!cached.safe)
       throw new Error(flaggedMessage);
     return;
   }
   const data = await openai('moderations', { model: 'omni-moderation-latest', input: query });
-  if (!data.results?.length)
-    throw new Error('Moderation returned no result. Try again.');
+  if (!Array.isArray(data?.results) || data.results.length !== 1 || typeof data.results[0]?.flagged !== 'boolean')
+    throw new Error('Moderation returned an invalid result. Try again.');
   const safe = !data.results[0].flagged;
   await atomicJson(file, { safe, at: Date.now() });
   if (!safe)
