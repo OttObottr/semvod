@@ -31,13 +31,14 @@ if(process.argv.includes('--prepare')){
   if(Math.abs(index.duration-duration)>1||index.frames.length!==Math.ceil(index.duration/2))throw Error('Full-clip duration/frame count mismatch');
   videos.push({vid:v.id,session,duration,nativeDuration:index.duration,indexSha256:hash(fs.readFileSync(path.join(folder,'index.json'))),frames:index.frames.map(f=>({...f,sha256:hash(fs.readFileSync(path.join(folder,f.file)))}))});
  }
- write(manifestFile,{acquisitionHash:hash(fs.readFileSync(path.join(dir,'acquisition.json'))),sources:sourceHashes(),queriesHash:acquisition.queriesSha256,goldHash:acquisition.goldSha256,videos,model:'gpt-4.1-mini',phaseCapUsd:.10,requestReserveUsd:.02,ratesUsdPerMillion:{input:.4,output:1.6},priceSource:'https://developers.openai.com/api/docs/models/gpt-4.1-mini',method:'Current production search and moderation; same qvh-v1 interval adapter; no chat. Freeze predictions before grade. No inference retries or model fallback.'});
+ write(manifestFile,{queryIds:queries.map(q=>q.qid),acquisitionHash:hash(fs.readFileSync(path.join(dir,'acquisition.json'))),sources:sourceHashes(),queriesHash:acquisition.queriesSha256,goldHash:acquisition.goldSha256,videos,model:'gpt-4.1-mini',phaseCapUsd:.10,requestReserveUsd:.02,ratesUsdPerMillion:{input:.4,output:1.6},priceSource:'https://developers.openai.com/api/docs/models/gpt-4.1-mini',method:'Current production search and moderation; same qvh-v1 interval adapter; no chat. Freeze predictions before grade. No inference retries or model fallback.'});
  console.log('Prepared four full clips and frozen inference contract; no inference.');
 }else if(process.argv.includes('--live')){
  if(fs.existsSync(predictionsFile))throw Error('No automatic reruns; predictions already exist');
  const manifest=read(manifestFile);
+ if(manifest.acquisitionHash!==hash(fs.readFileSync(path.join(dir,'acquisition.json')))||acquisition.protocolSha256!==hash(fs.readFileSync(path.join(dir,'protocol.json'))))throw Error('Frozen acquisition/protocol changed');
  if(JSON.stringify(manifest.sources)!==JSON.stringify(sourceHashes())||manifest.queriesHash!==hash(fs.readFileSync(queriesFile)))throw Error('Frozen source/query changed');
- for(const v of manifest.videos){const folder=path.join(scratch,'sessions',v.session);if(hash(fs.readFileSync(path.join(folder,'index.json')))!==v.indexSha256||v.frames.some(f=>hash(fs.readFileSync(path.join(folder,f.file)))!==f.sha256))throw Error('Frame inputs changed');}
+ for(const v of manifest.videos){const folder=path.join(scratch,'sessions',v.session);if(fs.existsSync(path.join(folder,'chat.jsonl'))&&fs.readFileSync(path.join(folder,'chat.jsonl'),'utf8').trim())throw Error('Benchmark chat must be empty');if(hash(fs.readFileSync(path.join(folder,'index.json')))!==v.indexSha256||v.frames.some(f=>hash(fs.readFileSync(path.join(folder,f.file)))!==f.sha256))throw Error('Frame inputs changed');}
  process.loadEnvFile(path.join(root,'.env'));if(!process.env.OPENAI_API_KEY)throw Error('Missing local OpenAI key');process.env.NODE_ENV='test';process.env.OPENAI_MODEL=manifest.model;
  const nativeFetch=globalThis.fetch,ledgerFile=path.join(root,'.semvod/real-footage/spend.json');
  if(read(ledgerFile).requests.some(r=>r.arm==='qvh-next-openai'))throw Error('This phase already attempted inference; no automatic restart');
@@ -67,6 +68,7 @@ if(process.argv.includes('--prepare')){
  await Promise.allSettled([queue]);result.accountedUsd=spent();result.newRequests=phaseRequests();write(predictionsFile,result);
 }else if(process.argv.includes('--grade')){
  const manifest=read(manifestFile),predictions=read(predictionsFile),goldFile=path.join(scratch,'gold.jsonl');
+ if(JSON.stringify(predictions.rows.map(r=>r.qid).sort())!==JSON.stringify(manifest.queryIds.slice().sort()))throw Error('Incomplete frozen prediction denominator');
  if(predictions.manifestHash!==hash(fs.readFileSync(manifestFile))||hash(fs.readFileSync(goldFile))!==manifest.goldHash)throw Error('Frozen inputs differ');
  const gold=lines(goldFile);if(JSON.stringify(predictions.rows.map(r=>r.qid).sort())!==JSON.stringify(gold.map(r=>r.qid).sort()))throw Error('Incomplete denominator');
  const rows=predictions.rows.map(r=>{const p=r.windows?.[0],g=gold.find(q=>q.qid===r.qid),iou=p?Math.max(0,...g.relevant_windows.map(w=>{const i=Math.max(0,Math.min(p[1],w[1])-Math.max(p[0],w[0]));return i/((p[1]-p[0])+(w[1]-w[0])-i);})):0;return {qid:r.qid,error:r.error??null,bestIoU:iou,r1IoU50:Number(iou>=.5),r1IoU70:Number(iou>=.7)};});
