@@ -11,12 +11,13 @@ export function sessionDir(id: string) {
   return id === 'demo' ? path.join(root, 'sample') : path.join(sessionsRoot, id);
 }
 export async function readJson<T>(file: string): Promise<T> { return JSON.parse(await fs.readFile(file, 'utf8')); }
-export async function atomicJson(file: string, value: unknown) {
+export async function atomicWrite(file: string, value: string | Buffer) {
   await fs.mkdir(path.dirname(file), { recursive: true, mode:0o700 });
   const tmp = `${file}.${randomUUID()}.tmp`;
-  await fs.writeFile(tmp, JSON.stringify(value, null, 2), {mode:0o600,flag:'wx'});
+  await fs.writeFile(tmp, value, {mode:0o600,flag:'wx'});
   await fs.rename(tmp, file);
 }
+export const atomicJson = (file: string, value: unknown) => atomicWrite(file, JSON.stringify(value, null, 2));
 export async function loadSession(id: string) { return readJson<Session>(path.join(sessionDir(id), 'index.json')); }
 export async function listSessions() {
   await fs.mkdir(sessionsRoot, { recursive: true });

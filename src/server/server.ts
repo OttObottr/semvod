@@ -72,10 +72,15 @@ export async function startServer(dev=false,demo=false){
     }
     if(p.startsWith('/api/')||p.startsWith('/media/'))return json(res,{error:'Not found'},404);
     if(vite){return vite.middlewares(req,res,async()=>{try{const html=await vite.transformIndexHtml(req.url||'/',await fs.readFile(path.join(root,'index.html'),'utf8'));res.setHeader('Content-Type','text/html');res.end(html);}catch(error){res.statusCode=500;res.end('Frontend failed to load');console.error(error);}});}
+    if(p!=='/'&&!p.startsWith('/assets/'))return json(res,{error:'Not found'},404);
     const publicRoot=path.join(root,'dist/client');const file=p.startsWith('/assets/')?path.resolve(publicRoot,`.${p}`):path.join(publicRoot,'index.html');
     if(!file.startsWith(publicRoot+path.sep))return json(res,{error:'Invalid path'},400);
     const types:Record<string,string>={'.html':'text/html','.js':'text/javascript','.css':'text/css','.svg':'image/svg+xml'};
-    res.setHeader('Content-Type',types[path.extname(file)]||'application/octet-stream');return res.end(await fs.readFile(file));
+    res.setHeader('Content-Type',types[path.extname(file)]||'application/octet-stream');
+    res.setHeader('Cache-Control',p.startsWith('/assets/')?'private, max-age=31536000, immutable':'no-cache');
+    const compress=/\.(js|css)$/.test(file);if(compress)res.setHeader('Vary','Accept-Encoding');
+    const gzip=compress&&req.headers['accept-encoding']?.split(',').some(value=>value.trim()==='gzip');
+    const content=await fs.readFile(gzip?`${file}.gz`:file);if(gzip)res.setHeader('Content-Encoding','gzip');return res.end(content);
   }
   await new Promise<void>(resolve=>server.listen(config.port,process.env.SEMVOD_SANDBOX==='1'?'0.0.0.0':'127.0.0.1',resolve));
   console.log(`SemVOD → http://localhost:${config.port}${demo?' (offline sample)':''}`);

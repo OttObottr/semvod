@@ -35,6 +35,7 @@ export default function App() {
   const searchRef = useRef<HTMLInputElement>(null);
   const sessionGeneration = useRef(0);
   const clipRequests = useRef(latestRequest()).current;
+  const linkRequests = useRef(latestRequest()).current;
 
   async function refresh() {
     const [nextStatus, nextSessions] = await Promise.all([
@@ -57,6 +58,7 @@ export default function App() {
     return () => {
       window.removeEventListener('keydown', focusSearch);
       clipRequests.invalidate();
+      linkRequests.invalidate();
     };
   }, []);
 
@@ -133,6 +135,7 @@ export default function App() {
 
   function selectMoment(hit?: Hit) {
     clipRequests.invalidate();
+    linkRequests.invalidate();
     setClipBusy(false);
     setSelected(hit);
     setCoverTitle('');
@@ -188,14 +191,15 @@ export default function App() {
   }
 
   async function copyVodLink() {
-    try {
-      if (!selected || searchBusy) return;
-      const result = await api<{ url: string }>('/api/vod-link', { sessionId, t: selected.t });
-      await navigator.clipboard.writeText(result.url);
-      setNotice('VOD timestamp link copied.');
-    } catch (error) {
-      setError((error as Error).message);
-    }
+    if (!selected || searchBusy) return;
+    await linkRequests.run(
+      async current => {
+        const result = await api<{ url: string }>('/api/vod-link', { sessionId, t: selected.t });
+        if (current()) await navigator.clipboard.writeText(result.url);
+      },
+      () => setNotice('VOD timestamp link copied.'),
+      error => setError((error as Error).message),
+    );
   }
 
   async function createClip() {

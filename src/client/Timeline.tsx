@@ -1,6 +1,7 @@
+import { useMemo } from 'react';
 import { MessageSquare, Search, Zap } from 'lucide-react';
 import type { Hit, SearchResult, SessionView } from '../shared/types';
-import { formatTime } from './ui';
+import { formatTime, timelineBins } from './ui';
 
 const MAX_BINS = 160;
 const EMPTY_BINS = 96;
@@ -17,32 +18,27 @@ interface TimelineProps {
 export default function Timeline({ session, result, selected, onSelect, busy }: TimelineProps) {
   const duration = session?.duration || 1;
   const count = Math.min(MAX_BINS, session?.frames.length || EMPTY_BINS);
-  const bins = Array.from({ length: count }, (_, index) => {
-    const from = index / count * duration;
-    const to = (index + 1) / count * duration;
-    const items = result?.scores.filter(score => score.t >= from && score.t < to) || [];
-    return items.sort((a, b) => b.score - a.score)[0];
-  });
+  const bins = useMemo(() => timelineBins(result?.scores || [], duration, count), [result?.scores, duration, count]);
+  const frames = session?.frames || [];
+  const frameIndex = Math.max(0, frames.findIndex(frame => frame.t === selected));
   const points = session?.hype
     .map(bucket => `${bucket.t / duration * 1000},${42 - bucket.value * 34}`)
     .join(' ') || '';
 
-  function selectBin(hit: Hit | undefined, index: number) {
-    if (hit) {
-      onSelect(hit);
-    } else if (session?.frames.length) {
-      const frameIndex = Math.min(
-        session.frames.length - 1,
-        Math.floor(index / count * session.frames.length),
-      );
-      onSelect({
-        ...session.frames[frameIndex],
-        score: 0,
-        visualScore: 0,
-        chatScore: 0,
-        reason: 'Selected timeline frame',
-      });
-    }
+  function selectFrame(index: number) {
+    const frame = frames[index];
+    if (busy || !frame) return;
+    onSelect(result?.scores.find(hit => hit.id === frame.id) || {
+      ...frame, score: 0, visualScore: 0, chatScore: 0, reason: 'Selected timeline frame',
+    });
+  }
+
+  function selectTime(t: number) {
+    if (busy || !frames.length) return;
+    const hit = bins[Math.min(count - 1, Math.floor(t / duration * count))];
+    if (hit) onSelect(hit);
+    else selectFrame(frames.reduce((nearest, frame, index) =>
+      Math.abs(frame.t - t) < Math.abs(frames[nearest].t - t) ? index : nearest, 0));
   }
 
   return (
@@ -59,19 +55,31 @@ export default function Timeline({ session, result, selected, onSelect, busy }: 
           <div className="timeline-label"><Search size={12} /><span>RELEVANCE</span></div>
           <div className="heat-track">
             {bins.map((hit, index) => (
-              <button
+              <span
                 key={index}
-                disabled={busy}
-                aria-label={hit
-                  ? `Explore ${formatTime(hit.t)}, ${hit.score.toFixed(1)} out of 10 relevance`
-                  : `Timeline ${formatTime(index / count * duration)}`}
-                title={hit
-                  ? `${formatTime(hit.t)} · ${hit.score.toFixed(1)}/10`
-                  : formatTime(index / count * duration)}
+                aria-hidden="true"
                 style={{ background: hit ? `rgba(203,235,147,${.08 + hit.score / 10 * .92})` : undefined }}
-                onClick={() => selectBin(hit, index)}
               />
             ))}
+            <input
+              type="range" min={0} max={duration} step="any" value={selected || 0}
+              disabled={busy || !frames.length}
+              aria-label="Explore stream timeline"
+              aria-valuetext={formatTime(selected || 0)}
+              onChange={event => selectTime(Number(event.currentTarget.value))}
+              onPointerUp={event => selectTime(Number(event.currentTarget.value))}
+              onKeyDown={event => {
+                const jump = Math.max(1, Math.ceil(frames.length / 10));
+                const moves: Record<string, number> = {
+                  ArrowRight: 1, ArrowUp: 1, ArrowLeft: -1, ArrowDown: -1, PageUp: jump, PageDown: -jump,
+                  Home: -frames.length, End: frames.length,
+                };
+                if (event.key in moves) {
+                  event.preventDefault();
+                  selectFrame(Math.max(0, Math.min(frames.length - 1, frameIndex + moves[event.key])));
+                }
+              }}
+            />
             {selected !== undefined && (
               <span className="playhead" style={{ left: `${Math.min(99.8, selected / duration * 100)}%` }}>
                 <i />

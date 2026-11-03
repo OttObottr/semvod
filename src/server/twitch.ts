@@ -8,19 +8,26 @@ const tokenFile = path.join(root,'.semvod','twitch.json');
 interface Token { access_token: string; refresh_token: string; expires_in: number; scope: string[]; obtainedAt: number }
 export interface Identity { user_id: string; login: string; client_id: string; scopes: string[] }
 export interface Vod { id: string; stream_id: string; created_at: string; duration: string; url: string }
-let refreshPending: Promise<Token> | undefined;
+let tokenTail: Promise<unknown> = Promise.resolve();
+// Serialize reads and complete writes so an old refresh cannot replace a new login.
+function withToken<T>(work: () => Promise<T>): Promise<T> {
+  const next = tokenTail.then(work, work);
+  tokenTail = next.catch(() => {});
+  return next;
+}
 async function tokenRequest(params: Record<string,string>): Promise<Token> {
   const response = await fetch('https://id.twitch.tv/oauth2/token',{method:'POST',body:new URLSearchParams({...params,client_id:config.twitchClientId,client_secret:config.twitchSecret}),signal:AbortSignal.timeout(20000)});
   const token = await response.json() as Token & {message?: string};
   if (!response.ok) throw new Error(`Twitch authorization failed: ${token.message || response.status}`);
   token.obtainedAt = Date.now(); await atomicJson(tokenFile,token); return token;
 }
-export async function exchangeCode(code: string) { await tokenRequest({grant_type:'authorization_code',code,redirect_uri:config.redirectUri}); return validateIdentity(); }
+export async function exchangeCode(code: string) { await withToken(() => tokenRequest({grant_type:'authorization_code',code,redirect_uri:config.redirectUri})); return validateIdentity(); }
 async function accessToken() {
-  const token = await readJson<Token>(tokenFile).catch(() => {throw new Error('Connect Twitch in Settings first.');});
-  if (Date.now() < token.obtainedAt + (token.expires_in-120)*1000) return token.access_token;
-  refreshPending ??= tokenRequest({grant_type:'refresh_token',refresh_token:token.refresh_token}).finally(()=>{refreshPending=undefined;});
-  return (await refreshPending).access_token;
+  return withToken(async () => {
+    const token = await readJson<Token>(tokenFile).catch(() => {throw new Error('Connect Twitch in Settings first.');});
+    if (Date.now() < token.obtainedAt + (token.expires_in-120)*1000) return token.access_token;
+    return (await tokenRequest({grant_type:'refresh_token',refresh_token:token.refresh_token})).access_token;
+  });
 }
 export async function validateIdentity(): Promise<Identity> {
   const response = await fetch('https://id.twitch.tv/oauth2/validate',{headers:{Authorization:`OAuth ${await accessToken()}`},signal:AbortSignal.timeout(15000)});

@@ -1,4 +1,5 @@
 // Shared browser-facing contracts, requests and media display helpers.
+import type { Hit } from '../shared/types';
 export interface Status {
   demo: boolean;
   openai: boolean;
@@ -38,11 +39,12 @@ export function latestRequest() {
   let revision=0;
   return {
     invalidate(){revision++;},
-    async run<T>(work:()=>Promise<T>,commit:(value:T)=>void,fail:(error:unknown)=>void,done:()=>void){
+    async run<T>(work:(current:()=>boolean)=>Promise<T>,commit:(value:T)=>void,fail:(error:unknown)=>void,done=()=>{}){
       const request=++revision;
-      try{const value=await work();if(request===revision)commit(value);}
-      catch(error){if(request===revision)fail(error);}
-      finally{if(request===revision)done();}
+      const current=()=>request===revision;
+      try{const value=await work(current);if(current())commit(value);}
+      catch(error){if(current())fail(error);}
+      finally{if(current())done();}
     }
   };
 }
@@ -56,3 +58,16 @@ export function formatTime(seconds: number): string {
 
 export const frameUrl = (sessionId: string, frameId: number) =>
   `/media/${sessionId}/frame/${frameId}`;
+
+export function timelineBins(scores: Hit[], duration: number, count: number) {
+  const bins = Array<Hit | undefined>(count).fill(undefined);
+  for (const hit of scores) {
+    if (!(hit.t >= 0 && hit.t < duration)) continue;
+    let index = Math.min(count - 1, Math.floor(hit.t / duration * count));
+    // Match the displayed interval edges despite floating-point rounding.
+    if (hit.t < index / count * duration) index--;
+    else if (hit.t >= (index + 1) / count * duration) index++;
+    if (!bins[index] || hit.score > bins[index]!.score) bins[index] = hit;
+  }
+  return bins;
+}

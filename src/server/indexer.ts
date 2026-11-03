@@ -2,7 +2,7 @@ import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
 import { chatConfig, sheetConfig } from './config.js';
-import { atomicJson, hash, loadSession, sessionDir } from './store.js';
+import { atomicJson, atomicWrite, hash, loadSession, sessionDir } from './store.js';
 import type { ChatMessage, Frame, HypeBucket, Sheet } from '../shared/types.js';
 const EMOTES = /^(lul|lulw|kekw|pog|poggers|pogchamp|omegalul|wow|hype|letsgo|pepega)$/i;
 export function buildHype(chat: ChatMessage[], duration: number): HypeBucket[] {
@@ -39,7 +39,8 @@ export async function buildSheets(id: string): Promise<Sheet[]> {
         const label = Buffer.from(`<svg width="${width}" height="${height}"><rect width="31" height="23" fill="#101114"/><text x="7" y="16" fill="white" font-family="sans-serif" font-size="15" font-weight="bold">${i+1}</text></svg>`);
         return {input:await sharp(image).resize(width,height,{fit:'cover'}).composite([{input:label}]).jpeg({quality:sheetConfig.tileQuality}).toBuffer(),left:(i%columns)*width,top:Math.floor(i/columns)*height};
       }));
-      await sharp({create:{width:columns*width,height:Math.ceil(frames.length/columns)*height,channels:3,background:'#151619'}}).composite(tiles).jpeg({quality:sheetConfig.sheetQuality}).toFile(path.join(dir,file));
+      const image = await sharp({create:{width:columns*width,height:Math.ceil(frames.length/columns)*height,channels:3,background:'#151619'}}).composite(tiles).jpeg({quality:sheetConfig.sheetQuality}).toBuffer();
+      await atomicWrite(path.join(dir,file), image);
     }
     sheets.push({file,hash:fingerprint,frames});
   }

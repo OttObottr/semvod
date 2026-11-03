@@ -51,7 +51,7 @@ export default function MomentPanel({
       <section className="moment-layout">
         <div className="preview-panel">
           <div className="preview-image">
-            {active && <img src={frameUrl(sessionId, active.id)} alt={selected?.reason || 'Illustrated sample game scene'} />}
+            {active && <img src={frameUrl(sessionId, active.id)} fetchPriority="high" alt={selected?.reason || (session?.demo ? 'Illustrated sample game scene' : 'Captured stream frame')} />}
             <div className="preview-top">
               <span className="preview-tag"><span />{session?.demo ? 'SAMPLE FRAME' : 'CAPTURED FRAME'}</span>
               <span className="preview-time">{formatTime(active?.t || 0)}</span>

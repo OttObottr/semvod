@@ -16,7 +16,12 @@ test('production server serves the demo and covers, and blocks cross-origin muta
  try{
   await new Promise<void>((resolve,reject)=>{const timer=setTimeout(()=>reject(new Error(log||'Server timeout')),10000);server.stdout.on('data',()=>{if(log.includes('SemVOD →')){clearTimeout(timer);resolve();}});server.on('exit',()=>{clearTimeout(timer);reject(new Error(log));});});
   const base=`http://127.0.0.1:${port}`;
-  const page=await fetch(base);assert.equal(page.status,200);assert.match(await page.text(),/SemVOD/);
+  const page=await fetch(base),html=await page.text();assert.equal(page.status,200);assert.match(html,/SemVOD/);assert.equal(page.headers.get('cache-control'),'no-cache');
+  assert.equal((await fetch(base+'/robots.txt')).status,404);
+  const asset=html.match(/src="([^"]+\.js)"/)![1];
+  const plain=await fetch(base+asset,{headers:{'Accept-Encoding':'gzip;q=0, identity'}}),compressed=await fetch(base+asset,{headers:{'Accept-Encoding':'gzip'}});
+  assert.equal(plain.headers.get('content-encoding'),null);assert.equal(compressed.headers.get('content-encoding'),'gzip');
+  assert.equal(compressed.headers.get('vary'),'Accept-Encoding');assert.match(compressed.headers.get('cache-control')!,/immutable/);assert.equal(await compressed.text(),await plain.text());
   const status=await fetch(base+'/api/status').then(r=>r.json());assert.equal(status.openai,false);assert.equal(status.twitch,null);assert.equal(status.redirectUri,`http://localhost:${port}/auth/twitch/callback`);
   const session=await fetch(base+'/api/session?id=demo').then(r=>r.json());assert.equal(session.frames.length,96);
   const post=(data:unknown,headers:Record<string,string>={})=>fetch(base+'/api/search',{method:'POST',headers:{'Content-Type':'application/json','X-Semvod-Client':'1',...headers},body:JSON.stringify(data)});
