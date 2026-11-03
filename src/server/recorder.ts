@@ -14,7 +14,7 @@ export class Recorder {
   private startSettled?: Promise<void>;
   private saves:Promise<void>=Promise.resolve();
   async start(chatEnabled = true) {
-    if(!this.stopped || this.starting || this.stopPending) throw new Error('A recording is already starting, running, or stopping.');
+    if(!this.stopped || this.starting || this.stopPending || this.session?.status==='recording') throw new Error('A recording is already starting, running, or stopping. Retry Stop if saving failed.');
     this.starting = true;
     let settled!:()=>void;this.startSettled=new Promise(resolve=>{settled=resolve;});
     try {
@@ -83,9 +83,14 @@ export class Recorder {
   }
   private async finishStop(){
     await this.startSettled;
-    if(this.stopped)return this.session;
-    this.stopped=true;clearTimeout(this.timer);clearInterval(this.validationTimer);
-    for(const ws of this.sockets)ws.close();await this.capturePending;await this.writes;this.obs.close();
-    this.session!.duration=this.elapsed();this.session!.status='complete';await this.save();return this.session;
+    if(this.stopped&&this.session?.status!=='recording')return this.session;
+    if(!this.stopped){
+      this.stopped=true;clearTimeout(this.timer);clearInterval(this.validationTimer);
+      for(const ws of this.sockets)ws.close();await this.capturePending;await this.writes;this.obs.close();
+      this.session!.duration=this.elapsed();
+    }
+    this.session!.status='complete';
+    try{await this.save();}catch(error){this.session!.status='recording';throw error;}
+    return this.session;
   }
 }

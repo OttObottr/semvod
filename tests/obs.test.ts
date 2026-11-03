@@ -7,7 +7,7 @@ import sharp from 'sharp';
 import { OBSClient } from '../src/server/obs.js';
 import { Recorder } from '../src/server/recorder.js';
 import { loadSession, sessionDir } from '../src/server/store.js';
-test('OBS v5 authentication, screenshot capture, and graceful stop preserve a session',async()=>{
+test('OBS authentication, capture and a retried stop preserve a session',async()=>{
  const Native=globalThis.WebSocket;const messages:any[]=[];const image=await sharp({create:{width:384,height:216,channels:3,background:'#88bb77'}}).jpeg().toBuffer();
  class MockSocket extends EventTarget{
   static OPEN=1;readyState=1;
@@ -20,7 +20,14 @@ test('OBS v5 authentication, screenshot capture, and graceful stop preserve a se
  const recorder=new Recorder();let id:string|undefined;
  try{
   const obs=new OBSClient();await obs.connect('ws://127.0.0.1:4455','password');const digest=(v:string)=>createHash('sha256').update(v).digest('base64');assert.equal(messages[0].d.authentication,digest(digest('passwordsalt')+'challenge'));obs.close();
-  const session=await recorder.start(false);id=session.id;await recorder.stop();const saved=await loadSession(id);assert.equal(saved.status,'complete');assert.equal(saved.frames.length,1);assert.ok(saved.frames[0].t>=0);assert.ok(saved.duration>=saved.frames[0].t);assert.equal(saved.chatStatus,'off');assert.equal(await fs.readFile(path.join(sessionDir(id),'chat.jsonl'),'utf8'),'');const screenshot=messages.find(m=>m.d?.requestType==='GetSourceScreenshot');assert.equal(screenshot.d.requestData.imageWidth,384);assert.equal(screenshot.d.requestData.sourceName,'Main');
+  const session=await recorder.start(false);id=session.id;
+  for(let i=0;i<200&&!session.frames.length;i++)await new Promise(r=>setTimeout(r,5));
+  assert.equal(session.frames.length,1);
+  const rename=fs.rename;let failed=false;
+  fs.rename=async(from,to)=>{if(String(to)===path.join(sessionDir(id!),'index.json')&&JSON.parse(await fs.readFile(from,'utf8')).status==='complete'){failed=true;throw new Error('Simulated final index failure');}return rename(from,to);};
+  try{await assert.rejects(recorder.stop(),/Simulated final index failure/);assert.equal(failed,true);assert.equal((await loadSession(id)).status,'recording');await assert.rejects(recorder.start(false),/Retry Stop/);assert.equal((await fs.readdir(sessionDir(id))).some(file=>file.endsWith('.tmp')),false);}
+  finally{fs.rename=rename;}
+  const duration=session.duration;await Promise.all([recorder.stop(),recorder.stop()]);const saved=await loadSession(id);assert.equal(saved.duration,duration);assert.equal(saved.status,'complete');assert.equal(saved.frames.length,1);assert.ok(saved.frames[0].t>=0);assert.ok(saved.duration>=saved.frames[0].t);assert.equal(saved.chatStatus,'off');assert.equal(await fs.readFile(path.join(sessionDir(id),'chat.jsonl'),'utf8'),'');const screenshot=messages.find(m=>m.d?.requestType==='GetSourceScreenshot');assert.equal(screenshot.d.requestData.imageWidth,384);assert.equal(screenshot.d.requestData.sourceName,'Main');
  }finally{await recorder.stop();globalThis.WebSocket=Native;if(id)await fs.rm(sessionDir(id),{recursive:true,force:true});}
 });
 test('test transports and OBS reject external network connections',async()=>{await assert.rejects(new OBSClient().connect('ws://example.com:4455',''),/loopback/);await assert.rejects(fetch('https://example.com'),/External network disabled/);assert.throws(()=>new WebSocket('wss://example.com'),/External network disabled/);});

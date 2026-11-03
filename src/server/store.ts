@@ -14,8 +14,10 @@ export async function readJson<T>(file: string): Promise<T> { return JSON.parse(
 export async function atomicWrite(file: string, value: string | Buffer) {
   await fs.mkdir(path.dirname(file), { recursive: true, mode:0o700 });
   const tmp = `${file}.${randomUUID()}.tmp`;
-  await fs.writeFile(tmp, value, {mode:0o600,flag:'wx'});
-  await fs.rename(tmp, file);
+  try {
+    await fs.writeFile(tmp, value, {mode:0o600,flag:'wx'});
+    await fs.rename(tmp, file);
+  } catch(error) { await fs.rm(tmp, {force:true}).catch(() => {}); throw error; }
 }
 export const atomicJson = (file: string, value: unknown) => atomicWrite(file, JSON.stringify(value, null, 2));
 export async function loadSession(id: string) { return readJson<Session>(path.join(sessionDir(id), 'index.json')); }
