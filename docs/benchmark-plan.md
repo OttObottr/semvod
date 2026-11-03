@@ -50,6 +50,10 @@ All 30 queries completed in both arms. Reference token cost includes reused Resp
 
 Independent review reconstructed all paired metrics, alias mappings and spend. **Not adopted.** Reference savings were 9.7%, below the fixed 10% gate. More importantly, QV queries 32, 657 and 8977 lost an existing threshold success or top-five match despite better aggregate results. A separate top-five coverage check rose from 28/38 to 31/38 windows but lost two previously covered windows (queries 666 and 8977). Grouping used 1,568 representatives for 1,864 frames, but 11 returned hits inherited another frame's evidence. NASA baseline was refreshed under the current schema, so its first-hit result differs from the older pilot. Cold wall times mix live inference and receipt replay and cannot establish a latency improvement. Runtime code and dependencies remain unchanged. This is development evidence, not a representative stream-quality guarantee.
 
+## Free ranking replay
+
+Before replay: one fixed tie-break orders existing top-five results by unchanged score, then mean full-trace neighbor score within ±2 seconds, then time. It preserves every hit and score; empty neighborhoods score zero. All 40 saved cases remain: 24 QVHighlights, two earlier pilot cases (including one failure), four continuation cases, four temporal-baseline cases, and six current NASA controls. Require a new QV IoU 0.5/0.7 pass with no per-case threshold or first-hit-containment losses. No parameter sweep, inference, or network. Known-label development evidence only; neighboring scores are not independent confirmation. Protocol SHA-256: `c3ede483d913a1ce65043a18e09641bcd0fe13ff6957f661026d346cebadc1b3`.
+
 ## Reproduction and historical evidence
 
 The [immutable research snapshot](https://github.com/OttObottr/semvod/tree/53ecc81bd8d586265e0476db1ac6d61012e4f98a) preserves runners, protocols, raw published receipts, evaluation tests, failed attempts and limitations. [README instructions](../README.md#code-and-evidence) open it in a separate checkout. Current app tests stay in this repository; research tooling stays outside the working app.
