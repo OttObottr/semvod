@@ -58,6 +58,10 @@ Complete ranking predictions committed before grading: SHA-256 `0bfd458778f8876e
 
 **Not adopted.** Independent replay checked all 40 cases and 2,719 saved scores with zero network calls or spend. The 24-query set improved from 11→14 at IoU 0.5 and 10→11 at 0.7, but continuation query 8976 fell from IoU 0.636 to 0 and lost first-hit relevance (that set fell 2→1 at IoU 0.5). Other QV threshold totals were unchanged; NASA positive first-hit matches rose 3→4/4 and absent controls remained 0/2. All hit memberships, top-five coverage and false-hit counts were unchanged; the earlier failed query remained counted. Neighbor agreement promoted a wrong moment, so the aggregate gains do not pass the frozen no-regression gate. Production ranking remains unchanged.
 
+## Fresh video preparation
+
+Preparing 20 unused [Perception Test](https://github.com/google-deepmind/perception_test) validation videos: 15 hash-selected general cases plus five separately reported memory-game cases requiring official reveal cuts, excluding all 25 previously tested IDs. Include every official MCQA question for each selected video; no content/answer filters or replacements. Selection precedes question inspection. This is a fresh capability audit, not a timestamp-retrieval benchmark. CC-BY 4.0 materials stay in the external research workspace with attribution; no inference or new packages. Protocol SHA-256: `fbcb9b528875d5c61cf48365b65bcc707fcd0f220fde5e0a9110d72f9b120463`.
+
 ## Reproduction and historical evidence
 
 The [immutable research snapshot](https://github.com/OttObottr/semvod/tree/53ecc81bd8d586265e0476db1ac6d61012e4f98a) preserves runners, protocols, raw published receipts, evaluation tests, failed attempts and limitations. [README instructions](../README.md#code-and-evidence) open it in a separate checkout. Current app tests stay in this repository; research tooling stays outside the working app.
