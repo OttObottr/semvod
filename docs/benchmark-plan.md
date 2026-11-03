@@ -64,7 +64,7 @@ Prepared 20 unused [Perception Test](https://github.com/google-deepmind/percepti
 
 Also prepared 12 previously unused [DiDeMo](https://github.com/LisaAnne/LocalizingMoments#dataset) validation videos, selected by a fixed hash from 145 explicitly CC-BY-licensed videos among 1,094 validation videos. All queries and original annotator time segments are retained; unavailable selections will not be replaced. This rights-filtered subset is not representative of the complete split. Media is capped at the official first 30 seconds; official DiDeMo metrics need their own evaluation contract. Protocol SHA-256: `89856437629434f8b621e3464f8c543a77e520057372be20d38c82213dfa44ae`.
 
-Independent preparation audits verified selection, media hashes, timestamps and complete annotations. Preparation completed with no replacements or paid inference: Perception has **85 questions / 244 frames / 463.2 seconds** after official reveal cuts; DiDeMo has **48 queries / 168 frames / 328.5 seconds**. DiDeMo source containers were uniformly normalized to 30 fps from t=0, at most 640px wide, before two-second sampling; original annotator bins remain unchanged. These are short-video subsets, not long-stream validation. Manifest SHA-256: Perception `bb3ef6042a378b5fbf984298348fdc696b950bbf26456b664cf34f09406f094a`; DiDeMo `c447a1bd405be6521f785f0452ceb3ee0a8920b3ac21619cc01b42b3d966f1b3`. No model predictions or accuracy results exist for these selections yet.
+Independent preparation audits verified selection, media hashes, timestamps and complete annotations. Preparation completed with no replacements or paid inference: Perception has **85 questions / 244 frames / 463.2 seconds** after official reveal cuts; DiDeMo has **48 queries / 168 frames / 328.5 seconds**. DiDeMo source containers were uniformly normalized to 30 fps from t=0, at most 640px wide, before two-second sampling; original annotator bins remain unchanged. These are short-video subsets, not long-stream validation. Manifest SHA-256: Perception `bb3ef6042a378b5fbf984298348fdc696b950bbf26456b664cf34f09406f094a`; DiDeMo `c447a1bd405be6521f785f0452ceb3ee0a8920b3ac21619cc01b42b3d966f1b3`. Perception remains unscored; DiDeMo results follow below.
 
 
 ## DiDeMo production-search evaluation
@@ -72,6 +72,21 @@ Independent preparation audits verified selection, media hashes, timestamps and 
 Before inference: all 48 prepared queries, unchanged production search, no chat/audio, one cold search followed by an identical warm search. Phase cap $0.12 within the existing shared cap; $0.02 reserved per request, no retries or fallback. Frozen interval adapter ranks all 21 official candidates by lexicographic overlap with existing ranked app windows (clip candidate seconds to available media; unavailable bins last; ties shorter then earlier). The [author’s evaluator](https://github.com/LisaAnne/LocalizingMoments/blob/b6a555c8134581305d0ed4716fbc192860e0b88c/utils/eval.py) averages the three best annotator ranks for R@1/R@5 and the three best top-prediction IoUs for mIoU, preserving duplicate votes and inclusive bin coordinates. Failures, unattempted queries and abstentions receive zero, retaining all 48 in the denominator. This evaluates production outputs through a fixed adapter, not a native DiDeMo model or a full-split leaderboard submission. Contract SHA-256: `9861592ebf9c4d4476feae42c1cb794d91ab7a76342310f047986a9501ad0821`.
 
 Complete predictions frozen before grading: SHA-256 `18b9d043a44d0973bfd464108ee85f44c4e5308dc2c2fd90f750db18479c0406`.
+
+Independent audit reconstructed all 628 returned frame scores from 137 exact request hashes and saved model responses. **Accuracy remains weak on this subset.** Of 48 queries, 45 searches completed, including 16 with no hits; three moderation blocks remain counted as misses. No query was replaced or retried.
+
+| Measure | Result |
+| --- | ---: |
+| Official consensus R@1 / R@5 | 4/48 (8.3%) / 9/48 (18.8%) |
+| Mean IoU / video-macro mean IoU | 20.76% / 20.54% |
+| Median cold / warm latency | 4.778 s / 12.631 ms |
+| Warm network calls | 0 across all 45 completed searches |
+| Estimated new cost / uncertain charges | $0.0423984 / $0 |
+
+Cost uses 69,844 input and 9,038 output tokens at the recorded $0.40/$1.60 per million rates, ignoring cached-input discounts. All source and input hashes remained unchanged. These short clips and the fixed interval adapter do not establish long-stream accuracy or a per-stream-hour price; the low cost does not establish useful retrieval quality.
+
+A credential-free Chrome replay checked all 48 cases: every one of the 628 returned scores, rendered heatmap bins and ranked hits matched the frozen results; the three cached moderation blocks displayed errors. All 45 cover downloads decoded at 1280×720, with no mobile overflow, browser exceptions or external page requests. Provider access was blocked and replay spent $0. The production build passed; app code, tests and dependencies were unchanged.
+
 
 ## Reproduction and historical evidence
 
