@@ -46,9 +46,11 @@ Independent scorers agreed on all 120 app/prior grades and reproduced the author
 
 A fixed equal-weight blend of coarse and refined scores improved cached development results, then failed fresh validation on the next three licensed videos in the frozen hash order, excluding all 24 previously selected videos. All eight official queries and three sampled-evidence absence controls completed. R@1 and R@5 both fell from 2/8 to 1/8; mIoU fell from 30.97% to 29.58%. Both methods returned no hits on the controls. The 37 shared inference requests cost an estimated $0.0100032, with no uncertain charges. Predictions were frozen before grading. **Decision: reject the blend; retain current scoring.**
 
+On the same now-reviewed eight queries and three controls, GPT-6 Luna with reasoning disabled reduced R@1 from 2/8 to 0/8; R@5 stayed 2/8 and mIoU fell from 30.97% to 20.56%. All cases completed, controls remained empty, and warm repeats made no network calls. Its 29 requests cost a conservative estimated $0.0024944 versus the saved baseline's $0.0100032, using $0.125/$0.50 per million input/output tokens with a cache-write allowance ([pricing](https://developers.openai.com/api/docs/models/gpt-6-luna)). This paired screen is not fresh validation or a full-split model comparison. **Decision: retain GPT-4.1 mini; the cheaper candidate lost accuracy.**
+
 ## Evidence and reproduction
 
-Costs use recorded input/output tokens at $0.40/$1.60 per million, including reused inference and excluding cached-input discounts. They are estimates, not billing statements or per-stream-hour prices. No uncertain charges occurred in these runs.
+GPT-4.1 mini costs use recorded input/output tokens at $0.40/$1.60 per million, including reused inference and excluding cached-input discounts. They are estimates, not billing statements or per-stream-hour prices. No uncertain charges occurred in these runs.
 
 [Earlier protocols, commitments, paired regressions and experiment history](https://github.com/OttObottr/semvod/blob/767763fab025e36eb30309cd89a4aaf574bcccab/docs/benchmark-plan.md) preserve prior comparisons. Earlier tools and public receipts are in the [research snapshot](https://github.com/OttObottr/semvod/tree/53ecc81bd8d586265e0476db1ac6d61012e4f98a); its `node scripts/benchmark.mjs` command replays saved fixtures without paid inference. Later raw runs and licensed media remain in the separate local benchmark workspace and are not bundled with a fresh clone.
 
