@@ -60,7 +60,9 @@ Complete ranking predictions committed before grading: SHA-256 `0bfd458778f8876e
 
 ## Fresh video preparation
 
-Preparing 20 unused [Perception Test](https://github.com/google-deepmind/perception_test) validation videos: 15 hash-selected general cases plus five separately reported memory-game cases requiring official reveal cuts, excluding all 25 previously tested IDs. Include every official MCQA question for each selected video; no content/answer filters or replacements. Selection precedes question inspection. This is a fresh capability audit, not a timestamp-retrieval benchmark. CC-BY 4.0 materials stay in the external research workspace with attribution; no inference or new packages. Protocol SHA-256: `fbcb9b528875d5c61cf48365b65bcc707fcd0f220fde5e0a9110d72f9b120463`.
+Preparing 20 unused [Perception Test](https://github.com/google-deepmind/perception_test) validation videos: 15 hash-selected general cases plus five separately reported cases requiring official reveal cuts, excluding all 25 previously tested IDs. Include every official MCQA question for each selected video; no content/answer filters or replacements. Selection precedes question inspection. This is a fresh capability audit, not a timestamp-retrieval benchmark. CC-BY 4.0 materials stay in the external research workspace with attribution; no inference or new packages. Protocol SHA-256: `fbcb9b528875d5c61cf48365b65bcc707fcd0f220fde5e0a9110d72f9b120463`.
+
+Also preparing 12 previously unused [DiDeMo](https://github.com/LisaAnne/LocalizingMoments#dataset) validation videos, selected by a fixed hash from 145 explicitly CC-BY-licensed videos among 1,094 validation videos. All queries and original annotator time segments are retained; unavailable selections will not be replaced. This rights-filtered subset is not representative of the complete split. Media is capped at the official first 30 seconds; official DiDeMo metrics need their own evaluation contract. Protocol SHA-256: `89856437629434f8b621e3464f8c543a77e520057372be20d38c82213dfa44ae`.
 
 ## Reproduction and historical evidence
 
