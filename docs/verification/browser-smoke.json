@@ -1,5 +1,5 @@
 {
-  "commit": "bf0d75d4d37d48305987fa1a1d89f5eeb042f3de",
+  "commit": "1a98e7ccae912443257667860de4f5e07bd0a638",
   "browser": "Installed Google Chrome, headless; native CDP, no added packages",
   "isolation": "Temporary profile and credential-free app/session copies; no user browser profile or screen capture",
   "checks": [
