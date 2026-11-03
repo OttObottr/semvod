@@ -11,6 +11,14 @@ The available evidence supports limited, reproducible comparisons rather than le
 
 Next useful evidence is independently reviewed, permitted real footage from several domains, with visible-state, speech, motion and absent-event queries reported separately. Include brief appearances and tiny objects. Freeze queries/labels before model calls; use a held-out subset to confirm any threshold or model selected on development data. Report temporal localization, format failures, abstentions, cold/warm latency, measured tokens and cost. Keep an unoptimized baseline and all failed arms. An actual hour-long workload is needed before claiming cost per stream-hour.
 
+## Next frozen evaluation
+
+Preparation only, **$0 model spend**. The next QVHighlights set uses complete validation MP4s within the first 2 GiB of the authors' archive (ETag `217742cf39-5f48976492b8f`; 4 GiB decompression and 64 MiB member limits). Exclude the six original YouTube parents in [qvh-v1](verification/qvh-v1/inputs.json) and [qvh-next](verification/qvh-next/inputs.json). Sort remaining clip IDs by SHA-256 of `semvod-qvh-holdout-v2\n<clip ID>` and take at most 24 distinct parents, including every official query for each clip. Fewer than 12 parents means incomplete preparation; no outcome-based replacement. This is an access-constrained sample, not a hardest-case or representative benchmark.
+
+Media, separate query/gold files, preparation tools and detailed checks live outside this repository in a local `semvod-benchmarks/qvh-holdout` workspace. The frozen protocol SHA-256 is `c5ffef20f333f902547826812f9fa41b41b58e492e9aba31dc4784ee3536f8d7`; the preparer is `2dded198137fbc6a3d026faadf798d7d872ace8b59ead32af8115992d585e089`. No API keys or paid entry point are used during preparation.
+
+A future run must freeze its model, source and any comparison arm before inference, then freeze complete predictions before grading with the existing QV interval adapter. Report R@1 at temporal IoU 0.5/0.7, per-parent averages, failures, cold/warm latency and measured usage-based cost; retain all selected queries in the denominator. Proposed combined spending cap: **$0.20**, including uncertain charges, with no automatic retries. No spending is authorized by this preparation. Verified absent-event controls remain separate work: annotation gaps and mismatched queries are not trustworthy negative labels. Publish a compact, complete summary; keep raw logs local.
+
 ## Competition exists
 
 - [OpusClip ClipAnything](https://www.opus.pro/clipanything) supports prompt-based clipping using visual/audio/sentiment cues. It is a direct competitor, not merely an automatic highlights tool.
