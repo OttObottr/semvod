@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { latestRequest } from '../src/client/latest.js';
+import { latestRequest } from '../src/client/ui.js';
 
 test('changing moment or session suppresses late clip results, errors and cleanup',async()=>{
   for(const reject of [false,true]){

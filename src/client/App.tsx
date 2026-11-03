@@ -6,8 +6,7 @@ import {
 } from 'lucide-react';
 import type { Hit, SearchResult, Session, SessionView } from '../shared/types';
 import { defaultClipTitle, inputLimits, sampleQueries } from '../shared/settings';
-import { latestRequest } from './latest';
-import { api, formatTime, frameUrl, type ClipResult, type Status } from './ui';
+import { api, formatTime, frameUrl, latestRequest, type ClipResult, type Status } from './ui';
 import MomentPanel from './MomentPanel';
 import Timeline from './Timeline';
 import WorkspaceDialog from './WorkspaceDialog';
@@ -63,15 +62,11 @@ export default function App() {
 
   useEffect(() => {
     sessionGeneration.current++;
-    clipRequests.invalidate();
+    selectMoment();
     let current = true;
     setSearchBusy(false);
-    setClipBusy(false);
     setSession(undefined);
     setResult(undefined);
-    setSelected(undefined);
-    setClip(undefined);
-    setCoverTitle('');
     setError('');
     setQuery('');
     setLiveDemo(false);
