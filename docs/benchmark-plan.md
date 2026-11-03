@@ -35,6 +35,15 @@ Five separate absence controls were manually reviewed against all sampled frames
 
 **Decision: retain current search.** Sequence interpretation improved aggregate localization and reduced cost by 43.76%, but introduced unsupported matches. The candidate and its evaluation tools remain outside the application. Total new spending was $0.0198928, with no uncertain charges or warm network calls; no queries were retried or replaced.
 
+We also replayed frozen search predictions against the [author's training-frequency prior](https://github.com/LisaAnne/LocalizingMoments/blob/b6a555c8134581305d0ed4716fbc192860e0b88c/utils/eval.py), which ranks intervals without seeing the query or video. Errors and abstentions remain in the denominators.
+
+| Frozen DiDeMo cohort | Search R@1 / R@5 / mIoU | Timing prior R@1 / R@5 / mIoU |
+| --- | --- | --- |
+| Earlier 48 queries, 12 videos | 4/48 / 10/48 / 22.75% | 11/48 / 38/48 / 29.40% |
+| Separate 12 queries, 3 videos | 1/12 / 3/12 / 22.92% | 0/12 / 6/12 / 6.94% |
+
+Independent scorers agreed on all 120 app/prior grades and reproduced the author's full-validation prior scores. This check used no new inference. The prior cannot detect absence; it is a diagnostic baseline, not a product change. Search does not consistently beat it, so these results do not support a leading-accuracy claim.
+
 ## Evidence and reproduction
 
 Costs use recorded input/output tokens at $0.40/$1.60 per million, including reused inference and excluding cached-input discounts. They are estimates, not billing statements or per-stream-hour prices. No uncertain charges occurred in these runs.
