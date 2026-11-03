@@ -1,0 +1,27 @@
+{
+  "qid": "nasa-3",
+  "expectedCells": 45,
+  "actualCells": 1,
+  "requestHash": "3eba43cae18402f6ba32f361b63cf449b54309162e933f6f7f62ac6540364aa0",
+  "responseId": "resp_0a1995cb15951027016ae93576f79887d0a22ea38b37941f22",
+  "usage": {
+    "input_tokens": 1910,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 14,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 1924
+  },
+  "estimatedUsd": 0.0007863999999999999,
+  "scores": [
+    {
+      "cell": 1,
+      "score": 7
+    }
+  ],
+  "outcome": "Rejected before returning partial scores. No automatic retry; final two cases retained as unattempted failures in the candidate experiment."
+}

@@ -1,0 +1,163 @@
+{
+  "officialQueries": 6,
+  "developmentRows": [
+    {
+      "qid": "nasa-0",
+      "kind": "development",
+      "error": null,
+      "positive": true,
+      "returned": 1,
+      "correct": 1,
+      "hit1": 1
+    },
+    {
+      "qid": "nasa-1",
+      "kind": "development",
+      "error": null,
+      "positive": true,
+      "returned": 2,
+      "correct": 2,
+      "hit1": 1
+    },
+    {
+      "qid": "nasa-2",
+      "kind": "development",
+      "error": null,
+      "positive": false,
+      "returned": 0,
+      "correct": 0,
+      "hit1": 0
+    },
+    {
+      "qid": "nasa-3",
+      "kind": "development",
+      "error": "Vision returned an incomplete score set. Retry this search.",
+      "positive": true,
+      "returned": 0,
+      "correct": 0,
+      "hit1": 0
+    },
+    {
+      "qid": "nasa-4",
+      "kind": "development",
+      "error": "Unattempted after budget or transport failure",
+      "positive": true,
+      "returned": 0,
+      "correct": 0,
+      "hit1": 0
+    },
+    {
+      "qid": "nasa-5",
+      "kind": "development",
+      "error": "Unattempted after budget or transport failure",
+      "positive": false,
+      "returned": 0,
+      "correct": 0,
+      "hit1": 0
+    }
+  ],
+  "predictionSha256": "924c8cd1694a932b8b15fdc09b02e992ad718405d51fe6ce7d695aa0688010d0",
+  "queries": 12,
+  "r1IoU50": 0.5,
+  "r1IoU70": 0.3333333333333333,
+  "failures": 4,
+  "accountedUsd": 0.04419879999999998,
+  "rows": [
+    {
+      "qid": 8967,
+      "error": "Prior moderation block retained; not retried",
+      "bestIoU": 0,
+      "r1IoU50": 0,
+      "r1IoU70": 0
+    },
+    {
+      "qid": 601,
+      "error": null,
+      "bestIoU": 0.9310344827586207,
+      "r1IoU50": 1,
+      "r1IoU70": 1
+    },
+    {
+      "qid": 9367,
+      "error": null,
+      "bestIoU": 0.6363636363636364,
+      "r1IoU50": 1,
+      "r1IoU70": 0
+    },
+    {
+      "qid": 8976,
+      "error": null,
+      "bestIoU": 0.75,
+      "r1IoU50": 1,
+      "r1IoU70": 1
+    },
+    {
+      "qid": 617,
+      "error": null,
+      "bestIoU": 0,
+      "r1IoU50": 0,
+      "r1IoU70": 0
+    },
+    {
+      "qid": 609,
+      "error": null,
+      "bestIoU": 0.4411764705882353,
+      "r1IoU50": 0,
+      "r1IoU70": 0
+    },
+    {
+      "qid": "nasa-0",
+      "kind": "development",
+      "error": null,
+      "positive": true,
+      "returned": 1,
+      "correct": 1,
+      "hit1": 1
+    },
+    {
+      "qid": "nasa-1",
+      "kind": "development",
+      "error": null,
+      "positive": true,
+      "returned": 2,
+      "correct": 2,
+      "hit1": 1
+    },
+    {
+      "qid": "nasa-2",
+      "kind": "development",
+      "error": null,
+      "positive": false,
+      "returned": 0,
+      "correct": 0,
+      "hit1": 0
+    },
+    {
+      "qid": "nasa-3",
+      "kind": "development",
+      "error": "Vision returned an incomplete score set. Retry this search.",
+      "positive": true,
+      "returned": 0,
+      "correct": 0,
+      "hit1": 0
+    },
+    {
+      "qid": "nasa-4",
+      "kind": "development",
+      "error": "Unattempted after budget or transport failure",
+      "positive": true,
+      "returned": 0,
+      "correct": 0,
+      "hit1": 0
+    },
+    {
+      "qid": "nasa-5",
+      "kind": "development",
+      "error": "Unattempted after budget or transport failure",
+      "positive": false,
+      "returned": 0,
+      "correct": 0,
+      "hit1": 0
+    }
+  ]
+}
