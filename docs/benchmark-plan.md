@@ -56,6 +56,8 @@ A paired model screen reused the same eight now-reviewed queries, three sampled-
 
 Luna used 29 inference requests and Terra 36. Conservative input/output rates were $0.125/$0.50 and $1.25/$5 per million respectively, including a cache-write allowance ([Luna pricing](https://developers.openai.com/api/docs/models/gpt-6-luna), [Terra pricing](https://developers.openai.com/api/docs/models/gpt-6.1-terra)). Terra also used 36 non-generating token-count preflights, reported separately from inference charges. These estimates are not invoices. **Decision: retain current scoring and model.** Neither candidate passed the fixed accuracy/control gate. Terra’s cat hit was an unrefined coarse candidate; nearby individual checks correctly rejected cat. This reviewed-subset screen is not fresh validation or a full-split model comparison.
 
+A fixed adaptive-coverage pass used remaining refinement slots to check current unchecked top hits, retaining the ten-check limit. On all 48 development queries, R@1 fell 4/48→2/48, R@5 stayed 10/48, and mIoU fell 22.75%→21.42%. Coarse hits decreased 29→6, but the added checks lost two previous successes. Additional inference cost an estimated $0.0098528; the three original errors remained misses. **Decision: reject; skip confirmation and retain current code.**
+
 ## Evidence and reproduction
 
 GPT-4.1 mini costs use recorded input/output tokens at $0.40/$1.60 per million, including reused inference and excluding cached-input discounts. They are estimates, not billing statements or per-stream-hour prices. No uncertain charges occurred in these runs.
