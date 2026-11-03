@@ -1,0 +1,29 @@
+{
+  "predictionCommit": "67395ff",
+  "reviewer": "Astra, independent read-only review; no reviewer API calls or edits",
+  "status": "passed",
+  "checks": [
+    "Predictions byte-identical to the pre-grade commit.",
+    "Source, acquisition, protocol and 300 frame hashes verified.",
+    "Private gold matches selected original official annotation records and SHA-256.",
+    "All 46 unique request hashes, response IDs, token usages and charges match full local receipts and shared ledger.",
+    "No inference retries, response replays, pending entries or unknown charges in this phase.",
+    "Coarse scores, 38 refinements, rankings and every predicted interval reconstructed from provider responses.",
+    "Independent temporal IoU grading and unchanged qvh-v1 adapter agree.",
+    "Every warm repeat made zero vision calls and used zero model tokens."
+  ],
+  "results": {
+    "r1IoU50": "2/4",
+    "r1IoU70": "1/4",
+    "estimatedUsd": 0.0160496,
+    "phaseCapUsd": 0.1
+  },
+  "diagnosis": {
+    "9367": "First interval95\u2013119 misses official0\u201344; no returned hit inside gold.",
+    "8976": "First71\u201381 vs official70\u201378 gives7/11 IoU, failing0.7.",
+    "617": "First21\u201347 vs official24\u201346 gives22/26 IoU.",
+    "609": "First0\u20135 misses official42\u201372. A later refined hit is inside gold, but its25\u201391 run is too broad to pass0.5."
+  },
+  "rankingDiagnostic": "Existing checked-first rule worsens to1/4 and0/4; no shipped ranking change or tuned improvement claim.",
+  "limits": "Four selected validation cases cannot establish representative real-stream accuracy or a leaderboard rank."
+}

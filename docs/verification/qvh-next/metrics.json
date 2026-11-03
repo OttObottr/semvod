@@ -1,0 +1,38 @@
+{
+  "predictionSha256": "1a504de828e0acc5ef7c8aff7dd042e8693bbfc0b46e768ddeca1c4f5ea9058c",
+  "queries": 4,
+  "r1IoU50": 0.5,
+  "r1IoU70": 0.25,
+  "failures": 0,
+  "accountedUsd": 0.0160496,
+  "rows": [
+    {
+      "qid": 9367,
+      "error": null,
+      "bestIoU": 0,
+      "r1IoU50": 0,
+      "r1IoU70": 0
+    },
+    {
+      "qid": 8976,
+      "error": null,
+      "bestIoU": 0.6363636363636364,
+      "r1IoU50": 1,
+      "r1IoU70": 0
+    },
+    {
+      "qid": 617,
+      "error": null,
+      "bestIoU": 0.8461538461538461,
+      "r1IoU50": 1,
+      "r1IoU70": 1
+    },
+    {
+      "qid": 609,
+      "error": null,
+      "bestIoU": 0,
+      "r1IoU50": 0,
+      "r1IoU70": 0
+    }
+  ]
+}
