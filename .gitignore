@@ -5,6 +5,7 @@ dist/
 !.env.example
 .semvod/
 sessions/
+sample/sheets/
 playwright-report/
 test-results/
 .DS_Store

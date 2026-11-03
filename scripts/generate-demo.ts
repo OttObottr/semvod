@@ -3,7 +3,7 @@ import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
 import { atomicJson, hash } from '../src/server/store.js';
-import { chatRelevance, buildSheets } from '../src/server/indexer.js';
+import { chatRelevance } from '../src/server/indexer.js';
 import { distinctHits } from '../src/server/search.js';
 import type { ChatMessage, Frame, Hit, SearchResult, Session } from '../src/shared/types.js';
 const dir=path.resolve('sample');await fs.mkdir(path.join(dir,'frames'),{recursive:true});
@@ -46,4 +46,4 @@ for(const query of sampleQueries){
  const c=chatRelevance(query,f.t,chat);return {...f,visualScore:v,chatScore:c.score,score:Math.max(v,c.score*.92),reason:query==='great moment'?'Chat: “great moment”':query==='dog'?'A golden dog beside the player':query==='brightest blue'?'A luminous cyan gate in the ruins':'The character falls into a gap in the path'};});
  fixtures[query.toLowerCase()]={query,hits:distinctHits(scores),scores,cached:true,mode:'demo',stats:{sheets:2,visionCalls:0,cacheHits:1,refined:0,elapsedMs:0}};
 }
-await atomicJson(path.join(dir,'searches.json'),fixtures);await buildSheets('demo');console.log('Generated 96 original sample frames, chat, sheets, and offline search fixtures.');
+await atomicJson(path.join(dir,'searches.json'),fixtures);console.log('Generated 96 original sample frames, chat, and offline search fixtures.');

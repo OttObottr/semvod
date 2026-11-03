@@ -76,22 +76,7 @@ If OBS fails, check its WebSocket settings and use **Setup → Test OBS connecti
 
 `src/client/` contains the UI; `src/server/` contains capture, search, storage and integrations; `src/shared/` contains types and public limits. `tests/` covers app regressions, `sample/` holds the offline demo, and `scripts/generate-demo.ts` regenerates it.
 
-`npm test` checks unused TypeScript code and runs **28 offline app regression cases**, with external provider transports blocked. Historical evaluation tooling and its four tests remain in the [immutable research snapshot](https://github.com/OttObottr/semvod/tree/53ecc81bd8d586265e0476db1ac6d61012e4f98a). No application test was removed during cleanup.
-
-[Browser verification](docs/verification.md) covers 17 workflows and replay of 24 real-video sessions, including all 1,774 saved scores and 24 covers. Earlier Lighthouse runs scored 100 in all four categories on desktop/mobile; page-load lab scores do not measure search accuracy.
-
-The [24-video retrieval benchmark](docs/benchmark-plan.md) achieved **11/24 at temporal IoU 0.5** and **10/24 at 0.7**, costing an estimated **$0.07975**. All queries completed; warm repeats made zero network calls. This access-constrained sample establishes a limited baseline, not superior accuracy or a leaderboard rank.
-
-Historical review logs, benchmark runners/results and submission materials are preserved at [revision `53ecc81`](https://github.com/OttObottr/semvod/tree/53ecc81bd8d586265e0476db1ac6d61012e4f98a). To inspect or replay them separately:
-
-```sh
-git worktree add --detach ../semvod-research 53ecc81bd8d586265e0476db1ac6d61012e4f98a
-cd ../semvod-research
-npm ci
-node scripts/benchmark.mjs
-```
-
-That command replays saved fixture receipts without paid inference. Dataset access and benchmark-specific instructions remain with each archived experiment. Failed attempts and limitations remain available there.
+`npm test` builds and runs 28 offline regression cases with external provider transports blocked. [Verification](docs/verification.md) covers browser, integration and security checks; [benchmarks](docs/benchmark-plan.md) report retrieval accuracy and cost, including limitations and regressions. Research tools and raw experiment logs stay outside the application tree.
 
 ## Built with Codex
 
