@@ -1,5 +1,5 @@
 {
-  "commit": "21c1d36d50cd3736fffac3fbce9e1d492698afbb",
+  "commit": "2b727d031be14450c0f7f691ba47728dbdcf58de",
   "browser": "Installed Google Chrome, headless; native CDP, no added packages",
   "isolation": "Temporary profile and credential-free app/session copies; no user browser profile or screen capture",
   "checks": [
@@ -11,19 +11,80 @@
     "Unsupported sample query displays an error and clears old hits",
     "Search recovers after an error",
     "Hit selection updates preview",
-    "Timeline selection changes preview",
+    "Native timeline supports Home, End, arrow keys and pointer selection",
     "Browser downloads a titled 1280x720 JPEG cover",
     "Sample blocks real clip and VOD actions",
     "Setup displays configured custom-port Twitch callback",
     "Session switch clears previous search results",
+    "200-frame timeline advances in both directions and reaches endpoints before searching",
     "Command-K focuses search",
     "390px viewport has no horizontal overflow",
     "No uncaught JS exceptions or external page requests"
   ],
   "paidCalls": 0,
   "limitations": [
-    "No OBS capture, live AI inference, OAuth or real Twitch clip creation in this run."
+    "No fresh AI inference, OBS capture, OAuth or Twitch clip creation in this pass.",
+    "Temporary profiles and blocked provider transports are test isolation, not an OS sandbox."
   ],
   "screenshotDesktop": "../screenshots/browser-smoke-desktop.png",
-  "screenshotMobile": "../screenshots/browser-smoke-mobile.png"
+  "screenshotMobile": "../screenshots/browser-smoke-mobile.png",
+  "modes": [
+    "production",
+    "development"
+  ],
+  "realVideoReplay": {
+    "sessions": 24,
+    "frames": 1774,
+    "covers": 24,
+    "numericScoresAndHitsMatchFrozenPredictions": true,
+    "paidCalls": 0,
+    "scope": "Real app/server in installed Chrome with an isolated profile; original public frames and saved model scores. Not fresh inference or a new accuracy evaluation.",
+    "checks": [
+      "All 24 real-video queries match every frozen frame score and hit, including empty results",
+      "Session switching clears earlier results",
+      "All 24 titled covers decode as 1280x720 JPEGs",
+      "Stale VOD response cannot copy the previous moment; current copy succeeds using a clipboard mock",
+      "Real-video results render at 390px without overflow or broken images",
+      "No browser runtime exceptions or external page requests"
+    ]
+  },
+  "lighthouse": {
+    "version": "13.0.3",
+    "scope": "Production sample landing page; one final cold run per standard profile, all four categories, no audit exclusions. Lab scores vary and do not measure search accuracy.",
+    "profiles": {
+      "desktop": {
+        "checkedAt": "2026-11-03T02:54:02.620Z",
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 445,
+        "blockingMs": 0,
+        "cls": 0.0275,
+        "reportSha256": "202b5f45e9b9d2bc03c9d14745af4039007ab0e1a41bdf58e8214d1c1d3bfbed"
+      },
+      "mobile": {
+        "checkedAt": "2026-11-03T02:54:12.433Z",
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "lcpMs": 1736,
+        "blockingMs": 0,
+        "cls": 0.0277,
+        "reportSha256": "7e004a296bd8b7c5579ab45489f9c862c829acdac6bd8fc6001addcdd7d3c778"
+      }
+    }
+  },
+  "timelineBinning": {
+    "equivalenceCases": 67,
+    "sixHourFrames": 10800,
+    "beforeMedianMs": 9.895333,
+    "afterMedianMs": 0.066542,
+    "scope": "15-run isolated CPU medians after warmup; not end-to-end search latency."
+  }
 }

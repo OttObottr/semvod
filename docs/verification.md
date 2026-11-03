@@ -1,57 +1,25 @@
 # Verification status
 
-Updated during the build on November 2, 2026. Keep this honest as live setup progresses.
+Updated November 2, 2026. The [submitted build](https://github.com/OttObottr/semvod/tree/hackathon-2026-11-02) is preserved; current `main` includes post-submission improvements.
 
-See [the adversarial review and before/after receipts](adversarial-review.md) for failure cases, measured costs, and remaining limits.
+## Current checks
 
-## Verified locally
+- `npm test` builds first, checks unused TypeScript code, and passes 32 offline regression cases. Provider transports are blocked; no keys are required.
+- [Chrome receipts](verification/browser-smoke.json): 17 workflow checks pass in both development and production, including errors, covers, session changes, mobile layout, and keyboard navigation before searching a 200-frame session.
+- All 24 real-video holdout sessions work through the UI. Every one of 1,774 saved numeric scores and all ranked hits match the frozen predictions; all 24 titled covers decode at 1280×720. This replays saved inference, not a new accuracy measurement.
+- Lighthouse 13.0.3 scores 100 for performance, accessibility, best practices and SEO on both standard desktop and mobile profiles. These are local page-load lab results; they do not establish complete accessibility or search quality.
+- Linear, memoized timeline binning matches the previous output in 67 cases. For 10,800 frames, isolated CPU medians fell from 9.90 ms to 0.067 ms; this is not end-to-end search speed.
+- Adversarial review and regression cases cover overlapping Twitch token writes, concurrent sheet publication, stale clipboard responses, cache isolation, recording state and clip boundaries. Astra reviewed the final changes with no remaining blocker found in that scope.
+- `npm audit`: zero known vulnerabilities. Registry verification: 83 package signatures and 43 attestations. [Git credential scan](verification/git-secret-audit.json): no findings across local objects, remote branches/tags/PR heads, working files and local Git configuration. These checks cannot prove the absence of malware or unknown secrets.
 
-- A clean checkout passes `npm ci`, production build, and all 22 tests with package install scripts disabled.
-- TypeScript checking and production Vite build pass.
-- Twenty-two native Node tests pass, with no real OpenAI calls.
-- Production HTTP integration serves the sample, supports search, and downloads a correctly sized 1280×720 cover.
-- Cross-origin requests, missing mutation headers, invalid session paths, and invalid OAuth state are rejected.
-- Mock OBS v5 challenge authentication, current-program-scene screenshot requests, frame persistence, and graceful stop pass.
-- Mock Twitch EventSub subscription identities/scopes, message deduplication, and reconnect migration pass.
-- Vision response validation, moderation blocking, concurrent-work coalescing, query normalization, duplicate-frame fan-out, persistent score reuse, and model-change invalidation pass.
-- VOD stream/time matching, recorder-start offset, clip end-offset semantics, and boundary clamping pass.
-- Desktop and 400px phone layouts were visually checked; full-page screenshots are saved in `docs/screenshots/`.
-- In Chrome, the sample loads; clicking `dog` and `brightest blue` changes the timeline, selected frame, and nearby chat.
-- Current `npm audit`: zero known vulnerabilities. `npm audit signatures`: 83 verified registry signatures; 43 verified attestations. This is package-authenticity/advisory evidence, not a malware-free guarantee.
+No packages or paid model calls were added for this pass. Detailed new audit tooling and reports remain in the separate benchmark workspace. Test isolation is not an OS sandbox.
 
-- Live Twitch OAuth completed for `ottobottr`; token validation confirms `user:read:chat` and `channel:manage:clips`.
-- Live EventSub WebSocket welcome and `channel.chat.message` subscription succeeded with status `enabled`; actual message delivery also passed in the separate capture described below.
+## Integration and submission evidence
 
-- Actual OBS 29.0.2 / WebSocket 5.1.0 capture passes in the network-disabled Linux sandbox; a captured image was visually inspected. Native macOS OBS remains intentionally uninstalled.
-- The artwork-only public Twitch test produced 63 captured frames, matched archive `2917774778`, and created confirmed clip `TardyResourcefulTurtleRuleFive-4N9rgxv50ZQTaF0g`. The channel was verified offline afterward.
-- Actual EventSub message `lol` from `ottobottr` was received while OBS frames were captured in a separate offline test session.
-- Real OpenAI moderation and `gpt-4.1-mini` vision requests passed for `dog` and `brightest blue` on the 63-frame Twitch recording. Eight unique frames share one detailed sheet. The initial vision check made nine paid requests without collecting token usage. A later fresh search did collect usage and a list-price estimate; see `verification/cost-and-quality.json`.
-- The first compact sheet missed the small illustrated dog. Short sheets now retain 384×216 frame detail; refinement also updates every exact duplicate timestamp. A regression test checks that a coarse false positive disappears from all its duplicates.
-- Repeated normalized queries and a fresh app process reused persisted scores with **zero paid vision calls**. See `verification/vision-report.json` and `screenshots/real-dog-search.png`.
-- The [public YouTube demo](https://www.youtube.com/watch?v=1-FCJHXmjm4) is published on Bellverse Labs. Signed-out incognito playback succeeded. The exported 1920×1080 H.264/AAC file is 141.967 seconds with an audio track. Page-only captures, original artwork, and OpenAI-generated narration with an on-screen disclosure keep the Mac desktop and microphone out of the video.
-- Sandbox configuration and evidence are recorded in `sandbox-testing.md`. Cleanup is complete: both test containers, the isolated network, all six test images, and the downloaded base image were removed. Docker lists no remaining containers or images. Temporary build folders were moved to Trash; temporary setup/proxy files were removed. The pre-existing OrbStack installation remains intact, and no native OBS app was installed.
+The earlier [isolated OBS/Twitch test](sandbox-testing.md) captured 63 frames from original artwork and created the [public demo clip](https://www.twitch.tv/ottobottr/clip/TardyResourcefulTurtleRuleFive-4N9rgxv50ZQTaF0g). EventSub message delivery and real OpenAI moderation/vision requests also passed. The test broadcast is now unpublished; the clip remains available. No desktop, camera or microphone content was broadcast.
 
-## Submitted
+The [2:22 public demo](https://www.youtube.com/watch?v=1-FCJHXmjm4) uses original artwork and disclosed generated narration. Devpost displayed “Project submitted!” for [SemVOD](https://devpost.com/software/semvod) before the deadline. Test containers, downloaded test images and temporary setup files were removed; native OBS was not installed.
 
-Devpost displayed **“Project submitted!”** for [SemVOD](https://devpost.com/software/semvod), listed under Codex x TwitchCon Hackathon, before the November 2 deadline. Public demo: https://www.youtube.com/watch?v=1-FCJHXmjm4.
+## Accuracy limits
 
-Source is published at https://github.com/OttObottr/semvod.
-
-## API contracts checked
-
-- Twitch API reference: `POST /helix/videos/clips`; `channel:manage:clips` for broadcaster authorization; end-offset semantics; required editor, broadcaster, VOD, offset, and title fields.
-- EventSub `channel.chat.message` v1: `user:read:chat`; broadcaster and authorized reader IDs; WebSocket welcome/subscription, deduplication, and migration handling.
-- OBS WebSocket v5 protocol: challenge authentication, program-scene lookup, screenshot request options.
-- OpenAI Responses image input/structured outputs and `omni-moderation-latest` moderation.
-
-Official references are linked in the README. The app's implemented behavior and simulated tests do not replace real integration validation.
-
-
-### Final clean-checkout verification
-
-On November 2, a `git archive` checkout with no `.env`, OAuth tokens, or recordings passed `npm ci --offline --ignore-scripts --no-audit --no-fund`, `npm run build`, and all 22 tests. Test transports reject external fetch/WebSocket destinations; the HTTP test runs in a temporary directory with synthetic credentials. This is test isolation, not an OS-level sandbox. The release remains on Responses after the faster Decisions experiment failed a cat-versus-dog adversarial check. See the [raw model comparison](verification/benchmark/README.md) and [illustrated-fixture search timelines](verification/semantic-comparison.png).
-
-
-### Fresh-clone test command correction
-
-A second clean checkout reproduced a missing `dist/client` failure when `npm test` ran before a build. The command now explicitly runs `npm run build` before the test runner. A `pretest` hook alone would be skipped by this repository’s `ignore-scripts=true` policy. The corrected `npm test` then built successfully and passed all 22 tests in that checkout. No runtime search behavior or dependencies changed.
+Integration success does not prove retrieval quality. The [frozen 24-video holdout](benchmark-plan.md#qvhighlights-holdout) achieved 11/24 at temporal IoU 0.5 and 10/24 at 0.7. Localization still needs improvement. The app searches sampled stills and chat, not audio; the illustrated demo is not a real-gameplay benchmark. Historical evidence remains in [the review](adversarial-review.md) and [evaluation summary](benchmark-plan.md).
