@@ -61,6 +61,19 @@ A fixed adaptive-coverage pass used remaining refinement slots to check current 
 
 A cached one-gap span merge recovered the known eating-query result: sequence R@1 rose 1/8→2/8, R@5 stayed 4/8, and mIoU rose 52.08%→56.25%. Older 48- and 12-query sequence cohorts were unchanged. Only that one case triggered the rule among 71 processable saved outputs; five inherited failures remained in the denominators. This $0 replay supports fresh validation, not adoption or a general accuracy claim.
 
+## Fresh sequence validation
+
+The next six previously untested CC-BY videos in the same frozen hash order supplied all 19 official queries, plus six independently reviewed sampled-frame absence controls. Both methods used identical two-second samples. Predictions were committed before grading; one moderation-blocked query remains a miss for both methods.
+
+| Method | R@1 | R@5 | mIoU | Estimated inference cost | Controls with matches |
+| --- | --- | --- | --- | --- | --- |
+| Current GPT-4.1 mini | 1/19 | 1/19 | 9.36% | $0.0196436 | 3/6 |
+| GPT-6.1 Terra sequence | 3/19 | 10/19 | 36.84% | $0.0210325 | 0/6 |
+
+The one-gap merge never triggered, so raw and merged results are identical; this provides no new evidence for the merge itself. Sequence search retained the existing first-place success and improved aggregate localization at 7.1% higher estimated cost. **Decision: retain current production code.** The fixed adoption gate required every case to complete, which the moderation block prevented. These six short videos do not establish accuracy on long streams or a leaderboard position.
+
+The 93 inference requests cost an estimated $0.0406761 in total, with no uncertain charges; 93 non-generating token-count operations are reported separately. One accounting-only amendment, before any official query ran, accepted actual usage within the already reserved token bound and reused the completed response without another API call. All cases, payloads and grading rules stayed fixed. Independent review reconstructed scores, rankings and all 57 official grades. All 24 completed searches replayed from cache with zero network calls; the moderation block also reproduced offline.
+
 ## Evidence and reproduction
 
 GPT-4.1 mini costs use recorded input/output tokens at $0.40/$1.60 per million, including reused inference and excluding cached-input discounts. They are estimates, not billing statements or per-stream-hour prices. No uncertain charges occurred in these runs.
