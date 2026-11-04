@@ -59,6 +59,8 @@ Luna used 29 inference requests; Terra used 36 for stills and 11 for sequences. 
 
 A fixed adaptive-coverage pass used remaining refinement slots to check current unchecked top hits, retaining the ten-check limit. On all 48 development queries, R@1 fell 4/48→2/48, R@5 stayed 10/48, and mIoU fell 22.75%→21.42%. Coarse hits decreased 29→6, but the added checks lost two previous successes. Additional inference cost an estimated $0.0098528; the three original errors remained misses. **Decision: reject; skip confirmation and retain current code.**
 
+A cached one-gap span merge recovered the known eating-query result: sequence R@1 rose 1/8→2/8, R@5 stayed 4/8, and mIoU rose 52.08%→56.25%. Older 48- and 12-query sequence cohorts were unchanged. Only that one case triggered the rule among 71 processable saved outputs; five inherited failures remained in the denominators. This $0 replay supports fresh validation, not adoption or a general accuracy claim.
+
 ## Evidence and reproduction
 
 GPT-4.1 mini costs use recorded input/output tokens at $0.40/$1.60 per million, including reused inference and excluding cached-input discounts. They are estimates, not billing statements or per-stream-hour prices. No uncertain charges occurred in these runs.
