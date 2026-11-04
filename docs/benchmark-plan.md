@@ -76,6 +76,8 @@ The 93 inference requests cost an estimated $0.0406761 in total, with no uncerta
 
 A development screen on the same inputs matched tile shapes to frame aspect ratios without increasing pixel area. R@1 stayed 3/19 and mIoU stayed 36.84%; R@5 fell 10/19→9/19. Reference inference cost across the 24 answered cases rose $0.0210325→$0.0211425. Nine identical responses were reused; 15 new requests cost an estimated $0.01319125, with no uncertain charges, plus 15 non-generating token-count checks. The inherited moderation block stayed in the denominator. **Decision: reject this layout candidate under the fixed development gate; retain current code.** Independent review reproduced all 38 official grades. No further validation was run.
 
+A separate prompt-clarification screen retained all 27 reviewed Terra queries and nine controls. Combined R@1 rose 4/27→7/27 and mIoU rose 41.36%→45.68%, but R@5 fell 14/27→13/27. Two existing top-five successes were lost; the older eight-query cohort also lost overlap accuracy. All nine controls remained empty. The 35 new inference requests cost an estimated $0.03481125 versus $0.0308175 for the reference outputs; 35 non-generating token-count checks are separate, with no uncertain charges. Independent review reproduced all 54 grades. **Decision: reject under the fixed no-regression gate; no fresh validation or app change.**
+
 ## Evidence and reproduction
 
 GPT-4.1 mini costs use recorded input/output tokens at $0.40/$1.60 per million, including reused inference and excluding cached-input discounts. They are estimates, not billing statements or per-stream-hour prices. No uncertain charges occurred in these runs.
