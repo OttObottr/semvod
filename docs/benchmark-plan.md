@@ -74,6 +74,8 @@ The one-gap merge never triggered, so raw and merged results are identical; this
 
 The 93 inference requests cost an estimated $0.0406761 in total, with no uncertain charges; 93 non-generating token-count operations are reported separately. One accounting-only amendment, before any official query ran, accepted actual usage within the already reserved token bound and reused the completed response without another API call. All cases, payloads and grading rules stayed fixed. Independent review reconstructed scores, rankings and all 57 official grades. All 24 completed searches replayed from cache with zero network calls; the moderation block also reproduced offline.
 
+A development screen on the same inputs matched tile shapes to frame aspect ratios without increasing pixel area. R@1 stayed 3/19 and mIoU stayed 36.84%; R@5 fell 10/19→9/19. Reference inference cost across the 24 answered cases rose $0.0210325→$0.0211425. Nine identical responses were reused; 15 new requests cost an estimated $0.01319125, with no uncertain charges, plus 15 non-generating token-count checks. The inherited moderation block stayed in the denominator. **Decision: reject this layout candidate under the fixed development gate; retain current code.** Independent review reproduced all 38 official grades. No further validation was run.
+
 ## Evidence and reproduction
 
 GPT-4.1 mini costs use recorded input/output tokens at $0.40/$1.60 per million, including reused inference and excluding cached-input discounts. They are estimates, not billing statements or per-stream-hour prices. No uncertain charges occurred in these runs.
