@@ -193,6 +193,8 @@ export default function App() {
 
   async function copyVodLink() {
     if (!selected || searchBusy) return;
+    setError('');
+    setNotice('');
     await linkRequests.run(
       async current => {
         const result = await api<{ url: string }>('/api/vod-link', { sessionId, t: selected.t });
