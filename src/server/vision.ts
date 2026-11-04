@@ -94,24 +94,25 @@ export async function cachedScore(query: string, image: Buffer, count: number, s
   const version = count === 1 ? visionConfig.singleFrameVersion : visionConfig.coarseVersion;
   const key = hash(`${version}:${config.model}:${query}:${count}:${hash(image)}`);
   const file = path.join(cacheRoot, `${key}.json`);
-  const cached = await readJson<ScoredCell[]>(file).catch(() => null);
-  if (cached) {
-    try {
-      const scores = validateCells(cached, count);
-      stats.cacheHits++;
-      return scores;
-    }
-    catch { /* Rebuild corrupt cache. */ }
-  }
   const existing = pendingScores.get(key);
   if (existing) {
     stats.cacheHits++;
     return existing;
   }
-  stats.visionCalls++;
-  const work = scoreImage(query, image, count, stats)
-    .then(async (scores) => { await atomicJson(file, scores); return scores; })
-    .finally(() => pendingScores.delete(key));
+  const work = readJson<ScoredCell[]>(file).catch(() => null).then(async cached => {
+    if (cached) {
+      try {
+        const scores = validateCells(cached, count);
+        stats.cacheHits++;
+        return scores;
+      }
+      catch { /* Rebuild corrupt cache. */ }
+    }
+    stats.visionCalls++;
+    const scores = await scoreImage(query, image, count, stats);
+    await atomicJson(file, scores);
+    return scores;
+  }).finally(() => pendingScores.delete(key));
   pendingScores.set(key, work);
   return work;
 }

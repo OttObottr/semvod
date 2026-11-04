@@ -41,6 +41,21 @@ test('image cache coalesces work, recovers from failure, and isolates scoring co
   globalThis.fetch=async()=>{throw Error('Compatible disk caches must not send another request');};
   const warm=stats();await cachedScore(query,image,1,warm);await cachedScore(query,image,2,warm);
   assert.equal(warm.visionCalls,0);assert.equal(warm.cacheHits,2);
+
+  // A delayed disk miss must not outlive the request it should join.
+  await fs.rm(single,{force:true});
+  const nativeRead=fs.readFile;
+  let providerStarted!:()=>void,finishProvider!:()=>void,finishRead!:()=>void;
+  const began=new Promise<void>(r=>{providerStarted=r;}),providerGate=new Promise<void>(r=>{finishProvider=r;}),readGate=new Promise<void>(r=>{finishRead=r;});
+  globalThis.fetch=async()=>{calls++;providerStarted();await providerGate;return visionResponse([{cell:1,score:7,reason:'test evidence'}]);};
+  try{
+   const first=cachedScore(query,image,1,stats());await began;
+   fs.readFile=((...args:Parameters<typeof fs.readFile>)=>String(args[0])===single
+    ? readGate.then(()=>{throw Object.assign(new Error('Delayed cache miss'),{code:'ENOENT'});})
+    : nativeRead(...args)) as typeof fs.readFile;
+   const joined=cachedScore(query,image,1,stats());finishProvider();await first;finishRead();await joined;
+   assert.equal(calls,3);
+  }finally{fs.readFile=nativeRead;finishProvider();finishRead();}
  }finally{release();globalThis.fetch=original;config.openaiKey=oldKey;await Promise.all([single,coarse,old].map(file=>fs.rm(file,{force:true})));}
 });
 
